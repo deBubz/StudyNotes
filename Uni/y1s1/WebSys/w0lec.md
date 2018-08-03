@@ -8,9 +8,9 @@ put [31268] in the email subj line when emailing
 
 3 modules
 
-1.os
-2. web
-3. comp theory
+1. os 1-3, 6-7
+2. web 3-5,7
+3. comp theory 8-10
 
 ## Learning act
 
@@ -36,3 +36,22 @@ put [31268] in the email subj line when emailing
 - info representation -binary, hex
 - logic - bool algebra, binary arimetics
 - Comp theory, memory, coding
+
+---
+
+OK Intro to Web System
+
+Intro Lecture was mostly Assesment Information.
+
+The Books section in BlackBoard seems to have some nice resources.
+Do yourself a favour and __install [linux gym](http://linuxgym.it.uts.edu.au/linuxgym/lgwww/) at home__. The `FAQ` can help with that.
+
+
+Key assesments:
+
+- Final Exam `exam period` (Based on quiz 1 and 2)
+- Skills Test `Week 12`
+- Website `Week 7`
+- Quiz `Week 7, 11`
+- Presentation `Week 12`
+- LinuxGym `Weekly`

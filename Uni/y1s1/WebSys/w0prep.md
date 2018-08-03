@@ -28,3 +28,7 @@ while in sftp
 `lcd [path]` : change local dir forcopy
 
 `get [filename]` : download remote file to current local dir
+
+---
+
+## UNIX
