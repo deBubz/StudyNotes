@@ -17,6 +17,9 @@ public class Bubbletest
                 }
             }
         } 
+
+
+        // print out array to test
         for(int num : Arr) {
             System.out.println(num);
         }
