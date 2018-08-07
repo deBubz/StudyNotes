@@ -76,9 +76,6 @@ minimun 6 articles
 
 ## ASIGNMENT 3 CAREERS project
 
-
-
-
 ---
 
 cat kutai 
