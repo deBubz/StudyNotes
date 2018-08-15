@@ -57,3 +57,27 @@ Communication : Facebook
 Time Management: Asana
 
 ---
+CIPT Assesment 3 Group Members
+Hi Amy, 
+
+I`m sorry for sending this out late.
+Here are the details of my group for the assesment 3, class Tuesdays 4.30 - 6.00.
+
+name: Bao Thai Hoang
+id: 13363332
+
+name: Qianchen Li
+id: 12997235
+
+name:Jiayu Zhou (Abby)
+id:13096627
+
+name:Samrat Kc
+id:13025717
+
+Collaborate : Google drive
+Communication : Facebook Messenger
+Time Management: Asana
+
+Regards,
+Bao Hoang

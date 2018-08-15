@@ -1,4 +1,15 @@
-# IS in the organisation 
+# Information Systems Withthin an Organisation
+
+## OUTLINE
+
+- Transactional Processing Systems __TPS__
+- Decision Support Systems __DSS__
+- Executive Support Systems __ESS__
+- Functional Area Support Systems
+- Enterprise Resource Planning __ERP__
+- Reports
+
+---
 
 ## Management System for managers
 
@@ -17,39 +28,53 @@
 
 ## TPS - Transaction Processing System
 
-### Similar to checkout point for retailers.
+### Similar to checkout point for retailers
 
 - It support the performing of __daily operational tasks__.
-- Serve operational managersL do __routine__ task and track the flow of __transactions__
+- Serve operational managers do __routine__ task and track the flow of __transactions__
 - Produces info for other Information Systems.
 
-> Transaction: any bussiness event that generates valuable data.
+> __Transaction__: any bussiness event that generates valuable data.
+>
+> __Transactional Information__: All Info contained within a single business process/work.
+>
+> _e.g._ payroll, CRUD, shop checkout.
 
-_e.g._ payroll, CRUD, shop checkout.
 
-### TPS - Transcaction Processing Systems (fundamental)
+
+### TPS Processes Data in 2 ways:
 
 - __BatchProcessing__: Transaction data, putting it in groups or batches, and processes it periodically(Not instantly).
-- __Online Transaction Processing(OLTP)__: Transacions are processed online as soon as they ocurr.
+- __Online Transaction Processing(OLTP)__: Transacions are processed online as soon as they ocurr. (Instantly )
 
 ---
 
 ## Decision support systen __DSS__
 
-- allow middle managers to examine large amy of detailed data from different internal and external sources to make a decision. _Data form multiple different sources._
-- Used to support performance of manegerial annalysis or unroutine decisions.
+- Let __middle Management__ examine large amounts of detailed datas from __different sources__, both __internal__ and __external__ sources to make a decision.
+- For Middle management to analyze pattern and trends
+- Used to support performance of manegerial annalysis and or __semi-struntured/ unstructured__ decisions.
+
+
+### Common Decision Support Systems Techniques
+
+- __What-if-analyst__ - what if this happens
+- __Sensitive analalysist__ - handles volatile data/ info.
+- __Optimization analyst__ - Optimize your processes
+- __Goal Seeking Analyst__ - GIT THAT DONE
+
+
+Decision Support Systems are usually used to solve recurring, specific problems. Such as calculating the cost of Oceanic transportation.
+
+One such DSS is called the __Voyage Estimating Systems__. It uses and processes all sort of data, such as Travel time, cost, projected earnings.
 
 ---
 
-## VES Voyage-Estimating System
+## Executive Support System __ESS__
 
----
-
-## ESS Executing support system
-
-- For executive managers addressing longterm issues.
+- __High level__ system used by _senior/executive managers_ addressing longterm issues, or sumarizes firm performances.
+- Data often presented on a __dashboard__.
 - non routine decisions
-- uses a dashboard to present data.
 
 ---
 
