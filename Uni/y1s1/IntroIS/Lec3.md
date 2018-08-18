@@ -74,24 +74,33 @@ One such DSS is called the __Voyage Estimating Systems__. It uses and processes 
 
 - __High level__ system used by _senior/executive managers_ addressing longterm issues, or sumarizes firm performances.
 - Data often presented on a __dashboard__.
-- non routine decisions
+- Used in non-routine high level decisions, needing top level support, evaluation, insight.
 
 ---
 
-## Functional Area of IS
+## Functional Area Information System __FAIS__
 
-Able to supoprt any department of the organisation.
+Each of these Functional Area Informational System or __FAIS__ supports a particular operation of the organisation:
 
-- IS for Production/Operations Management
+- __IS for Production/Operations Management__
   - Inventory management (Overstocking - incr cost, Understocking - reduce earnings)
   - QA/QC
-- IS for Accounting and finance
+- __IS for Accounting and finance__
   - Payrol
   - Transactions
   - control and auditing (Budget management, track spendings)
   - Expense Management - Earnings, Cost
-- IS for HR management
+- __IS for HR management__
   - Staff management (Recruitment, Special requests)
+
+### Production/Operations Management
+
+Responsible for processing data inpur to useful output informatioon, and aswell as the business` overal operations. These Operations includes:
+
+- __Logistics and materials management__: deals with both inbound(recieving) and outbound(shipping) logistics and can be automated with IS for POM. Relating to this is:
+  - Inventory Management
+  - Quality assurance, Quality controll
+  - 
 
 ---
 
@@ -101,7 +110,7 @@ Look at data, manage marketing
 
 ---
 
-## ERP Enterptise Resource Planning System
+## Enterprice Resource Planning System __ERP__
 
 - Something Data warehouse- 1 database wtf??
 
@@ -125,8 +134,21 @@ Look at data, manage marketing
 
 ---
 
-## Reports - Produced by IS
+## Reports
 
-- Routine reports
-- Ad-hoc(OnDemand) Reports
-- Exeption Reports
+All IS produces reports, which falls into 3 cattegories:
+
+- __Routine reports__
+  - Produces at scheduled intervals(weekly, monthly).
+  - Though this is very useful to managers. More information is often needed thats not presented in this.
+  - Financials
+  - Inventory
+  - HR
+- __Ad-hoc(OnDemand) Reports__ can be request including these type of information:
+  - __Drill down report__: more detailed information
+  - __Key Indication Report__: sumarizes performance of important activities.
+  - __Comparative reports__: Compare performance of different bussiness units, teams.
+- __Exeption reports__: includes any information that falls outside of the standard reports.
+
+---
+

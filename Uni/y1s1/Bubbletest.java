@@ -2,26 +2,31 @@ public class Bubbletest
 {
     public static void main(String[] args)
     {
-        int[] Arr = new int[] {3,5,2,1,100,9,6};
+        int[] Arr = new int[] {2,5,7,8,1,12,33,9,3,0};
         int temp;
-        //boolean switch = false;
-        for(int i =1; i < Arr.length+1; i++)
+        Boolean swap;
+
+        for(int x = 0; x < Arr.length; x++)
         {
-            for( int x = 0; x < Arr.length; x++)
+            swap = false;
+            for( int i = 1; i < Arr.length; i++)
             {
-                if(Arr[i] < Arr[i-1])
-                { // swap if 2nd value smaller than 1st
+                
+                if(Arr[i-1] > Arr[i]) // first > 2nd
+                { 
+                    //swap
                     temp = Arr[i];
                     Arr[i] = Arr[i-1];
-                    Arr[i-1] = temp;
+                    Arr[i-1] = temp;     
                 }
+                swap = true;
             }
-        } 
-
+            if(!swap) break; //break loop if no swapping occurs
+        }
 
         // print out array to test
-        for(int num = 0; num< Arr.length; num++) {
-            System.out.println(Arr[num]);
+        for(int num : Arr) {
+            System.out.print(num+ " ");
         }
     }
 }
