@@ -3,8 +3,9 @@ public class Bubbletest
     public static void main(String[] args)
     {
         int[] Arr = new int[] {2,5,7,8,1,12,33,9,3,0};
-        int temp;
+        int temp, something , no , why;
         Boolean swap;
+
 
         for(int x = 0; x < Arr.length; x++)
         {

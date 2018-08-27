@@ -19,8 +19,7 @@ some factors that generates pressures
 - __Globalization__: this refers to businesses now operates on an international scale. This can involve:
   - __E-Commerce__: The process of trading(buy, sell, swappign) services, products, or information through the through the global network(the internet)
   - __E-Business__: includes servicing customers, collaborating with others with in, and with other organisations, partners. Also performing electronic trnasactions?? `Fix this`
-  - Customers can acces to different bussiness, services from different geographical locations.
-  - Pressure to keep current customers happy
+  - Customers __ALSO__ have acces to different bussiness, services through the net. Therefore, there is a _pressure_ to attract new customers as well as retaining old ones.
   - something e-bus and e-commerce
   - CRM, Make-to-order systems
 - __Changing nature of the workforce__: 

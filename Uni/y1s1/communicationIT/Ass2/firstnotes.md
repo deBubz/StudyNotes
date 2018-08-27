@@ -2,11 +2,7 @@
 
 Where does IoT exist:
 
-- Everything
-- Health
-- Agriculture
-- Bussiness
-- Personal use
+Everything, Health, Agriculture, Bussiness, Personal use
 
 what can I do with this
 
@@ -29,7 +25,13 @@ What are the questions
 
   ---
 
-  Iot devices are everywhere and but is the security good enough?
+Topic: Personal Iot Devices, Are you safe?
+
+Should the end-user be notified of what kind and how much data is collected?
+Are end-users aware what kind of information is will be recorded when they aquire new devices and services. 
+
+How safe and secure are the IoT devices? What could happen if they are breached? `Fitbit`
+What should vendors do to ensure their customer`s privacy and safety? ``Firbit did acknowledge the researchers``
 
   ---
 
