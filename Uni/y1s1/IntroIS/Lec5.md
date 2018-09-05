@@ -105,8 +105,8 @@ Km can be explicite or tacit
 - __capture__ : knowledge identified and presented in a meaningful way.
 - __refine__ : knowledge refined and put in actionable context. Tacit knowledge must be captured along with explicit facts.
 - __storage__ : knowledge stored in reasonable and accesible formats.
-- __manage__ : 
-- __disseminate__ : 
+- __manage__ : must be reviewed regularly to be accurate and current.
+- __disseminate__ : be readily availible to anyone at in the org, and at any time
 
 ### Knowledge Management System __KMS__
 
