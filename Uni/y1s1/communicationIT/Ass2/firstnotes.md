@@ -25,7 +25,7 @@ What are the questions
 
   ---
 
-Topic: Personal Iot Devices, Are you safe?
+__Topic: Personal Iot Devices, Are you safe__
 
 Should the end-user be notified of what kind and how much data is collected?
 Are end-users aware what kind of information is will be recorded when they aquire new devices and services. 

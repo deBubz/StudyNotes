@@ -1,12 +1,14 @@
-__Topic: Personal Iot Devices, Are you safe__
+## __Topic - Personal IoT Devices, Are you safe - is your future safe__
 
+Arguements - They are not, they are not being designed with security in mind, 
 
-Arguements 
-
-1.
-1.
-1.
-1. 
+1. Definitions 
+1. Growth of IoT `(usage rate, trends, popularity)`
+1. Benefits of IoT `(for personal, healthcare, argicultural)`
+1. Type of recorded data
+1. Usage of Data
+1. Implications of harm `(possible attacks, damages)`
+1. Innovation are not designed with security in mind `(get stats)`
 
 Should the end-user be notified of what kind and how much data is collected?
 Are end-users aware what kind of information is will be recorded when they aquire new devices and services. 
