@@ -2,16 +2,109 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Index</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheet.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>This is me</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="websystems.css" />
 </head>
 <body>
-<h1>this be index</h1>
-<h2><a href="past.html">Goto Past</a></h2>
-<h2><a href="future.html">Goto future</a></h2>
-<h2><a href="comments.html">Goto comments</a></h2>
+    <!--Header/Navigation bar-->
+    <header>
+        <p class="nav_email"><a href="mailto:bao.es.hoang2@gmail.com">bao.es.hoang2@gmail.com</a></p>
+        
+        <nav class="navigation"> 
+            <a href="index.html"><h3 class="nav_item current">Home</h3></a>
+            <a href="past.html"><h3 class="nav_item">Past</h3></a>
+            <a href="future.html"><h3 class="nav_item ">Future</h3></a>
+            <a href="comments.html"><h3 class="nav_item">Comments</h3></a>
+        </nav>
+    </header>
 
+    <div class="header-push"></div>
+
+    <div class="bod-container">
+
+        <!--Top profile container-->
+        <div class="profile_container">
+            <img alt="profile" src="profile.jpg" class="profile_img">
+            <h1>Hey, I'm Bao. This is me</h1>
+            <h5>The one on the left</h5>
+
+        </div>
+        <!--Container 2-->
+        <div style="display:block; position:relative;">
+            <div class="text_padding about_container">
+                <h1>About:</h2>
+                <p>
+                My name is Bao Hoang and this is my Website. 
+                I am an IT student at UTS majoring in Enterprise development
+                Although its's my first year, I know quite abit of programming.
+                Some WebDev using Asp.Net core some Android app development.
+                Technically a "full-stack dev" but I still have a long way to go.    
+                </p>   
+                <br>
+                <p>Beside that, I live in CanleyHeights (1 hr train from uts).</p>
+                <p>I like Mechanical Keyboards, snowboarding and Islay Scotch.</p>
+                <p>I don't like front-end development, web design, css :D</p>
+            </div>
+            <div class="text_padding about_container">
+                Some text
+            </div>
+        </div>
+        <!--Container 3 schedule-->
+        <div class="about_container" style="background:white; width: 96%">
+            <pre> 
+                So this is my time table for the current session,luckily they are all clumped up together
+                But they all mostly are at night.
+                (the time table is drawn using html table)
+            </pre>
+
+            <table>
+                <tr>
+                    <td class="first"></td>
+                    <td>Monday</td>
+                    <td>Tuesday</td>
+                    <td>Wednesday</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">4pm</td>
+                    <td rowspan="2"></td>
+                    <td></td>
+                    <td rowspan="2"></td>
+                </tr>
+                <tr>
+                    <td rowspan="3" class="subject">Communications for IT professionals Tute</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">5pm</td>
+                    <td rowspan="2"></td>
+                    <td rowspan="2"></td>
+                </tr>
+                <tr>
+</tr>
+                <tr>
+                    <td rowspan="2">6pm</td>
+                    <td rowspan="2">WebSystems Lec</td>
+                    <td rowspan="4" class="subject">Programming Fundamentals Lab</td>
+                    <td rowspan="3">Introduction to IS Lec</td>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <td rowspan="2">7pm</td>
+                    <td rowspan="4">WebSystems Lab</td>
+                </tr>
+                <tr>
+                    <td rowspan="3">Introduction to IS Tute</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">8pm</td>
+                    <td rowspan="2"></td>
+                </tr>
+                <tr></tr>
+            </table>
+        </div>
+    </div>
+    <footer>
+        <p >Bao Hoang 13363332</p>
+    </footer>
 </body>
 </html>

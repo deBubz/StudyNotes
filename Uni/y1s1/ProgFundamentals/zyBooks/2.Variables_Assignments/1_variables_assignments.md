@@ -16,3 +16,17 @@ int i = 0; //int
 boolean switch = false; // boolean
 String a = "Hello"; // string
 ```
+
+---
+
+## Identifiers
+
+- __Identifiers__ are names created by the programmer to identify variables, methods, classes, namespaces.
+- Cannot start with a number(0-9)
+- cannot use some reserve keywords (int, String, double, public...)
+- case sensitive.
+
+### Style guidance
+
+- __Camel Case__ capilatize first letter of words (numTotal, numFirst, numSeccond)
+- Seperation of words using underscore
