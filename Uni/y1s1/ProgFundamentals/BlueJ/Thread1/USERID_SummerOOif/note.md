@@ -25,12 +25,10 @@ public void putNumber(int newNumber)
 {
     sum = sum + newNumber;
     count = count + 1;
-    
     if(newNumber > this.maximum) // max check
     {
         this.maximum = newNumber;
     }
-    
     if(newNumber > this.maximum) // min check
     {
         this.maximum = newNumber;

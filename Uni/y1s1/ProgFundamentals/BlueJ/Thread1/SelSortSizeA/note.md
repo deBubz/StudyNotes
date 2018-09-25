@@ -4,6 +4,9 @@
 - look at the requirements
 - check error messages
 
+- minPosition - return the position of the smallest value in a list (list, first, last).
+- swapPosition - swap the value of 2 different indexes.
+
 ```java
 public static void selSort04(int [] a)
 {

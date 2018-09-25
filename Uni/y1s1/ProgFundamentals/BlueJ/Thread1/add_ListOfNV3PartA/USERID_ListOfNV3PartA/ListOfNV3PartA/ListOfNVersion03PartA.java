@@ -62,8 +62,6 @@ public class ListOfNVersion03PartA
         if(next != null)return thisNumber;
         
         return 0;
- // delete this line and add your lab test solution
-
     } // method getLast
 
     /**
@@ -126,6 +124,7 @@ public class ListOfNVersion03PartA
         {
             if(next.thisNumber == element) counter++;
         }
+        
         
         return counter; // delete this line and add your lab test solution
 
