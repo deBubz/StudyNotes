@@ -41,15 +41,12 @@ student id: 13363332
 name: Bao Hoang
 
 student id: 12997235
-
 name: Qianchen Li
 
 student id:13096627
-
 name:Jiayu Zhou (Abby)
 
 student id:13025717
-
 name:Samrat Kc
 
 Collaborate : Google drive
