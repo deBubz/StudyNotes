@@ -26,12 +26,6 @@ public class SelSortSizeN
 
         for (int i = 1 ; i < a.length; i++)
         {
-            // You *MUST* use methods minPosition and
-            // swapPositions in your solution. These two
-            // methods are located immediately after
-            // this method, so look at the javadoc comments
-            // of hose methods for a description of those
-            // methods' parameters.
             minPos = minPosition(a, i-1, (a.length-1));
             swapPositions(a, i-1,minPos);
             
