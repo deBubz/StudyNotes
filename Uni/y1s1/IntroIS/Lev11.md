@@ -54,6 +54,9 @@ The __SDLC__ is a structured framework that consist of swquential process by whi
 - __Programming and Testing__
 - __Implementation__
 - __Operation and Maintenance__
+  - 
+  - __Debugging__ Find and remove bugs
+  - __Updating__ Modify System to accomodate change in business conditions
 
 ---
 
