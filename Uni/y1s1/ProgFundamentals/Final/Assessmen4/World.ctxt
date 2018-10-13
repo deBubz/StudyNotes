@@ -1,0 +1,27 @@
+#BlueJ class context
+comment0.target=World
+comment0.text=\n\ Write\ a\ description\ of\ class\ World\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=Player\ getPlayer1()
+comment10.params=player
+comment10.target=void\ armiesSetUp(Player)
+comment2.params=
+comment2.target=Player\ getPlayer2()
+comment3.params=
+comment3.target=Territory\ getTerritory1()
+comment4.params=
+comment4.target=Territory\ getTerritory2()
+comment5.params=
+comment5.target=Territory\ getTerritory3()
+comment6.params=
+comment6.target=Territory\ getTerritory4()
+comment7.params=
+comment7.target=World()
+comment7.text=\n\ Constructor\ for\ objects\ of\ class\ World\n
+comment8.params=
+comment8.target=java.lang.String\ toString()
+comment8.text=\n\ \ toString\ method\n\ \ \n\ \ @retn\ printout\ status\ of\ thegame\ \ \n
+comment9.params=player\ ter
+comment9.target=void\ placeArmies(Player,\ Territory)
+comment9.text=\n\ use\ to\ place\ armies\ into\ territory\n\ \ \n\ \ @retn\ printout\ status\ of\ thegame\ \ \n
+numComments=11

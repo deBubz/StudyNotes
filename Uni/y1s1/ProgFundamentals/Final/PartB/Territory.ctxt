@@ -1,0 +1,15 @@
+#BlueJ class context
+comment0.target=Territory
+comment0.text=\n\ Write\ a\ description\ of\ class\ Territory\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=Player\ getOwner()
+comment2.params=c\ r
+comment2.target=Territory(int,\ int)
+comment2.text=\n\ Constructor\ for\ objects\ of\ class\ Territory\n
+comment3.params=
+comment3.target=java.lang.String\ toString()
+comment3.text=\n\ territory\ tostring\n\ \n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\n
+comment4.params=player\ placedArmies
+comment4.target=void\ placeArmies(Player,\ int)
+comment4.text=\n\ territory\ place\ army\n\ \n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\n
+numComments=5
