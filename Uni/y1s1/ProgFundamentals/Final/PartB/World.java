@@ -56,6 +56,12 @@ public class World
                 territory4.toString();
     }
     
+    public void prompt(String message)
+    {
+        System.out.println(message);
+        System.out.println(toString());
+    }
+    
     /**
      * use to place armies into territory
      *  
@@ -63,27 +69,12 @@ public class World
      */
     
     public void placeArmies(Player player)
-    {
-        //placeArmiesPrompt(player);
-        /*System.out.print("How many armies would you like to place on "+ter.toString()+"? ");
-        int placedArmies = keyboard.nextInt();
-        
-        ter.placeArmies(player, placedArmies); // place armies in territory
-        player.placeArmies(placedArmies); // reduce unsetarmies.
-        System.out.println( this.toString() );*/
-        
-        System.out.println("You have "+ player.getUnplacedArmies() +" armies to place.");
-        System.out.println(this.toString());
+    {   
+        prompt("You have "+ player.getUnplacedArmies() +" armies to place.");
         
         while(player.getUnplacedArmies() != 0)
         {
-            int column, row;
-            
-            System.out.print("Select a territory: ");
-            column = keyboard.nextInt();
-            row = keyboard.nextInt();
-            
-            Territory territory = this.checkTerritory(column, row);
+            Territory territory = territoryPrompt();
             
             if(territory.getOwner() == player || territory.getOwner() == null)
             {
@@ -96,7 +87,10 @@ public class World
         }
     }
     
-    public Territory checkTerritory(int col, int row)
+    /**
+     * return territory from coordinate values
+     *  */
+    public Territory checkTerritory(int col, int row) 
     {
         if(col == 0)
         {
@@ -110,23 +104,44 @@ public class World
         }
     }
     
-    /*
-    public void armiesSetUp(Player player)
+    /**
+     * promt to ENTER TERRITORY COODRINATES
+     * if enter -1 null is returned
+     * @return Found territory
+     * 
+     *  */
+    public Territory territoryPrompt()  
     {
-        System.out.println(player.toString() + ", please place your armies");
-        System.out.println( this.toString() );
-        
-        Territory holder1 = territory1;
-        Territory holder2 = territory2;
-        if(player == player2)
-        {    
-            holder1 = territory3;
-            holder2 = territory4;
-        }
+        int column, row;
+            
+        System.out.print("Select a territory: ");
+        column = keyboard.nextInt();
+        if(column == -1) return null; // return null if input is -1; 
+        row = keyboard.nextInt();
 
-        
-        placeArmies(player, holder1);
-        placeArmies(player, holder2);
-    }  */
+        return this.checkTerritory(column, row);
+    }
     
+    public void transfer(Player player)
+    {
+        boolean switcher = true;
+        prompt("Select source/target territories for a transfer.");
+        while (switcher) {
+            switcher = transferTask(player);
+        }
+        //if(select.getOwner() == player) System.out.print("FOUNDHIM");
+        //else System.out.print("FALSE ALARM");
+    }
+    
+    public boolean transferTask(Player player)
+    {
+        Territory select = territoryPrompt(); //select 
+        if(select == null) return false; // if input is -1
+        if(select.getOwner() != player ) return true; // if 
+        Territory transfer = territoryPrompt(); // transfer to
+        select.removeArmies();
+        transfer.placeArmies(player,1);
+        System.out.println(toString());
+        return true;
+    }
 }

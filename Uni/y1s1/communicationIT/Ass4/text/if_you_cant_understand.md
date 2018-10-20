@@ -146,3 +146,8 @@ accustomed to as this is not their expectation.
 ### 5.2 Risk Assessing a complex, autonomous Black box
 
 - look at the knowledge and insight kept by users and the IoT team. This show how knowledge(or lack their of) impact how risk is assessed.
+- challange in assessing and tracking changes in a complex system.
+
+---
+
+### 5.3 Address new element of IoT Risks

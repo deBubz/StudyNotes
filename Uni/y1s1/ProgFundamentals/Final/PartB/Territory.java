@@ -36,7 +36,7 @@ public class Territory
     }
     
      /**
-     * territory place army
+     * innitial territory place army
      * 
      * @return    the sum of x and y
      */
@@ -44,6 +44,21 @@ public class Territory
     public void placeArmies(Player player, int placedArmies)
     {
         owner = player;
-        armies += placedArmies;
+        placeArmies(placedArmies);
     }
+    
+    public void placeArmies(int army) { armies += army; }
+    
+    public void placeArmies() { armies+=1; }
+    
+
+    public void removeArmies() 
+    { 
+        armies -= 1;
+        if(armies == 0) owner = null;
+    }
+    
+    
+    
+    
 }
