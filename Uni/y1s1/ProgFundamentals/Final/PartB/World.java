@@ -122,6 +122,19 @@ public class World
         return this.checkTerritory(column, row);
     }
     
+    public Territory ATKterritoryPrompt()  
+    {
+        int column, row;
+            
+        System.out.print("Select a territory: ");
+        column = keyboard.nextInt();
+        System.out.print(column);
+        if(column == -1) return null; // return null if input is -1; 
+        row = keyboard.nextInt();
+
+        return this.checkTerritory(column, row);
+    }
+
     public void transfer(Player player)
     {
         boolean switcher = true;
@@ -142,6 +155,60 @@ public class World
         select.removeArmies();
         transfer.placeArmies(player,1);
         System.out.println(toString());
+        return true;
+    }
+    
+    public void attack(Player player)
+    {
+        
+        int inputCounter = 1;
+        prompt("Select source/target territories for an attack.");
+        Territory select = territoryPrompt();
+        
+        if(select != null) fourInputs(select);
+        
+        
+    }
+
+    public void fourInputs(Territory select)
+    {
+        boolean selectSwitch = true;
+        int inputCounter = 1;
+        while(selectSwitch){
+            selectSwitch = attackTarget(select);
+            inputCounter++;
+            
+            if(inputCounter == 3) 
+            {
+                Territory newSelection = territoryPrompt();
+                if(newSelection != null) fourInputs(newSelection); 
+            }
+        }
+    }
+    
+    public boolean attackTarget(Territory attacker)
+    {   
+        Territory target = ATKterritoryPrompt();
+        if(target == null) // cancel targetting and stop attack if input is -1
+        {
+            //System.out.print("THAR BE -1");
+            return false;
+        }
+        if(target.getOwner() == null) return true; // if there is no owner, return true to repeat target selection
+        
+        // attacking 
+        attacker.removeArmies();
+        target.removeArmies();
+        System.out.println(toString());
+        return true;
+    }
+    
+    public boolean selectTask(Player player)
+    {
+        Territory select = territoryPrompt(); //select 
+        if(select == null) return false; // stop if input is -1
+        if(select.getOwner() != player ) return true; //  repeat if you didnt select your own
+        // transfer to
         return true;
     }
 }
