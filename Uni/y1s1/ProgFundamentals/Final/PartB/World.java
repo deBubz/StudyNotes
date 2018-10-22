@@ -9,13 +9,9 @@ import java.util.Scanner;
 public class World
 {
     // instance variables - replace the example below with your own
-    private Player player1;
-    private Player player2;
+    private Player player1, player2;
     
-    private Territory territory1;
-    private Territory territory2;
-    private Territory territory3;
-    private Territory territory4;
+    private Territory territory1, territory2, territory3, territory4;
     
     public static final Scanner keyboard = new Scanner(System.in);
 
@@ -27,8 +23,7 @@ public class World
     public Territory getTerritory3() {return territory3;}
     public Territory getTerritory4() {return territory4;}
     
-    /**
-     * Constructor for objects of class World
+    /** Constructor for objects of class World
      */
     public World()
     {
@@ -41,54 +36,45 @@ public class World
         player2 = new Player();
     }
 
-    /**
-     *  toString method
-     *  
-     *  @retn printout status of thegame  
-     */
     public String toString()
     {
         //“[0,0]Joe(1) [1,0]null(0) [0,1]Sam(0) [1,1]null(0)” 
         // terr1 terr2 terr3 terr4
-        return  territory1.toString() + " " +
-                territory2.toString() + " " +
-                territory3.toString() + " " +
-                territory4.toString();
+        return  String.format("%1$s %2$s %3$s %4$s", territory1.toString(), territory2.toString(), territory3.toString(), territory4.toString());
     }
     
-    public void prompt(String message)
-    {
-        System.out.println(message);
-        System.out.println(toString());
+    public void prompt(String message) { System.out.println(message);}
+    public void list() { prompt(toString());}
+    public void fullPrompt(String message) {
+        prompt(message); 
+        list();
     }
-    
-    /**
-     * use to place armies into territory
-     *  
+    public void rmArmies(Territory ter){ ter.removeArmies(); }
+
+    //---------------------------------------B A S E ----------------------------------------------
+    /** Game start   
      *  @retn printout status of thegame  
      */
     
     public void placeArmies(Player player)
     {   
-        prompt("You have "+ player.getUnplacedArmies() +" armies to place.");
-        
+        fullPrompt(String.format("You have %d armies to place.", player.getUnplacedArmies()));
         while(player.getUnplacedArmies() != 0)
         {
             Territory territory = territoryPrompt();
             
-            if(territory.getOwner() == player || territory.getOwner() == null)
+            if(territory.owner == player || territory.owner == null)
             {
+                if(territory.owner == null) player.addTerritory();
                 territory.placeArmies(player, 1);
                 player.placeArmies(1);
             }
             
-            System.out.println(this.toString());
-            //System.out.println("=== " + player.getUnplacedArmies());
+            list();
         }
     }
     
-    /**
-     * return territory from coordinate values
+    /** return territory from coordinate values
      *  */
     public Territory checkTerritory(int col, int row) 
     {
@@ -104,111 +90,111 @@ public class World
         }
     }
     
-    /**
-     * promt to ENTER TERRITORY COODRINATES
-     * if enter -1 null is returned
-     * @return Found territory
-     * 
+    /**promt to ENTER TERRITORY COODRINATES
+     * @return territory
+     * return null if -1 is entered
      *  */
     public Territory territoryPrompt()  
     {
-        int column, row;
-            
+        int column, row; 
         System.out.print("Select a territory: ");
-        column = keyboard.nextInt();
-        if(column == -1) return null; // return null if input is -1; 
-        row = keyboard.nextInt();
 
-        return this.checkTerritory(column, row);
-    }
-    
-    public Territory ATKterritoryPrompt()  
-    {
-        int column, row;
-            
-        System.out.print("Select a territory: ");
-        column = keyboard.nextInt();
-        System.out.print(column);
-        if(column == -1) return null; // return null if input is -1; 
-        row = keyboard.nextInt();
+        column = keyboard.nextInt();    // first input
+        if(column == -1) return null;   // return null if input is -1; 
+        row = keyboard.nextInt();       // 2nd input
 
-        return this.checkTerritory(column, row);
+        return this.checkTerritory(column, row);    // found territory
     }
 
-    public void transfer(Player player)
+
+    // --------------------------------------------------------------------------------------------------
+    public void transfer(Player player) 
     {
         boolean switcher = true;
-        prompt("Select source/target territories for a transfer.");
+        fullPrompt("Select source/target territories for a transfer.");
         while (switcher) {
             switcher = transferTask(player);
         }
-        //if(select.getOwner() == player) System.out.print("FOUNDHIM");
-        //else System.out.print("FALSE ALARM");
-    }
+    }    // TASK 2
     
     public boolean transferTask(Player player)
     {
         Territory select = territoryPrompt(); //select 
         if(select == null) return false; // if input is -1
-        if(select.getOwner() != player ) return true; // if 
+        if(select.owner != player ) return true; // if 
         Territory transfer = territoryPrompt(); // transfer to
-        select.removeArmies();
+        rmArmies(select);
         transfer.placeArmies(player,1);
-        System.out.println(toString());
+        list();
         return true;
     }
-    
-    public void attack(Player player)
-    {
-        
-        int inputCounter = 1;
-        prompt("Select source/target territories for an attack.");
-        Territory select = territoryPrompt();
-        
-        if(select != null) fourInputs(select);
-        
-        
-    }
-
-    public void fourInputs(Territory select)
-    {
-        boolean selectSwitch = true;
-        int inputCounter = 1;
-        while(selectSwitch){
-            selectSwitch = attackTarget(select);
-            inputCounter++;
-            
-            if(inputCounter == 3) 
-            {
-                Territory newSelection = territoryPrompt();
-                if(newSelection != null) fourInputs(newSelection); 
-            }
-        }
-    }
-    
-    public boolean attackTarget(Territory attacker)
-    {   
-        Territory target = ATKterritoryPrompt();
-        if(target == null) // cancel targetting and stop attack if input is -1
-        {
-            //System.out.print("THAR BE -1");
-            return false;
-        }
-        if(target.getOwner() == null) return true; // if there is no owner, return true to repeat target selection
-        
-        // attacking 
-        attacker.removeArmies();
-        target.removeArmies();
-        System.out.println(toString());
-        return true;
-    }
-    
+    // -----------------------------------------------------------------------------------------------------
     public boolean selectTask(Player player)
     {
         Territory select = territoryPrompt(); //select 
         if(select == null) return false; // stop if input is -1
-        if(select.getOwner() != player ) return true; //  repeat if you didnt select your own
+        if(select.owner != player ) return true; //  repeat if you didnt select your own
         // transfer to
         return true;
+    }
+
+    public void attack(Player player)
+    {
+        fullPrompt("Select source/target territories for an attack.");
+        
+        Territory select = territoryPrompt();
+
+        attacking(select);
+    }
+
+    public void attacking(Territory ter){
+        boolean selectSwitch = true;
+        Territory select = ter;
+        while(selectSwitch){
+            selectSwitch = attackTarget(select);
+            if(selectSwitch){
+                selectSwitch = attackTarget(select);
+                if(select == null) return;
+            }
+            else return;
+        } 
+    }
+    
+    public void attackTest(boolean selectSwitch, Territory select){
+        if(selectSwitch){
+            selectSwitch = attackTarget(select);
+        }
+        else return;
+    }
+
+    public boolean attackTarget(Territory attacker)
+    {   
+        Territory target = territoryPrompt();
+        if(target == null) { return false; }
+        
+        // attacking 
+        rmArmies(attacker);
+        rmArmies(target);
+        list();
+        return true;
+    }
+
+    // ----------------------------------------------------------------
+    public void turn(Player player)
+    {
+        if(player.getTurn() == 0)
+        {
+            prompt(String.format("%s\'s turn.", player));
+            placeArmies(player);
+            player.nextTurn();
+        }
+        else
+        {
+            prompt(String.format("%s\'s turn.", player));
+            player.giveArmies();
+            placeArmies(player);
+            attack(player);
+        }
+        
     }
 }

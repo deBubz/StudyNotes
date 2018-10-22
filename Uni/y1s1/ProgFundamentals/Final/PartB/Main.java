@@ -12,6 +12,10 @@ public class Main
     {
         World game = new World();
 
+        game.turn(game.getPlayer1());
+        game.turn(game.getPlayer2());
         
+        game.turn(game.getPlayer1());
+        game.turn(game.getPlayer2());
     }
 }
