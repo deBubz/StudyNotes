@@ -1,10 +1,71 @@
-# Something Intro IS
+# Introduction to Information technologhy
 
-## Check the subj outline
+## Objectives
 
-__Note__: have alook at the outline and gather information for assesments
+- Overview of the Computer-based Information System
+- Why are Information System important?
+- Why should we study Information System?
+
+## Data, Information and Knowledge
+
+- __Data__: raw data, elemtary description of things, activities, transactions that are recorded and stored. BUT not organized to convey a specific meaning.
+- __Information__: Organized data to have a meaningful value to the reciepient
+- __Knowledge__: Consist of processed and organized data/information. Used to convey understanding and accumulated learning, and expertise as they apply to a current business problem.
 
 ---
+
+## What is Information System
+
+A __Computer Based Information System(CBIS)__ or an __Information System__ is a:
+
+- set of interrelated components that collect/recieve _data/information_ to be processed, analyzed, stored, organized and distribute information for a specific purpose.
+
+### Fundamental Component of an Information System
+
+- __Hardware__: Physical component of the information system. `e.g processor, printer, monitor...`
+- __Software__: Programs controlling the function of the hardware. There can be OperationS Software (OS), Anti Virus(AV), Utility Software and Application Software(used for specific information processing needs)
+- __Database__: Data collection
+- __Network__: Allow computer communications. WAN and LAN
+- __Procedure__: A set on instruction to combine hardware, software, database and network to process input and generate the desired output.
+- __People__: The ones that use the system.
+
+---
+
+## Information Technology (IT)
+
+Information Technology VS Information System
+
+- It consist of the hardware and software used by an organization to achive an objective
+- Also, refers to computer-based tools that suports information processing. `Includes hardware,software and communication technologies`.
+
+---
+
+## Information System (cont)
+
+Firm use Information system to produce valuable information. This information is used to make decisions, controll operations, analyze problems and create new product/services. The process to achieve this includes:
+
+- __Input__: capture raw data from within the organization or from its external environment
+- __Process__: conversion of raw data to meaningful information
+- __Output__: Transfering processed data to the one that needs it, mostly to support an activity.
+
+Information System also requires feedback to better refine the processes and improve the overal system.
+
+### __`Example` Hotel reservation system__
+
+1. Input: data reservation, customer's name, address, room booked, date, payment info
+1. Process: Calculate fees, store data, send payment request to banks.
+1. Output: reciept, order confirmation.
+
+---
+
+## Major capabilities of Information System
+
+- Perform high-speed, high-volume numerical computations.
+- Provide fast communication and collaborations.
+- Store huge amount of information.
+- Allow quick and inexpensive access to vast amount of information.
+- Automate __business process__ and manual tasks
+
 
 ## Assesments
 
