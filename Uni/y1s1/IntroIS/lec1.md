@@ -66,6 +66,39 @@ Information System also requires feedback to better refine the processes and imp
 - Allow quick and inexpensive access to vast amount of information.
 - Automate __business process__ and manual tasks
 
+__Business Processes__ are a collection of activities that create products/services of value to the organisation, its business partners and/or customers. Information Systems helps execute processess by providing necessary data to complete the task.
+
+---
+
+## Why are Information Systems important
+
+IS facilitates and support:
+
+- __Operational Excellence__: IS Enable users to achieve higher level of efficiency and productivity.
+- __New product/Service__: Business use IS to sense and respond to rapidly changing demand.
+- __Customer and supplier Intimacy__: Keep track of user's preferences and improve intimacy/ loyalty
+- __Improved Decision making__: Enables users to acess to information to make better decisions
+- __Competitive advantage__: Provide organization with assets to have an edge aginst its competotors.
+
+### Why is IS important to __Society__
+
+IS allows
+
+- __Improvements in healthcare__
+  - Make more accurate, timely diagnoses
+  - streamlne process of R&D
+  - Allow surgeons to use robots and remotely perform surgery
+
+---
+
+## Why should I Study Information Systems
+
+1. Be an _informed user_
+   - can benefit more from IT resources/ applications
+   - Enhace the quality resources
+   - get more value from technology
+1. Explore different career pathways/opportunities in IT
+1. Take part in managing Information resources
 
 ## Assesments
 

@@ -1,32 +1,24 @@
 # Information Systems Withthin an Organisation
 
+## OBjectives
+
+- Explain the purpose of TPS, DSS, and ESS
+- Explain the types of support IS can provide each Functional Area of the organozation
+- Identify advantages and drawbacks to businessess implementing an ERP system
+- Discuss the 3 major types of reports genterated by the FAIS
+
 ## OUTLINE
 
 - Transactional Processing Systems __TPS__
 - Decision Support Systems __DSS__
 - Executive Support Systems __ESS__
-- Functional Area Support Systems
+- Functional Area Support Systems __FAIS__
 - Enterprise Resource Planning __ERP__
 - Reports
 
 ---
 
-## Management System for managers
-
-- Tps, Dss, Ess
-- explain the types of support is
-
----
-
-## Managerial level pyramid:
-
-- Senior
-- middle management: 
-- operational
-
----
-
-## TPS - Transaction Processing System
+## Transaction Process System __TPS__
 
 ### Similar to checkout point for retailers
 
