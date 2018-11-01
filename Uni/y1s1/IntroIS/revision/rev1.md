@@ -4,7 +4,7 @@
 
 lets start with simple revision from the notes
 
-## Difference between data, informationa and knowledge.
+## Data, informations and knowledge
 
 - __data__: raw, unorganised data that need to be processed and organized to convay any specific meaning. Data have no context.
 - __information__: Processed, organized and structured data that have meaning and value to recipent. Data converted into meaningful context.
@@ -30,12 +30,6 @@ __Information Technology (IT)__: Hardware, software, Network Database that suppo
 - __Input__: entering raw captured data from both within the organization or the external environment.
 - __Processing__: Conversion of raw input into meaningful form (data -> information)
 - __Output__: Output the processed information to to support specific activities.
-
-`Examples: hotel reservation information system`
-
-- Input: consist of order data for reservation(Name, address, payment detail, room information, key dates)
-- Process: calculate order fees, track reserved rooms, track purchases, send payment request to bank.
-- Output can be order confirmation printout or email, order reciepts. The System can also provide meaningful Information such as total room booked per year or repeated customers.
 
 ---
 

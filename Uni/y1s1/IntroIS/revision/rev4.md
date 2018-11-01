@@ -4,8 +4,6 @@ Effective Information System is needed to stay ahead of the competition
 
 __An effective Information__ system provides users with accurate, timeley and relevant information
 
-Organizations which don't have timely, accurate or relevant information because the __data__ is _poorly organized and manage_.
-
 ## What makes data management difficult
 
 - The amount of data in increasing exponentially
@@ -18,16 +16,17 @@ Organizations which don't have timely, accurate or relevant information because 
 
 __Data Governance__ Is to ensure established data standards and policies are defined and enforced across the whole organizations.
 
+1. established data governance
+   - Identify and define what policies are needed.
+   - establish data governance council.
+1. define standard data policies
+1. Enforcement
+1. Audit, Monitor , control
+   - regular inspections to see if these policies are followed
+
 ---
 
 ## Database
-
-### Problems with the tradditional file enviromnent
-
-- __Data redundancy__: same data stored in many places
-- __Data Inconsistnecy__: copies of data do not agree
-- __Poor Security__: little controll or management of data, access and dissemination of information may be out of control
-- __Poor sharing and availability__: Pieces of data are in different files and parts of the organizations cannot be related to one another.
 
 ### __Databases__ are used to address above problems
 
@@ -38,7 +37,15 @@ __Data Governance__ Is to ensure established data standards and policies are def
 
 __Database Management System(DBMS)__: software that permit organizations to centralize data, efficiently manage and provide acess to stored data by application program.
 
-## Advantages
+### Even without a database, companies can utilize these to impove their business process
+
+__Data warehouse__: logical collection of information, gathered from many different operational database to suport business analysis activities and decesion making
+
+__Data mart__: low-cost scaled-down version of datawarehouse designed for end-user needs in an individual department
+
+---
+
+## Advantages/ Disadvantages of databases
 
 |Advantages| Description|
 |---|---|
@@ -51,12 +58,6 @@ __Database Management System(DBMS)__: software that permit organizations to cent
 |__Program-data independance__|Much easier to alter software according to changing business needs. (decoupling design)|
 |__Increased productivity of application development__|Datastandrds make it easier to build and modify applications|
 |__Reduced program Maintenance__|Data changed in the central DB is replicated seamlessly throughout all applications|
-
----
-
-__Data arehouse__: logical collection of information, gathered from many different operational database to suport business analysis activities and decesion making
-
-__Data mart__: low-cost scaled-down version of datawarehouse designed for end-user needs in an individual department
 
 ---
 
@@ -94,12 +95,12 @@ The process an org use to gain the greatest value form its knowledge assets:
 
 ### The Knowledge Management System(KMS) Cycle:
 
-1. __Create Knowledge__ is created as people determine new methods of operations. Some external knowledge is brought in.
-1. __Capture knowledge__ new knowledge must be identified as valuable to be represented in a reasonable way
-1. __Refine knowledge__ must be placed in context so that it's actionable. This is where tacit qualities(human insight) must be captured along with explicit facts
-1. __Store knowledge__ useful knowledge must be stored in a reasonal format in a known repository so that other people in the organization can access it.
-1. __Manage knowledge__: knowledge muist be kept current. Need to be reviewd regularty to verify its accuracy and relevantcy.
-1. __Disseminate knowledge__ to made availible in a useful format to anyone withihn the org
+1. __Create Knowledge__
+1. __Capture knowledge__
+1. __Refine knowledge__
+1. __Store knowledge__
+1. __Manage knowledge__
+1. __Disseminate knowledge__
 
 KMS is typically a collection of tech based tools that inclde communication techs as well as information storage
 

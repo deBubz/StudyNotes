@@ -6,7 +6,7 @@ __Ethics:__ The principles of right and wrong that individuals use to make choic
 
 Are often used to make an ethical decision
 
-- __Utilitarian Approach__: the approach that provide the most good and does the least harm. Based on this approach, ethical corporate action would be the ones that produce the least harm to all affected parties - customers, employers, shareholders, business partners, the community and the environment
+- __Utilitarian Approach__: the approach that provide the most good and does the least harm.
 - __Rights Approach__: maintains that an ethical action is the one that best protects and respects the moral rights of the affected parties (even competitors)
 - __Common Good Approach__: An ethical actions is the one that best serves the community as whole and not just some members.
 
@@ -14,20 +14,22 @@ Are often used to make an ethical decision
 
 ## Steps for making an ethical decisions
 
-1. recognise the issues
-1. Get the facts
-1. Evaluate the alternatives
-1. Make the choice
-1. Reflect your decisions
+recognise the issues > Get the facts > Evaluate the alternatives > Make the choice > Reflect your decisions
 
-__Code of Ethics__: Collection of principles that are inteded to guide decision making by member of an organization.
-
-> ACS code of ethics.
->
+__Code of Ethics__: Collection of principles that are inteded to guide decision making by member of an organization. `ACS`
 > Many organizations develp their own code of ethics and that different code of ethics are not always consistent with one another.
 ---
 
 ## Fundamental __Tenets of Ethics__
+
+Responsibility, Accountability and Liability(unethical is not necessarity ilegal)
+
+### IT Ethical issues
+
+- Privacy issues involving the collection, storage and dissimination of information about individuals
+- Accuracy issues relating to the authenticity, fidelity and correctness of information thast is colelcted and processed.
+- Property issues involves the ownership and value of colelcted and processed information
+- Accessibility issues involve to who should have access to collected and processed information and whether a fee should be paid for this access
 
 __Information Privacy__ refers to the right to determine when and to what extent, Information about you can be gathered and/or communicated to others
 
@@ -40,15 +42,6 @@ NOTE: Improvement ion Information technologies such as big data analysis have ge
 |Data Analysis advances|Vast quantities of data gathered care analyze to develop detailed profiles of individual behaviours|
 |Network Advances|Cost of moving data and making it accessible falls exponentially. Access of data become more difficult to control|
 |Mobile device Growth Impact|Individual mobile phones can be tracked without user consent or knowledge|
-
----
-
-## Categories of Ethical issues related to IT
-
-- Privacy issues involving the collection, storage and dissimination of information about individuals
-- Accuracy issues relating to the authenticity, fidelity and correctness of information thast is colelcted and processed.
-- Property issues involves the ownership and value of colelcted and processed information
-- Accessibility issues involve to who should have access to collected and processed information and whether a fee should be paid for this access
 
 ## IT related threats to privacy
 

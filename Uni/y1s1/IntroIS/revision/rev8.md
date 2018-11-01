@@ -1,6 +1,6 @@
 # Aquiring Information Systems and Applications
 
-The plannign process for new IS/IT application begin with the analyis of the organisational strategic plan. This is to identify the firm's overal mission and goal (IS should suport the org to reach their goals)
+The planning process for new IS/IT application __begin__ with the analyis of the organisational strategic plan. This is to identify the firm's overal mission and goal (IS should suport the org to reach their goals)
 
 > IT Steering Committee establishes IT priorities and ensure the IS function address the organisation's needs.
 

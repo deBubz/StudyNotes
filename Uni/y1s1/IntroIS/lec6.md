@@ -20,6 +20,7 @@ Threat to is includes threat source and threat intent
 - Technological threats: 
 ---
 
+
 ## factors contributing vulnerabulity of IS
 
 - communication network: accsess from different sources.

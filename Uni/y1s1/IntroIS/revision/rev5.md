@@ -4,15 +4,14 @@
 
 Threats to IS refers to undesireable events that can cause harm to IS. Some characteristics of threats to IS
 
-### Threat source
-  
-- Internal threats: arise from individuals or events inside of a company
-- External threas: arise from individuals or events outside of a company
+### Threat source and Intent
 
-### Threat Intent
-
-- Intentionsal: threats are result of harmful decisions
-- Unintentional: threatsa are introduced without awareness or malicious intent `e.g user/ operator error`
+- source
+  - Internal threats: arise from individuals or events inside of a company
+  - External threas: arise from individuals or events outside of a company
+- Intent: 
+  - Intentionsal: threats are result of harmful decisions
+  - Unintentional: threatsa are introduced without awareness or malicious intent `e.g user/ operator error`
 
 ### Threat Agents
 
@@ -56,12 +55,17 @@ Precautopms taken to keep all aspect of Information System safe from:
 - Destruction
 - Manipulation
 
+### IS Security Process
+
+Assessing > Developing strategy > Implement control and training > Monitor
+
 ### IS Security is an ongoing process, consisting of:
 
-- __Assessing Risks__: To obtain an understanding of the risk to Information Systems. Organizations assess the values of their protected assessts to determine the probability of being compromised, and compare probable cost of compromisation with the estimated cost of protection. They might have to adopt some strategies to mitigate the risk agaisnt any threats.
+- __Assessing Risks__: To obtain an __understanding__ of the risk to Information Systems. Organizations assess the values of their protected assessts to determine the probability of being compromised, and compare probable cost of compromisation with the estimated cost of protection.
+
+### Mitigation strategies:
   - Transfer the risk by purchasing insurance
-  - Implement controls that minimise the impact of the threat
-  - Install controls that block the risk
+  - Implement controls that minimise/block the impact of the threat
 - __Developing A security Strategy__ A formulated strategy that details what IS controlls should be implemented. IS strategies should focus on:
   - _Preventive contols_ To prevent potentially negative events from occuring `e.g preventing unauthorized acess to facility`
   - _Detective Controls_ to assess whether anything went wrong `e.g unauthorized acess attempts`
@@ -79,12 +83,11 @@ Precautopms taken to keep all aspect of Information System safe from:
       - `Authentication` confirming the identity of a user]
       - `Authorization` determines with action/ rights or privilage the person has
     - __Firewall__ a network security system that monitors and contolling network traffic based on predetermined security rules
-    - __Encryption__ process of encoding messages using an encryption key before they enter the network or airwaves, then decoding them using a matching key at the recieving end of the transmission so that the intended recipients can access it 
+    - __Encryption__ process of encoding messages using an encryption key before they enter the network or airwaves, then decoding them using a matching key at the recieving end of the transmission so that the intended recipients can access it
     - __Anti-malware Systems(AV)__ software packes that can identify and eliminate virus worms and other malicious software
-    - __BlackListing__ A list of software that are not allowed to run on the computer system
-    - __WhiteListing__ A list of software that have permission to run in the system, everything else is not permitted.
+    - __BlackListing__, __WhiteListing__
     - __System Development Controls__ when systems are designed to by purchased (Saas), care must be taken that all security features are implimented, enabled and managed.
-    - __Human Controls__ Various himan safeguards can helo to protect information systems, specifically ehtics, laws, and effective management.
+    - __Human Controls__ Various human safeguards can hel to protect information systems, specifically ehtics, laws, and effective management.
     - __Deployment and Training__ Personnell throughout the organization should recieve training about the security policies and plans for disaster recovery.
     - __Following ovjectives set in guidelines__ Review the entire IS infastructures, Following objecticves set forth in guidelines such as the Control Objective for information and related technology (COBIT)
     - __Computer forensics__ the use of formal investigative techiques to evaluate digital information for judicial review.

@@ -10,6 +10,7 @@
 ## OUTLINE
 
 - Transactional Processing Systems __TPS__
+
 - Decision Support Systems __DSS__
 - Executive Support Systems __ESS__
 - Functional Area Support Systems __FAIS__
@@ -20,45 +21,36 @@
 
 ## Transaction Process System __TPS__
 
-### Similar to checkout point for retailers
-
-- It support the performing of __daily operational tasks__.
-- Serve operational managers do __routine__ task and track the flow of __transactions__
-- Produces info for other Information Systems.
+- Serves Operational mangers perform __Daily operational Tasks__ and track the flow of transactions. Also used to monitor status of internal operations and firm's relations with the external environment
+- Produces data for other Information Systems.
 
 > __Transaction__: any bussiness event that generates valuable data.
 >
 > __Transactional Information__: All Info contained within a single business process/work.
 >
-> _e.g._ payroll, CRUD, shop checkout.
+> `e.g. payroll, CRUD, shop checkout.`
 
-
-
-### TPS Processes Data in 2 ways:
+### TPS Processes Data in 2 ways
 
 - __BatchProcessing__: Transaction data, putting it in groups or batches, and processes it periodically(Not instantly).
-- __Online Transaction Processing(OLTP)__: Transacions are processed online as soon as they ocurr. (Instantly )
+- __Online Transaction Processing(OLTP)__: Transacions are processed online as soon as they ocurr. (Instantly). Mostly used in e-shops
 
 ---
 
 ## Decision support systen __DSS__
 
-- Let __middle Management__ examine large amounts of detailed datas from __different sources__, both __internal__ and __external__ sources to make a decision.
-- For Middle management to analyze pattern and trends
+- Let __middle Management__ examine large amounts of detailed datas from __different sources__, both __internal__(data from TPS) and __external__(see data-warehouse) sources could be used to make a decision. One of the key fuctions of __DSS__ is to analyze pattern and trends.
 - Used to support performance of manegerial annalysis and or __semi-struntured/ unstructured__ decisions.
-
 
 ### Common Decision Support Systems Techniques
 
 - __What-if-analyst__ - what if this happens
-- __Sensitive analalysist__ - handles volatile data/ info.
+- __Sensitive analalysist__ - extension of what-if, handles volatile data/ info, assess impacts.
 - __Optimization analyst__ - Optimize your processes
-- __Goal Seeking Analyst__ - GIT THAT DONE
+- __Goal Seeking Analyst__ - Research the means of achieving a specified goal. GIT THAT DONE
 
 
-Decision Support Systems are usually used to solve recurring, specific problems. Such as calculating the cost of Oceanic transportation.
-
-One such DSS is called the __Voyage Estimating Systems__. It uses and processes all sort of data, such as Travel time, cost, projected earnings.
+Decision Support Systems could be used used to solve recurring, specific problems. Such as calculating the cost of Oceanic transportation. Using the __Voyage Estimating Systems__ to processes all sort of data, such as Travel time, cost, projected earnings.
 
 ---
 
@@ -72,75 +64,75 @@ One such DSS is called the __Voyage Estimating Systems__. It uses and processes 
 
 ## Functional Area Information System __FAIS__
 
-Each of these Functional Area Informational System or __FAIS__ supports a particular operation of the organisation:
+Each of these Functional Area Informational System or __FAIS__ supports a particular operation of the organisation(to increase efficientcy and effectiveness):
 
 - __IS for Production/Operations Management__
-  - Inventory management (Overstocking - incr cost, Understocking - reduce earnings)
-  - QA/QC
+  - Responsible for the Product/ Operation Management(POM) where Input is transforms into useful output. Some of these activiteis includes:
+    - Inventory management (Overstocking - incr cost, Understocking - reduce earnings)
+    - QA/QC
+    - Product planning and operation
 - __IS for Accounting and finance__
   - Payrol
-  - Transactions
+  - Managing financial transactions:
+    - Expense Management - Earnings, Cost
   - control and auditing (Budget management, track spendings)
-  - Expense Management - Earnings, Cost
-- __IS for HR management__
+- __IS for Human Resource management__
   - Staff management (Recruitment, Special requests)
-
-### Production/Operations Management
-
-Responsible for processing data inpur to useful output informatioon, and aswell as the business` overal operations. These Operations includes:
-
-- __Logistics and materials management__: deals with both inbound(recieving) and outbound(shipping) logistics and can be automated with IS for POM. Relating to this is:
-  - Inventory Management
-  - Quality assurance, Quality controll
-  - 
+  - Payroll and Employee's Recor
+  - Benefits administration.
 
 ---
 
 ## IS for Marketing
 
-Look at data, manage marketing
+Support marketing function, providing sales force automation to assist with salesmen with the sales process, a key component of an operational __Customer Relationship Management(CRM)__
 
 ---
 
-## Enterprice Resource Planning System __ERP__
+## Enterprice Resource Planning System __ERP__ **
 
-- Something Data warehouse- 1 database wtf??
+__Enterprice Resource Planning(ERP) System__ were designed to correct the lack of communicaion in Functional Area IS(FAIS), as FAIS were developed _independently of one another_
 
-- SCm Suply Chain Management (Ensure supply chain efficientcy)
-- CRM Customer Relationship Management(Manage customer relationships)
+ERP achieve this by intergrating FAIS with a common __Database__ and streamline dataflow across different FAIS.
 
----
+### Extended ERP Modules
 
-> Have a closer look at the lec slides.
->
-> Lec2
-
+- __Supply Chaim Management(SCM)__ Manage information flow between different stages in a supply chain to maximize efficientcy and effectiveness. This can alsobe used to plan, schedule, controll and optimize supply chain in aquiring raw materials and reception of finished products.
+  - Can be used to manage relationship with suppliers by sharing information with suppliers regarding order, inventory levels, and delevery of products.
+- __Customer Relationship Management(CRM)__ handle business process that deal with customers in sale, marketing and services and optimizing relationship with customers.
 
 ---
+
+## Benefits of ERP
+
+- Organizational flexibility and agility
+- __Decision support__ give managers an overal view of operations and provide essential informations for the ability to make better decisions
+- __Quality and Efficiency__ better flexibility in customer support
 
 ## ERP Failure
-- SAP
-- no training.
-- no communication with the people that uses it.
-- failure in testing.
+
+- Changing existing business processes
+- Can be complex, expensive and time-consuming to implement
+
+### Causes
+
+- Failure to _involve affected employees_ in the implementation process
+- Rushing, trying too much, too fast
+- Insufficient training
+- Failure to perform data conversion and testing of the new system
 
 ---
 
 ## Reports
 
-All IS produces reports, which falls into 3 cattegories:
+All Information System produces reports, which falls into 3 cattegories:
 
 - __Routine reports__
   - Produces at scheduled intervals(weekly, monthly).
   - Though this is very useful to managers. More information is often needed thats not presented in this.
-  - Financials
-  - Inventory
-  - HR
 - __Ad-hoc(OnDemand) Reports__ can be request including these type of information:
-  - __Drill down report__: more detailed information
-  - __Key Indication Report__: sumarizes performance of important activities.
-  - __Comparative reports__: Compare performance of different bussiness units, teams.
-- __Exeption reports__: includes any information that falls outside of the standard reports.
-
----
+  - __Drill down report__: more __detailed__ information
+  - __Key Indication Report__: sumarizes performance of __important activities__.
+  - __Comparative reports__: __Compare performance__ of different bussiness units, teams.
+- __Exeption reports__: includes any information that falls __outside__ of the standard reports.
 

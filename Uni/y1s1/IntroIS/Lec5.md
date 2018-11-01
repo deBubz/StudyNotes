@@ -3,43 +3,43 @@
 ## Outline
 
 1. Managing data
-1. The dataabase approach
+1. The database approach
 1. Data warehouse and data marts
 1. Big Date
 1. Data management
 
 ## Objectives
 
-- Ways that common challanges in managing data can be addressed using data governance
-- advantages of relational databases
-- Whats Big Data, what are its basic characteristics
-- What are some knowledge management systems in organisations
+- Regarding data management, Data Governance can be used to address common chalanges
+- Advantages of relational databases
+- Big Data, what are its basic characteristics
+- Knowledge Management systems in organisations
 
 ----
 
-## Data management and accurate, timely information
+## Data management
 
-- The need to accuarately and timely manage data has never been so strong.
-- The main purpose is to reduce error and maintain a competitive advantage.
-- The need for data to be accurate is to let managers make informed decisions
+An effective Information System needs to have effective data management. This is to:
 
-### Difficulties of managing data and why?
+- ensure accurate information
+- ensure Information is readily availible when it is required
+- ensure the relevancy and usefulness of the information.
+
+### Difficulties of managing data
 
 - Exponentially increasing amount of data recorded
-- Data comes from multiple different sources, needs to sort it
-- Data rot (Outdated, destroyed, forgery?, hardware wear and tear), needs staff to manage that.
+- Data comes from multiple different sources(needs to sort it)
+- Data rot (Outdated, destroyed, forgery?, hardware wear and tear)
 - inconsistent, conflicting due to non- intergrated information system.
 - Mananging sound data is very vital to the business
 
-### How do organisations manage the avaibility, usability, reliability, integrity and security of company data?
+----
 
-#### Data governance
+## Data governance
 
-- Data Governance is a set of enforcable __standard policies__ on how to handle data in an organization.
-- Enforcable standards, Managing data entegrity
-- Consist of how data is gathered, stored, accessesd, backed up.
+A set of enforcable __standard policies__ on how to handle data in an organization, how to manage data entegrity. This consist of how data is gathered, stored, accessesd, backed up.
 
-#### Data Governance process
+### Data Governance process
 
 1. established data governance
    - Identify and define what policies are needed.
@@ -49,7 +49,7 @@
 1. Audit, Monitor , control
    - regular inspections to see if these policies are followed
 
-#### Problems with traditional File systems
+### Problems with traditional File systems
 
 - __Data Redundancy__ repetition, cause inconsistency and storage issues
 - __Data Inconsistency__ data not updated.
@@ -73,6 +73,8 @@ Data Storing Technology that can easily centralise all stored data. Databases ar
 
 Data bases are are managed using a Datamase Management System __(DBMS)__. Easily users __CRUD__ functions, which are __C__ reate, __R__ emove, __U__ pdate, __D__ elete.  
 
+----
+
 ### Entity Relationship Diagram (ERD)
 
 - Diagrams which represents _entities_ and their _relationships_ in a database.
@@ -85,19 +87,28 @@ If an organisation find they dont have data, they can access:
 
 - __Data Mart__ : A scaled down version of a data warehouse designed for end-users need in an individual department.
 
----
+----
 
-## BigData
+## Big Data
+
+This is a bread term used for large and __complex structured and unstructured data__ that is near impossible to process using tradditional data processing methods. Big Data is often used by organizations to gain more value and performence for their processes.Some characteristics of Big Data are:
+
+- __Volume__
+- __Velocity__
+- __Variety__
 
 ### Data mining
+
+Data mining is the process of analyzing existing data to find patterns and insights not offered by raw data alone. This includes:
+
+- Identifying fraudulent credit card transactions
+- Identify characteristics of profitabble customers
 
 ----
 
 ## Knowledge Management
 
-The procedure what companies uses to get more value from their knowledge assets.
-
-Km can be explicite or tacit
+The procedure what companies uses to get more value from their knowledge assets. Knowledge can be both explicit or tacit.
 
 ### Knowledge Management Cycle
 
