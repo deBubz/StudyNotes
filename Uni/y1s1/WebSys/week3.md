@@ -19,9 +19,9 @@
   - efficcient, secure, stable
   - have a set of tools to approach
 
-  ---
+---
 
-  ## OS - File Systems
+## OS - File Systems
 
 - estimated a billion sites 
 - google only indexed 200tvb of data > warehouse 12exabyte 15 mill tb
