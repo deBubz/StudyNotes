@@ -33,3 +33,29 @@ Part of OS tbat manage storage data acess
 ## File Storage
 
 __Distrubuted File System__ multiple connected data centers
+
+- __Disk Physical Structure__: contains tracks, heads, cylinders and sectors.
+- __Disk Logical Structure__:
+  - Partitions:
+  - Blocks: OS view disk space as an array of fized size logical blocks
+- __File Allocation Methods__:
+  - Contiguous Alocation: A sequential set of blocks is allocated at creation
+  - Linked/Chain Allocation: non contiguous. Linked list
+  - Indexed Alocation: Tree Based, have an "index" datablock which points to other datablocks.
+
+Usage
+
+- Contigious Alocation: small systems
+- Linked/Chain: archival
+- Indexed: large
+
+---
+
+## Complexity
+
+Figgure out the best way to store data (assuming efficientcy == best)
+
+- O notation to calculate the time taken to find a block (n == number of blocks)
+  - Contiguous: O(1)
+  - Linked: O(n)
+  - Indexed/Inode: O(logk(n))
