@@ -1,11 +1,9 @@
 
 # Virtual Pin Quick References
 
-## [Sauce](http://iot.nortcele.win/doc/reference/virtual-pins.html)
+[Sauce](http://iot.nortcele.win/doc/reference/virtual-pins.html)
 
-## Quick Search
-
-### Ctrl+f  `Vn` (replace n with a number)
+### Quick Search with `Ctrl+f Vn` (replace n with a number)
 
 - **V1** - set default text, sends a text string to device, and be displayed on the LED array.
 - **V2** - set default number, same as v1 but only numeric values
