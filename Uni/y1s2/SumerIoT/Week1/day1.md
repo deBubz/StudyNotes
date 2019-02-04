@@ -20,6 +20,12 @@
 - Wifi config for DataLogger is availible when connected to DataLogger's hotspot (max 3).
 
 - Get the app Blynk to interact with the DataLogger With a GUI
-- [My Credentials](cred.md) (link not availible on GitHub).
+- [My Credentials](cred.md) (not availible on GitHub/ only on local machine).
 
 ---
+
+## Tutorials
+
+### [Displaying Data from the DataLogger on Blynk]()
+
+Valued Display: set the format of the displayed value

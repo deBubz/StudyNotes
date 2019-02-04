@@ -5,6 +5,7 @@
 1. figgure out the progamming stuff (look up docs)
 1. what to build....
 1. keep the notes pretty (update format/content)
+  - Check the Blynk ref
 
 ## Notes n stuff
 
