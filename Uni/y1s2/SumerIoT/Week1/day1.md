@@ -28,4 +28,14 @@
 
 ### [Displaying Data from the DataLogger on Blynk]()
 
-Valued Display: set the format of the displayed value
+#### Blynk Widgets
+
+- Valued Display: Display values for pins([see Vpin reference](../vpinref.md))
+
+- Labled Value: Display values with custom format `/pin.#/ one decimal place`
+
+- Push: rate of upload from the DataLoader to the Blynk App
+
+- LED (duh) can use this to test buttons
+
+- Squence: If statements
