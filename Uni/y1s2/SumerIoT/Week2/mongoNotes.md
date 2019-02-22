@@ -26,7 +26,7 @@ db.createUser({
     user:"";
     pwd:"";
     roles:[ see doccumentation]
-});
+});dv
 
 // return status success, fail
 ```

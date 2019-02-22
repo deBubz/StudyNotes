@@ -5,7 +5,7 @@ const url = require('../cred.js');                      // hidden url link
 
 // db name information
 const dbName = "turtle";
-const client = new MongoClient(url);
+const client = new MongoClient(url.mevn, {useNewUrlParser:true});
 
 // db connection
 client.connect((err)=>{
@@ -13,13 +13,12 @@ client.connect((err)=>{
 
     const db = client.db(dbName);
     console.log("aaaand moving on");
-
     //action then close
 
     // ----- Single Action -----
-    dbFunctions.findDocs(db, ()=>{
-        client.close();
-    }); console.log(".....");
+    // dbFunctions.module.findDocs(db, ()=>{
+    //     client.close();
+    // }); console.log(".....");
     
 
     // ----- Chaining Actionts -----
