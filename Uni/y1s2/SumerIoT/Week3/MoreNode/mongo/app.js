@@ -5,16 +5,13 @@ const    MongoClient = require('mongodb').MongoClient
 
 console.log(url);
 
-//const url = "mongodb://admin:Q4ePfCbUWShF@ds225375.mlab.com:25375/turtle";
-// const url = "mongodb://user:user@atlas.studio.xyz"
-// const dbName = 'turtle';
 
 const client = new MongoClient(url);
 
 client.connect(()=>{
     console.log("connected");
     const db = client.db('turtle');     //set dbb
-    var promise = db.collection('sensorreadings').find({a:1});
+    var promise = db.collection('sensorreadings').find({a:1}); // find docs with field a = 1;
 
 
     function iterateFunc(doc) {
