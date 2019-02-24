@@ -32,11 +32,8 @@ app.post('/addname', (rq,res)=>{
     var myData = new user(rq.body);
     myData.save().then(item =>{
         res.send("item to the db");
-        console.log();
         
-        // .catch(err=>{
-        //     res.status(400).send("unable to send")
-        // })
+        console.log();
     })
 })
 

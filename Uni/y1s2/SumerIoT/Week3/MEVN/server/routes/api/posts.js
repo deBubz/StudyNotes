@@ -17,7 +17,6 @@ router.post('/', async(req,resp)=>{
         text: req.body.text,
         createdAt: new Date()
     });
-    // ok status
     console.log(`inserting ${post.text}`);
     
     resp.status(200).send();

@@ -6,9 +6,10 @@ const    MongoClient = require('mongodb').MongoClient
 console.log(url);
 
 
-const client = new MongoClient(url);
+const client = new MongoClient(url);        // do dis
+// MongoClient.connect(url, (err,db)=>{})   // no gud
 
-client.connect(()=>{
+client.connect(()=>{                        // then do stuff in here
     console.log("connected");
     const db = client.db('turtle');     //set dbb
     var promise = db.collection('sensorreadings').find({a:1}); // find docs with field a = 1;
@@ -21,9 +22,6 @@ client.connect(()=>{
      function errorFunc(error) {
         console.log(error);
      }
-    
-     // print out everything
-     // lookup find();
     promise.forEach(iterateFunc, errorFunc);     
     
 
