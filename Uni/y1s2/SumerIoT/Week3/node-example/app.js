@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 var bodyParser = require('body-parser'); // middleware capture data> convert to json> insert data 
 
-const url = require('../cred.js'); // hide this
+const url = require('../cred.js'); // db connection url
 
 mongoose.Promise =global.Promise;
 mongoose.connect(url)
