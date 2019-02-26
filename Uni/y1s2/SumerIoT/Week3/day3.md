@@ -63,7 +63,7 @@ More Routes [Example](./express/moreRoutes.js)
 middle man to render html (why did i never use this). look at the [template](./express/index.html) and [server be](./express/moreRoutes.js)
 
 > There seem to be an issue with rendering the view. the file cannot be located
-> Might try with a new npm file that has all the json stuff
+> Might try with a new npm flile that has all the json stuff
 
 ### 6. NodeJs MongoDb
 
