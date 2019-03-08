@@ -6,25 +6,29 @@
 
 - [x] SubjectOutline
 - [ ] Brm Lecture notes rev
-- [ ] Get Important Dates
+- [x] Get Important Dates
+- [ ] Week1 Plan
 
 ### ApplicationsProg
 
-- [ ] SubjectOutline
+- [x] SubjectOutline
 - [ ] Refresh Quiz
-- [ ] Get Important Dates
+- [x] Get Important Dates
+- [ ] Week1 Plan
 
 ### Networking Fundamentals
 
-- [ ] SubjectOutline
-- [ ] Get Important Dates
+- [x] SubjectOutline
+- [x] Get Important Dates
 - [ ] basic Python
+- [ ] Week1 Plan
 
 ## Db Fundamentals
 
 - [x] SubjectOutline
-- [ ] Get Important Dates
+- [x] Get Important Dates
 - [ ] Class Activity
+- [ ] Week1 Plan
 
 ### IntroSoftware
 
