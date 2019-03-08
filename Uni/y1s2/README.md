@@ -20,6 +20,7 @@
 
 - [x] SubjectOutline
 - [x] Get Important Dates
+- [x] Week 1 Lec
 - [ ] basic Python
 - [ ] Week1 Plan
 
