@@ -1,5 +1,14 @@
 # y1s2
 
+## Week 1
+
+### Database Fundamentals
+
+- [ ] review Subject outline
+- [ ] Quiz 1 on subj outline
+- [ ] class activity
+- [ ] submit class activity as pdf
+
 ## week 0 3/3
 
 ### BRM
@@ -27,9 +36,10 @@
 ## Db Fundamentals
 
 - [x] SubjectOutline
+- [ ] lecture notes
 - [x] Get Important Dates
 - [ ] Class Activity
-- [ ] Week1 Plan
+- [x] Week1 Plan
 
 ### IntroSoftware
 
