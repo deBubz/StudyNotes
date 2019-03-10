@@ -36,7 +36,7 @@
 ## Db Fundamentals
 
 - [x] SubjectOutline
-- [ ] lecture notes
+- [x] lecture notes
 - [x] Get Important Dates
 - [ ] Class Activity
 - [x] Week1 Plan
