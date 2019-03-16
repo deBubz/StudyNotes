@@ -10,6 +10,9 @@
   - [ ] Db
   - [ ] AppProg
   - [ ] Networking
+- Textbook Notes
+  - [ ] DB ch2
+  - [ ] Networking ch1
   
 
 ---
@@ -20,7 +23,7 @@
 - [x] review Subject outline
 - [x] Quiz 1 on subj outline
 - [ ] class activity
-- [ ] submit class activity as pdf
+- [x] submit class activity as pdf
 - [ ] try Postgres SQL
 
 ---
@@ -32,21 +35,21 @@
 - [x] SubjectOutline
 - [ ] Brm Lecture notes rev
 - [x] Get Important Dates
-- [ ] Week1 Plan
+- [x] Week1 Plan
 
 ### ApplicationsProg
 
 - [x] SubjectOutline
 - [x] Refresh Quiz
 - [x] Get Important Dates
-- [ ] Week1 Plan
+- [x] Week1 Plan
 
 ### Networking Fundamentals
 
 - [x] SubjectOutline
 - [x] Get Important Dates
 - [x] Week 1 Lec
-- [ ] Week1 Plan
+- [x] Week1 Plan
 
 ## Db Fundamentals
 
