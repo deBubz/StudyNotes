@@ -48,7 +48,7 @@ Orders: pending order/ past order
 
 Meals: Meals in a restaurant
 
-Restaurant:
+Restaurant: restaurant details, should convert this to 
 
 > **NOTE** draw this out, add some attribute names
 
