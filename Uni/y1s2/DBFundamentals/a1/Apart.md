@@ -57,22 +57,22 @@ Restaurant: restaurant details, should convert this to
 write everything out, eliminate/refine
 
 - User BR
-  1. Users should be able to store multiple payment methods & delivery address
-  2. Login function (unique email)
+  - Users should be able to store multiple payment methods & delivery address
+  - Login function (unique email)
 - Menu BR
-  1. Query restaurants by distance
-  2. query restaurants by cusine type
-  3. query restaurants by special deals
+  - Query restaurants by distance
+  - query restaurants by cusine type
+  - query restaurants by special deals
 - Restaurant BR
-  1. meals should be speparated into categories
-  2. users should be able to customise their meals
+  - meals should be speparated into categories
+  - users should be able to customise their meals
 - Ordering BR
-  1. Each order should only contain meals from 1 restaurant.
-  2. users should be able to view & edit details such as delivery address & payment method before confirming the order.
-  3. users should be able to add promotional code to orders
+  - Each order should only contain meals from 1 restaurant.
+  - users should be able to view & edit details such as delivery address & payment method before confirming the order.
+  - users should be able to add promotional code to orders
 - CartBR
-  1. Users should be able to order multiple meals per order. (shopping cart)
-  2. Users should be able to view and edit their cart.
+  - Users should be able to order multiple meals per order. (shopping cart)
+  - Users should be able to view and edit their cart.
 
 ---
 
