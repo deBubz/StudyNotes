@@ -3,7 +3,7 @@ public class StretchWith2Vowels {
         String sent = readSentence();
         
         while(!sent.contains("*")){
-            System.out.println("Matching words = " + countPattern(sent));
+            System.out.println("Matching words = " + countWord(sent));
             sent = readSentence();
         }
     }
@@ -11,8 +11,9 @@ public class StretchWith2Vowels {
     //------------------------------------------------------
          
         // count the words that match in this sentence
-    public static int countPattern(String sent){ //count total LV2
+    public static int countWord(String sent){ //count total LV2
         int count = 0;
+        sent = sent.toLowerCase();
         for(String word: sent.split(" +")){
            if (wordZCheck(word)) count++ ; 
         }
@@ -22,21 +23,38 @@ public class StretchWith2Vowels {
     // does this word have a z bloc
     public static boolean wordZCheck(String word){  // CHECK PATTERN
         if (word.contains("z")) {
-            return subStringCheck(word.substring(word.indesOf('z')+1 ,word.length()));
+            return subStringCheck(word);
         }
         else return contain2Vowels(word);
     }
 
     public static boolean subStringCheck(String word) {
-        charCount = 0;
-    
-        if (word.contains("z")) {
-            for (int i = 0; i < word.length(); i++) {
-            
+
+        // ------------------
+        int charCount = 0;
+        int zstart = 0;
+
+        for (int i = 0; i < word.length(); i++) {
+            if (word.charAt(i) == 'z') {
+                if(charCount < 2) {
+                    charCount = 0;
+                    zstart = i+1;
+                }
+                else {
+                    //if (zstart != 0) zstart++;  zstart!=0? zstart ++: zstart
+                    //zstart = i;
+                    //String testWord = word.substring(zstart, zstart+charCount);
+                    if( contain2Vowels(word.substring(zstart, zstart+charCount))) return true;
+                    else charCount = 0;
+                }
             }
-            return false;
+            else charCount++;
         }
-        else return contain2Vowels(word);
+
+        if (charCount >= 2) {
+            return contain2Vowels(word.substring(zstart));
+        }
+        else return false;
     }
     
     //---------------------------------------------------------------
