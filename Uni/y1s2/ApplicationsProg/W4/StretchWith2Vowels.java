@@ -45,7 +45,7 @@ public class StretchWith2Vowels {
                     //zstart = i;
                     //String testWord = word.substring(zstart, zstart+charCount);
                     if( contain2Vowels(word.substring(zstart, zstart+charCount))) return true;
-                    else charCount = 0;
+                    else {charCount = 0; zstart = i+1;}
                 }
             }
             else charCount++;
