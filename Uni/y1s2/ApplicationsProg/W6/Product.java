@@ -12,18 +12,18 @@ public class Product {
     }
 
     public String getName() {
-        return "";
+        return this.name;
     }
 
     public boolean isEmpty() {
-        return false;
+        return stock == 0;
     }
 
     /**
      * Return true iff this product has at least n stock
      */
     public boolean has(int n) {
-        return true;
+        return this.stock >= n;
     }
 
     /**
@@ -31,13 +31,15 @@ public class Product {
      * and return the amount of money earned (price * n)
      */
     public double sell(int n) {
-        return 0.0;
+        this.stock -= n;
+        return (double)price*n;
     }
 
     /**
      * Increase stock by n.
      */
     public void restock(int n) {
+        this.stock += n;
     }
 
     @Override

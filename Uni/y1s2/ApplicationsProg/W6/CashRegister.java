@@ -4,9 +4,15 @@ public class CashRegister {
     private double cash;
 
     public CashRegister() {
+        this.cash = 0;
+    }
+
+    public CashRegister(double cash) {
+        this.cash = cash;
     }
 
     public void add(double money) {
+        this.cash += money;
     }
 
     @Override
