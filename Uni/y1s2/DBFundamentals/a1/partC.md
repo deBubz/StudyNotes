@@ -36,9 +36,31 @@ ForeignKey references OtherTable
 
 ## Revised Business Rules and Assumption
 
+1. **User BR**
+   - *1.1* Each User should be able to store multiple delivery address in their account.
+   - *1.2* Each User should be able to store multiple payment methods in their account wether its a paypal account or through a creditcard.
+   - *1.3* Each users will need to have a Unique Email, but for security and privacy reasons an auto generated UniqueID will be used to identify each users instead of the emails.
+   - *1.4* When signing up, users will only be asked to enter an email, their name and set up a password for the account.
+   - *1.5* When signing up, If the email already exist in the database, the user will be prompt to sign in with a matching password for the account
+   - *1.6* Users could become delivery driver if they want to.
+2. **Restaurants BR**
+   - *2.1* The list of restaurants a user could order from is based on the distance
+   - *2.2* The list of restaurants should be able to be filtered by cuisine type
+3. **Menu BR**
+   - *3.1* Each restaurants are able to offer multiple different meals and the meals are speparated into different categories set by the restaurant owner.
+   - *3.2* users should be able to customise their meals with different options(size, extra toppings) if they wish to.
+4. **Ordering BR**
+   - *4.1* For logistics reasons and to keep delivery cost low, each order should only contain meals from 1 restaurant.
+   -* 4.2* Users should be able to order multiple different meals per order.
+   - *4.3* users should be able to view and edit details such as delivery address and payment method before confirming the order.
+   - *4.4* If a user did not provide a delivery address/ payment method before ordering, they will be promt to provide them before checking out.
+   - *4.5* users should be able to add promotional code for discounts for their order.
+   - *4.6* Each order can not have more than one promo code applied.
+
+
 ## Revised ERD **1.5m**
 
-- Add self referencing relationship for ERD
+- Here is the new and revises design of the Entity Relation Diagram. Also included below is the list of changes since the previous report.
 
 ![ERD](./deliveroo/b_erd.PNG)
 
@@ -160,24 +182,54 @@ Promotion
 
 ## List of Functional Dependancies related to BR
 
-## Notmalisation
+1. **User BR**
+   - *1.1* Each User should be able to store multiple delivery address in their account.
+   - *1.2* Each User should be able to store multiple payment methods in their account wether its a paypal account or through a creditcard.
+   - *1.3* Each users will need to have a Unique Email, but for security and privacy reasons an auto generated UniqueID will be used to identify each users instead of the emails.
+   - *1.4* When signing up, users will only be asked to enter an email, their name and set up a password for the account.
+   - *1.5* When signing up, If the email already exist in the database, the user will be prompt to sign in with a matching password for the account
+   - *1.6* Users could become delivery driver if they want to.
+2. **Restaurants BR**
+   - *2.1* The list of restaurants a user could order from is based on the distance
+   - *2.2* The list of restaurants should be able to be filtered by cuisine type
+3. **Menu BR**
+   - *3.1* Each restaurants are able to offer multiple different meals and the meals are speparated into different categories set by the restaurant owner.
+   - *3.2* users should be able to customise their meals with different options(size, extra toppings) if they wish to.
+4. **Ordering BR**
+   - *4.1* For logistics reasons and to keep delivery cost low, each order should only contain meals from 1 restaurant.
+   -* 4.2* Users should be able to order multiple different meals per order.
+   - *4.3* users should be able to view and edit details such as delivery address and payment method before confirming the order.
+   - *4.4* If a user did not provide a delivery address/ payment method before ordering, they will be promt to provide them before checking out.
+   - *4.5* users should be able to add promotional code for discounts for their order.
+   - *4.6* Each order can not have more than one promo code applied.
+
+
+## Normalisation
+
+This section will show the step by step to normalise the each FD from the previous section to achieve at least +3 Normalization Form
+
+### Step by Step
+
+- See Normalization step by step doc
+- 
 
 ## Reflection
 
 - **What did you already know about the content and skills that were presented in this lecture?**
   - I was shown how to design an ERD and work with "SeeQUel"(Specificly SQLServer) in TAFE through their programming/ software dev course. So I would say about 70% of the coursework.
-  - TAFE shown me how to build a secure DB(atleast against injections) and intergrated it with a MVC webapp. The final project is to build a functional e-commerce site with APIs to get/generate data from the db.
+  - TAFE shown me how to a secure DB(atleast against injections) and intergrated it with a MVC webapp. The final project is to build a functional e-commerce site with APIs to get/generate data from the db.
   - This is not a complaint as I understand that this course was made to introduce Db to first year students.
 - **What did you learn about the content or skills that were presented in this class?**
   - Using Normalization as an extra step of verifying your db design. Even though it wasnt shown very well ( not the fault of the lecturer and tutor) due to the structure of the course.
-  - It took me a while to understand that this is not a following process after completing the ERD but an alternative db design process or a verification method for the existing ERD design.
+  - It took me a while to understand that this is not a following process after completing the ERD but an alternative method of db design process or a verification method for the existing ERD design.
 - **How did doing the assignment change your understanding about this subject?**
   - Not much, I would say that this assessment only provided  more much needed practice for normalization and ERD design.
-- **What connections have you made between this subject and other subjects you have taken?**year
+  - Beside that, the assessment shown me the importance of constantly reviewing your design to gradually improve and build it to satisfy given requirements.
+- **What connections have you made between this subject and other subjects you have taken?**
   - Not much aside from other subjects such as BRM also using Db in the coursework.
   - This is only my second semester at and so far, I dont think UTS intergrates related subjects very well. e.g big difference in the notation used in BRM and DBFun.
 - **What do you suggest for your further improvements in this subject?**
-  - A more maths like approach, using different smaller bite size usecase to actually apply and practice what is taught in class (building ERD, normalization).
+  - A more math like approach, using different smaller bite size usecase to actually apply and practice what is taught in class (building ERD, normalization).
   - Don't just stick with one case study, have several examples for students to practice the processes of normalisation.
   - I understand using the same Hospital use case is to simulate how DB are developed in the real world, but it is very difficult to understand the process if its not applied to different scenarios, They do not need to be big and intricate use case like the Hospital to achieve this
-  - I perfer the approach similar to how the SQL tutes are carried out.
+  - I perfer the approach similar to how the SQL tutes are carried out, build queries to get certain data.
