@@ -1,26 +1,6 @@
 # Part C Logical Design
 
-
-## NOTES
-
-2. Logical Design/ Normalisation
-   1. ID and list Functional FD and state which fd is determined based on which BR/Forms of your case study.
-      - Use the format `X -> Y`
-      - `Determinant -> Dependent`
-   2. Use FD to determine highes normal form for each table/relation in previous part.
-      - Also Justify your choice
-      - Normalise all table till they are BCNF 
-      - Document each detail of the nomalzation(or 3rd?)
-4. Structure
-   1. Revised BR and Assumption
-   4. List of FD related to each BR
-   5. Normalisation
-
-**NOTE** Normalization step by step
-
----
-
-## Revised Business Rules and Assumption
+## I. Revised Business Rules and Assumption
 
 1. **User BR**
    - *1.1* Each User should be able to store multiple delivery address in their account.
@@ -44,8 +24,7 @@
    - *4.5* users should be able to add promotional code for discounts for their order.
    - *4.6* Each order can not have more than one promo code applied.
 
-
-## Revised ERD **1.5m**
+## II. Revised ERD
 
 - Here is the new and revises design of the Entity Relation Diagram. Also included below is the list of changes since the previous report.
 
@@ -56,40 +35,40 @@ ChangeNotes:
 - Changed the naming format of attributes.
 - Added a 1 mandatory : 1 optional **Unary** realationship for the User. This is to fit the reviesd BR
  will need to nique Email, but for security and privacy reasons an auto generated UniqueID will be used to identify each users instead of the emails.
-     - `UserID → UserEmail`
+
 > Current Users can refer the Deliveroo service to their friends and families to get a reference discounts on the service
 
-## Relation **4m**
+## III. Relation
 
 This section contain the converted relation from entities in the ERD.
 
 ### Customer
 
-**User**
+- **User**
 
 > **USER**(<u>UserID</u>, UserFName, UserLName, UserEmail, UserPassword, RefereeID*)
 >
 > FK(RefereeID) references USER
 
-**Address**
+- **Address**
 
 > **ADDRESS**(<u>AddressID, UserID*</u>, AddrNo, AddrStreetName, AddrCity, AddrPostCode, AddrState)
 >
 > FK (UserID) references User
 
-**Payment**
+- **Payment**
 
 > **PAYMENT**(<u>PaymentID, UserID*</u>)
 >
 > FK (UserID) references USER
 
-**Creditcard** (subtype of Payment)
+- **Creditcard** (subtype of Payment)
 
 > **CREDITCARD**(<u> PaymentID, UserID*</u>, CardNum, CardHolderName, CardExp, CardSecCode)
 >
 > FK (UserID) references USER
 
-**Paypal**
+- **Paypal**
 
 > **PAYPAL**(<u>PaymentID, UserID*</u>, PaypalAcc, PaypalToken)
 >
@@ -97,11 +76,11 @@ This section contain the converted relation from entities in the ERD.
 
 ### Restaurant Section
 
-**Restaurant**
+- **Restaurant**
 
 > RESTAURANT(<u>RestaurantID</u>, RtrCusineType, RtrAddrNumber, RtrStreetName, RtrPost, RtrCity, RtrState, RtrOwnerFname, RtrOwnerLName, RtrContactNo)
 
-**Meal**
+- **Meal**
 
 > **MEAL** (<u> MealID, RestaurantID*</u>, MealName, MealPrice, MealImage, CategoryID*)
 >
@@ -109,15 +88,15 @@ This section contain the converted relation from entities in the ERD.
 > 
 > FK (CategoryID) references MEALCATEGORY
 
-**MealCategory**
+- **MealCategory**
 
 > **MealCategory** (<u>CategoryID</u>, CategoryName)
 
-**Option**
+- **Option**
 
 > **OPTION** (<u>OptionID</u>, OptionName, OptionDesc, OptionPrice)
 
-**Order-Meal**
+- **Order-Meal**
 
 > **ORDERMEAL** (<u>OrderID*, MealID* ,ReastaurantID*</u>, Quantity)
 >
@@ -127,7 +106,7 @@ This section contain the converted relation from entities in the ERD.
 >
 > FK (RestaurantID) references RESTAURANT
 
-**Meal-Option**
+- **Meal-Option**
 
 > **MEALOPTION** (<u>OrderID*, MealID* ,OptionID</u>)
 >
@@ -139,7 +118,7 @@ This section contain the converted relation from entities in the ERD.
 
 ### Order Section
 
-**Order**
+- **Order**
 
 > ORDER (<u>OrderID, RestaurantID*, UserID*</u>, OrderDate, OrderTime, AddressID*, PaymentID*)
 >
@@ -151,7 +130,7 @@ This section contain the converted relation from entities in the ERD.
 > 
 > FK (PaymentID) references PAYMENT
 
-**Delivery**
+- **Delivery**
 
 > **DELIVERY** (<u>OrderID*, DriverID*</u>, PickupTime, DeliveryTime)
 >
@@ -159,11 +138,11 @@ This section contain the converted relation from entities in the ERD.
 >
 > FK (DriverID) references USER
 
-**Promotion**
+- **Promotion**
 
 > **PROMOTION** (<u>PromotionID</u>, PromoCode, PromoStartDate, PromoEndDate, DiscAmount, DiscType).
 
-## List of Functional Dependancies related to BR
+## IV. List of Functional Dependancies related to BR
 
 This secion present Functional Dependancies extracted from business rules. For organisational purposes, 
 
@@ -171,134 +150,176 @@ This secion present Functional Dependancies extracted from business rules. For o
 
 **Regarding Address**
 
-- *1.1* Each User should be able to store multiple delivery address in their account.
-  - `UserID → AddressID`
-  - `UserID, AddressID → AddressNumber, AddressStreetName, AddressCity, AddressPostCode, AddressState`
+- *1.1* Each User should be able to store multiple delivery address in their account. Each Address entry are uniquely identified by a combination of a unique key plus the user's key.
+  - **U-FD1**: `User → Address`
+  - **U-FD2** `UserID, AddressID → Address Attributes`
 
 **Regarding Payment**
 
-- *1.2* Each User should be able to store multiple payment methods in their account wether its a paypal account or through a creditcard.
-  - `UserID → PaymentID(Payment attributes)`
-  - `UserID, PaymentID → PayPalAccount, PaypalAccToken`
-  - `UserID, PaymentID → CardNumber, CardHolderName, CardExpDate, CardSecNumber`
+- *1.2* Each User should be able to store multiple payment methods in their account wether its a paypal account or through a creditcard. Each Payment methods are uniquely identified by a combination of a unique key plus the user's key.
+  - **U-FD3**:`User → Payment`
+  - **U-FD4**: `UserID, PaymentID → Paypal Details, CreditCard Details`
 
 **Regarding User**
 
-- *1.3* Each users will need to nique Email, but for security and privacy reasons an auto generated UniqueID will be used to identify each users instead of the emails.
+- *1.3* Each users will need to provide an unique Email, but for security and privacy reasons an auto generated UniqueID will be used to identify each users instead of the emails.
 - *1.4* When signing up, users will only be asked to enter an email, their name and set up a password for the account.
-  - `UserID → UserEmail, UserPassword, UserFName, UserLName`
-- *1.5* When signing up, If the email already exist in the database, the user will be prompt to sign in with a matching password for the account
+  - **U-FD5**: `UserID → UserEmail, UserPassword, User Name`
 - *1.6* Users could become delivery driver to deliver order if they want to. The time when the food is picked up and the time delivered to ensure the package arrived as promised
-  - `DriverID → OrderID, UserID, PickupTime, DeliveredTime`
+  - **U-FD6**:`Driver → OrderID, UserID, PickupTime, DeliveredTime`
+    - Under the assumption of each Driver will deliver the order to the assigned User/orderer.
+  - **U-FD7**: `User → Driver`
+  - **U-FD8**: `Driver → User`
+    - **UFD7** and **UFD8** references a user can be a driver if they want to
 - *1.7* Current Users can refer the Deliveroo service to their friends and families to get a reference discounts on the service.
-  - `RefererID → UserID, UserAttributes`
-  - `UserID → RefererID`
+  - **U-FD9**: `Referer → User`
+  - **U-FD10**: `User → Referer`
+    - **UFD9** and **UFD10** references a user can also be a referee for another user.
 
 ### Restaurant Functional Dependancies
 
-- *2.1* The list of restaurants a user could order from is based on the distance
-  - `RestaurantID → RtrAddrNo, RtrAddrStreet, RtrAddrCity, RtrAddrPost, RtrAddrState`
+- *2.1* The list of restaurants a user could order from is based on the distance and for drivers to pickup orders
+  - Notates restaurants must provide an address to use the Deliveroo service.
 - *2.2* The list of restaurants should be able to be filtered by cuisine type
-  - `RestaurantID → RtrCusineType`
-- *2.3* Restaurants also need to provide the contact details of the owner
-  - `RestaurantID - RtrOwnerFname, RtrOwnerLName, RtrContactno`
-- *2.4* Restaurants need to provide Price, Name and an image of every single dish they provide.
-  - `RestaurantID, MealID → MealName, MealPrice, MealImage`
+- *2.3* Each Restaurant will be given a unique identifier key and  also need to provide the contact details of the owner
+  - **R-FD1**: `RestaurantID - Owner's Name, ContactNumber, CusineType, Address`
+  - Combination of BR *2.1*, *2.2* and *2.3*.
+- *2.4* Restaurants need to provide Price, Name and an image of every single dish they provide. Each meal/dish/ offered product is identified using a given unique key and the restaurant's key.
+  - **R-FD2**: `RestaurantID → MealID`
+  - **R-FD3**: `RestaurantID, MealID → MealName, MealPrice, MealImage`
 - *3.1* Each restaurants are able to offer multiple different meals and the meals are speparated into different categories set by the restaurant owner.
-  - `RestaurantID → MealID`
-  - `MealID → CategoryID`
-  - `RestaurantID, MealID → MealName, MealDesc, MealPrice`
-- *3.2* users should be able to customise their meals with more than one options(size, extra toppings) if they wish to. Selecting an option may modify the cost of the meal.
-  - `OptionID → OptionName, OptionDesc, OptionPrice`
-  - `OrerID, MealID → OptionID`
+  - **R-FD4**: `RestaurantID, MealID → Category`
+- *3.2* users should be able to customise their meals with more than one options(size, extra toppings) if they wish to. Each Option will be given their own unique key. Selecting an option may modify the cost of the meal.
+  - **R-FD5**: `OptionID → OptionName, OptionPrice`
+    - Assuming when an option is selected for the chosen order, the price stored for option will be added into the total cost.
+  - **R-FD6**: `OrerID, UserID, MealID → OptionID, OptionName, OptionPrice`
+    - Expanding from **O-FD2**(see below), **R-FD6** is used to show when an aditional option is applied to a specific item on the order.
 
 ### Order Functional Dependancies
 
-- *4.1* For logistics reasons and to keep delivery cost low, each order should only contain meals from 1 restaurant.
+- *4.1* For logistics reasons and to keep delivery cost low, each order should only contain meals from 1 restaurant. Each order would also be only for 1 user.
 - *4.2* Order records contain the date of the order is made, and its status. Users should also be able to order multiple different meals per order.
-  - `OrderID → RestaurantID, UserID`
-  - `OrderID, UserID, RestaurantID → MealID, MealQuantity`
-  - Note: the meal quantity is to depict the number of a specific meal that the user want to order.
-- *4.3* users should be able to view and edit details such as delivery address and payment method before confirming the order.
-  - `UserID, OrderID → AddressID(Address attributes), PaymentID(Payment attributes)`
+  - **O-FD1**: `OrderID, UserID → RestaurantID`
+  - **O-FD2**: `OrderID, UserID → MealID, MealName, MealPrice, MealImage, MealQuantity`
+    - BR *4.1* notate that OrderID, UserID will be the CompositePK for each order. Thus `OrderID, UserID, and MealID` will be the composite PK for each item in each order.
+    - Note: the meal quantity is to depict the number of a specific meal that the user want to order.
+- *4.3* Each order will need to store the inital date when the order starts. Users should also be able to view and edit details such as delivery address and payment method before confirming the order.
 - *4.4* If a user did not provide a delivery address/ payment method before ordering, they will be promt to provide them before checking out.
-  - `UserID, OrderID → AddressID, PaymentID`
 - *4.5* users should be able to add promotional code for discounts for their order.
+  - **O-FD3**: `UserID, OrderID → OrderDate, Payment(PaymentAttributes), Address(AddressAttributes), Restaurant(Restaurant Attributes), Meal(and meal's Attribues), Option(and OptionAttributes), PromotionCode(promo attributes)`
+  - Combination of BR *4.3*, *4.4*, and *4.5. Additionally also apply previous FDs.
 - *4.7* Each PromoCode are only applicable in a certain period and the code can either give a percentage or a flat rate discount
   - `PromotionID → PromoStartDate,PromoEndDate, Promocode, PromoDiscountType, PromoDiscountRate`
-  - `UserID, OrderID → PromotionID(Promo code attributes)`
 
-### Combining the Functional Dependancies
-
-**User Section**
-
-- `UserID → RefererID, UserEmail, UserPassword, UserFName, UserLName, PaymentID, AddressID`
-- `RefererID → UserID, UserFName, UserLName, UserPassword, UserEmail`
-- `UserID, AddressID → AddrNumber, AddrStreetName, AddrCity, AddrPostCode, AddrState`
-- `UserID, PaymentID → PaypalAccount, PaypalToken, CardNumber, CardHolderName, CardExpDate, CardSecurityNumber`
-- `DriverID → UserID, UserFName, UserLastName, UserEmail, UserPassword`
-
-**Restaurant Section**
-
-- `RestaurantID → RtrCusineType, RtrAddrNo, RtrAddrStreet, RtrAddrCity, RtrAddrPost, RtrAddrState, MealID`
-- `RestaurantID, MealID → MealName, MealPrice, MealImage`
-- `OptionID → OptionName, OptionDesc, OptionPrice`
-
-**Order Section**
-
-- `OrderID → RestaurantID, UserID, OrderDate, OderStatus`
-- `OrderID, UserID, RestaurantID → MealID, MealQuantity`
-- `OrderID, MealID → OptionID`
-- `OrderID, UserID → PromoID, RestaurantID, PaymentID, AddressID`
-- `PromotionID → PromoStartDate, PromoEndDate, PromoCode, PromoDiscountType, PromoDiscountRate`
-
-## Normalisation
+## V. Normalisation
 
 This section will examine each relations previously converted from the ERD and use the functional dependancies to check if they have reached the 3rd normalization form. A 3rd normal form include these characteristis:
 
 - 1NF: All Attributes must be atomic and not derrived.
 - 2NF: Every Non-Key attribute must be defined by the whole key.
-- 3NF: No Transitive dependancies
+- 3NF: No Transitive dependancies, where the PK is a determinant for an attribute which is a determinant for other attributes.
 
 ### **User**
+
+- Relation
 
 > **USER**(<u>UserID</u>, UserFName, UserLName, UserEmail, UserPassword, RefereeID*)
 >
 > FK(RefereeID) references USER
 
-Normal Form
+- Related FD:
+  - **U-FD5**: `UserID → UserEmail, UserPassword, User Name`
+  - **U-FD9**: `Referer → User`
+  - **U-FD10**: `User → Referer`
+- Note: **U-FD9** and **U-FD10** depict it is a unary relationship, Hence the `RefereeID` presented in the relation.
+- Normal Form:
+  - 1NF: All Attributes in the relation are atomic and not derrived.
+    - **U-FD5** still have an composite attribute `UserName`, should be broken down to `FirstName` and `LastName`.
+  - 2NF: Every Non-Key attr is defined by the whole key.
+  - 3NF: No Transitive dependancies. Even though `RefererID` is a determinant for the attributes of `User` it is presented in the relation as a ForeignKey which only show the relationship.
 
 **Address**
+
+- Relation:
 
 > **ADDRESS**(<u>AddressID, UserID*</u>, AddrNo, AddrStreetName, AddrCity, AddrPostCode, AddrState)
 >
 > FK (UserID) references User
 
+- Related FD:
+  - **U-FD1**: `User → Address`
+  - **U-FD2** `UserID, AddressID → Address Attributes`
+- Normal Form:
+  - 1NF: All Attributes in the relation are atomic and not derrived. For **U-FD2**, the address attributes will need to be broken down to record the StreetNumber, StreetName, City, PostCode, and State of each `Address` entry.
+  - 2NF: Every Non-Key attr is defined by the whole key.
+  - 3NF: No Transitive dependancies.
+
 **Payment**
+
+- Relation:
 
 > **PAYMENT**(<u>PaymentID, UserID*</u>)
 >
 > FK (UserID) references USER
 
+- Related FD:
+  - **U-FD3**:`User → Payment`
+- Note: Supertype Entity
+- Normal Form:
+  - 1NF: All Attributes in the relation are atomic and not derrived.
+  - 2NF: There are no non-key attributes in the relation.
+  - 3NF: There are no non-key attributes(where its a determinant for other attributes) in the relation.
+
 **Creditcard** (subtype of Payment)
+
+- Relation:
 
 > **CREDITCARD**(<u> PaymentID, UserID*</u>, CardNum, CardHolderName, CardExp, CardSecCode)
 >
 > FK (UserID) references USER
 
+- Related FD:
+  - **U-FD4**: `UserID, PaymentID → Paypal Details, CreditCard Details`
+- Note: SubType entity of Payment Entity
+- Normal Form:
+  - 1NF: All Attributes in the relation are atomic and not derrived. Not all Attributes(`PaypalDetails` and `CreditCardDetails`) in the fd are atomic and will need to be broken down.
+  - 2NF: There are no non-key attributes in the relation nor the FD. Technically the FD is correct, but since `CREDITCARD` is a subtype of `Payment`, it only contains the `CreditCard` related attributes.
+  - 3NF: No Transitive dependancies.
+
 **Paypal**
+
+- Relation:
 
 > **PAYPAL**(<u>PaymentID, UserID*</u>, PaypalAcc, PaypalToken)
 >
 > FK (UserID) references User
 
+- Related FD:
+  - **U-FD4**: `UserID, PaymentID → Paypal Details, CreditCard Details`
+- Note: SubType entity of Payment Entity
+- Normal Form:
+  - 1NF: All Attributes in the relation are atomic and not derrived. Not all Attributes(`PaypalDetails` and `CreditCardDetails`) in the fd are atomic and will need to be broken down.
+  - 2NF: There are no non-key attributes in the relation nor the FD. Technically the FD is correct, but since `PayPal` is a subtype of `Payment`, it only contains the `CreditCard` related attributes.
+  - 3NF: No Transitive dependancies.
+
 ### Restaurant Section
 
 **Restaurant**
 
+- Relation:
+
 > RESTAURANT(<u>RestaurantID</u>, RtrCusineType, RtrAddrNumber, RtrStreetName, RtrPost, RtrCity, RtrState, RtrOwnerFname, RtrOwnerLName, RtrContactNo)
 
+- Related FD:
+  - **R-FD1**: `RestaurantID - Owner's Name, ContactNumber, CusineType, Address`
+- Normal Form:
+  - 1NF: All Attributes in the relation are atomic and not derrived. In the FD, `Owner'sName` and `Address` would need to be broken down.
+  - 2NF: Every Non-Key attribute in the relation is defined by the whole key.
+  - 3NF: No Transitive dependancies
+
 **Meal**
+
+- Relation:
 
 > **MEAL** (<u> MealID, RestaurantID*</u>, MealName, MealPrice, MealImage, CategoryID*)
 >
@@ -306,15 +327,44 @@ Normal Form
 > 
 > FK (CategoryID) references MEALCATEGORY
 
+- Related FD:
+  - **R-FD2**: `RestaurantID → MealID`
+  - **R-FD3**: `RestaurantID, MealID → MealName, MealPrice, MealImage`
+- Normal Form:
+  - 1NF: All Attributes in the relation are atomic and not derrived.
+  - 2NF: Every Non-Key attribute in the relation is defined by the whole key.
+  - 3NF: No Transitive dependancies.
+
 **MealCategory**
+
+- Relation:
 
 > **MealCategory** (<u>CategoryID</u>, CategoryName)
 
+- Related FD:
+  - **R-FD4**: `RestaurantID, MealID → Category`
+- Note: The FD depict what Category is depend on in the Meal relation.
+- Normal Form:
+  - 1NF: All Attributes in the relation are atomic and not derrived.
+  - 2NF: Every Non-Key attribute in the relation is defined by the whole key.
+  - 3NF: No Transitive dependancies.
+
 **Option**
+
+- Relation:
 
 > **OPTION** (<u>OptionID</u>, OptionName, OptionDesc, OptionPrice)
 
+- Related FD:
+  - **R-FD5**: `OptionID → OptionName, OptionPrice`
+- Normal Form:
+  - 1NF: All Attributes in the relation are atomic and not derrived. The FD is only missing the `OptionDescription` attribute, which is used to show what the extra option includes for the user.
+  - 2NF: Every Non-Key attribute in the relation is defined by the whole key.
+  - 3NF: No Transitive dependancies.
+
 **Order-Meal**
+
+- Relation:
 
 > **ORDERMEAL** (<u>OrderID*, MealID* ,ReastaurantID*</u>, Quantity)
 >
@@ -324,7 +374,16 @@ Normal Form
 >
 > FK (RestaurantID) references RESTAURANT
 
+- Related FD:
+  - **O-FD2**: `OrderID, UserID → MealID, MealName, MealPrice, MealImage, MealQuantity`
+- Normal Form:
+  - 1NF: All Attributes in the relation are atomic and not derrived.
+  - 2NF:
+  - 3NF:
+
 **Meal-Option**
+
+- Relation:
 
 > **MEALOPTION** (<u>OrderID*, MealID* ,OptionID</u>)
 >
@@ -334,9 +393,18 @@ Normal Form
 >
 > FK (OptionID) references OPTION
 
+- Related FD:
+  - **R-FD6**: `OrerID, UserID, MealID → OptionID, OptionName, OptionPrice`
+- Normal Form:
+  - 1NF: All Attributes in the relation are atomic and not derrived.
+  - 2NF:
+  - 3NF:
+
 ### Order Section
 
 **Order**
+
+- Relation:
 
 > ORDER (<u>OrderID, RestaurantID*, UserID*</u>, OrderDate, OrderTime, AddressID*, PaymentID*)
 >
@@ -348,7 +416,16 @@ Normal Form
 > 
 > FK (PaymentID) references PAYMENT
 
+- Related FD:
+  - **O-FD3**: `UserID, OrderID → OrderDate, Payment(PaymentAttributes), Address(AddressAttributes), Restaurant(Restaurant Attributes), Meal(and meal's Attribues), Option(and OptionAttributes), PromotionCode(promo attributes)`
+- Normal Form:
+  - 1NF: All Attributes in the relation are atomic and not derrived.
+  - 2NF: 
+  - 3NF:
+
 **Delivery**
+
+- Relation:
 
 > **DELIVERY** (<u>OrderID*, DriverID*</u>, PickupTime, DeliveryTime)
 >
@@ -356,10 +433,29 @@ Normal Form
 >
 > FK (DriverID) references USER
 
+- Related FD:
+  - **U-FD6**:`Driver → OrderID, UserID, PickupTime, DeliveredTime`
+  - **U-FD7**: `User → Driver`
+  - **U-FD8**: `Driver → User`
+- Normal Form:
+  - 1NF: All Attributes in the relation are atomic and not derrived.
+  - 2NF: 
+  - 3NF:
+
 **Promotion**
 
+- Relation:
+
 > **PROMOTION** (<u>PromotionID</u>, PromoCode, PromoStartDate, PromoEndDate, DiscAmount, DiscType).
-## Reflection
+
+- Related FD:
+  - `PromotionID → PromoStartDate,PromoEndDate, Promocode, PromoDiscountType, PromoDiscountRate`
+- Normal Form:
+  - 1NF: All Attributes in the relation are atomic and not derrived.
+  - 2NF: Every Non-Key attribute must be defined by the whole key, All of the information about Promotion code is dependant on the `PromotionID`
+  - 3NF: No Transistive dependancies.
+
+## VI. Reflection
 
 - **What did you already know about the content and skills that were presented in this lecture?**
   - I was shown how to design an ERD and work with "SeeQUel"(Specificly SQLServer) in TAFE through their programming/ software dev course. So I would say about 70% of the coursework.
