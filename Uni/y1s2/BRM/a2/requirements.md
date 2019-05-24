@@ -15,13 +15,7 @@
 
 ## Overview
 
-- Using the updated case study to produce an **OO Requirement Analysis and Specification report**, this uncludes
-  - UML Diagrams
-  - Parts of SRS docs using *provided templates*
-- youre required to captured:
-  - functional requiremetns
-  - data requirements
-  - non-functional requirements
+- Using the updated case study to produce an **OO Requirement Analysis and Specification report**
 - the new Customer Onboarding System should address:
   - Epic's goal for a better system.
   - any inefficiencies
@@ -39,6 +33,59 @@ To develop the new COS system you should:
 - Two User **Interface/Wireframe** for any 2 use case (should be the same use case chosen for the sequence diagram)
 - Security & Performance Requirements.
 - Include Document management, Introduction, bibliography and contribution.
+
+---
+
+## Structure
+
+### Document Management
+
+- **Revision History**: Table showing changes
+- **Intended Audience**: table showing intended audience: lecturer, tutor, group, blah 
+- **Reference Documents**: Table showing reference text, mostlikely lecture slides
+- **Glossary**: Glossary table for jargon, abbreviations
+
+### Intro
+- **Document Purpose**: State the purpose of the report, present a list of business requirements
+- **Projecy Purpose**: State the purpose of the project
+- **Project Scope**: State the scope of what the project entails, Should Include a basic usecase diagram covering all of your `UseCases`
+  - **In Scope** Table Showing usecases in the scope
+  - **Out of Scope** Table Shoing use cases out of the scope
+- **Assumption**: Assumptions on extra implemented features not presented in the case study
+
+### Functional Requirements
+
+- **User Stories and User Story Map**
+  - Provide ALL possible user stories for the new COS (min 2 form user, 2 from staff)
+  - user story map, Follow template
+  - Each use case must have an ID number included
+  - **Use Cases** (use case Narative Table) (2 customer, 2 kaching)
+    - **UC1**
+    - **UC2**
+    - **UC3**
+    - **UC4**
+  - **Sequence Diagram** Base on presented UseCase Narrative
+    - Each Diagram must cleary state corresponding usecase name, should match the mainflow of corresponding usecase narrative.
+    - 1 User
+    - 1 Kaching
+- **Data Requirements**
+  - **Class Diagram**
+    - 1 Diagram covoring all user stories and usecase
+  - **State Transition Diagram**
+    - State Transition Diagram from the lecture, example is not complete, need
+      - Event inbetween states that triggers the transition
+      - Correct Labeling (verbs)
+      - 1 STD (lel) for the `Customer` object covering all related usecases across the whole COS
+- **Non-Functional Requirement**
+  - **User Interface Requirements**
+    - 2 UI wireframe 1 used by the customer, 1 used by kaching staff
+  - **Security Requiremtnts**
+    - Security Requirement table
+  - **Performance Requirements**
+    - Performance requirement table
+- Bibliography
+- Appendices
+
 
 ---
 
