@@ -10,7 +10,7 @@
 
 -- DROP
 DROP TABLE ordermeal_t;
-DROP TABLE ordermeal_t;
+DROP TABLE order_t;
 DROP TABLE meal_t;
 -- NOTE: cascade incase of there are dependant tables
 

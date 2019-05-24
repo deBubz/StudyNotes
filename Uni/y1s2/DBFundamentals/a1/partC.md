@@ -209,7 +209,14 @@ This secion present Functional Dependancies extracted from business rules. For o
 - *4.3* Each order will need to store the inital date when the order starts. Users should also be able to view and edit details such as delivery address and payment method before confirming the order.
 - *4.4* If a user did not provide a delivery address/ payment method before ordering, they will be promt to provide them before checking out.
 - *4.5* users should be able to add promotional code for discounts for their order.
-  - **O-FD3**: `UserID, OrderID → OrderDate, Payment(PaymentAttributes), Address(AddressAttributes), Restaurant(Restaurant Attributes), Meal(and meal's Attribues), Option(and OptionAttributes), PromotionCode(promo attributes)`
+  - **O-FD3**: `UserID, OrdeCREATE TABLE Customer_T(
+    CustID          NUMBER(11,0)    NOT NULL,
+    CustName        VARCHAR2(25)    NOT NULL,
+    CustStreet      VARCHAR2(30),
+    CustCity        VARCHAR2(20),
+    CustState       CHAR(2),
+    CustPostalCode  VARCHAR2(9),
+CONSTRAINT Customer_PK PRIMARY KEY (CustID));rID → OrderDate, Payment(PaymentAttributes), Address(AddressAttributes), Restaurant(Restaurant Attributes), Meal(and meal's Attribues), Option(and OptionAttributes), PromotionCode(promo attributes)`
   - Combination of BR *4.3*, *4.4*, and *4.5. Additionally also apply previous FDs.
 - *4.7* Each PromoCode are only applicable in a certain period and the code can either give a percentage or a flat rate discount
   - `PromotionID → PromoStartDate,PromoEndDate, Promocode, PromoDiscountType, PromoDiscountRate`
