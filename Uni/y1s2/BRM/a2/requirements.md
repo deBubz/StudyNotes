@@ -66,7 +66,7 @@ To develop the new COS system you should:
     - **UC4**
   - **Sequence Diagram** Base on presented UseCase Narrative
     - Each Diagram must cleary state corresponding usecase name, should match the mainflow of corresponding usecase narrative.
-    - 1 User
+    - 1 Userhttps://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project
     - 1 Kaching
 - **Data Requirements**
   - **Class Diagram**
