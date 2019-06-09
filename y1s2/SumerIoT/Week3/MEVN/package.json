@@ -1,0 +1,22 @@
+{
+  "name": "mevn",
+  "version": "1.0.0",
+  "description": "full stack vue express app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js"
+  },
+  "author": "deBubz",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mongodb": "^3.1.13"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}

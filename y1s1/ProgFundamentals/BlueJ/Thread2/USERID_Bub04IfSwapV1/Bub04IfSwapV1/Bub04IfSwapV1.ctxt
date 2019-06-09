@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Bub04IfSwapV1
+comment0.text=\n\ A\ demonstration\ of\ the\ BubbleSort\ algorithm,\n\ on\ arrays\ of\ size\ 4,\ using\ the\ "ifSwap"\ method.\n\ \n\ SKELETON\ FOR\ LAB\ TEST.\n\ \n\ @author\ Raymond\ Lister\ \n\ @version\ April\ 2018\n
+comment1.params=a\ i\ j
+comment1.target=void\ ifSwap(int[],\ int,\ int)
+comment1.text=\n\ Compares\ two\ elements\ of\ an\ array\ and\ swaps\ them\n\ if\ the\ two\ elements\ are\ out\ of\ order.\n
+comment2.params=a
+comment2.target=void\ bubSort04(int[])
+comment2.text=\n\ Sorts\ an\ array\ of\ 4\ integers\ with\ the\ Bubble\ Sort\n\ algorithm,\ using\ the\ "ifSwap"\ method.\n\ \ \n\ @param\ \ \ a\ \ \ An\ array\ of\ 4\ elements\n
+numComments=3

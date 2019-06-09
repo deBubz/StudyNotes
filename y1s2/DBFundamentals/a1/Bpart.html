@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+        <title>Part B Conceptual Data Modelling</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        <script src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+    </head>
+    <body>
+        <h1 id="part-b-conceptual-data-modelling">Part B Conceptual Data Modelling</h1>
+<h2 id="overview">Overview</h2>
+<h2 id="business-rules">Business Rules</h2>
+<ol>
+<li><strong>User BR</strong>
+<ul>
+<li>1.1 Each User should be able to store multiple delivery address in their account.</li>
+<li>1.2 Each User should be able to store multiple payment methods in their account wether its a paypal account or through a creditcard.</li>
+<li>1.3 Each users will need to have a Unique Email, but for security and privacy reasons an auto generated UniqueID will be used to identify each users instead of the emails.</li>
+<li>1.4 When signing up, users will only be asked to enter an email, their name and set up a password for the account.</li>
+<li>1.5 When signing up, If the email already exist in the database, the user will be prompt to sign in with a matching password for the account</li>
+</ul>
+</li>
+<li><strong>Restaurants BR</strong>
+<ul>
+<li>2.1 The list of restaurants a user could order from is based on the distance</li>
+<li>2.2 The list of restaurants should be able to be filtered by cuisine type</li>
+</ul>
+</li>
+<li><strong>Menu BR</strong>
+<ul>
+<li>3.1 Each restaurants are able to offer multiple different meals and the meals are speparated into different categories set by the restaurant owner.</li>
+<li>3.2 users should be able to customise their meals with different options(size, extra toppings) if they wish to.</li>
+</ul>
+</li>
+<li><strong>Ordering BR</strong>
+<ul>
+<li>4.1 For logistics reasons and to keep delivery cost low, each order should only contain meals from 1 restaurant.</li>
+<li>4.2 Users should be able to order multiple different meals per order(cart)</li>
+<li>4.3 users should be able to view and edit details such as delivery address and payment method before confirming the order.</li>
+<li>4.4 If a user did not provide a delivery address/ payment method before ordering, they will be promt to provide them before checking out.</li>
+<li>4.5 users should be able to add promotional code for discounts to orders.</li>
+<li>4.6 Each order can not have more than one promo code applied.</li>
+</ul>
+</li>
+</ol>
+<h2 id="conceptual-data-modelling-erd">Conceptual Data Modelling (ERD)</h2>
+<p>Here is the ERD for the Deliveroo DB system based on the business rules</p>
+<p><img src="file:///deliveroo/b_erd.PNG" alt="BRM"></p>
+<p><em><strong>Fig.0</strong> Main ERD</em></p>
+<h3 id="design-note">Design Note</h3>
+<p>The ERD is drawn using the software <strong>ER-Assistant</strong>, therefore notation for super/sub-entity relationship at Payment(<strong>fig.1</strong>) could seem different from the regular Crows Nest notation(<strong>fig.2</strong>). In <strong>Fig.1</strong>, the bolded arrow notates that the Paypal and CreditCard entities are subtypes for the supertype Payment entity. Additionaly, the <strong>D</strong> and <strong>C</strong> means its a <strong>Complete</strong>/Total specilization(supertype instance must be a subtype) with <strong>Disjointed</strong> constraints(Supertype instance can only be one of the subtypes).</p>
+<p><img src="file:///deliveroo/b_assistant.PNG" alt="ER-A notation"></p>
+<p><em><strong>Fig.1</strong> ER-Assistant super/subtype</em> notation</p>
+<p><img src="file:///deliveroo/b_propper.PNG" alt="crow"></p>
+<p><em><strong>Fig.2</strong> Crows Nest Super/Sub notation</em></p>
+<h2 id="design-justification">Design Justification</h2>
+<h3 id="1-user-fig3">1. User (<em>fig.3</em>)</h3>
+<p><img src="file:///deliveroo/b_customer.PNG" alt="customer"></p>
+<p><em><strong>Fig.3</strong> ERD - User</em></p>
+<ul>
+<li>Regarding the Entity types of User, Payment and Address:
+<ul>
+<li>The decision to make User a strong Enity, while making Payment and Address weak entities is from:</li>
+</ul>
+<blockquote>
+<p><strong>BR 1.1</strong>: Each User should be able to store multiple delivery address in their account.</p>
+<p><strong>BR 1.2</strong>: Each User should be able to store multiple payment methods in their account wether its a paypal account or through a creditcard.</p>
+<p><strong>BR 1.4</strong>: When signing up, users will <strong>only</strong> be asked to enter an email, their name and set up a password for the account.</p>
+</blockquote>
+<ul>
+<li>As <strong>1.4</strong> states that new instances of User only require only details such as Name,Email and Password. Making User a strong Entity.</li>
+<li>Also in <strong>1.1</strong> and <strong>1.2</strong>, Payment and Address are dependent on Users. Hence they are weak entities</li>
+</ul>
+</li>
+<li>Regarding the Relationships between User - Address and User - Payment
+<ul>
+<li>These 3 BR shows the choice for the relationship:</li>
+</ul>
+<blockquote>
+<p><strong>BR 1.1</strong>: Each User should be able to store multiple delivery address in their account.</p>
+<p><strong>BR 1.2</strong>: Each User should be able to store multiple payment methods in their account wether its a paypal account or through a creditcard.</p>
+<p><strong>BR 1.4</strong>: When signing up, users will <strong>only</strong> be asked to enter an email, their name and set up a password for the account.</p>
+<p><strong>BR 4.4</strong> If a user did not provide a delivery address/ payment method before ordering, they will be promt to provide them before checking out.</p>
+</blockquote>
+<ul>
+<li>BR <strong>1.1</strong> and <strong>1.2</strong> both states that the relationship between Users - Payment and Users - Address will be both <strong>One for Users</strong> to Many for both Payment and Address.</li>
+<li>For Cardinality, BR <strong>1.4</strong> and <strong>4.4</strong> both shows that a user does not need to have any data regarding adressor payment to start using the Deliveroo Service. Hence the OneMandatory(User) to ManyOptional(Payment, Address) cardinality</li>
+</ul>
+</li>
+<li>Regarding the Super/subtype entity Payment:
+<ul>
+<li>The BR <strong>1.2</strong> shows the need to have a super/subtype entity</li>
+</ul>
+<blockquote>
+<p><strong>BR 1.2</strong>: Each User should be able to store multiple payment methods in their account wether its a paypal account or through a creditcard.</p>
+</blockquote>
+<ul>
+<li>Each instance of Payment would only be either an instance of Paypal or CreditCard(Total Specialization with Disjointed Constraint)</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-restaurant-fig-4">2. Restaurant (<em>fig. 4</em>)</h3>
+<p><img src="file:///deliveroo/b_rest.PNG" alt="Restaurant"></p>
+<div><img src="file:///deliveroo/b_rest.PNG" align="middle"></img></div>
+<p><em><strong>Fig.4</strong> Restaurant ERD Section</em></p>
+<ul>
+<li>Regarding the Restaurant and Meal
+<ul>
+<li>Starting with the Restaurant Entity, BR 2.1 and 2.2 show the need for Restaurant to be its own Strong Entity</li>
+</ul>
+<blockquote>
+<p><strong>BR 2.1</strong>: The list of restaurants a user could order from is based on the distance</p>
+<p><strong>BR 2.2</strong>: The list of restaurants should be able to be filtered by cuisine type</p>
+</blockquote>
+<ul>
+<li>Where as for Meal being a weak entity is shown in BR 3.1. The business rules also the need for the relationship between Restaurant and Meals to be One(Restaurant) to Many(Meal)</li>
+</ul>
+<blockquote>
+<p><strong>BR 3.1</strong>: Each restaurants are able to offer multiple different meals and the meals are speparated into different categories set by the restaurant owner.</p>
+</blockquote>
+<ul>
+<li>As for the Mandatory cardinality for both side is decided through reasoning. It does not make much sense if a Restaurant does not have any meals availible for Customers to orderfrom. Also if there are meals which are not belong in any restaurants, how will they be made.</li>
+</ul>
+</li>
+<li>Regarding Meal and its Categories
+<blockquote>
+<p><strong>BR 3.1</strong>: Each restaurants are able to offer multiple different meals and the meals are speparated into different categories set by the restaurant owner.</p>
+</blockquote>
+<ul>
+<li>BR 3.1 shows the need for the MealCategory entity. As for the mandatory cardinality for Meal, its made under the assumption of all Meal instances are required to have a category.</li>
+<li>As for the mandatory cardinality for Category, it is to reduce data redundency and prevent the menu from showing empty categories.</li>
+</ul>
+</li>
+<li>Regarding Meal-Options and Option
+<ul>
+<li>The Strong Entity Option is there to store different addons cutomers can add to their meals. This satisfy the BR 3.3</li>
+</ul>
+<blockquote>
+<p><strong>BR 3.2</strong> users should be able to customise their meals with different options(size, extra toppings) if they wish to.</p>
+</blockquote>
+<ul>
+<li>As BR 3.2 requires meals can have &quot;different options&quot;, meaning many Ordered Meals can have many Options. The Entity Order-Meal is an associative entity to break up the M:N relationship between Option and Order-Meal.</li>
+</ul>
+</li>
+<li>Regarding Order-Meal</li>
+</ul>
+<h3 id="3-ordering-fig-5">3. Ordering (<strong>fig. 5</strong>)</h3>
+<p><img src="file:///deliveroo/b_order.PNG" alt="order"></p>
+<p><em><strong>Fig. 5</strong> Order Section</em></p>
+<ul>
+<li>Regarding the Order entity</li>
+<li>Regarding relationship with Order-Meal</li>
+<li>Regarding relationship with Restaurant</li>
+<li>Regarding relationship with Promotion</li>
+<li>Regarding User and Delivery entity</li>
+</ul>
+
+    </body>
+    </html>
