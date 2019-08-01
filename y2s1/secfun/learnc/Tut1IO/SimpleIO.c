@@ -1,22 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char* enterText(char *s)
+char* enterText()
 {
-    // *s = (char*)malloc(20);
-    scanf("%99s", &s);
+    char *s = (char*) malloc( 100 );
+    scanf("%s",s);
     return s;
 }
 
-int main(void){
-    char first[100];
-    char last[100];
-
-    printf("Whats your firstname? \n");
-    enterText(first);
-    printf("Whats your Lastname \n");
-    enterText(last);
-    printf("Hello %s %s, How are you doing? ", first, last);
+int main(){
+    char *first = enterText();
+    char *last = enterText();
+    printf("Hey hey %s %s, Whats going on? ", first, last);
     exit(0);
 }
 
