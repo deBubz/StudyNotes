@@ -21,7 +21,7 @@
 
 ## Whatis Signature
 
-**Signatures** are used to bind an author to a document. Desireble props are
+**Signatures** are used to bind an author to a document. Can be used to figgure out who is the author. Desireble props are
 
 - **Authentic** suffecient belief that the signer deliberatly signed the doc
 - **Unforgeable** Proof that only the signer could have signed the doc, no-one else
@@ -76,6 +76,8 @@ Step-by-Step: **Alice** wishes to sign a message and send it to **Bob**. This pr
 >
 > Why include `r = {0,1}^n` in the signature
 >
+> Prevent Sig reuse
+>
 > Consider
 >
 > - Alice send Bob a digital cheque for 100
@@ -84,7 +86,7 @@ Step-by-Step: **Alice** wishes to sign a message and send it to **Bob**. This pr
 >
 > What is stopping Bob from cashing it twice (replay attack)
 >
-> - the random valuer `r` is known as nonce and is used to aboud replay (assure "freshness")
+> - the random valuer `r` is known as nonce and is used to aboud replay (assure **"freshness"**)
 > - Bank keep tracks of all nonce it has seen so far from alice
 
 ### Signature based on RSA
@@ -93,7 +95,7 @@ Step-by-Step: **Alice** wishes to sign a message and send it to **Bob**. This pr
 
 - **Key Generation**
   - `n = pq` (p,q are large primes)
-  - `de = 1 mox φ(n)`
+  - `de = 1 mox φ(n)` (1 mod phi of n)
   - `Apu = (n,e)`
   - `Apr = (n,d)`
 - **Signature Generation**
@@ -237,6 +239,8 @@ DSA was selected by NIST as the **Digital Signatue standard** (DSS)
 ---
 
 ## SSL/TLS
+
+> check lecture recording 30min
 
 In standard `HTTP`, everything goes across the line in plaintext (insecure). This leave connection vulneraable to:
 
