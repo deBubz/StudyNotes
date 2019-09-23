@@ -1,2 +1,0 @@
-# ProgFundamentals Lab2
-

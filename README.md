@@ -1,2 +1,3 @@
 # StudyNotes
-Study notes from uni and any MOOC
+
+Uni study notes for the semester. All completed semester notes are then transfered to google drive.
