@@ -1,5 +1,32 @@
 # Week 7
 
+- [Week 7](#week-7)
+  - [Authentication](#authentication)
+  - [**Objectives** of Identification Protocols](#objectives-of-identification-protocols)
+    - [Basis of identification](#basis-of-identification)
+    - [Example of Authentication](#example-of-authentication)
+    - [Attacks of Authentication](#attacks-of-authentication)
+  - [Passwords](#passwords)
+    - [Problems with password](#problems-with-password)
+    - [UNIX /etc/passwd](#unix-etcpasswd)
+    - [Dictionary Attacks](#dictionary-attacks)
+    - [Salting](#salting)
+    - [Brute Forcing Hashes](#brute-forcing-hashes)
+  - [Mordern Password Hashing](#mordern-password-hashing)
+    - [bcrypt](#bcrypt)
+    - [scrypt](#scrypt)
+  - [One-Time Password](#one-time-password)
+    - [Lamport's One Time Password](#lamports-one-time-password)
+      - [Pros and cons](#pros-and-cons)
+    - [HTOP](#htop)
+    - [TOTP](#totp)
+    - [Challenge-Response Authentication](#challenge-response-authentication)
+      - [Symetric Crypto](#symetric-crypto)
+      - [Asymetric Crypto](#asymetric-crypto)
+    - [Zero-knowledge proofs](#zero-knowledge-proofs)
+    - [Naive HTTP(web server) Auth](#naive-httpweb-server-auth)
+  - [Key Points](#key-points)
+
 ## Authentication
 
 Authentication is a mean where identity is established
