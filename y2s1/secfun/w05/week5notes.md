@@ -1,5 +1,7 @@
 # Week 5
 
+Symmetric - samekey for both encr and decr
+
 ## Data Encryption Standard (DES)
 
 Is a block cipher operating on **64-bit block** using **56-bit key** (world most heabily analyzed and used cipher)
@@ -56,7 +58,7 @@ Criteria:
 - Strength => 3DES with much better efficiency
 - Flexible - can be implemented is software, hardware, smartcards
 - Simple and Elegant
-- Block cipher: 128-bit block
+- Block cipher: 128-bit block (DES uses 64 bit block)
 - 128/ 192/ 256 bit keys
 - Royalty free world wide
 - Security for 30 years
@@ -71,7 +73,7 @@ Rijndael
 - Variable key length: 128, 192, 256
 - Its an Substition-Permutation network
 - Uses a single S-box which acts on a byte input to give a byte output (256 byte lookup table)
-    > `S(x) = M(x^-1) + b over GF(2^8)
+    > `S(x) = M(x^-1) + b over GF(2^8)`
 - Where `M` is a redefined matrix, `b` a constant, `GF` is chosen Galios Fels( non lineararity comes from `x -> x^-1)
 - Construction gives tight differential and linear bounds
 
@@ -99,19 +101,16 @@ Potential attacks (which require an enormous number of plaintext/ciphertext pair
 - **Key Establishment**: process whereby a shared key become available to 2 or more parties for subsequent cryptographic use.
 - **Key Management**
   - set of processess and mechanism which support key establishment and the maintenance of on-going key relationship between parties, including older keys with newer ones.
-- **Includes**
-  - Key agreemant
-  - Key transport
+  - **Includes**
+    - Key agreemant
+    - Key transport
 
 ### Key Management
 
-s16
-
-Suppose we have a symmetric key network where `A`, `B`, `C` and `D` wants to talk to each other.
-
+Suppose we have a symmetric key network where `A`, `B`, `C` and `D`(4 parties) wants to talk to each other.
 For secre comms with `n` parties, we require
 
-`(n(n-1)) / 2` keys (6 keys for 4 parties)
+`(n(n-1)) / 2` keys
 
 Keys Distribution and management becomes a major issue
 
@@ -130,9 +129,9 @@ Keys Distribution and management becomes a major issue
 
 > **Problems**
 >
-> - Key Distribution Center is a single point of failure(single point of  Attack)
+> - Key Distribution Center is a single point of failure(single point of  Attack
 > - No Auth
-> - Poor scalability
+> - Poor scalability (DOS)
 > - Slow
 
 ### Merkle's Puzzle
