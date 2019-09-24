@@ -1,32 +1,5 @@
 # Week 6
 
-- [Week 6](#week-6)
-  - [Asymetric-Key Cryptography](#asymetric-key-cryptography)
-    - [Public Key Cryptography](#public-key-cryptography)
-    - [Asymetric Cipher](#asymetric-cipher)
-    - [Why Asymmetric Key](#why-asymmetric-key)
-  - [Diffie-Hellman Key Exchange](#diffie-hellman-key-exchange)
-    - [Paint Analogy](#paint-analogy)
-    - [Hardness of Diffie-Hellman](#hardness-of-diffie-hellman)
-    - [Attacks on the Discrete Log Problem](#attacks-on-the-discrete-log-problem)
-    - [Selecting g and p for Diffie-Hellman](#selecting-g-and-p-for-diffie-hellman)
-    - [Strength of DH](#strength-of-dh)
-  - [RSA](#rsa)
-    - [Operation](#operation)
-    - [RSA Example](#rsa-example)
-    - [Security of RSA](#security-of-rsa)
-      - [Core Security](#core-security)
-    - [Not proven to be "hard"](#not-proven-to-be-%22hard%22)
-    - [Factoring Attack](#factoring-attack)
-    - [size of Modulus](#size-of-modulus)
-  - [Symmetric v Asymmetric](#symmetric-v-asymmetric)
-    - [Summary Symmetric Crypto](#summary-symmetric-crypto)
-    - [Summary Asymmetric Crypto](#summary-asymmetric-crypto)
-  - [Combinding Crypto System](#combinding-crypto-system)
-    - [symetric Crypto: Key Length](#symetric-crypto-key-length)
-    - [Interesting ways to break symmetric ciphers](#interesting-ways-to-break-symmetric-ciphers)
-    - [Asymetric Crypto Key length](#asymetric-crypto-key-length)
-
 ## Asymetric-Key Cryptography
 
 - Both **Symmetric** and **Asymmetric** key crypto will exist in parallel and continue to serve the community.

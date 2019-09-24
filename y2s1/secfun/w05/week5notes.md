@@ -1,5 +1,6 @@
 # Week 5
-o- [Week 5](#week-5)
+
+- [Week 5](#week-5)
   - [Data Encryption Standard (DES)](#data-encryption-standard-des)
     - [Attacks on DES](#attacks-on-des)
     - [2DES](#2des)
