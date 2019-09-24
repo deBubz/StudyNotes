@@ -288,14 +288,33 @@ Ultimately, salting makes dictionarry attacks exponentiall harder (unless the sa
 
 2 common type of password hashing
 
-- **bcrypt**: key deriviation func password (highly reccomended for websites as its very easily implimented for all languages)
-- **scrypt**
+- **bcrypt**: key deriviation func password (highly reccomended for websites as its very easily implimented for all languages). Makes hasing expensive by using more time(more rounds) (still vulnerable to *hardware attacks*)
+- **scrypt** makes pw hashing harder by using more space. (bigger size hash/key/salt?)
 
 ### One Time Password
 
+One time use, passwords to prevent evesdropping and replay attacks.
+
+There are **many variations** of OTP
+
+- shared OPT list
+- challange/ response table
+- sequentially updated OTP (e.g user creates and uploads `k<i+1>` when using `k<i>`
+- OT-sequence based on one-way func(Lamport)
+- **HTOP** HMAC-based OTP (RFC4226)
+- **TOTP** Time based TOP, extension of **HOTP** (key expired on set `t` timeout)
+
 ### ZKP
 
+**Zero Knowledge Proofs**(ZKP) or challange-response auth. Where id is proven by demonstrating knowledge of secret while revealing no info about that secret.
+
+
+
 ### Naive HTTP
+
+- **Basic Auth** uses `base64` encoding of `username:password`
+- **Basic Hash** use `md5`
+- (opt) Auth basic `QWRtaW46Zm9vYmFy` (google that, pretty cool)
 
 ---
 
