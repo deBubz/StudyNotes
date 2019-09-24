@@ -21,6 +21,7 @@
   - [Week 7](#week-7)
     - [Authentication](#authentication)
     - [Passwords](#passwords)
+    - [Dictonary attack](#dictonary-attack)
     - [Password Salt](#password-salt)
     - [Password Hashing](#password-hashing)
     - [One Time Password](#one-time-password)
@@ -227,11 +228,68 @@ still can be broken by:
 
 ### Authentication
 
+Main **goal** of **Auth** is to securely establish identity of an individual in an *unsecured channel*
+
+The **problem** is to make sure the id confirmation is not tampered by an evesdropper
+
+**Attacks** on Auth
+
+- **Impersonation** hey im you, no i am me. (in another sesh)
+- **Interleaving**: sending information from an ongoing auth to the originator(this is my auth  request now)
+- **Forced Delay**: intercepts and relay msg at a different time
+- **Chosen Text**: intruder attempts to figure out the secret key, from multiple request
+
+> NOTE
+>
+> - cannot reuse `id` auth exchange in another session (*impersonation*)
+> - its should be computationally hard for impersonation (even after multiple sessions)
+
 ### Passwords
+
+Password is just password(weak and simple). Theyre often hashed and salted, then stored on db for extra security
+
+BUT
+
+- still vulnerable to keyloggers, people behind you
+- can still be evesdropped/ replayed ( partially fixed by using a secured channel - DF, Symmetric crypto
+
+> UNIX `/etc/passwd`
+>
+> - truncate password to 8 char (7-bits /char => 56-b)
+> - use DES as hash, encrypy 64-b block of `0`'s using truncated password as key (25 rounds)
+> - added 2-byte salt, prevent standard DES cracking
+> - stored format `user:password:uid:guid:homedir:shell`
+
+### Dictonary attack
+
+extension of bruteforce, uses a dictionary of well known/pre-computed passwords.
+
+Wont affect all users, but can affect a large portion of *tech-illiterate* individuals
+
+**e.g** Rainbow Tables
 
 ### Password Salt
 
+> - `p` password
+> - `h()` hash func
+> - `s` random string
+
+rather than just stored `h(p)`. A random `s` is generated and added to the hash `h(p || s)`
+
+The salt `s` are then often stored with the hash `h(p || s)` in the database. 
+
+Ultimately, salting makes dictionarry attacks exponentiall harder (unless the salt is known, then bruteforce can be applied)
+
 ### Password Hashing
+
+> General password hash shoud be slow(or complex) to slow down bruteforce
+>
+> `MD5`, `SHA-1`, `SHA256` shouldnt be used since they are designed to be fast.
+
+2 common type of password hashing
+
+- **bcrypt**: key deriviation func password (highly reccomended for websites as its very easily implimented for all languages)
+- **scrypt**
 
 ### One Time Password
 

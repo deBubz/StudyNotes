@@ -40,7 +40,7 @@ Bob must ensure Alice's id and has actively participated.
 
 ## **Objectives** of Identification Protocols
 
-- if `Alice` and `Bob` are honest. `A` should be able so succesfully auth herself. (`B` will complete the protocol having verified `A` identity)
+- if `A` and `B` are honest. `A` should be able so succesfully auth herself. (`B` will complete the protocol having verified `A` identity)
 - `B` cannot reuse an id exchange with `A` as so to impersonate `A` in conversation with others
 - Probability that `E`(attacker) to impersonate `A` is computationally hard
 - All above should be **true** even if
