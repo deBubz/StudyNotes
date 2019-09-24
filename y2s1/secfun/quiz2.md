@@ -32,6 +32,7 @@
     - [SSL/TSL](#ssltsl)
     - [Certificate Authenticator](#certificate-authenticator)
     - [Online Certification Status Protocol](#online-certification-status-protocol)
+    - [SSL Cert Aquisition](#ssl-cert-aquisition)
 
 ## Week 5
 
@@ -244,10 +245,97 @@ still can be broken by:
 
 ### Digital Signature
 
+**Signature** used to bind an author to a doc. Desirable props:
+
+- **Authentic**
+- **Un-forgeable** only the auth can sign
+- **Non-reusable** used only for that one doc
+- **Non-Repudation** auth can not deny its not theirs
+
+All of these props are considered when designing systems that uses signatures
+
 ### DSA
+
+- **m** message to be signed
+- **k** secret key
+- **F** signature scheme (func)
+- **S** the signature
+
+> `S = F(m, k)`
+
+Given `(m, S)` signature is verifiable without `k` (achieve non-repundancy)
+
+**DSA** with public keys
+
+1. Key Gen
+2. Signature Generation
+3. Signature Verifications
+
+**Attacks** on DSA with public keys
+
+- **Total Break** recovered `A<pr>` and `A<pu>` from `(m, S)`
+- **Selective Forgery** forge sigs for a particular msg/class of msg
+- **Existential Forgery** only theory
+
+> Preventing **Signature Replay (reuse)**
+>
+> uses a nonce `r = {0, 1}^n` (random binary length `n`)
+>
+> used to assure **"freshness"** per transaction
+
+Theres also:
+
+- Signature based on **RSA**, but
+  - can be tricked by evesdropper in signing any `m` (by maths tricks) generating a valid `(m, S)`
+- **Public Key Cryptography Standard** 1 (PKCS1) uses hash ( much faster than RSA)
+- **ElGamal**, whose security is based on the DLP
+- Signatures based on **One-Way Func**
+
+> NOTES: DSA
+>
+> - security of DSA is similar to Elgamal
+> - DSA cant be used for encryption
+> - Sigs are shorts (aprx 320-b)
 
 ### SSL/TSL
 
+- **SSL** Secure Socket Layer (old name)
+- **TSL** Transport Socket Layer
+
+They use:
+
+- Asym encryption for auth
+- Sym encryption for confidentiality of Messages
+- MAC for integrity
+
+> `SSL/TSL` + `http` = `https`
+>
+> only `ip`, `port` and size of `m` is revealed with `https`
+
 ### Certificate Authenticator
 
+Certs comes from **Certificate Authentocators** (CAs).
+Which are truted 3rd party orgs whom issue *ditital certs*
+
+Certs are
+
+- Included with browser, OS, other software
+- When a server sends a cert to a browser, browser check with a trusted CAs if they signed it.
+
 ### Online Certification Status Protocol
+
+The **Online Cert Status Protocol**(OCSP) is for reverting protocols
+
+- browser see a new Cert, makes a request to OCSP url embedded in the cert
+- OCSP send a response to signify the new cert is valid
+- response signature only contain a part of the data, doesnt include response status.
+
+Possible **MiTM**, intercepting the OCSP response and send `tryLater`. Tricking the browser to think its OK
+
+### SSL Cert Aquisition
+
+1. Generate public/ private keypair for a server
+2. Geberate **CertSigningRequest**(CSR) containing domain name, publ key, and other details to send to CA
+3. CA confirms detail (domain validation or extension)
+4. CA sign and return Cert
+5. Installed on server

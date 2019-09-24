@@ -55,7 +55,7 @@ Step-by-Step: **Alice** wishes to sign a message and send it to **Bob**. This pr
   1. Alice Generate 2 keys
   2. `Apu` is published in a public dict (verifying)
   3. `Apr` is kept secret (signing)
-- **STEP2** Signature Verification
+- **STEP2** Signature Generation
   1. Alice chooses `n` random bits `r = {0,1}^n`
   2. Alice hashes the message to get a message digest `d = h(m)`
      - Uses collision resistan hash (CRHF)
