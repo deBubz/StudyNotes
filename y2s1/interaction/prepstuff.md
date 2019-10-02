@@ -1,5 +1,3 @@
-# Prep Stuff
-
 ## Design Principles
 
 - **Visibiity**: Show Opportunity to interact (visual cues), guide through task, show what is possible(color, contrast, size, placement, consistancy..)
@@ -11,16 +9,14 @@
   - Gestalt - Simplicity, closure, symmetry/order, figure/ground, uniform connectedness, common regions, proxumity, parallelism, similarity, Focal points
 - **Signifiers**: text signals(hints, labels, short intro) show how to interact. (push pull)
 
-## Usability Design principles
-
-### (Preece et al, 1994)
+### Usability Design (Preece et al, 1994)
 
 - **Know the User**: target audience duh
 - **Reduce Cognitive load**: less clutter - so user dont have to remember large ammount of details
 - **Enginner for error**: designed to prevent error and enable recovery from error
 - **Maintain consistency and clarity** duh
 
-### (Sommervile, 1995)
+### Usability Design (Sommervile, 1995)
 
 - **User familiarity** use terms/concepts which are already familiar to the targeted audience
 - **Consistency** duh
@@ -28,7 +24,7 @@
 - **Recoverability** ui should include ways to recover from error
 - **User Guidance** ui should include some form of context sensitive user guidance and assistance
 
-### (Maculay, 1995)
+### Usability Design (Maculay, 1995)
 
 - **Naturalness**: users doent have to change their approach to their work to interact of the system
 - **Consistency**: duh - fancy expl: built expectation from one part of the system are not changed in another
@@ -67,16 +63,12 @@
 
 ## Stuff
 
-- Immersion
-  - **Immersion** is the process whereby you become ‘immersed’ or deeply interested in a story or particular material.
-  - **Immersion** implies a passive act, rather than something you are actively engaged in.
+- **Immersion** is the process whereby you become ‘immersed’ or deeply interested in a story or particular material.
+- **Immersion** implies a passive act, rather than something you are actively engaged in.
+- `watching ‘My Neighbor Totoro’.  The story captures the wonder of being a child and really drew me in.`
 - **Engagement** is the process where you are actively ‘engaged’ in solving a particular problem.
 - **Engagement** implies action – like trying to overcome a challenge, understand some difficult material.
-
-> I got really immersed watching ‘My Neighbor Totoro’.  The story captures the wonder of being a child and really drew me in.
-> Whereas, Tiny Wings is just totally engaging. The mechanics are elegantly simple and yet deeply challenging at the same time.
-
-### Stuffs
+- `Tiny Wings is just totally engaging. The mechanics are elegantly simple and yet deeply challenging at the same time.`
 
 - **Cognition**: input
 - **Visual/auditory/tactile** perception: output
