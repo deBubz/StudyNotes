@@ -1,5 +1,9 @@
 # Security protocols
 
+> a number of public/private keys are used to achieve Perfect Forward Secrecy
+
+> Often uses session keys 
+
 ## Perfect Forward Secrecy
 
 A protocol has **perfect forward secrecy** if disclosure of long-term does not compromise previous (short term) sessions
@@ -12,6 +16,8 @@ Protocols are vulnerable to **known key attack** if disclosure of past session k
 ### MiTM
 
 Suppose `A` and `B` performs DH key exchange, but `E` owns the communication channel and can intercepts traffic without the knowledge of `A` and `B`
+
+> `E` now can replace what is sent with its own keys
 
 - shared for `A` and `E` is `g^ax mod p`
 - shared for `B` and `E` is `g^bx mod p`
@@ -38,6 +44,10 @@ Suppose `A` and `B` performs DH key exchange, but `E` owns the communication cha
 
 `needham-Schroeder`'s problen is that is assumes all users of the system are good, and the goal is to keep bad parties from getting in.
 
+> not using pub/priv key
+>
+> only symmetric
+
 ### Kerberos
 
 **kerberos** is a protocol which builds on **Needham-Shroeder** protocol. It allows noedes with in the insecure network to prove identity to each other.
@@ -54,7 +64,6 @@ public key cert binds a public key to its owner:
 
 - Everyone must be able to berify the `CA`'s publlic key so its shipped with OS, browsers...
 - `CA` is a trusted party: it has the ability to issue signatures to whomever
-
 ## Public Key Certificate Generation
 
 1. `A` generates public/private keypair
@@ -83,13 +92,13 @@ This is a `major` problem with the `CA` system
 
 ## Trust Model
 
-- **Symmetric keys**
+- **Symmetric keys** (kdc)
   - TTP must be online (used every session)
   - TTP is a juicy tarket(known passwords)
   - no forward secrecy
 - **Assymetric keys**
   - TTP is offline (only used in generation)
-  - TTP onlu knows public key
+  - TTP only knows public key
   - TTP has forward secrecy
   - Not as fast (e.g SSL/TLS, PGP)
 
@@ -229,4 +238,21 @@ Overal
 
 ## Mental Poker
 
+**Problem** `A` and `B` wants to play poker over email, They dont trust each other to deal hands fairly
+
+> Use a **Commutative public key crypto system**
+>
+> 1. `A` and `B` generates keypairs `a`, `b`
+> 2. `A` encrypts 52 message `m1 = (ace-spades, r1)` , ... using her public key and sends these blobs `x1`, `x2`, ... to `B`
+> 3. `B` picks 5 however he pleases (random or not), encrypts them with his public key, sends them back to `A`
+> 4. `A` decrypts the messages with its public key, sends back to `B`
+> 5. `B` decrypts message: its hand
+> 6. At the end, `A` and `B` may reaveal their keys to ensure no one cheated
+
 ### Attacks against the Poker Scheme
+
+Cryptosystems (esp if based on number theory) tend to leak small amt of info, if not used in conjuction with hash func
+
+**e.g** in RSA, if the num representing the card is a quardratic residue ( square num modulo the RSA modulus), then the encryption of the card is also a quadratic residue. *Could be used by the dealer to "mark" certain cards*
+
+what why
