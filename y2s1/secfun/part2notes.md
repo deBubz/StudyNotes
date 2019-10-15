@@ -47,6 +47,44 @@ block size are 128 byte
 **cbc** Cipher Block Chaining mode, The first block (128byte/16char) is encrypted using the provided IV and key.
 The ciphertext for that will then also act as the IV for the next block (which uses the same key)
 
-## Symmetric
+## Symmetric (single key)
 
-## Asymmetric
+- What
+  - Same key to encr/decr
+  - Short key (128, .. 256)
+  - can be used as primitives to create other construct such as PRNG
+  - used(simple substitution, permutation) to construct stronger ciphers
+- Usage
+  - **GOOD FOR** encryption and data integrity applications
+  - DES, AES
+
+## Asymmetric (Two Key)
+
+- **What**
+  - Private(decr), public(encr)
+  - Establish secure communication when was not done beforehand
+  - Longer key (1024,... 4096 bits) slower
+- **Usage**
+  - **GOOD FOR** key management and signatures
+  - Asym crypto used to establish key for subsequent faster symmetric crypto (session key)
+  - Diffie-Hellman
+  - RSA (Most popular pulicke algo)
+    - Both public/private are interchangable
+    - Key 512, 1024, 2048
+  - ElGamal
+    - less common, more for PGP (512 or 1024)
+
+## Comparison
+
+## Misc
+
+- **Perfect Secrecy** Key/ cipher doesnot reveal anything of the main text (patterns)
+- Other Block Ciphers
+  - ElectronicBlockCipher: each block seperately
+- AES keys 128, 192, 256
+
+## Attacks
+
+- **DES** Exhaustive Key Search
+  - 2DES broken in `2^56`
+  - 3DES `2^112`
