@@ -12,10 +12,11 @@
   - initial vector (if neccesary/optional can be null)
 - `EVP_EncryptUpdate(&ctx, outbuf, &outlen, plaintext, strlen(plaintext))`
   - ctx interface
-  - outbuf, outlen output length 16 (first block)
+  - outbuf, outlen output length 16 (first block or nth complete block)
   - plain, strlen() input, input length to encrypt
+  - encrypt a "full" block at (plaintext + pointer)
 - `EVP_EncryptFinal_ex(&ctx, outbuf + outlen, &tmplen)`
-  - enctypt block which requires padding
+  - enctypt block final partial block which requires padding
   - ctx interface
   - `unsigned char *` outbuff with pointer at 16byte down
   - tmplen length of the encrypted block
@@ -54,6 +55,7 @@ The ciphertext for that will then also act as the IV for the next block (which u
   - Short key (128, .. 256)
   - can be used as primitives to create other construct such as PRNG
   - used(simple substitution, permutation) to construct stronger ciphers
+  - Session key
 - Usage
   - **GOOD FOR** encryption and data integrity applications
   - DES, AES
@@ -66,7 +68,6 @@ The ciphertext for that will then also act as the IV for the next block (which u
   - Longer key (1024,... 4096 bits) slower
 - **Usage**
   - **GOOD FOR** key management and signatures
-  - Asym crypto used to establish key for subsequent faster symmetric crypto (session key)
   - Diffie-Hellman
   - RSA (Most popular pulicke algo)
     - Both public/private are interchangable
@@ -75,6 +76,8 @@ The ciphertext for that will then also act as the IV for the next block (which u
     - less common, more for PGP (512 or 1024)
 
 ## Comparison
+
+- Asym crypto used to establish key for subsequent faster symmetric crypto (session key)
 
 ## Misc
 
