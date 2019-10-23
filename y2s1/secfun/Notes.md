@@ -114,9 +114,32 @@
 - Homophonic cipher: extension of substitution which target/replace a comon letter with miltiple different chars
   - `e` would substitue with any of `[a, 2, 7, 8, c]`
 - Vigenere cipher: `plain + keystream` mod `26`
+
 ---
 
-## Week 4
+## Week 4 PRNG and BlockCipher
+
+- good source of RNG is essential in cryptography(session keys, nonce, shuffling, challanges)
+- PseudoRNG generate what appears random
+- CryptographicallySecure PRNG are types of PRNG with props that makes it suitable for crypto
+- **Entropy** or **randomness** measure of randomness which is used as the **seed** to generate random numberk
+  - sourced from userinput, thermal noise of hd, voltage reading, cpu clock...
+
+### PRNG
+
+- Desireable props
+  - repeatability
+  - statistical randomness
+  - long period/cycle
+  - insensitive to seeds
+- broken by
+  - statistical test to find patterns
+  - infering the state of internal registers from the output sequenceo
+
+### PRNG: linear congruential generators
+
+### PRNG: linear feedback shift registers
+
 ---
 
 ## Week 5
