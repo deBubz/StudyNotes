@@ -1,0 +1,154 @@
+* SecThings 
+** Intro to Security
+*** Types of cyrptography
+**** Classical Crypto
+     - Symetric: Same key to encrypt/decrypt
+     - Product Cipher: transposition, substituion cipher
+**** Public Key Crypto
+     - Asymmetric: two different keys, public to encrypt, private to decrypt
+       Must be difficult to derrive private from public or chosen plaintext attacck
+**** Crypto Checksum
+     - Hash Functions and Keyed Hash functions(MAC and HMAC)
+** Number Theory 
+   - divisors, gcd, euclidean algo
+   - modular arimethics
+   - generators, inverse a is a^phi(n) mod p
+   - CAIN closurem, assi, identity, inverse
+   - Group -> rign -> field
+** Hash Func & Ciphers
+*** Context
+    - Cryptography: study of math techniques related to cipher design
+    - Cryptanalyis: study of breaking crypto
+    - Crypto: study of both
+*** HashFunc
+   - Map a long string to a short fixed length string
+**** General
+     - used to store password, verify integrity, zero knowledge proof
+     - Hash are preimage resistance, 2nd preimage resistance(hard to find a different m with the same c), collision resistance(same c different m) 
+     - Collisions Hash Func satisfy collision res and 2nd pre
+**** OneWay
+     - Hard to find preimage of (x of f(x))
+     - is pre and 2nd preimg resistance
+**** HMAC/MAC
+     - MessagedAuthedCodes - oneway hash func with key
+     - HashedBased MAC
+     - Mainly for integrity
+**** Attacks 
+     - Bruteforce(match) all posibilities to find match
+     - usually takes 2^n-1 (n bit output)
+*** Substitution Ciphers
+    - Simplest: shift letter by 3, breable
+    - Homophonic: prevent frequency analysis
+    - Vinegrene: plain + key mod 26
+** PRNG & Block Cipher
+*** PRNG
+**** Linear Confruential Generator
+     - Sequence of num starting with seed and follow a rule 
+     - insecure, easily reversible
+**** Linear Feedback shift Generator
+     - combines bits of a seris of register, shift output tonto register
+     - insecurem can be fetermined from 2^n output 
+*** OneTimePad
+    - is using different substitution cipher for each letter of plain
+    - perfecly secure if
+     - k is truely randon
+     -plaintext/key stream does not repear
+*** Perfect Secrecy
+    - Cipher doesnot reaveal anything about plain, very slow, high bandwidth
+    - TwoTimePad is perfecly insecure
+    - Streamcipher is malleable
+*** Block Cipher mode of operation
+    - ElectronicCodeBook: encr Each block seperately, open to freq analysis
+    - CipherBlockChaining: blocks chained together using XOR, also uses randomIV, errors only affect 2 plaintxt box
+**** Block Cipher
+     - encr one block at a time, hard to reverse
+     - ECB, CBC
+**** Stream Cipher
+     - One Byte at a time, easily reversed, complex, malleable
+     - RC4, CFP, OFB
+** Sym & Key Exchange
+*** DataEncrStandard
+*** AdvancedEncrStandard
+*** KeyDistribution
+*** Merkle Puzzle
+*** DiffieHelman
+** Asym Encr & RSA
+*** PublicKey(Asym) crypto
+*** DSA
+*** ElGamal
+*** DiffieHelman
+*** Sym v Asym
+** Authentication
+*** Basis of Auth 
+*** Password
+*** OneTimePassword
+**** Lamport
+**** HOPT
+**** TOTP
+*** ZeroKnowledge Proofs
+** Digital Signature
+*** What
+*** Sig with public key
+*** PKCS#1 Signature Scheme
+*** Sig ased oneway Func
+*** SSL TLS
+*** Certificates
+**** Generation
+**** Acquiring
+**** Revocation
+** Security Protocol
+*** Perfect Forward Secrecy 
+*** Needham-SChroderer
+**** Kerberos
+*** Public Key
+**** Management with Cert Auth
+**** Generation
+**** Revocation
+*** TrustModel with SecretSplitting/Sharing
+**** with XOR
+**** Shamir (t,n) thershold scheme
+*** Commitment Protocol
+**** Bit Commitment
+**** Fair Coin Flipping
+**** Mental Poker
+** Confidentiality & Integrity
+*** Confidentiality Policy
+*** Bell-LaPadula
+**** Step 1
+**** Step 2
+**** Step 1 Theorem
+**** Step 2 Theorem
+*** Integrity Policies
+*** Intefrity Model
+**** Intuition
+**** Biba
+**** LOCUS
+**** Clark-Wilson
+*** Entities
+*** CertRules 1,2
+*** Enforcement 1,2
+*** Users and Rules
+*** Logging
+*** UntrustedInput
+*** Seperation of Duty
+*** Biba v Wilson
+*** Key
+** CryptoCurrencies & BlockChain
+*** Centralised Digital Curr 
+*** BTC
+**** Transaction
+**** BTC Wallet
+*** BlockChain
+**** What
+**** Features
+**** Attacks
+*** ETH
+**** Smart Contracts
+* Lets go
+** DONE 4 prng
+** DONE 5 sym key exchange
+** TODO 6 asym RSA
+** TODO 7 Auth
+** TODO 8 Digital Sig
+** TODO 9 Security Protocol
+
