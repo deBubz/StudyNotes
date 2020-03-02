@@ -1,16 +1,44 @@
 # Data Structure and Algos
 
-> **Coordinator**: farookh.hussain@uts.edu.au
+> **Coordinator**: xianzhi.wang@uts.edu.au
 
 ## SLO
 
+1. Explain basic DSA for manipulating them
+2. implement these DSA in `c++`
+3. Integrate these DSA in larger programs
+4. code/test well structured programs of moderate size using `c++`
+
 ## Topics
+
+1. c++ constructs including templates and the STL ( standard template library? )
+2. program design
+3. design, implementation and evaluation of data structures
+4. recursion
+5. computability, NP-completeness, Optimization
 
 ## Assessments
 
-### Assessment Name
+### Prog a1
 
-- **Type/Weight**:
-- **Group**:
-- **Due**
-- **Task**:
+- **Type/Weight**: exercise `25%`
+- **Due**: 5pm 8 May 2020 (week 9)
+- **Task**: Code as per specification
+
+### Prog a2
+
+- **Type/Weight**: exercise `35%`
+- **Due**: 5pm 29 may 2020 (week 12)
+- **Task**: Code as per specification
+
+### Final
+
+- **Type/Weight**: quizzes `30%` 
+- **Due**: Exam
+- **Task**: open book exam
+
+### Quizzes
+
+- **Type/Weight**: quizzes `10%`
+- **Due**: week 3, 6, 9
+- **Task**: in class quiz

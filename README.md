@@ -8,7 +8,7 @@
 
 # 2020 Autumn (year 2 sem 2)
 
-- DSA
-- Intro to Software Dev
-- Cloud computing and SaaS
-- Database Programming
+- [DSA](dsa/)
+- [Intro to Software Dev](intro_software_dev/)
+- [Cloud computing and SaaS](cloud_saas/)
+- [Database Programming](db_prog/)
