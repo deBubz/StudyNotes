@@ -20,21 +20,21 @@
 
 ## Assessments
 
-### Project - analysis, planning, architecture design 
+### **A1**: Project - analysis, planning, architecture design 
 
 - **Type/Weight**: project `30%`
 - **Group**: group, indiv assessed
 - **Due**: 11pm 24 april 2020
 - **Task**:
 
-### Implementation and testing
+### **A2**: Implementation and testing
 
 - **Type/Weight**: project `50%`
 - **Group**: group, indiv assessed
 - **Due**: 11pm 29 May 2020
 - **Task**: 
 
-### Online Quiz
+### **A3**: Online Quiz
 
 - **Type/Weight**: Quiz `20%`
 - **Due**: weekly

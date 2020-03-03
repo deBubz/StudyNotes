@@ -19,25 +19,25 @@
 
 ## Assessments
 
-### Prog a1
+### **A1**: Prog a1
 
 - **Type/Weight**: exercise `25%`
 - **Due**: 5pm 8 May 2020 (week 9)
 - **Task**: Code as per specification
 
-### Prog a2
+### **A2**: Prog a2
 
 - **Type/Weight**: exercise `35%`
 - **Due**: 5pm 29 may 2020 (week 12)
 - **Task**: Code as per specification
 
-### Final
+### **A3**: Final
 
 - **Type/Weight**: quizzes `30%` 
 - **Due**: Exam
 - **Task**: open book exam
 
-### Quizzes
+### **A4**: Quizzes
 
 - **Type/Weight**: quizzes `10%`
 - **Due**: week 3, 6, 9

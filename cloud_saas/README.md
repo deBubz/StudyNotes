@@ -23,35 +23,35 @@
 
 > 2019 dates
 
-### Research Essay
+### A1: Research Essay
 
 - **Type/Weight**: essay `10%`
 - **Group**: group, individually assessed
-- **Due**: 6pm 29 Monday 2020
+- **Due**: 6pm 29 april 2020
 - **Task**: Research Essay apprx 5 pages on a topic
 
-### SaaS Development
+### A2: SaaS Development
 
 - **Type/Weight**: project `25%`
 - **Group**: group, individually assessed
 - **Due**:  6pm 3 june 2019
 - **Task**: Group work engineering a SaaS prototype using [Force.com](force.com)
 
-### Report on SaaS development
+### A3: Report on SaaS development
 
 - **Type/Weight**: report `10%`
 - **Group**: group, individually assessed
 - **Due**: 6pm 3 june 2019
 - **Task**:a write a project report (key descriptors) on SaaS dv exercises
 
-### Presentation
+### A4: Presentation
 
 - **Type/Weight**: presentation `20%`
-- **Group**: group, individually assesed
+- **Group**: group, individually assessed
 - **Due**: week 12
 - **Task**: presentation outlining learning experience with SaaS.
 
-### Examination
+### A5: Examination
 
 - **Type/Weight**: examination `35%`
 - **Due**: exam
