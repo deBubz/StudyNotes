@@ -27,6 +27,7 @@
 - Week 07
   - intro-sw-dev a1 showcase
 - Week 08
+  - db-prog assessment
 - Week 09
   - dsa prog a1
   - dsa quiz

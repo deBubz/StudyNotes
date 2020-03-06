@@ -26,7 +26,7 @@
 ### Assignment
 
 - **Type/Weight**: exercises `50%`
-- **Due**: 11pm 29 may 2020
+- **Due**: 11pm 6 may 2020
 - **Task**: develop a small automated application to solve a business problem
 
 ### Final Examination
