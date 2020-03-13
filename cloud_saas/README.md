@@ -55,3 +55,7 @@
 
 - **Type/Weight**: examination `35%`
 - **Due**: exam
+
+---
+
+> Assessments on subject note/ does not match with canvas info

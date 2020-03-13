@@ -27,3 +27,10 @@
 - [ ] Discussion ( Travel Funding Project)
   - Project for week 1-3
 - [ ] Workshop1 Logbook
+ 
+
+--- 
+
+## Misc
+
+- Make sure to fill and complete the weekly logbook
