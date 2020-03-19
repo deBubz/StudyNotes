@@ -1,6 +1,26 @@
-* DSA
-* DB Prog
-** :wq
-:wq
-* Intro Software Development
-* Cloud SaaS
+* Tasks:
+** dsa 
+** dbprog
+** DONE isd
+** cloud_saas
+* Subjects
+** DSA
+*** Redo the notes of week 1 
+*** Try week 1 work again
+*** ReWatch week 1 
+*** Watch week 2 studd
+** DB Prog
+*** Take notes of functions 
+*** Write example text for all of the functions
+** Intro Software Development
+*** Update the google cloud folder to contain all the required documents
+*** ReMind every one about the small GitHub activity
+*** See whats next week 
+** Cloud SaaS
+*** Read the NIST Section 1
+*** List the AWS products and their differences
+* Email Remainder
+** Software Dev Studio for ISD
+*** Just a remainder tonight for communicating to get information on attending the studio
+*** If not ask, to attend the studio on Wednesday 2pm
+

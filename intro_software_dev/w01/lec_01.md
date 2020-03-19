@@ -24,7 +24,7 @@ The main difference is where
 
 ## Model driven software development
 
-> so what do first. Its not **CODING** for sure
+> so what do first. Its **NOT CODING** for sure
 
 this shit needs planning, a lot of planning.
 
@@ -89,7 +89,4 @@ Presents the people involving in the Software Development process. This usually 
   - Face-2-face communication, in self-driven teams
 
 > This subject will mainly focus on **scrum** and **xp**
-
-
-
 
