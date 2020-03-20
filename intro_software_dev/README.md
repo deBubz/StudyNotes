@@ -2,6 +2,8 @@
 
 > asif.gill@uts.edu.au
 
+> [Docs Folder](https://drive.google.com/open?id=10e7MqjCSqBLXNsziqqJsqxUv-mUztBDN)
+
 ## SLO
 
 1. Investigate and solve s-dev problems with minimal supervision

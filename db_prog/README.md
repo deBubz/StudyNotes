@@ -2,6 +2,8 @@
 
 > linchao.zhu@uts.edu.au
 
+[Docs folder](https://drive.google.com/drive/folders/1lX9Xk-SUmZAcLcLdZU_tUImE6ttJCjNU?usp=sharing)
+
 ## SLO
 
 1. be able to describe the benefits of database programming
