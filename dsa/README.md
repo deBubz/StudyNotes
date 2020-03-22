@@ -2,6 +2,8 @@
 
 > **Coordinator**: xianzhi.wang@uts.edu.au
 
+> ****
+
 ## SLO
 
 1. Explain basic DSA for manipulating them
