@@ -11,9 +11,9 @@
   - Definition of cloud computing
   - Understand cloud computing driving parameters
 
-## P2 - Infrastructure as a Service (IaaS)
+## P2 - Infrastructure as a Service ( IaaS )
 
-- overview of IaaS service provisioning (AWS)
+- overview of IaaS service provisioning ( AWS )
 - **Objectives**
   - understand computing infrastructure in Enterprise
   - Understand and define IaaS

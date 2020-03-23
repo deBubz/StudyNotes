@@ -1,5 +1,7 @@
 # Cloud computing and software as a services
 
+> [drive](https://drive.google.com/open?id=1mCoFMavxCB1zjDl18Q0HcYocNJUew84R) 
+
 ## SLO
 
 1. Articulate the need for cloud computing, elements of cloud computing for e-business, e-gov, e-banking, e-health and e-learning
@@ -27,7 +29,7 @@
 
 - **Type/Weight**: essay `10%`
 - **Group**: group, individually assessed
-- **Due**: 6pm 29 april 2020
+- **Due**: 6pm May 2020
 - **Task**: Research Essay apprx 5 pages on a topic
 
 ### A2: SaaS Development
