@@ -255,7 +255,3 @@ values (my_key.nextval, value, ...)         -- vals to add
 
 > lots of code snippets here, lets try it out
 
-
---
-
-## Summary
