@@ -1,7 +1,7 @@
 * Tasks:
 ** dsa 
 ** dbprog
-** DONE isd
+** isd
 ** cloud_saas
 * Subjects
 ** DSA
@@ -20,7 +20,5 @@
 *** Read the NIST Section 1
 *** List the AWS products and their differences
 * Email Remainder
-** Software Dev Studio for ISD
-*** Just a remainder tonight for communicating to get information on attending the studio
-*** If not ask, to attend the studio on Wednesday 2pm
+* NOTES:
 
