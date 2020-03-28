@@ -4,11 +4,13 @@
 
 using namespace std;
 
+// define area printing
 void Polygon::print_area()
 {
     cout << "Area is " << this->get_area() << endl;
 }
 
+// class rectangle inheriting Polygon
 class Rect: public Polygon
 {
     public:
@@ -19,6 +21,7 @@ class Rect: public Polygon
     };
 };
 
+//class triangle inheriting Polygon
 class Triangle: public Polygon
 {
     public:

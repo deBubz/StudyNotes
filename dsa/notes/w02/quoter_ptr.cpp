@@ -9,7 +9,9 @@ struct student {
     float score;
 };
 
-void get_info(student * ptr) {
+student* get_info() {
+    student* ptr = new student();
+
     cout << "enter student info" << endl;
     cout << "Enter name";
     cin >> ptr->name;
@@ -17,6 +19,8 @@ void get_info(student * ptr) {
     cin >> ptr->sid;
     cout << "Enter score";
     cin >> ptr->score;
+
+    return ptr;
 }
 
 void display_info(student * ptr) {
@@ -26,8 +30,7 @@ void display_info(student * ptr) {
 }
 
 int main () {
-    student * s_ptr = new student();    // student pointer
-    get_info(s_ptr);
+    student * s_ptr = get_info();    // student pointer
     display_info(s_ptr);
 
     delete s_ptr;
