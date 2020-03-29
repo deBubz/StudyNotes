@@ -2,6 +2,20 @@
 
 >  tools > db > NLS> set your own date format
 
+- [Database Programming Into ( w01 )](#database-programming-into--w01)
+  - [Class Goals](#class-goals)
+  - [Intro to Catalogue Tables](#intro-to-catalogue-tables)
+  - [SQL revisions](#sql-revisions)
+    - [SQL Revision](#sql-revision)
+  - [ORACLE SQL features](#oracle-sql-features)
+    - [DUAL table](#dual-table)
+    - [DATE functions](#date-functions)
+      - [Other Date Functions](#other-date-functions)
+    - [Character Functions](#character-functions)
+    - [NVL](#nvl)
+    - [DECODE](#decode)
+    - [Sequences](#sequences)
+
 ---
 
 ## Class Goals

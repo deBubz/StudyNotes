@@ -1,4 +1,4 @@
-31253 Code for Lectures
+-- 31253 Code for Lectures
 
 SELECT  c.custno, c.CUSTFIRSTNAME,
         c.CUSTLASTNAME, c.CUSTSTREET, 
