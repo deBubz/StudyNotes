@@ -150,6 +150,15 @@ Obj design Mvc includes
 - Architecture and design are done using some design patterns ( MVC )
 - Architecture can defined for both a small/large set of applications
 
+---
+
+## Extras
+
+- while planning the database, keep in mind there most likely will be some existing databases
+  - In case of shortage, in a design PoV
+    - You should have a **backup**, secondary database. 
+- Most of your architecture design choice will be determined by your non-functional requirements
+- 
 
 
 
