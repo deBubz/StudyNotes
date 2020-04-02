@@ -12,9 +12,10 @@
 - **iterator**: enumerating all elements of the container
 - **capacity**: get/adjust size of container
 - **element access**: get elem at a specific location
+  - not primitive to c++ so not random access
 - **modifier**: crud options
 
-> References: (try practice 2)
+> References: (try practice 2 and 4)
 > - https://www.geeksforgeeks.org/vector-in-cpp-stl/
 > - https://www.geeksforgeeks.org/list-cpp-stl/
 
@@ -53,11 +54,37 @@
   - `multiset`, `multimap`: allow duped elem/keys
   - `hash_set`, `hash_map`, `hash_multiset`, `hash_multimap`: implemented using hash tables
 
+### Container adaptors
 
+```cpp
+queue <int, list<int>> q; // build a queue based on int
+queue<int> q;             // by default build a queue based on dequeue
+```
 
 ## Templates
 
 > `templates` are angle practice that let you specify the datatype of containers
+
+```cpp
+int sum(int x, int y) {   // can only handle int
+  return x + y            // what happened when the user uses
+}                         // double, float, short, long
+
+// template
+T sum(T x, T t) { return x + y };
+
+// calling
+sum(1.05, 3 );
+```
+
+```cpp
+// template class
+template <typename T>
+class Node {
+  T data;
+  T * next;
+}
+```
 
 > practice 3
 
@@ -69,6 +96,7 @@
   - **iterator**: random access container
   - **bidirectional** iterator: non-random access containers.
 - reduce complexity and execution time of programs
+- iterators are built-into c++ 
 
 ok so
 
