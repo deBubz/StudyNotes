@@ -4,7 +4,7 @@
 
 ## Chapt01 Intro
 
-### 1.2 Objectrives
+### 1.2 Objectives
 
 - Provide understanding for cloud computing and cloud services
 - taxonomy of 3 service models
