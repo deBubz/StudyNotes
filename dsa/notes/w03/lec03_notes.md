@@ -19,7 +19,6 @@
 > - https://www.geeksforgeeks.org/vector-in-cpp-stl/
 > - https://www.geeksforgeeks.org/list-cpp-stl/
 
-
 ### Comparison
 
 - **array**
