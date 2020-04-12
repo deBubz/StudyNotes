@@ -106,9 +106,7 @@ ELSE
 END IF;
 
 -- to this
-IF v_order_exceed_bal
-THEN
-    --
+v_oreder_exceed := order_total > max_allowable_order
 ```
 
 ### `NULL`s in statements
@@ -148,10 +146,10 @@ Force a `loop` to complete unconditionally
 
 ```sql
 LOOP
-    --
-    IF --
+    -- infinite loop
+    IF -- exit condition
     THEN
-        --
+        -- log? then exit loop
         EXIT;
     END IF;
     --
@@ -167,7 +165,7 @@ if the condition is true, the `loop` **finishes** and continue on to the next st
 ```sql
 Loop
     fetch c1 into --
-    EXIT when c1%NOTFOUND;
+    EXIT when c1%NOTFOUND; -- exit when cursor is empty
     --
 End Loop;
 close c1;
@@ -237,6 +235,7 @@ The loop will fetch values from the record set and then traverse through the rec
 It reduces the amount of code required to fetch data from a cursor, thereby reducing the chances of making errors
 
 ```sql
+-- set output buffer size
 set serverouput on size 1000000
 
 declare
