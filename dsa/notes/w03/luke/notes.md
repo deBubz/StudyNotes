@@ -1,0 +1,22 @@
+# Vid 3 notes
+
+- **Vectors**
+  - List provide an alternative for arrays but doesnt guarantee how memory is managed
+  - List have more overhead, different to arrays
+  - vectors are middle ground to array/linked list
+  - Think as dynamically sized arrays
+  - In the back end, vectors are almost the same as arrays with the ability to handle size allocation
+- **Templates**
+  - assign specific data type of data structures. e.g `vector<int>`
+    - easily make vector hold different types
+  - does not change the functions of the DS, beside telling what size of memory will be allocated.
+    - java/c# generics
+    - provide way to write certain type of code where it doesnt care of the type
+  - Easy to work with, but more prone to errors
+  - work at runtime
+- **Iterators**
+  - something `tail()`, iterators in java well put together. all look the same from the outside
+  - Its more flexible in `c++` but expect ugly code.
+  - `getHead()` first of linked list, `tail()` last of linked list
+- **Algo Analysis**
+  - Big O Notation, how to compare algorithms ( via speed and memory )
