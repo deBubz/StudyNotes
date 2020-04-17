@@ -7,7 +7,7 @@ When doing the **assessment** you may need to reclaim the space or at least "low
 
 `Delete from a Table` put data into the **rollback segment** until a rollback or commit is issued. the **space** that the data is occupied is not reclaimed 
 
-> `DELETE FROM FSS_TRANSACTIONS;
+> DELETE FROM FSS_TRANSACTIONS;
 
 `Truncate a Table` Remove **all data**, there is no opportunity to recover. The "high water mark" restored back to base level.
 
