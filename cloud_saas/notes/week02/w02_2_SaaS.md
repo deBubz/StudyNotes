@@ -125,3 +125,5 @@ okok 3 ways the data synchronization can be achieved
 - Google Docs
 - Dropbox
 
+> Better Read Integration broker
+
