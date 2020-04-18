@@ -20,3 +20,4 @@
   - `getHead()` first of linked list, `tail()` last of linked list
 - **Algo Analysis**
   - Big O Notation, how to compare algorithms ( via speed and memory )
+  - e.g we have function `f` and `g`

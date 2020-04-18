@@ -23,40 +23,39 @@
 
 ## Assessments
 
-> 2019 dates
-
 ### A1: Research Essay
 
 - **Type/Weight**: essay `10%`
 - **Group**: group, individually assessed
-- **Due**: 6pm May 2020
+- **Due**: 6pm 4 May 2020
 - **Task**: Research Essay apprx 5 pages on a topic
 
 ### A2: SaaS Development
 
 - **Type/Weight**: project `25%`
 - **Group**: group, individually assessed
-- **Due**:  6pm 3 june 2019
+- **Due**:  6pm 10 June 2020
 - **Task**: Group work engineering a SaaS prototype using [Force.com](force.com)
 
 ### A3: Report on SaaS development
 
 - **Type/Weight**: report `10%`
 - **Group**: group, individually assessed
-- **Due**: 6pm 3 june 2019
+- **Due**: 6pm  10 June 2020
 - **Task**:a write a project report (key descriptors) on SaaS dv exercises
 
 ### A4: Presentation
 
 - **Type/Weight**: presentation `20%`
 - **Group**: group, individually assessed
-- **Due**: week 12
+- **Due**: 6pm 10 June 2020
 - **Task**: presentation outlining learning experience with SaaS.
 
 ### A5: Examination
 
-- **Type/Weight**: examination `35%`
-- **Due**: exam
+- **Type/Weight**: Application Development `35%`
+- **Due**: 6pm 29th June 2020
+- **Tasks** Build an Application using Amazon Web Services
 
 ---
 
