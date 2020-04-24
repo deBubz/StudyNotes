@@ -1,5 +1,7 @@
 #include <iostream>
 
+// Exercise understanding pointers
+
 int main() {
     // array
     // int a[] = {1, 2};
@@ -9,7 +11,7 @@ int main() {
 
     // this will not work segmentation fault (core dumped)
     // memory is not allocated for b[1] b[2]
-    std::cout << "\nPOINTERS STUFF" << std::endl;
+    std::cout << "POINTERS STUFF" << std::endl;
     int b = 3;
     int *b_ptr = &b;
     std::cout << "number: " << b << std::endl;

@@ -19,7 +19,7 @@
 ## What is DSA
 
 - **Data structure**: way to store/organizes (non-persistent) data
-  - **Simple data type**: bool, int char, float, double
+  - **Simple data type**: `bool`, `int`, `char`, `float` and `double`
   - **Data Structure**: set of data items with definite associations
     - **Native**: array, vector, queue
     - **Free-form**: linked list, tree, graph
@@ -143,7 +143,7 @@ good for passing data around with out copying it
 
 to create an array without knowing the size, we need a pointer
 
-`int * tab(Data dataObj)`
+`int *tab;`
 
 but thats just a pointer we don't know its an array
 
@@ -151,7 +151,7 @@ we use `std::vector`
 
 ### Classes
 
-typical `c++` class
+typical `c++` class:
 
 ```c++
 #include <string>
@@ -167,6 +167,8 @@ class myClass : public parentClass {
         string toString();
 };
 ```
+
+`c++` have 3 access modifier: private (default), public, protected
 
 ### Header and Source files
 

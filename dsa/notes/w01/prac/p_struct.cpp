@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 
+// exercise using a struct as a object
+
 // ----------------------------------------
 
 struct student
@@ -12,15 +14,6 @@ struct student
 
 void read_input(student *s);
 void get_output(student *s);
-
-// ----------------------------------------
-
-int main()
-{
-    student *s = new student();
-    read_input(s);
-    get_output(s);
-}
 
 // ----------------------------------------
 
@@ -41,6 +34,16 @@ void get_output(student *s)
 {
     std::cout << "\nStudent Name: " << s->name << 
         "\nStudent Id: " << s->sid <<
-        "\nStudent Score: " << s->score;
+        "\nStudent Score: " << s->score <<
+        std::endl;
+}
+
+// ----------------------------------------
+
+int main()
+{
+    student *s = new student();
+    read_input(s);
+    get_output(s);
 }
 

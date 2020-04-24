@@ -78,7 +78,7 @@ good for passing data around with out copying it
 
 to create an array without knowing the size, we need a pointer
 
-`int * tab(Data dataObj)`
+`int * tab;`
 
 but thats just a pointer we don't know its an array
 

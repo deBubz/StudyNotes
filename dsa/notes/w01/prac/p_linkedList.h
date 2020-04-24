@@ -1,5 +1,5 @@
-#ifndef LINKEDLIST_H_
-#define LINKEDLIST_H_
+#ifndef P_LINKEDLIST_H_
+#define P_LINKEDLIST_H_
 
 
 
@@ -8,11 +8,10 @@ class linkedList
 private:
     class Node          // node in linked list
     {
-    private:
+    public:
         int data;
         Node *next;
-    public:
-        Node(int d, Node *n);
+        Node();
         ~Node();
     };
 
@@ -25,6 +24,7 @@ public:
     // basic linked list methods
     void prepend(int d);
     void append(int d);
+    int size();
     // void removeByValue(int v);
     // void removeByPos(int pos);
     // void insertByPos(int d, int pos);
