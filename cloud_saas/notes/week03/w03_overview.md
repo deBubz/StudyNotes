@@ -2,7 +2,6 @@
 
 > **Multitenancy** (software) - mode of software operation where there are many independent instances of the applications operating in a shared environment. **Logically isolated, physically integrated**
 
-
 > **Virtualization** - the process of running a *virtual instance* of a computing system 
 
 Ok this builds on previous classes. 
