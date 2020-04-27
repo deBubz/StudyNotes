@@ -1,5 +1,9 @@
 -- tut 04 homework
 
+-- what is 
+show errors
+-- 
+
 
 -- q01 create a function what returns a fullname from employee
 create or replace function empFullName(p_empno in employee.empno%type)
@@ -14,8 +18,8 @@ begin
     return nvl(v_fullname, 'error');
 end;
 
--- run this 
-SELECT empno, empFullName(empno) name FROM   employee;
+-- run this
+SELECT empno, empFullName(empno) name FROM employee;
 
 
 ---------------------------------
