@@ -66,7 +66,7 @@ BEGIN
     v_number := to_number(p_value)/0;   -- error dividing by 0
     return true;
 EXCEPTION
-    when VALUE_ERROR
+    when VALUE_ERROR                    -- divide by 0 is unhandled ( ORA-01476 ), error thrown
     then
         dbms_output.put_line('invalid number ' || p_value);
         return false;
@@ -96,6 +96,10 @@ EXCEPTION
         -- handle error
 END;
 ```
+
+> `PRAGMA` a compiler directive to bind something
+>
+> `EXCEPTION_INIT()` bind error code to a user defined exception
 
 Bind to an Oracle ERROR code
 ```sql

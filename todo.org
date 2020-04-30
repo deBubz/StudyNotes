@@ -1,28 +1,11 @@
 * Tasks:
 ** dsa 
-*** week 2
-**** do cplusplus doc tutorial files0
 ** dbprog
 ** isd
 ** cloud_saas
 * Subjects
 ** DSA
-*** Redo the notes of week 1 
-*** Try week 1 work again
-*** ReWatch week 1 
-*** Watch week 2 studd
 ** DB Prog
-*** Take notes of functions 
-*** Write example text for all of the functions
 ** Intro Software Development
-*** Update the google cloud folder to contain all the required documents
-*** ReMind every one about the small GitHub activity
-*** See whats next week 
 ** Cloud SaaS
-*** Read the NIST Section 1
-*** List the AWS products and their differences
-* Email Remainder
 * NOTES:
-  - Friday 27th
-  - I should: call up the covid hotline
-  - complete ISD monday notes
