@@ -8,10 +8,29 @@
 - summary of existing topic
 - findings & reflections
 
+## Attacks/Issues Covered
+
+1. User Distrust in Information Processing Measures
+2. Cloud Attacks??
+   - Wrapping attack
+   - malware injection
+   - Flooding (just say DoS/DDoS)
+3. Data Leak
+4. Account/Service Hijacking
+5. VM escape
+6. Auth and Access Control
+
+## Solutions??
+
+1. TTP handle the data transactions, transactions use the public key infrastructure
+   - brings up the issues of how the keys are managed
+   - CyberSec/Networking issue
+   - attacks integrity
+2. 
+
 ## Notes
 
 ### abstract
-
 
 ### keywords
 
