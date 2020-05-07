@@ -1,8 +1,11 @@
-* Tasks:
-** dsa 
-** dbprog
-** isd
-** cloud_saas
+* Tasks
+** Email DB prog about the doccumentation
+** DSA review
+*** Week 03
+*** Week 04
+* Important Dates
+** DSA a1  22 May
+** DB Prog 5 June
 * Subjects
 ** DSA
 ** DB Prog
