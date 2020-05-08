@@ -1,11 +1,29 @@
 # Week03 Vectors & Lists
 
+- [Week03 Vectors & Lists](#week03-vectors--lists)
+  - [Vectors and Lists](#vectors-and-lists)
+    - [Vectors](#vectors)
+    - [Functions of `vector` and `list`](#functions-of-vector-and-list)
+    - [Comparison](#comparison)
+    - [STL containers](#stl-containers)
+    - [Container adaptors](#container-adaptors)
+  - [Templates](#templates)
+  - [Iterators](#iterators)
+  - [Algorithms](#algorithms)
+    - [Big-O notation](#big-o-notation)
+
 ## Vectors and Lists
 
 - Alternative Data Structures to Array
   - vector `#include <vector>`
   - list `#include <list>`
 - [Read](https://thispointer.com/difference-between-vector-and-list-in-c/)
+
+### Vectors
+
+- Dynamic size arrays, less overhead than lists/linkedlist
+- its just a wrapper for a regular array
+  - functions like an array, but with extra steps so it is dynamically allocated
 
 ### Functions of `vector` and `list`
 
@@ -39,6 +57,10 @@
 
 > `Containers` are objects that store data
 
+- similar to java generics, work at runtime
+- does not change the function of the data structure, tells what the size of memory will be allocated.
+  - very error prone, careful of logical bugs
+
 > `STL` standard library
 
 - **Simple container**
@@ -55,8 +77,15 @@
 
 ### Container adaptors
 
+These are classes that use an encapsulation object of a specific container class as its underlying container.
+Providing a specific set of member functions to access elements
+
+- **queue** based of deque or list
+- **priority queue** based on vector or deque
+- **stack** based on deque, vectors or lists
+
 ```cpp
-queue <int, list<int>> q; // build a queue based on int
+queue <int, list<int>> q; // implement an int queue based on int list
 queue<int> q;             // by default build a queue based on dequeue
 ```
 
@@ -68,16 +97,19 @@ queue<int> q;             // by default build a queue based on dequeue
 int sum(int x, int y) {   // can only handle int
   return x + y            // what happened when the user uses
 }                         // double, float, short, long
+```
 
-// template
+templates
+
+```cpp
 T sum(T x, T t) { return x + y };
 
 // calling
 sum(1.05, 3 );
 ```
 
+template class example
 ```cpp
-// template class
 template <typename T>
 class Node {
   T data;
@@ -102,11 +134,18 @@ ok so
 - Why iterators?
   - STL algorithms in `<algorithm>` use iterators
   - A flexible way to access data in containers that don't have obvious means of accessing all of the data ( maps )
-- Gotchas
+- gotchas? cons?
   - No boundary check (out of index?)
   - Can be invalidated if the underlying container is changed significantly
 
 > practice 4
+
+some iterators are:
+
+- linked list: `getHead()`, `tail()`
+  - tail returns the list after head
+
+---- 
 
 ## Algorithms
 

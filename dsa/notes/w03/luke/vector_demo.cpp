@@ -7,6 +7,7 @@
 int main() {
     std::vector<int> v;
 
+    // add into array
     for (int i = 0; i < 10; i++)
         v.push_back(i);
 
@@ -15,6 +16,7 @@ int main() {
 
     std::cout << std::endl;
     
+    // change values
     for (int i = 0; i < v.size(); i++)
         v[i] += 5;
     

@@ -1,8 +1,12 @@
 * Tasks
-** Email DB prog about the doccumentation
+** TODO Email DB prog about the doccumentation
 ** DSA review
-*** Week 03
-*** Week 04
+*** TODO Week 03
+*** TODO Week 04
+** TODO Make a 'table of contents' for each weekly notes
+* Tomorrow
+** TODO Do sds sparks notes
+** TODO do sps design doc?
 * Important Dates
 ** DSA a1  22 May
 ** DB Prog 5 June
@@ -12,3 +16,9 @@
 ** Intro Software Development
 ** Cloud SaaS
 * NOTES:
+** questions
+*** Urthor - question about electives and data analytics
+*** Laurie - question about how the doc should be like
+    - he mentioned it should be simple an understandable for a layperson
+    - I had the assumption that it would be similar to programming language/frameworks/api/etc documentation
+      - where it presents detailes of the packages' public elemts, what is achievable with the package and examples on how to use the  
