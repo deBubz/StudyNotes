@@ -12,8 +12,8 @@
 ** TODO Email DB prog about the doccumentation
 ** 1 redux project
 ** 1 redux project
-** TODO DSA practice 3
-** TODO DSA practice 4
+** DONE DSA practice 3
+** DOING DSA practice 4
 ** TODO do sps design doc?
 * Tomorrow
 * Important Dates

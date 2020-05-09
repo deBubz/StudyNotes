@@ -12,16 +12,14 @@ class stack {
         stack() { };
         ~stack() {};
 
-        void push(T t) {
+        void push(T t) {    // first in
             this->data[this->size] = t;
             this->size++;
-            // std::cout << "in " << t << " " << this->size << std::endl;
         };
 
-        T pop() {
+        T pop() {           // last out
             T elem = this->data[this->size - 1];
             this->size--;
-            // std::cout << "out " << elem << " " << this->size - 1<< std::endl;
             return elem;
         };
 
@@ -49,9 +47,9 @@ int main () {
 
     std::cout << "Loop ended" << std::endl;
 
+    // pop what is left
     while(!s.empty()) {
         std::cout << s.pop() << std::endl;
-        // s.pop();
     }
     
 
