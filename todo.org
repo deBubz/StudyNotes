@@ -1,12 +1,21 @@
 * Tasks
+** DONE Do sds sparks notes
+   CLOSED: [2020-05-09 Sat 17:03]
+** DONE DSA review
+   CLOSED: [2020-05-09 Sat 17:33]
+   - Make a 'table of contents' for each weekly notes
+*** DONE Week 03
+    CLOSED: [2020-05-09 Sat 17:04]
+*** DONE Week 04
+    CLOSED: [2020-05-09 Sat 17:32]
+** TODO sds do 1 week reflection
 ** TODO Email DB prog about the doccumentation
-** DSA review
-*** TODO Week 03
-*** TODO Week 04
-** TODO Make a 'table of contents' for each weekly notes
-* Tomorrow
-** TODO Do sds sparks notes
+** 1 redux project
+** 1 redux project
+** TODO DSA practice 3
+** TODO DSA practice 4
 ** TODO do sps design doc?
+* Tomorrow
 * Important Dates
 ** DSA a1  22 May
 ** DB Prog 5 June
