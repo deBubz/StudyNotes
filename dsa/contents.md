@@ -12,7 +12,7 @@
 ## Week 02
 
 - fileIO, exceptions, more pointers ( dereferencing )
-- constructors, destructors
+- constructors, destructorshttps://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker
 - classes ( simple inheritance )
 - linked list, stack and queue
 
@@ -32,6 +32,7 @@
   - requirements to implement recursive algos, calling itself (or overloaded version), contains a termination condition
 - examples to some divide and conquer algos, 
 - Big O notation
+- **Master theorem??**
 
 ## Week 05
 ## Week 06

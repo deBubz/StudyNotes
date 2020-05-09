@@ -14,6 +14,8 @@ General framework of a Divide and Conquer algo
 - The number and size of the sub-problems must be in the right balance - depends on the the "simple" solution's complexity.
 - able to **recombine** solutions into a solution efficiently
 
+> divide problems into small enough sub-problems to be easily solved
+
 `example`
 
 **Binary search** find an element in a sorted array.
@@ -26,7 +28,11 @@ General framework of a Divide and Conquer algo
 
 **Fast exponentiation** calc `n^x` for large `n`
 
+slide 14
+
 **Merge so, k = 0rt** and **Quick sort** in the future
+
+> What is this master theorem for
 
 ## Recursion
 
