@@ -8,11 +8,11 @@
     CLOSED: [2020-05-09 Sat 17:04]
 *** DONE Week 04
     CLOSED: [2020-05-09 Sat 17:32]
-** TODO sds do 1 week reflection
+** DONE DSA practice 3
+** TODO sds do 3 week reflection
 ** TODO Email DB prog about the doccumentation
 ** 1 redux project
 ** 1 redux project
-** DONE DSA practice 3
 ** DOING DSA practice 4
 ** TODO do sps design doc?
 * Tomorrow
