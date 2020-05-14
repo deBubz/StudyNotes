@@ -21,9 +21,11 @@
 ## Tutorial
 
 - destructors (delete keyword)
+  - how to properly de-allocate a linked list, node
 - vectors & container adaptor
 - template
-- iterator
+- List
+- iterators (can use any standard container type, not container adaptor) (try code?)
 - big O
 - deconstructing a stack, linked list
 
