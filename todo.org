@@ -1,4 +1,4 @@
-* Tasks
+* Done
 ** DONE Do sds sparks notes
    CLOSED: [2020-05-09 Sat 17:03]
 ** DONE DSA review
@@ -9,12 +9,37 @@
 *** DONE Week 04
     CLOSED: [2020-05-09 Sat 17:32]
 ** DONE DSA practice 3
-** TODO sds do 3 week reflection
+** DONE DSA practice 4
+   CLOSED: [2020-05-10 Sun 19:51]
+** DONE sds reflections [3/3]
+   CLOSED: [2020-05-11 Mon 12:15]
+*** DONE [] before stuvac (15 april)
+    CLOSED: [2020-05-11 Mon 03:26]
+*** DONE [] after stufac (29 april)
+    CLOSED: [2020-05-11 Mon 12:15]
+*** DONE [] last week (6 may)
+    CLOSED: [2020-05-11 Mon 12:15]
+** DONE do sds json doc
+   CLOSED: [2020-05-13 Wed 05:57]
+** DONE do sds design doc?
+   CLOSED: [2020-05-13 Wed 05:58]
+** DONE take db notes week07
+   CLOSED: [2020-05-13 Wed 14:31]
+* Tasks
+** DONE get started on DSA a1
+   CLOSED: [2020-05-14 Thu 03:12]
 ** TODO Email DB prog about the doccumentation
-** 1 redux project
-** 1 redux project
-** DOING DSA practice 4
-** TODO do sps design doc?
+** TODO do sds api docs 
+** TODO dsa check week 01 - 05 notes [0/5]
+   briefly go through / take notes if not related
+*** TODO week01
+*** TODO week02
+*** TODO week03
+*** TODO week04
+*** TODO week05
+
+** TODO dsa week 05 notes
+** TODO dsa week 04 notes
 * Tomorrow
 * Important Dates
 ** DSA a1  22 May

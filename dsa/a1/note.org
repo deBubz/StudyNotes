@@ -1,0 +1,85 @@
+* Generic notes on asessment 1
+* class
+** vertex
+*** variables
+**** id
+**** weight
+**** vetex<T> edge_list (maybe)
+*** functions
+** directed_graph
+*** variables
+*** methods [0/24]
+**** TODO constructor/destructor
+     - standard
+**** TODO bool->contains (int&)
+     - return true if grap contains vertex_id
+**** TODO bool->adjacent (int&, int&)
+     - return true if first vertex is adjacent to second
+
+**** TODO void add_vertex (vertex<T>&)
+     - Adds the passed in vertex to the graph (with no edges).
+**** TODO void add_edge (const int&, const int&, const T&)
+     - Adds a weighted edge from the first vertex to the second.
+ 
+**** TODO void remove_vertex (int&)
+     - Removes the given vertex. Should also clear any incident edges.
+**** TODO void remove_edge (int&, int&)
+     - Removes the edge between the two vertices, if it exists.
+
+**** TODO size_t out_degree (int&) {return this->size;} const;
+     - Returns the number of edges leaving a vertex.
+**** TODO size_t->in_degree (int&) {return this->size;}
+     - Returns number of edges coming in to a vertex.
+**** TODO size_t degree(const int&) {return this->size; const;
+     - Returns the degree of the vertex (both in edges and out edges).
+
+**** TODO size_t num_vertices() {return this->size;} const;
+     - Returns the total number of vertices in the graph.
+**** TODO size_t num_edges() {return this->size;} const;
+     - Returns the total number of edges in the graph.
+
+**** TODO vector<vertex<T>> get_vertices() {vertex<T> v; return v;};
+     - Returns a vector containing all the vertices.
+
+**** TODO vector<vertex<T>> get_neighbours(int&) {vertex<T> v; return v;}
+     - Returns a vector containing all the vertices reachable from the given vertex.
+     - The vertex is not considered a neighbour of itself.
+**** TODO vector<vertex<T>> get_second_order_neighbors(const int&) {vertex<T> v; return v;}
+     - Returns a vector containing all the second_order_neighbours (i.e., neighbours of neighbours) of the given vertex.
+     - A vector cannot be considered a second_order_neighbor of itself.
+**** TODO bool reachable(const int&, const int&) const;
+     - Returns true if the second vertex is reachable from the first (can you follow a path of out-edges to get from the first to the second?)
+     - Returns false otherwise.
+**** TODO bool contain_cycles() const;
+     - Return true if the graph contains cycles (there is a path from any vertices directly/indirectly to itself)
+     - false otherwise.
+
+**** TODO vector<vertex<T>> depth_first(const int&) {vertex<T> v; return v;};
+     - Returns the vertices of the graph in the order they are visited in by a depth-first traversal
+     - starting at the given vertex.
+**** TODO vector<vertex<T>> breadth_first(const int&) {vertex<T> v; return v;};
+     - Returns the vertices of the graph in the order they are visisted in by a breadth-first traversal
+     - starting at the given vertex.
+
+**** TODO directed_graph<T> out_tree(const int&);
+     - Returns a spanning tree of the graph starting at the given vertex using the out-edges.
+     - This means every vertex in the tree is reachable from the root.
+
+**** TODO vector<vertex<T>> pre_order_traversal(const int&, directed_graph<T>&) {vector<vertex<T>>> v; return v;};
+     - returns the vertices in the visiting order of a pre-order traversal of the minimum spanning tree
+     - starting at the given vertex.
+**** TODO vector<vertex<T>> in_order_traversal(const int&, directed_graph<T>&) {vector<vertex<T>>> v; return v;};
+     - returns the vertices in the visiting order of an in-order traversal of the minimum spanning tree
+     - starting at the given vertex.
+**** TODO vector<vertex<T>> post_order_traversal(const int&, directed_graph<T>&) {vector<vertex<T>>> v; return v;};
+     - returns the vertices in ther visitig order of a post-order traversal of the minimum spanning tree
+     - starting at the given vertex.
+
+**** TODO vector<vertex<T>> significance_sorting(){vector<vertex<T>>> v; return v;};
+     - Return a vector containing a sorted list of the vertices in descending order of their significance.
+
+* Notes
+noting what i did
+
+- vector of vertex to add vertexes
+- vector of edges to add edges OR vector of vertex in vertex to keep pointing
