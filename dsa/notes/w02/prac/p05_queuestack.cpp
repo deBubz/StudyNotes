@@ -2,6 +2,9 @@
 #include <queue>            // queue
 #include <bits/stdc++.h>    // everything, bust mainly for stack
 
+// present difference between stack and queue
+
+// show data
 void showQ(std::queue<int> q){
     std::cout << "Show Queue";
     while (!q.empty()) {
@@ -10,6 +13,7 @@ void showQ(std::queue<int> q){
     }
     std::cout << std::endl;
 }
+
 void showS(std::stack<int> s){
     std::cout << "Show Stack";
     while(!s.empty()){
@@ -19,6 +23,8 @@ void showS(std::stack<int> s){
     std::cout << std::endl;
 }
 
+
+// add data
 void tryQ(){
     std::queue<int> q;
 

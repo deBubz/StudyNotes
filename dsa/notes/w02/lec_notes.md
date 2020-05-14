@@ -134,3 +134,11 @@ class intStack {
 > have a look at the diagrams at **slides 13 - 14**
 
 #### c++ standard template library
+
+some library we're using
+
+- vector
+- list
+- map, multimap
+- set, multiset
+- unordered set

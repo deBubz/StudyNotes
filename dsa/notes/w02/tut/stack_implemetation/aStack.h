@@ -3,7 +3,10 @@
 
 #include "baseStack.h"
 
-// define data structure
+// define stack using LinkedList
+// notice the NODE containing data and next address
+
+
 class AStack : public BaseStack {
     private:
         class Node {
@@ -15,6 +18,7 @@ class AStack : public BaseStack {
                 ~Node();
         };
         Node* head;
+
     public:
         AStack();
         ~AStack();

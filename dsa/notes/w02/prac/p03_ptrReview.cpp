@@ -11,7 +11,7 @@ struct student {
     int sid;
 };
 
-student* get_info(){
+student* get_info(){    // user input
     student* s = new student();
 
     cout << "enter student info\n";
@@ -24,7 +24,7 @@ student* get_info(){
    return s; 
 }
 
-void display(student* s){
+void display(student* s){   // show user info
     cout << "\nDisplay student info\n" <<
         "Name: " << s->fName << " " << s->lName << "\n" <<
         "ID: " << s->sid << std::endl;

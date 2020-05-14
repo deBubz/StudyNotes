@@ -11,12 +11,12 @@ public class Test {
         ArrayList <Integer> v = new ArrayList<>();
 
         for (int i = 0; i < 10; i++) {
-           v.add(i);
+            v.add(i);
         }
 
         for (int i = 0; i < v.size(); i++) {
-           System.out.println(v.get(i)); 
+            System.out.println(v.get(i));
         }
-    }
-    
+        }
+
 }

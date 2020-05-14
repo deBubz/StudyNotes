@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 // -------------- stack.h -------
 // #include "stack.h" ofcource import it
@@ -19,7 +20,7 @@ class stack {
                 std::cout << "Stack is full; Push failed!" << std::endl;
             }
         }
-        
+
         void pop() {                // remove elem from top of stack
             if(!this->empty()) this->size--;
         }
@@ -46,6 +47,6 @@ int main() {
         std::cout << s.top() << std::endl;
         s.pop();
     }
-    
-    
+
+
 }

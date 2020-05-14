@@ -3,7 +3,7 @@
 
 // use a suitable container
 // try vector
-#include <vector>
+// #include <vector>
 
 int main() {
     // std::queue<std::vector<int>> q;
@@ -12,7 +12,7 @@ int main() {
     for (int i = 0; i < 20; i++)
     {
         // std::vector<int> v = {i};
-        int v = i;
+        int v = i*4;
         q.push(v);
     }
 
@@ -22,5 +22,5 @@ int main() {
     }
 
     std::cout << std::endl;
-    
+
 }

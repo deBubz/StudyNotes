@@ -1,6 +1,6 @@
 #include <iostream>
 
-// ========= stack.h    ========== 
+// ========= stack.h    ==========
 
 // declaring template
 template <typename T>
@@ -36,24 +36,17 @@ class stack {
 int main () {
     stack<int> s;
 
-    for (int i = 0; i < 10; i++)
-    {
-        if(i < 7) {
-            s.push(i);
-        } else {
-            s.pop();
-        }
+    for (int i = 0; i < 10; i++) {
+        if(i < 7)   s.push(i);  // add into stack
+        else s.pop();    // remove from stack
     }
 
     std::cout << "Loop ended" << std::endl;
 
-    // pop what is left
+    // print stack
     while(!s.empty()) {
         std::cout << s.pop() << std::endl;
     }
-    
-
 }
 
-//  ok abit weird but
-//  compare my implementation with paper theory tests
+//  try to compute the output on paper

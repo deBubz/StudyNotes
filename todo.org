@@ -32,14 +32,13 @@
 ** TODO do sds api docs 
 ** TODO dsa check week 01 - 05 notes [0/5]
    briefly go through / take notes if not related
-*** TODO week01
 *** TODO week02
 *** TODO week03
 *** TODO week04
 *** TODO week05
-
 ** TODO dsa week 05 notes
 ** TODO dsa week 04 notes
+** TODO dsa week 06 notes
 * Tomorrow
 * Important Dates
 ** DSA a1  22 May

@@ -1,7 +1,7 @@
 #include <iostream>
-#include "./polygon.h"
+#include "polygon.h"
 
-// define printArea() of Polygon
+// define printArea() of polygon.h
 
 void Polygon::printArea() {
     std::cout << "Area: " << this->getArea() << std::endl;

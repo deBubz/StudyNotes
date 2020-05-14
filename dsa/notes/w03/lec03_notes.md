@@ -21,7 +21,7 @@
 
 ### Vectors
 
-- Dynamic size arrays, less overhead than lists/linkedlist
+- Dynamic size arrays, less overhead than lists/linked list
 - its just a wrapper for a regular array
   - functions like an array, but with extra steps so it is dynamically allocated
 
@@ -48,7 +48,7 @@
   - implementation: based on `array`
 - **list**
   - mem: dynamic size, contiguous
-  - feat: efficient insertion and deletion 
+  - feat: efficient insertion and deletion
   - implementation: based on `doubly linked list`
 
 > practice 1
@@ -127,7 +127,7 @@ class Node {
   - **iterator**: random access container
   - **bidirectional** iterator: non-random access containers.
 - reduce complexity and execution time of programs
-- iterators are built-into c++ 
+- iterators are built-into c++
 
 ok so
 
@@ -145,7 +145,7 @@ some iterators are:
 - linked list: `getHead()`, `tail()`
   - tail returns the list after head
 
----- 
+----
 
 ## Algorithms
 

@@ -1,8 +1,7 @@
 #include <iostream>
 #include "aStack.h"
 
-// implementation
-// AStack :: Node
+// AStack :: Node implementation
 AStack::Node::Node(int data, Node* next){
     this->data = data;
     this->next = next;
@@ -10,7 +9,7 @@ AStack::Node::Node(int data, Node* next){
 
 AStack::Node::~Node() {}
 
-// AStack
+// AStack implementation
 AStack::AStack(){
     this->head = nullptr;
 }
@@ -39,21 +38,4 @@ void AStack::display(){
     if(this->empty()){
         std::cout << "empty stack\n";
     }
-}
-
-int main() {
-    AStack* st = new AStack();
-
-    // add then remove
-    for(int i = 3; i < 10; i++){
-        if(i <= 5){
-            st->push(i);
-        } else {
-            st->pop();
-        }
-    }
-
-    st->display();
-
-    delete st;      // deallocate before exiting
 }

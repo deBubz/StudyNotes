@@ -2,7 +2,8 @@
 #define BASESTACK_H_
 
 // file 1
-// interface
+// interface for STACK
+
 class BaseStack{
     public:
     virtual bool empty() = 0;
