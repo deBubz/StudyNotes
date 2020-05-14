@@ -30,11 +30,13 @@
    CLOSED: [2020-05-14 Thu 03:12]
 ** TODO Email DB prog about the doccumentation
 ** TODO do sds api docs 
-** TODO dsa check week 01 - 05 notes [0/5]
+** TODO dsa check week 01 - 05 notes [2/4]
    briefly go through / take notes if not related
-*** TODO week02
-*** TODO week03
-*** TODO week04
+*** DONE week02
+    CLOSED: [2020-05-14 Thu 12:57]
+*** DONE week03
+    CLOSED: [2020-05-14 Thu 13:36]
+*** DOING week04
 *** TODO week05
 ** TODO dsa week 05 notes
 ** TODO dsa week 04 notes
