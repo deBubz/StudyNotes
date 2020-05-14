@@ -2,7 +2,7 @@
 
 ## Divide and Conquer
 
-General framework of a Divide and Conquer algo 
+General framework of a Divide and Conquer algo
 
 1. Divide the instance into a set of subproblems
 2. If the Subproblem is small enough, solve it; otherwise, recursively split the subproblem.

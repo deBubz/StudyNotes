@@ -10,7 +10,7 @@ unsigned long long factorial (unsigned long long n){
 
     for (auto i = 2; i <= n; i++)
     {
-        l = l * i; 
+        l = l * i;
     }
     return l;
 }
@@ -23,9 +23,9 @@ unsigned long long factorial_rec (unsigned long long n){
 
 // main
 int main() {
-    unsigned long long n;
-    std::cout << "Input Integer: " << std::endl;
-    std::cin >> n;
+    unsigned long long n = 5;
+    // std::cout << "Input Integer: " << std::endl;
+    // std::cin >> n;
 
     std::cout << factorial(n) << std::endl;
     std::cout << factorial_rec(n) << std::endl;

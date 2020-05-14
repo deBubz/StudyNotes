@@ -29,14 +29,12 @@ int main() {
     // create node 1
     std::string d1[] = {"sand", "which?"};
     Node n1(d1);
-    // add
-    head = &n1;
+    head = &n1;         // add
 
     // create node 2
     std::string d2[] = {"cheese", "stick"};
     Node * n2 = new Node(d2);
-    // add
-    head->setNext(n2);
+    head->setNext(n2);  // add
 
     // print
     Node *c = head;
