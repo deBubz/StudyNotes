@@ -507,7 +507,6 @@ class Assignment1Tests : public CxxTest::TestSuite{
 		}
 	}
 
-	void testDepthFirst(){
 
 		directed_graph<int> g;
 		int r = std::rand()%20 + 1;

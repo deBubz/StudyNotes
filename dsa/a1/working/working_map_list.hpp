@@ -5,11 +5,10 @@
 #include<string>
 #include<vector>
 #include<unordered_map>
-#include<array>
+#include<queue>
+#include<stack>
 
-// include more libraries here if you need to
-
-using namespace std; // the standard namespace are here just in case.
+using namespace std;
 
 /*
 	the vertex class
@@ -22,7 +21,6 @@ public:
 	T weight;
 
 	vertex(int x, T y) : id(x), weight(y) {}
-	// add more functions here if you need to
 };
 
 /*
@@ -61,6 +59,9 @@ public:
 	size_t out_degree(const int&); //Returns the number of edges leaving a vertex.
 	size_t degree(const int&); //Returns the degree of the vertex (both in edges and out edges).
 
+	// assist functions
+	//void init_visited_checker(const bool[]&);
+
 	// ok
 	size_t num_vertices() const; //Returns the total number of vertices in the graph.
 	size_t num_edges() const; //Returns the total number of edges in the graph.
@@ -71,8 +72,8 @@ public:
 	vector<vertex<T>> get_second_order_neighbours(const int&); // Returns a vector containing all the second_order_neighbours (i.e., neighbours of neighbours) of the given vertex.
 															  // A vector cannot be considered a second_order_neighbour of itself.
 	// todo
-	bool reachable(const int&, const int&) const; //Returns true if the second vertex is reachable from the first (can you follow a path of out-edges to get from the first to the second?). Returns false otherwise.
-	bool contain_cycles() const; // Return true if the graph contains cycles (there is a path from any vertices directly/indirectly to itself), false otherwise.
+	bool reachable(const int&, const int&); //Returns true if the second vertex is reachable from the first (can you follow a path of out-edges to get from the first to the second?). Returns false otherwise.
+	bool contain_cycles(); // Return true if the graph contains cycles (there is a path from any vertices directly/indirectly to itself), false otherwise.
 
 	// todo
 	vector<vertex<T>> depth_first(const int&); //Returns the vertices of the graph in the order they are visited in by a depth-first traversal starting at the given vertex.
@@ -188,6 +189,10 @@ size_t directed_graph<T>::degree(const int& u_id) {
 	return in_degree(u_id) + out_degree(u_id);
 }
 
+// void directed_graph<T>::init_visited_checker() {
+//	cout << "hey hey" << endl;
+// }
+
 template <typename T>	// return num of vertex
 size_t directed_graph<T>::num_vertices() const { return this->vertex_size; }
 
@@ -227,12 +232,10 @@ template <typename T>	// second neighbours
 vector<vertex<T>> directed_graph<T>::get_second_order_neighbours(const int& u_id) {
 	vector<vertex<T>> outN, secN,
 		firstN = get_neighbours(u_id);
-	bool flag[num_vertices() + 1];
 
 	// setting up flags for added verts
-	for (int i = 1; i < num_vertices() + 1; i++) {
-		flag[i] = false;
-	}
+	bool flag[num_vertices() + 1];
+	for (int i = 1; i < num_vertices() + 1; i++) { flag[i] = false; }
 
 	for (vertex<T> v1 : firstN) {						// foreach neighbour
 		secN = get_neighbours(v1.id);
@@ -248,9 +251,16 @@ vector<vertex<T>> directed_graph<T>::get_second_order_neighbours(const int& u_id
 }
 
 template <typename T>	// true if u can reach v
-bool directed_graph<T>::reachable(const int& u_id, const int& v_id) const {
-	if (adjacent(u_id, v_id)) return true;
+bool directed_graph<T>::reachable(const int& u_id, const int& v_id) {
+	// if (adjacent(u_id, v_id)) return true;
 
+	//// better breadth first
+	//vector<vertex<T>> n_list = breadth_first(u_id);
+	//cout << "breadth first  " << endl;
+	//for (int i = 0; i < n_list.size(); i++) {
+	//	if(v_id == n_list[i].id) return true;
+	//}
+	//cout << endl;
 
 	return false;
 }
@@ -258,7 +268,7 @@ bool directed_graph<T>::reachable(const int& u_id, const int& v_id) const {
 template <typename T>	// true if graph have any cycles
 bool directed_graph<T>::contain_cycles() {
 	// should be the same as reachable
-	// check each v if it can reach itself
+	// check each v if it can reach its neighbour
 
 	for(auto v : this->vertex_list) {
 		return reachable(v.first, v.first);
@@ -266,10 +276,82 @@ bool directed_graph<T>::contain_cycles() {
 }
 
 template <typename T>
-vector<vertex<T>> directed_graph<T>::depth_first(const int& u_id) { return vector<vertex<T>>(); }
+vector<vertex<T>> directed_graph<T>::depth_first(const int& u_id) {
+	// could break for unconnected
+	vector<vertex<T>> DFT;
+	stack<int> to_visit;
+
+	bool flag[num_vertices() + 1];
+	// setting up flags for visited verts
+	for (int i = 0; i < num_vertices() + 1; i++) {
+		flag[i] = false;
+	}
+
+	to_visit.push(u_id);
+	while(!to_visit.empty()) {
+		// pop from stack
+		int visit = to_visit.top();		// u
+		to_visit.pop();
+
+		if(!flag[visit]) {
+			DFT.push_back(vertex<T>(visit, this->vertex_list[visit]));
+			// visit u
+			flag[visit] = true;
+		}
+
+		for(vertex<T> v : get_neighbours(visit)) {
+			// add to stack if unvisited
+			if(!flag[v.id]) { to_visit.push(v.id); }
+		}
+	}
+
+	return DFT;
+}
+
+//template<typename T>
+//void directed_graph<T>::depth_first_util(const int& v, const bool flag[]) {
+//	// Mark the current node as visited and print it
+//	flag[v] = true;
+//	cout << v << " ";
+
+//	// Recur for all the vertices adjacent to this vertex
+//	//list<int>::iterator i;
+//	//for(i = adj[v].begin(); i != adj[v].end(); ++i)
+//	//	if(!visited[*i])
+//	//		depth_first_util(*i, visited);
+//}
 
 template <typename T>
-vector<vertex<T>> directed_graph<T>::breadth_first(const int& u_id) { return vector<vertex<T>>(); }
+vector<vertex<T>> directed_graph<T>::breadth_first(const int& u_id) {
+	// could break for
+	vector<vertex<T>> BFT;				// output
+
+	queue<int> to_visit;					// queue for bft
+	bool flag[num_vertices() + 1];	// visited checker
+	for (int i = 1; i < num_vertices() + 1; i++) {
+		flag[i] = false;
+	}
+
+	to_visit.push(u_id);					// first node
+
+	while(!to_visit.empty()) {
+		// pop from queue
+		int visit = to_visit.front();	// u
+		to_visit.pop();
+
+		if(!flag[visit]) {
+			BFT.push_back(vertex<T>(visit, this->vertex_list[visit]));
+			flag[visit] = true;
+		}										// visit u
+
+		for(vertex<T> v : get_neighbours(visit)) {
+			// add to stack if unvisited
+			if(!flag[v.id]) { to_visit.push(v.id); }
+		}
+
+	}
+	return BFT;
+}
 
 template <typename T>
 directed_graph<T> directed_graph<T>::out_tree(const int& u_id) { return directed_graph<T>(); }

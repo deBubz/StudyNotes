@@ -163,6 +163,7 @@ int testAddEdge_Adjacent_GetNeighbours() {
             if (rand()%2 == 0 && i != j){
                 re[i][j] = true;
                 g.add_edge(i+1, j+1, (i+1)+(j+1)); // add edges
+                cout << "edge: " << (i+1) << " " << (j+1) << endl;
             }else{
                 re[i][j] = false;
             }
@@ -210,6 +211,20 @@ int testAddEdge_Adjacent_GetNeighbours() {
         }
         //cout << "testing c" << endl;
     }
+
+        cout << "what\n";
+    vector<vertex<int>> bfs = g.breadth_first(1);
+
+    cout << "path from 1 size:" << g.num_vertices() << "\n";
+    cout << "edge count " << g.num_edges() << endl;
+    for(vertex<int> v : bfs) {
+        cout << v.id << " ";
+    }
+    cout << endl;
+
+
+
+
 
     return 0;
 }
@@ -271,11 +286,13 @@ int testVertexDegrees(){
 
     directed_graph<int> g;
 
+
     //  srand(time(0));
     int r = rand()%test_size + 2;
     for (int i = 0; i < r; ++i){
         g.add_vertex(vertex<int>(i+1,(i+1)*2)); // add vertices
     }
+
 
     bool re[r][r];
     for (int i = 0; i < r; ++i){
@@ -285,6 +302,7 @@ int testVertexDegrees(){
             if (rand()%2 == 1 && i != j){
                 re[i][j] = true;
                 g.add_edge(i+1,j+1,(i+1)+(j+1)); // add edges
+                cout << "edge: " << i+1 << " " << j+1 << endl;
             }else{
                 re[i][j] = false;
             }
@@ -316,6 +334,22 @@ int testVertexDegrees(){
             return 27;
         }
     }
+
+
+
+    //cout << "what\n";
+    vector<vertex<int>> bfs = g.breadth_first(2);
+
+    cout << "\npath from 2 size:" << g.num_vertices() << "\n";
+    cout << "edge count " << g.num_edges() << endl;
+    for(vertex<int> v : bfs) {
+        cout << v.id << " ";
+    }
+    cout << endl;
+
+    //cout << "reachable  from 4 - 1 " << g.reachable(4,1);
+
+
 
     return 0;
 
