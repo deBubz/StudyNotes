@@ -8,20 +8,23 @@
 *** functions
 ** directed_graph
 *** variables
-*** methods [0/24]
+*** methods [6/24]
 **** TODO constructor/destructor
      - standard
-**** TODO bool->contains (int&)
+**** DONE bool->contains (int&)
+     CLOSED: [2020-05-16 Sat 08:26]
      - return true if grap contains vertex_id
 **** TODO bool->adjacent (int&, int&)
      - return true if first vertex is adjacent to second
 
-**** TODO void add_vertex (vertex<T>&)
+**** DONE void add_vertex (vertex<T>&)
+     CLOSED: [2020-05-16 Sat 07:01]
      - Adds the passed in vertex to the graph (with no edges).
 **** TODO void add_edge (const int&, const int&, const T&)
      - Adds a weighted edge from the first vertex to the second.
  
-**** TODO void remove_vertex (int&)
+**** DONE void remove_vertex (int&)
+     CLOSED: [2020-05-16 Sat 07:30]
      - Removes the given vertex. Should also clear any incident edges.
 **** TODO void remove_edge (int&, int&)
      - Removes the edge between the two vertices, if it exists.
@@ -33,12 +36,15 @@
 **** TODO size_t degree(const int&) {return this->size; const;
      - Returns the degree of the vertex (both in edges and out edges).
 
-**** TODO size_t num_vertices() {return this->size;} const;
+**** DONE size_t num_vertices() {return this->size;} const;
+     CLOSED: [2020-05-16 Sat 07:02]
      - Returns the total number of vertices in the graph.
-**** TODO size_t num_edges() {return this->size;} const;
+**** DONE size_t num_edges() {return this->size;} const;
+     CLOSED: [2020-05-16 Sat 07:02]
      - Returns the total number of edges in the graph.
 
-**** TODO vector<vertex<T>> get_vertices() {vertex<T> v; return v;};
+**** DONE vector<vertex<T>> get_vertices() {vertex<T> v; return v;};
+     CLOSED: [2020-05-16 Sat 07:02]
      - Returns a vector containing all the vertices.
 
 **** TODO vector<vertex<T>> get_neighbours(int&) {vertex<T> v; return v;}
@@ -83,3 +89,36 @@ noting what i did
 
 - vector of vertex to add vertexes
 - vector of edges to add edges OR vector of vertex in vertex to keep pointing
+- did add vertex into list
+- add field num_vert and num_edges
+- did get_vertex list
+- added vertex_list, edit adjMatrix to store (v)
+
+** changing to unordered_map fix
+*** DONE add_vertex
+    CLOSED: [2020-05-16 Sat 10:42]
+*** DONE contains
+    CLOSED: [2020-05-16 Sat 10:42]
+*** DONE get_vertices
+    CLOSED: [2020-05-16 Sat 10:48]
+*** DONE num_vertices
+    CLOSED: [2020-05-16 Sat 11:15]
+*** DONE add_edge
+    CLOSED: [2020-05-16 Sat 21:58]
+
+*** DONE remove_vertex
+    CLOSED: [2020-05-17 Sun 00:14]
+**** DONE remove links
+     CLOSED: [2020-05-17 Sun 00:14]
+**** DONE remove from list
+     CLOSED: [2020-05-16 Sat 11:07]
+*** TODO num_edge
+*** DONE adjacent
+    CLOSED: [2020-05-16 Sat 21:58]
+*** in_dgree
+*** DONE out_degree
+    CLOSED: [2020-05-16 Sat 22:00]
+*** DONE degree
+    CLOSED: [2020-05-16 Sat 22:17]
+*** TODO second detgree neighbor
+*** remove edge

@@ -251,6 +251,7 @@ int test2ndOrderNeighbours(){
         vector<vertex<int>> son_i = g.get_second_order_neighbours(i+1);
 
         if(count_second_i != son_i.size()){
+            //cout << "test " << count_second_i << " ?? " << son_i.size() << endl;
             return 23;
         }
 

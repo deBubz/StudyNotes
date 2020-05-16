@@ -5,6 +5,7 @@
 #include<string>
 #include<vector>
 #include<unordered_map>
+#include<array>
 
 // include more libraries here if you need to
 
@@ -21,7 +22,6 @@ public:
 	T weight;
 
 	vertex(int x, T y) : id(x), weight(y) {}
-
 	// add more functions here if you need to
 };
 
@@ -33,7 +33,10 @@ class directed_graph {
 
 private:
 	unordered_map<int, T> vertex_list;
-	unordered_map<int, unordered_map<int, T>> adj_matrix;
+	unordered_map<int, unordered_map<int, T>> adj_list;
+
+	size_t vertex_size = 0;
+	size_t edge_size = 0;
 
 
 public:
@@ -81,72 +84,44 @@ public:
 // Although these are just the same names copied from above, you may find a few more clues in the full method headers.
 // Note also that C++ is sensitive to the order you declare and define things in - you have to have it available before you use it.
 
-template <typename T>	// const
-directed_graph<T>::directed_graph() {
-}
-
-template <typename T>	// destructor
-directed_graph<T>::~directed_graph() {}
+template <typename T> directed_graph<T>::directed_graph() {}
+template <typename T> directed_graph<T>::~directed_graph() {}
 
 template <typename T>	// does graph contain this edge
 bool directed_graph<T>::contains(const int& u_id) const {
-	if(this->adj_matrix.find(u_id) == this->adj_matrix.end()) return false;
+	if(this->adj_list.find(u_id) == this->adj_list.end()) return false;
 	else return true;
 }
 
 template <typename T>	// check if 2 vert is linked/n
 bool directed_graph<T>::adjacent(const int& u_id, const int& v_id) {
-	if (u_id == v_id) return false;	// no looped edges
+	if (contains(u_id) && contains(v_id) && (u_id != v_id)) {
+		// if exist && no looped edges
 
-	//cout << "finding " << u_id << "  " << v_id;
-	unordered_map<int, T> found = this->adj_matrix[u_id];
-	for ( auto f : found ) {
-		if (f.first == v_id) {
-			//cout << " true " << endl;
-			return true;
-			cout << v_id << " == " << f.first << " " << f.second << endl;
-		};
+		unordered_map<int, T> found = this->adj_list[u_id];
+		for ( auto f : found ) {
+			if (f.first == v_id) return true;
+		}
 	}
-	//cout << " false " << endl;
 	return false;
-
-	//if( found[v_id] == 0) {
-	//	cout << "return false for " << u_id << " " << v_id << " find\t"<< found[v_id] << endl;
-	//	return false;
-	//} else {
-	//	cout << "return true findTo\t"<< found[v_id] << endl;
-	//	return true;
-	//};
-
-
-	//typedef pair<const Key, T> value_type;
-	//typename unordered_map<int,T>::iterator it = adj_matrix[u_id].begin();
-
-
-	//if(this->adj_matrix[u_id].find(v_id) == this->adj_matrix[u_id].end()){
-	//	return false;
-	//} else return true;
-
-
-	//return false;
 }
 
 template <typename T>	// add vertex
 void directed_graph<T>::add_vertex(const vertex<T>& u) {
-	if(!this->contains(u.id)){	// if not already added
-		vertex_list.insert({u.id, u.weight});
-		this->adj_matrix[u.id] = unordered_map<int, T>(); // (key, empty map<key, weight>)
+	if(!contains(u.id)){	// if not already added
+		this->vertex_list.insert({u.id, u.weight});		// into list
+		this->adj_list[u.id] = unordered_map<int, T>(); // (uid, empty map<key, weight>)
+		this->vertex_size++;
 	}
 }
 
 template <typename T>	// add edge
 void directed_graph<T>::add_edge(const int& u_id, const int& v_id, const T& weight) {
 
-	if (this->contains(u_id) && this->contains(v_id)) {		// check existing vertexes
-		if (this->adj_matrix[u_id].find(v_id) == this->adj_matrix[u_id].end()) {	// check existing links
-			this->adj_matrix[u_id].insert({v_id, weight});
-
-			//cout << "add\t" << u_id << " " << v_id << " " << adj_matrix[u_id][v_id] << endl;
+	if (contains(u_id) && contains(v_id)) {		// check existing vertexes
+		if (this->adj_list[u_id].find(v_id) == this->adj_list[u_id].end()) {	// check existing edges
+			this->adj_list[u_id].insert({v_id, weight});
+			this->edge_size++;
 		}
 	}
 
@@ -155,32 +130,35 @@ void directed_graph<T>::add_edge(const int& u_id, const int& v_id, const T& weig
 template <typename T>	// remove vertex
 void directed_graph<T>::remove_vertex(const int& u_id) {
 	if (this->contains(u_id)) {
-		this->vertex_list.erase(u_id);			// delet from list
-		this->adj_matrix.erase(u_id);				// delet v head from list
+		this->vertex_list.erase(u_id);		// delet from list
+		this->adj_list.erase(u_id);			// delet v head from list
+		this->vertex_size--;
 
-		//cout << "\tremoving " << u_id << endl;
-		//cout << "\t-------------" << endl;
-		for (auto x : this->vertex_list) {		// delet v tail from list
-			adj_matrix[x.first].erase(u_id);
+		for (auto x : this->vertex_list) {	// delet v tail from list
+			adj_list[x.first].erase(u_id);
 		}
 	}
 }
 
-template <typename T>	// remove edge
+template <typename T>	// remove edge (u,v)
 void directed_graph<T>::remove_edge(const int& u_id, const int& v_id) {
+	if(adjacent(u_id, v_id)) {
 
+		this->edge_size--;
+	}
 }
 
 template <typename T>
 size_t directed_graph<T>::in_degree(const int& u_id) {
 	size_t size = 0;
-	if(contains(u_id)) {							// find out_deg from u_id
-		for (auto v : this->vertex_list) {	// u_map<id, weight>
-			if(this->adj_matrix[v.first].find(u_id) != this->adj_matrix[v.first].end())
+	if(contains(u_id)) {							// check if exist
+		for (auto v : this->vertex_list) {	// foreach map(id, W) in list
+			// find edges v -> u
+			unordered_map<int, T> map = this->adj_list[v.first];
+			if(map.find(u_id) != map.end())
 				size++;
 		}
 	}
-	//cout << " wtf size " << size << "  ";
 	return size;
 }
 
@@ -188,9 +166,9 @@ template <typename T>
 size_t directed_graph<T>::out_degree(const int& u_id) {
 	size_t size = 0;
 
-	if (contains(u_id)) {
-		unordered_map<int, T> map = adj_matrix[u_id];
+	if (contains(u_id)) {	// if exist
 
+		unordered_map<int, T> map = adj_list[u_id];
 		for (auto v: this->vertex_list ) {
 			if(map.find(v.first) != map.end()) size++;
 		}
@@ -206,8 +184,6 @@ size_t directed_graph<T>::degree(const int& u_id) {
 
 template <typename T>	// return num of vertex
 size_t directed_graph<T>::num_vertices() const {
-
-
 	return this->vertex_list.size();
 
 }
@@ -215,11 +191,10 @@ size_t directed_graph<T>::num_vertices() const {
 template <typename T>	// return num of edges
 size_t directed_graph<T>::num_edges() const {
 	size_t size = 0;
-	for (auto v : adj_matrix) {
+	for (auto v : adj_list) {
 		size += v.second.size();
 	}
-	//cout << "gmm " << size << endl;
-	//wrong
+
 	return size;
 }
 
@@ -239,19 +214,44 @@ template <typename T>
 vector<vertex<T>> directed_graph<T>::get_neighbours(const int& u_id) {
 	vector<vertex<T>> v;
 	if (contains(u_id)) {
-		//cout << "get n " << u_id << endl;
-		for (auto f : this->adj_matrix[u_id]) {
-			//cout << " found " << u_id << f.first << " " << f.second << endl;
+		for (auto f : this->adj_list[u_id]) {
 			vertex<T> n(f.first, f.second);
 			v.push_back(n);
 		}
 	}
-
 	return v;
 }
 
 template <typename T>
-vector<vertex<T>> directed_graph<T>::get_second_order_neighbours(const int& u_id) { return vector<vertex<T>>(); }
+vector<vertex<T>> directed_graph<T>::get_second_order_neighbours(const int& u_id) {
+	vector<vertex<T>> firstN = get_neighbours(u_id);
+	vector<vertex<T>> secN, outN;
+	bool flag[num_vertices() + 1];
+
+	// setting up flags for added verts
+	for (int i = 1; i < num_vertices() + 1; i++) {
+		flag[i] = false;
+	}
+
+	//cout << endl;
+
+	for (vertex<T> v1 : firstN) {						// foreach neighbour
+		secN = get_neighbours(v1.id);
+		for (vertex<T> v2 : secN) {					// foreach neighbour of neighbour
+			if ((v2.id != u_id) && !flag[v2.id]) {	// cannot be itself and not yet added
+				outN.push_back(v2);
+				flag[v2.id] = true;
+			}
+		}
+	}
+
+	//for (vertex<T> v3 : outN) {
+	//	//cout << v3.id << " ";
+	//}
+	//cout << endl;
+
+	return outN;
+}
 
 template <typename T>
 bool directed_graph<T>::reachable(const int& u_id, const int& v_id) const { return false; }

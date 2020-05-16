@@ -45,16 +45,21 @@
    CLOSED: [2020-05-16 Sat 01:11]
 ** DONE dsa 05 adj_list
    CLOSED: [2020-05-16 Sat 01:11]
+** DONE build basic sds form while using one of the json
+   CLOSED: [2020-05-16 Sat 06:20]
 ** TODO Email DB prog about the doccumentation
 ** TODO dsa week 05 lec
 ** TODO note sds form element
 ** TODO dsa week 06 notes
-** DOING build basic sds form while using one of the json
-** TODO do sds api docs 
+** TODO do sds api docs on what i need 
+** TODO internet bills
+** TODO cancel optus
+** TODO student fees
 * Tomorrow
 * Important Dates
 ** DSA a1  22 May
 ** DB Prog 5 June
+** cloud 11 June
 * Subjects
 ** DSA
 ** DB Prog
