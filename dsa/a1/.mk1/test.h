@@ -46,7 +46,7 @@ class Assignment1Tests : public CxxTest::TestSuite{
 
 		directed_graph<double> i;
 		TS_ASSERT_EQUALS(i.num_vertices(), 0);
-		TS_ASSERT_EQUALS(i.num_edges(), 0);		
+		TS_ASSERT_EQUALS(i.num_edges(), 0);
 	}
 
 	void testAddVertex(){
@@ -55,7 +55,7 @@ class Assignment1Tests : public CxxTest::TestSuite{
 		int r = std::rand()%20 + 1;
 		for (int i = 0; i < r; ++i) g.add_vertex(i);
 
-		TS_ASSERT_EQUALS(g.num_vertices(),r);		
+		TS_ASSERT_EQUALS(g.num_vertices(),r);
 	}
 
 	void testContains(){
@@ -66,7 +66,7 @@ class Assignment1Tests : public CxxTest::TestSuite{
 
 		for (int i = 0; i < r; i++){
 			TS_ASSERT(g.contains(i));
-		}		
+		}
 	}
 
 	void testRemoveVertex(){
@@ -92,7 +92,7 @@ class Assignment1Tests : public CxxTest::TestSuite{
 				out.push_back(i);
 			}
 		}
-		
+
 		for (auto i : out) g.remove_vertex(i);
 
 		TS_ASSERT_EQUALS(g.num_vertices(), r - out.size());
@@ -145,18 +145,18 @@ class Assignment1Tests : public CxxTest::TestSuite{
 	}
 
 	void testAreAdjacent() {
-		
+
 		directed_graph<std::string> h;
-		
+
 		h.add_vertex("vertex1");
 		h.add_vertex("vertex2");
 		h.add_vertex("vertex3");
 		h.add_vertex("vertex4");
-		
+
 		h.add_edge("vertex2", "vertex3");
 		h.add_edge("vertex4", "vertex1");
 		h.add_edge("vertex1", "vertex3");
-		
+
 		TS_ASSERT(h.adjacent("vertex2", "vertex3"));
 		TS_ASSERT(h.adjacent("vertex4", "vertex1"));
 		TS_ASSERT(h.adjacent("vertex1", "vertex3"));
@@ -246,8 +246,8 @@ class Assignment1Tests : public CxxTest::TestSuite{
 			g.add_vertex(i);
 		}
 
-		struct PairHash{ 
-			size_t operator()(const std::pair<int, int> &key) const{ 
+		struct PairHash{
+			size_t operator()(const std::pair<int, int> &key) const{
 				return std::hash<int>()(key.first) * std::hash<int>()(key.second);
 			}
 		};
@@ -284,7 +284,7 @@ class Assignment1Tests : public CxxTest::TestSuite{
 
 	}
 
-	void testOutDegree(){	
+	void testOutDegree(){
 
 		directed_graph<int> g;
 		int r = std::rand()%20 + 2;
@@ -329,7 +329,7 @@ class Assignment1Tests : public CxxTest::TestSuite{
 
 	}
 
-	void testInDegree(){	
+	void testInDegree(){
 
 		directed_graph<int> g;
 		int r = std::rand()%20 + 2;
@@ -374,7 +374,7 @@ class Assignment1Tests : public CxxTest::TestSuite{
 
 	}
 
-	void testDegree(){	
+	void testDegree(){
 
 		directed_graph<int> g;
 		int r = std::rand()%20 + 2;
@@ -455,7 +455,7 @@ class Assignment1Tests : public CxxTest::TestSuite{
 			for (int j = i + 1; j < v.size(); ++j){
 				TS_ASSERT_DIFFERS(v[i], v[j]);
 			}
-		}		
+		}
 	}
 
 	void testGetNeighbours(){
@@ -503,7 +503,7 @@ class Assignment1Tests : public CxxTest::TestSuite{
 				for (int k = j + 1; k < n_i.size(); ++k){
 					TS_ASSERT_DIFFERS(n_i[j], n_i[k]);
 				}
-			}	
+			}
 		}
 	}
 
@@ -525,7 +525,7 @@ class Assignment1Tests : public CxxTest::TestSuite{
 			for (int j = 0; j < r;  ++j){
 				if (std::rand()%2 == 1 && i != j){
 					re[i][j] = true;
-					
+
 				}
 			}
 		}
@@ -578,7 +578,7 @@ class Assignment1Tests : public CxxTest::TestSuite{
 			for (int j = 0; j < r;  ++j){
 				if (std::rand()%2 == 1 && i != j){
 					re[i][j] = true;
-					
+
 				}
 			}
 		}
@@ -615,31 +615,31 @@ class Assignment1Tests : public CxxTest::TestSuite{
 	}
 
 	void testOutTree(){
-	  
+
 	  directed_graph<int> g;
 	  std::vector<int> verts;
 	  int r = std::rand()%20 + 1;
-	  
+
 	  bool re[r][r];
-	  
+
 	  for (int i = 0; i < r; ++i){
 	    for (int  j = 0; j < r; ++j){
 	      re[i][j] = false;
 	    }
 	  }
-	  
+
 	  for (int i = 0; i < r; ++i){
 	    g.add_vertex(i);
 	    verts.push_back(i);
 	  }
-	  
+
 	  std::vector<std::pair<int, int> > tree_edges = random_tree(verts);
-	  
+
 	  for (auto edge : tree_edges){
 	    g.add_edge(edge.first, edge.second);
 	    re[edge.first][edge.second] = true;
 	  }
-	  
+
 	  for (int i = 0; i < r; ++i){
 	    for (int j = 0; j < r;  ++j){
 	      if (std::rand()%2 == 1 && re[i][j] == 0 && i != j){
@@ -648,7 +648,7 @@ class Assignment1Tests : public CxxTest::TestSuite{
 	      }
 	    }
 	  }
-	  
+
 	  directed_graph<int> t = g.out_tree(0);
 
 	  TS_ASSERT_EQUALS(t.num_vertices(), verts.size());
@@ -659,35 +659,35 @@ class Assignment1Tests : public CxxTest::TestSuite{
 			  if (!re[i][j]) TS_ASSERT(!t.adjacent(i,j));
 		  }
 	  }
-	  
+
 	}
 
 	void testInTree() {
-	  
+
 	  directed_graph<int> g;
 	  std::vector<int> verts;
 	  int r = std::rand()%20 + 1;
-	  
+
 	  bool re[r][r];
-	  
+
 	  for (int i = 0; i < r; ++i){
 	    for (int  j = 0; j < r; ++j){
 	      re[i][j] = false;
 	    }
 	  }
-	  
+
 	  for (int i = 0; i < r; ++i){
 	    g.add_vertex(i);
 	    verts.push_back(i);
 	  }
-	  
+
 	  std::vector<std::pair<int, int> > tree_edges = random_tree(verts);
-	  
+
 	  for (auto edge : tree_edges){
 	    g.add_edge(edge.second, edge.first);
 	    re[edge.second][edge.first] = true;
 	  }
-	  
+
 	  for (int i = 0; i < r; ++i){
 	    for (int j = 0; j < r;  ++j){
 	      if (std::rand()%2 == 1 && re[i][j] == 0 && i != j){
@@ -696,7 +696,7 @@ class Assignment1Tests : public CxxTest::TestSuite{
 	      }
 	    }
 	  }
-	  
+
 	  directed_graph<int> t = g.in_tree(0);
 
 	  TS_ASSERT_EQUALS(t.num_vertices(), verts.size());
@@ -710,18 +710,18 @@ class Assignment1Tests : public CxxTest::TestSuite{
 	}
 
 	void testReachable() {
-	  
+
 	  directed_graph<int> g;
 	  int r = std::rand()%20 + 2;
-	  
+
 	  bool re[r][r];
-	  
+
 	  for (int i = 0; i < r; ++i){
 	    for (int  j = 0; j < r; ++j){
 	      re[i][j] = false;
 	    }
 	  }
-	  
+
 	  for (int i = 0; i < r; ++i){
 	    for (int j = 0; j < r; ++j){
 	      if (std::rand()%2 == 1 && i != j){
@@ -729,11 +729,11 @@ class Assignment1Tests : public CxxTest::TestSuite{
 	      }
 	    }
 	  }
-	  
+
 	  for (int i = 0; i < r; ++i){
 	    g.add_vertex(i);
 	  }
-	  
+
 	  for (int i = 0; i < r; ++i){
 	    for (int j = 0; j < r;  ++j){
 	      if (re[i][j]){
@@ -747,7 +747,7 @@ class Assignment1Tests : public CxxTest::TestSuite{
 	      TS_ASSERT_EQUALS(g.reachable(i,j), is_reachable(g, i, j));
 	    }
 	  }
-	  
+
 	}
 
 	void testGraphIterator(){
@@ -767,7 +767,7 @@ class Assignment1Tests : public CxxTest::TestSuite{
 			for (int j = 0; j < r;  ++j){
 				if (std::rand()%2 == 1 && i != j){
 					re[i][j] = true;
-					
+
 				}
 			}
 		}
@@ -782,7 +782,7 @@ class Assignment1Tests : public CxxTest::TestSuite{
 					g.add_edge(i,j);
 				}
 			}
-		}		
+		}
 
 		std::unordered_set<int> it_vertices;
 		for (auto v : g){
@@ -831,7 +831,7 @@ class Assignment1Tests : public CxxTest::TestSuite{
 
 		for (auto u = 0; u < r; u++){
 
-			std::unordered_set<int> it_neighbours;
+			std::unordered_set<int> neighbours;
 			for (auto n = g.nbegin(u); n != g.nend(u); ++n){
 				it_neighbours.insert(*n);
 			}

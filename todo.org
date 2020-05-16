@@ -25,22 +25,32 @@
    CLOSED: [2020-05-13 Wed 05:58]
 ** DONE take db notes week07
    CLOSED: [2020-05-13 Wed 14:31]
-* Tasks
 ** DONE get started on DSA a1
    CLOSED: [2020-05-14 Thu 03:12]
-** TODO Email DB prog about the doccumentation
-** TODO do sds api docs 
-** TODO dsa check week 01 - 05 notes [2/4]
+** DONE dsa check week 01 - 05 notes [4/4]
+   CLOSED: [2020-05-15 Fri 02:28]
    briefly go through / take notes if not related
 *** DONE week02
     CLOSED: [2020-05-14 Thu 12:57]
 *** DONE week03
     CLOSED: [2020-05-14 Thu 13:36]
-*** DOING week04
-*** TODO week05
-** TODO dsa week 05 notes
-** TODO dsa week 04 notes
+*** DONE week04
+    CLOSED: [2020-05-15 Fri 02:28]
+*** DONE week05
+    CLOSED: [2020-05-15 Fri 02:28]
+** DONE dsa week 05 notes
+   CLOSED: [2020-05-15 Fri 02:28]
+* Tasks
+** DONE dsa 05 adj_matrix
+   CLOSED: [2020-05-16 Sat 01:11]
+** DONE dsa 05 adj_list
+   CLOSED: [2020-05-16 Sat 01:11]
+** TODO Email DB prog about the doccumentation
+** TODO dsa week 05 lec
+** TODO note sds form element
 ** TODO dsa week 06 notes
+** DOING build basic sds form while using one of the json
+** TODO do sds api docs 
 * Tomorrow
 * Important Dates
 ** DSA a1  22 May

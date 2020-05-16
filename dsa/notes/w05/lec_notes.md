@@ -26,7 +26,7 @@
 ### Notations & Definitions
 
 - **adjacent** 2 vertices have an edge between
-- **incident** vertex is one pair that forms and edge 
+- **incident** vertex is one pair that forms and edge
 - **degree** number on edges incident to a vertex
 - **G, H** uppercase letters = graphs
 - **u, v** vertices
@@ -56,20 +56,19 @@ size_t degree(Vertex u);
 ### DS - Adjacency Matrix
 
 - simplest form
-  - edges stored as 2d matrix ( `vector<vector<bool>>` edges OR `edge[][]` )
+  - edges stored as 2d matrix ( `vector<vector<bool>>` edges OR `bool edge[][]` )
+  - `edge[i][j] == true` means vertex `i` is adjacent to `j`
 - enhancements
-  - can use a numeric matrix to give *weighed edge*
+  - can use a numeric matrix to give *weighted edge*
   - supports **directed** and **undirected**
   - if vertices have **associated data**, they can be stored separately
 - quick access `O(1)`, spaces `O(n^2)`
 
 ### DS - Adjacency List
 
-- Each vertex has associated with a list of its adjacent vertices forming an array of linked lists or similar.
+- Each vertex contains a list of its adjacent vertices (array of linked lists or similar).
 - Easy to modify for more complex edge and vertex data structure
-- Works best for sparse graphs
-
-> OK what the fuck is this
+- better on sparse graphs ( less edge per vertex )
 
 ### DS - object oriented
 
@@ -83,6 +82,8 @@ size_t degree(Vertex u);
 - Evaluation Criteria
   - Search time, space
   - support for modification
+
+---
 
 ## Traversing Graphs
 
@@ -113,7 +114,7 @@ DFT(Vertex v){
 Iterative
 
 ```md
-// pseudo 
+// pseudo
 DFT(){
     starting vertex v;
     Stack unprocessed = new Stack();
@@ -164,26 +165,44 @@ BFT() {
 ## Greedy Algos
 
 - Narrow Sense
+  - Do what's best at the moment
 - Broad Sense
+  - doesn't generally produces the optimal solution
+  - simpler to implement
+  - may produce the worst solutions
 
-### Is my algo greddy
+> *Is my Algo Greedy* what does the graph means
 
 ## Spanning trees of Graphs
 
-### Problem
+consider
+
+- ISPs need to connect cities with cables that such each city has a link to every other city. Company knows the cost of linking each pair of cities and wants to do it with minimum cost.
+- Weighted graphs can solve this but what are we looking for
+  - set of edges that connects all vertices
+  - no unneeded edges (disconnected ?)
+- we want a sub graph that *includes all the vertices* and has the min total edge weight (tree)
 
 ### Spanning trees
 
+- **subgraph** is a subset of vertices of edges of a graph that form a graph
+- subgraph is **spanning** if it includes all the vertices of the original graph
+- spanning tree is a **minimum spanning tree** if it has the least total (edge) weight over all possible spanning trees of the graph
+
 ### Unweighted Graphs
 
-> a graph where all edges weghts are the same
+In unweighted graphs, any spanning tree is a minimum spanning tree
+
+> a graph where all edges weight are the same
+
+can compute one from a DFT or BFT
 
 
 ### Weighted Graphs
 
 - if theres different weights on the edges, a simple traversal is not enough
 
-Use these 2 following greedy algos
+Use these 2 following greedy algos: Prims or KrusKal
 
 ### Prim's algo
 
@@ -194,7 +213,7 @@ Given a connected graph G
    1. let `E'` be the set of edges where `uv` where `u in T` and `v in G/T`
    2. let `uv` be the edges of the smallest weight in `E'`
    3. add `uv` to the edges of `T` and `v` to verteces of `T`
-3. Return `T` 
+3. Return `T`
 
 In other words
 
@@ -216,6 +235,8 @@ prims(Graph G, Tree T) {
 
 ### Kruskal's Algo
 
+> dont see the differences between Prims and KrusKal
+
 #### Other Algos
 
 - (misc) sort of like a backward;s Kruskal
@@ -226,7 +247,6 @@ prims(Graph G, Tree T) {
 if graph has several disconnected component, we **cannot** get a spanning tree. *Must be connected*.
 
 The algos we have so far wont work.
-
 
 ---
 
