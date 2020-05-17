@@ -42,9 +42,11 @@ public:
 	directed_graph();
 	~directed_graph();
 
+	// ======= helper functions ===========
 	// ok
 	bool contains(const int &) const;
 	bool adjacent(const int &, const int &);
+
 
 	// ok
 	void add_vertex(const vertex<T> &);						 //Adds the passed in vertex to the graph (with no edges).
@@ -65,9 +67,10 @@ public:
 
 	// helper methods
 	// get vertex by id
-	vertex<T> get_vertex(const int&);
 
 	// ok
+
+	vertex<T> get_vertex(const int&);
 	vector<vertex<T>> get_vertices();									//Returns a vector containing all the vertices.
 	vector<vertex<T>> get_neighbours(const int &);					//Returns a vector containing all the vertices reachable from the given vertex. The vertex is not considered a neighbour of itself.
 	vector<vertex<T>> get_second_order_neighbours(const int &); // Returns a vector containing all the second_order_neighbours (i.e., neighbours of neighbours) of the given vertex.
@@ -95,19 +98,22 @@ public:
 // Although these are just the same names copied from above, you may find a few more clues in the full method headers.
 // Note also that C++ is sensitive to the order you declare and define things in - you have to have it available before you use it.
 
+// =============== const, destr ======================
 template <typename T> directed_graph<T>::directed_graph() {
 	this->vertex_size = 0;
 	this->edge_size = 0;
 }
 template <typename T> directed_graph<T>::~directed_graph() {}
 
-template <typename T>
+// ============== helper functions ===================
+
+template <typename T>	// ok
 bool directed_graph<T>::contains(const int &u_id) const
 {	// check if graph contains vertex u
 	return this->vertex_list.find(u_id) != this->vertex_list.end();
 }
 
-template <typename T>
+template <typename T>	// ok
 bool directed_graph<T>::adjacent(const int &u_id, const int &v_id)
 {	// check if graph contains u->v
 	if (contains(u_id) && contains(v_id) && (u_id != v_id))
@@ -116,6 +122,8 @@ bool directed_graph<T>::adjacent(const int &u_id, const int &v_id)
 	}
 	return false;
 }
+
+
 
 template <typename T> // add vertex
 void directed_graph<T>::add_vertex(const vertex<T> &u)
@@ -218,6 +226,11 @@ size_t directed_graph<T>::degree(const int &u_id)
 // void directed_graph<T>::init_visited_checker() {
 //	cout << "hey hey" << endl;
 // }
+template <typename T>
+vertex<T> directed_graph<T>::get_vertex(const int &u_id)
+{	// returns a copy of vector obj from vertex_list
+	return vertex<T>(u_id, this->vertex_list[u_id]);
+}
 
 template <typename T> // return num of vertex
 size_t directed_graph<T>::num_vertices() const
@@ -349,7 +362,7 @@ vector<vertex<T>> directed_graph<T>::depth_first(const int &u_id)
 
 		if (!flag[visit])
 		{
-			DFT.push_back(vertex<T>(visit, this->vertex_list[visit]));
+			DFT.push_back(get_vertex(visit));
 			// visit u
 			flag[visit] = true;
 		}
@@ -390,7 +403,7 @@ vector<vertex<T>> directed_graph<T>::breadth_first(const int &u_id)
 
 		if (!flag[visit])
 		{
-			BFT.push_back(vertex<T>(visit, this->vertex_list[visit]));
+			BFT.push_back(get_vertex(visit));
 			flag[visit] = true;
 		} // visit u
 
@@ -418,7 +431,7 @@ directed_graph<T> directed_graph<T>::out_tree(const int &u_id)
 
 	// dfs recursive
 	// root node
-	tree.add_vertex(vertex<T>(u_id, this->vertex_list[u_id]));
+	tree.add_vertex(get_vertex(u_id));
 
 	for (vertex<T> v : get_neighbours(u_id))
 	{	// foreach neighbours of root
@@ -435,8 +448,8 @@ void directed_graph<T>::out_tree_helper(directed_graph<T> &tree, const int &pare
 	if(!flag[child_id]) {
 		flag[child_id] = true;	// mark visited
 		// add parent, child vertex
-		tree.add_vertex(vertex<T>(parent_id, this->vertex_list[parent_id]));
-		tree.add_vertex(vertex<T>(child_id, this->vertex_list[child_id]));
+		tree.add_vertex(get_vertex(parent_id));
+		tree.add_vertex(get_vertex(child_id));
 		// add edge parent -> child
 		tree.add_edge(parent_id, child_id, this->adj_list[parent_id][child_id]);
 
