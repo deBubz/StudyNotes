@@ -163,7 +163,7 @@ int testAddEdge_Adjacent_GetNeighbours() {
             if (rand()%2 == 0 && i != j){
                 re[i][j] = true;
                 g.add_edge(i+1, j+1, (i+1)+(j+1)); // add edges
-                cout << "edge: " << (i+1) << " " << (j+1) << endl;
+                //cout << "edge: " << (i+1) << " " << (j+1) << endl;
             }else{
                 re[i][j] = false;
             }
@@ -212,15 +212,15 @@ int testAddEdge_Adjacent_GetNeighbours() {
         //cout << "testing c" << endl;
     }
 
-        cout << "what\n";
+        //cout << "what\n";
     vector<vertex<int>> bfs = g.breadth_first(1);
 
-    cout << "path from 1 size:" << g.num_vertices() << "\n";
-    cout << "edge count " << g.num_edges() << endl;
+    //cout << "path from 1 size:" << g.num_vertices() << "\n";
+    //cout << "edge count " << g.num_edges() << endl;
     for(vertex<int> v : bfs) {
-        cout << v.id << " ";
+        //cout << v.id << " ";
     }
-    cout << endl;
+    //cout << endl;
 
 
 
@@ -302,7 +302,7 @@ int testVertexDegrees(){
             if (rand()%2 == 1 && i != j){
                 re[i][j] = true;
                 g.add_edge(i+1,j+1,(i+1)+(j+1)); // add edges
-                cout << "edge: " << i+1 << " " << j+1 << endl;
+                //cout << "edge: " << i+1 << " " << j+1 << endl;
             }else{
                 re[i][j] = false;
             }
@@ -324,7 +324,7 @@ int testVertexDegrees(){
             }
         }
         if(g.in_degree(i+1) != in_degree_count){
-            cout << g.in_degree(i+1) << " out is " << out_degree_count << endl;
+            //cout << g.in_degree(i+1) << " out is " << out_degree_count << endl;
             return 25;
         }
         if(g.out_degree(i+1) != out_degree_count){
@@ -340,14 +340,14 @@ int testVertexDegrees(){
     //cout << "what\n";
     vector<vertex<int>> bfs = g.breadth_first(2);
 
-    cout << "\npath from 2 size:" << g.num_vertices() << "\n";
-    cout << "edge count " << g.num_edges() << endl;
+    //cout << "\npath from 2 size:" << g.num_vertices() << "\n";
+    //cout << "edge count " << g.num_edges() << endl;
     for(vertex<int> v : bfs) {
-        cout << v.id << " ";
+        //cout << v.id << " ";
     }
-    cout << endl;
-    cout << "reachable  from 4 - 1 " << g.reachable(4,1) << endl;
-    cout << "cycle " << g.contain_cycles() << endl;
+    //cout << endl;
+    //cout << "reachable  from 4 - 1 " << g.reachable(4,1) << endl;
+    //cout << "cycle " << g.contain_cycles() << endl;
 
     directed_graph<int> tree = g.out_tree(1);
 

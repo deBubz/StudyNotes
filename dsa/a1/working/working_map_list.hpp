@@ -107,13 +107,13 @@ template <typename T> directed_graph<T>::~directed_graph() {}
 
 // ============== helper functions ===================
 
-template <typename T>	// ok
+template <typename T> // ok
 bool directed_graph<T>::contains(const int &u_id) const
 {	// check if graph contains vertex u
 	return this->vertex_list.find(u_id) != this->vertex_list.end();
 }
 
-template <typename T>	// ok
+template <typename T> // ok
 bool directed_graph<T>::adjacent(const int &u_id, const int &v_id)
 {	// check if graph contains u->v
 	if (contains(u_id) && contains(v_id) && (u_id != v_id))
@@ -123,54 +123,46 @@ bool directed_graph<T>::adjacent(const int &u_id, const int &v_id)
 	return false;
 }
 
-
-
-template <typename T> // add vertex
+template <typename T> // ok
 void directed_graph<T>::add_vertex(const vertex<T> &u)
 {
 	if (!contains(u.id))
-	{																	// if not already added
+	{	// add vertex if not exist
 		this->vertex_list.insert({u.id, u.weight});		// into list
-		this->adj_list[u.id] = unordered_map<int, T>(); // (uid, empty map<key, weight>)
+		this->adj_list[u.id] = unordered_map<int, T>(); // map<uid, (empty map<key, weight>)>
 		this->vertex_size++;
 	}
 }
 
-template <typename T> // add edge
+template <typename T> // ok
 void directed_graph<T>::add_edge(const int &u_id, const int &v_id, const T &weight)
-{
-
-	if (contains(u_id) && contains(v_id))
-	{ // check existing vertexes
-		if (!adjacent(u_id, v_id))
-		{ // check existing edges
-			this->adj_list[u_id].insert({v_id, weight});
-			this->edge_size++;
-
-			//cout << "added edge" << u_id << " " << v_id << " " << weight << endl;
-		}
+{	// add edge u->v with weight
+	if (contains(u_id) && contains(v_id) && !adjacent(u_id, v_id))
+	{ // check if edge exist, edge doenst
+		this->adj_list[u_id].insert({v_id, weight});
+		this->edge_size++;
 	}
 }
 
-template <typename T> // remove vertex
+template <typename T> // ok
 void directed_graph<T>::remove_vertex(const int &u_id)
-{
-	if (this->contains(u_id))
-	{
-		this->vertex_list.erase(u_id); // delet from list
-		this->adj_list.erase(u_id);	 // delet v head from list
-		this->vertex_size--;
+{	// remove vertex u
+	if (contains(u_id))
+	{	// if vertex exist
+		this->vertex_list.erase(u_id);	// delete u from vertex_list
+		this->adj_list.erase(u_id);		// delete u-> v from adj_list
 
-		for (auto x : this->vertex_list)
-		{ // delet v tail from list
-			this->adj_list[x.first].erase(u_id);
+		for (auto v : this->vertex_list)	// pair<int, T>
+		{	// delete edges v->u
+			this->adj_list[v.first].erase(u_id);
 		}
+		this->vertex_size--;
 	}
 }
 
-template <typename T> // remove edge (u,v)
+template <typename T> // ok
 void directed_graph<T>::remove_edge(const int &u_id, const int &v_id)
-{
+{	// remove edge u->v
 	if (adjacent(u_id, v_id))
 	{
 		this->adj_list[u_id].erase(v_id);
@@ -178,139 +170,109 @@ void directed_graph<T>::remove_edge(const int &u_id, const int &v_id)
 	}
 }
 
-template <typename T>
+template <typename T> // ok
 size_t directed_graph<T>::in_degree(const int &u_id)
-{
+{	// returns in_degrees to u
 	size_t size = 0;
 	if (contains(u_id))
-	{ // check if exist
+	{
 		for (auto v : this->vertex_list)
-		{ // foreach map(id, W) in adj_list
-			// find edges v -> u
-			unordered_map<int, T> map = this->adj_list[v.first];
-			if (map.find(u_id) != map.end())
+		{	// for each vertex v, if v->u exist
+			if (this->adj_list[v.first].find(u_id) != this->adj_list[u_id].end())
 				size++;
 		}
 	}
 	return size;
 }
 
-template <typename T>
+template <typename T> // ok
 size_t directed_graph<T>::out_degree(const int &u_id)
-{
-	size_t size = 0;
-
-	if (contains(u_id))
-	{ // if exist
-		unordered_map<int, T> map = adj_list[u_id];
-		for (auto v : this->vertex_list)
-		{
-			if (map.find(v.first) != map.end())
-				size++;
-		}
-	}
-	return size;
-
-	// same as these but, ed's not happy
-	//return this->adj_list[u_id].size();
-	//return get_neighbours(u_id).size();
+{	// out degree from u
+	return (contains(u_id)) ? this->adj_list[u_id].size() : 0;
 }
 
-template <typename T>
+template <typename T> // ok
 size_t directed_graph<T>::degree(const int &u_id)
-{
-	// would be a bit faster if implemented seperately
+{	// total in + out degrees
 	return in_degree(u_id) + out_degree(u_id);
 }
 
-// void directed_graph<T>::init_visited_checker() {
-//	cout << "hey hey" << endl;
-// }
-template <typename T>
+template <typename T> // ok
 vertex<T> directed_graph<T>::get_vertex(const int &u_id)
 {	// returns a copy of vector obj from vertex_list
 	return vertex<T>(u_id, this->vertex_list[u_id]);
 }
 
-template <typename T> // return num of vertex
+template <typename T> // ok
 size_t directed_graph<T>::num_vertices() const
 {
 	return this->vertex_size;
 }
 
-template <typename T> // return num of edges
+template <typename T> // ok
 size_t directed_graph<T>::num_edges() const
 {
 	return this->edge_size;
 }
-//size_t size = 0;
-//for (auto v : adj_list) {
-//	size += v.second.size();
-//}
 
-template <typename T> // list of vertex
+template <typename T> // ok
 vector<vertex<T>> directed_graph<T>::get_vertices()
-{
-	vector<vertex<T>> output_list;
+{	// return vector of vertices
+	vector<vertex<T>> vertices;
 
 	for (auto v : this->vertex_list)
-	{
-		vertex<T> vert(v.first, v.second);
-		output_list.push_back(vert);
+	{	// converting map to vector
+		vertices.push_back(vertex<T>(v.first, v.second));
 	}
 
-	return output_list;
+	return vertices;
 }
 
-template <typename T> // first neighbours
+template <typename T> // ok
 vector<vertex<T>> directed_graph<T>::get_neighbours(const int &u_id)
-{
-	vector<vertex<T>> v;
+{	// get all v for u->v
+	vector<vertex<T>> neighbours;
+
 	if (contains(u_id))
 	{
-		for (auto f : this->adj_list[u_id])
+		for (auto v : this->adj_list[u_id])
 		{
-			vertex<T> n(f.first, f.second);
-			v.push_back(n);
+			neighbours.push_back(vertex<T>(v.first, v.second));
 		}
 	}
-	return v;
+
+	return neighbours;
 }
 
 template <typename T> // second neighbours
 vector<vertex<T>> directed_graph<T>::get_second_order_neighbours(const int &u_id)
 {
-	vector<vertex<T>> outN, secN,
-		 firstN = get_neighbours(u_id);
+	vector<vertex<T>> sec_o_neighbours;
 
 	// setting up flags for added verts
 	bool flag[num_vertices() + 1];
 	for (int i = 1; i < num_vertices() + 1; i++)
-	{
-		flag[i] = false;
-	}
+	{ flag[i] = (i == u_id); }
 
-	for (vertex<T> v1 : firstN)
-	{ // foreach neighbour
-		secN = get_neighbours(v1.id);
-		for (vertex<T> v2 : secN)
-		{ // foreach neighbour of neighbour
+	for (vertex<T> v1 : get_neighbours(u_id))
+	{
+		for (vertex<T> v2 : get_neighbours(v1.id))
+		{	// foreach 2_o_neighbour of 1_o_neighbour of u
 			if ((v2.id != u_id) && !flag[v2.id])
-			{ // cannot be itself and not yet added
-				outN.push_back(v2);
-				flag[v2.id] = true;
+			{	// cannot be itself and not yet added
+				sec_o_neighbours.push_back(v2);
+				flag[v2.id] = true;		//add & mark added
 			}
 		}
 	}
 
-	return outN;
+	return sec_o_neighbours;
 }
 
 template <typename T> // true if u can reach v
 bool directed_graph<T>::reachable(const int &u_id, const int &v_id)
 {
-	if (adjacent(u_id, v_id))
-		return true;
+	if (adjacent(u_id, v_id)) return true;
 
 	for (auto v : breadth_first(u_id))
 	{
