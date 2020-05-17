@@ -1,22 +1,22 @@
 #include "./test.hpp"
 
-void setup(directed_graph<int> &g) {
-	int r = rand()%test_size + 2;
-	for (int i = 0; i < r; ++i){
-		g.add_vertex(vertex<int>(i+1,(i+1)*2)); // add vertices
-	}
+//void setup(directed_graph<int> &g) {
+//	int r = rand()%test_size + 2;
+//	for (int i = 0; i < r; ++i){
+//		g.add_vertex(vertex<int>(i+1,(i+1)*2)); // add vertices
+//	}
 
-	bool re[r][r];
-	for (int i = 0; i < r; ++i){
-		for (int j = 0; j < r; ++j){
-		//  srand(time(0));
-		if (rand()%2 == 0 && i != j){
-			re[i][j] = true;
-			g.add_edge(i+1, j+1, (i+1)+(j+1)); // add edges
-			} else{ re[i][j] = false; }
-		}
-	}
-}
+//	bool re[r][r];
+//	for (int i = 0; i < r; ++i){
+//		for (int j = 0; j < r; ++j){
+//		//  srand(time(0));
+//		if (rand()%2 == 0 && i != j){
+//			re[i][j] = true;
+//			g.add_edge(i+1, j+1, (i+1)+(j+1)); // add edges
+//			} else{ re[i][j] = false; }
+//		}
+//	}
+//}
 // aa
 int main(){
 	cout << "Test Cons\t\t" << testConstructor_AddVertex_Contains() << endl;
@@ -49,6 +49,12 @@ int main(){
 	//cout << "vert count "<< g.num_vertices() << endl;
 
 	// add edge
+
+	cout << "testing tree time" << endl;
+
+	directed_graph<int> g;
+
+
 
 
 }

@@ -130,5 +130,9 @@ noting what i did
     CLOSED: [2020-05-17 Sun 07:15]
 *** DONE DTF
     CLOSED: [2020-05-17 Sun 09:49]
-*** TODO reachable
-*** TODO cycle
+*** DONE reachable
+    CLOSED: [2020-05-17 Sun 10:37]
+*** DONE cycle
+    CLOSED: [2020-05-17 Sun 10:37]
+*** TODO tree
+*** 

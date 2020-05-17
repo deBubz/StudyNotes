@@ -71,16 +71,17 @@ public:
 	vector<vertex<T>> get_neighbours(const int&); //Returns a vector containing all the vertices reachable from the given vertex. The vertex is not considered a neighbour of itself.
 	vector<vertex<T>> get_second_order_neighbours(const int&); // Returns a vector containing all the second_order_neighbours (i.e., neighbours of neighbours) of the given vertex.
 															  // A vector cannot be considered a second_order_neighbour of itself.
-	// todo
+	// done
 	bool reachable(const int&, const int&); //Returns true if the second vertex is reachable from the first (can you follow a path of out-edges to get from the first to the second?). Returns false otherwise.
 	bool contain_cycles(); // Return true if the graph contains cycles (there is a path from any vertices directly/indirectly to itself), false otherwise.
 
-	// todo
+	// done
 	vector<vertex<T>> depth_first(const int&); //Returns the vertices of the graph in the order they are visited in by a depth-first traversal starting at the given vertex.
 	vector<vertex<T>> breadth_first(const int&); //Returns the vertices of the graph in the order they are visisted in by a breadth-first traversal starting at the given vertex.
 
 	// todo
 	directed_graph<T> out_tree(const int&); //Returns a tree starting at the given vertex using the out-edges. This means every vertex in the tree is reachable from the root.
+	void out_tree_helper();
 
 	vector<vertex<T>> pre_order_traversal(const int&, directed_graph<T>&); // returns the vertices in the visiting order of a pre-order traversal of the tree starting at the given vertex.
 	vector<vertex<T>> in_order_traversal(const int&, directed_graph<T>&); // returns the vertices in the visiting order of an in-order traversal of the tree starting at the given vertex.
@@ -105,8 +106,8 @@ bool directed_graph<T>::contains(const int& u_id) const {
 
 template <typename T>	// check if 2 vert has an edge
 bool directed_graph<T>::adjacent(const int& u_id, const int& v_id) {
-	if (contains(u_id) && contains(v_id) && (u_id != v_id)) {
 		// if exist && no looped edges
+	if (contains(u_id) && contains(v_id) && (u_id != v_id)) {
 		return this->adj_list[u_id].find(v_id) != this->adj_list[u_id].end();
 	} else return false;
 }
@@ -268,7 +269,7 @@ bool directed_graph<T>::contain_cycles() {
 	// should be the same as reachable
 	// for each vertex v in graph
 	// can the neighbour u reach v
-	for(auto v : this->vertex_list) {					// map(int, T)
+	for(auto v : this->vertex_list) {						// map(int, T)
 		for (vertex<T> n : get_neighbours(v.first)) {	// vertex
 			if (reachable(n.id, v.first)) return true;
 		}
@@ -309,19 +310,6 @@ vector<vertex<T>> directed_graph<T>::depth_first(const int& u_id) {
 	return DFT;
 }
 
-//template<typename T>
-//void directed_graph<T>::depth_first_util(const int& v, const bool flag[]) {
-//	// Mark the current node as visited and print it
-//	flag[v] = true;
-//	cout << v << " ";
-
-//	// Recur for all the vertices adjacent to this vertex
-//	//list<int>::iterator i;
-//	//for(i = adj[v].begin(); i != adj[v].end(); ++i)
-//	//	if(!visited[*i])
-//	//		depth_first_util(*i, visited);
-//}
-
 template <typename T>
 vector<vertex<T>> directed_graph<T>::breadth_first(const int& u_id) {
 	// could break for
@@ -329,9 +317,7 @@ vector<vertex<T>> directed_graph<T>::breadth_first(const int& u_id) {
 
 	queue<int> to_visit;					// queue for bft
 	bool flag[num_vertices() + 1];	// visited checker
-	for (int i = 1; i < num_vertices() + 1; i++) {
-		flag[i] = false;
-	}
+	for (int i = 1; i < num_vertices() + 1; i++) { flag[i] = false; }
 
 	to_visit.push(u_id);					// first node
 
@@ -349,13 +335,30 @@ vector<vertex<T>> directed_graph<T>::breadth_first(const int& u_id) {
 			// add to stack if unvisited
 			if(!flag[v.id]) { to_visit.push(v.id); }
 		}
-
 	}
 	return BFT;
 }
 
 template <typename T>
-directed_graph<T> directed_graph<T>::out_tree(const int& u_id) { return directed_graph<T>(); }
+directed_graph<T> directed_graph<T>::out_tree(const int& u_id) {
+	directed_graph<T> tree;
+
+	// dfs/bfs but also add roots
+
+	// u id root
+	//tree->add_vertex(vertex<T>(u_id, this->vertex_list[u_id]));
+	// using
+
+
+	//tree.out_tree_helper(parent_id, child_id, visited);
+
+
+
+	return tree;
+}
+
+template <typename T>
+void directed_graph<T>::out_tree_helper() { } ;
 
 template <typename T>
 vector<vertex<T>> directed_graph<T>::pre_order_traversal(const int& u_id, directed_graph<T>& mst) { return vector<vertex<T>>(); }

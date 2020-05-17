@@ -47,15 +47,16 @@
    CLOSED: [2020-05-16 Sat 01:11]
 ** DONE build basic sds form while using one of the json
    CLOSED: [2020-05-16 Sat 06:20]
-** TODO Email DB prog about the doccumentation
+** DONE Email DB prog about the doccumentation
+   CLOSED: [2020-05-17 Sun 14:48]
 ** TODO dsa week 05 lec
 ** TODO note sds form element
 ** TODO dsa week 06 notes
 ** TODO do sds api docs on what i need 
-** TODO internet bills
-** TODO cancel optus
-** TODO student fees
 * Tomorrow
+** TODO student fees
+** TODO cancel optus
+** TODO internet bills
 * Important Dates
 ** DSA a1  22 May
 ** DB Prog 5 June
