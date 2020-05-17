@@ -347,8 +347,8 @@ int testVertexDegrees(){
     }
     cout << endl;
 
-    //cout << "reachable  from 4 - 1 " << g.reachable(4,1);
-
+    cout << "reachable  from 4 - 1 " << g.reachable(4,1) << endl;
+    cout << "cycle " << g.contain_cycles() << endl;
 
 
     return 0;

@@ -112,13 +112,23 @@ noting what i did
      CLOSED: [2020-05-17 Sun 00:14]
 **** DONE remove from list
      CLOSED: [2020-05-16 Sat 11:07]
-*** TODO num_edge
+*** DONE num_edge
+    CLOSED: [2020-05-17 Sun 02:37]
 *** DONE adjacent
     CLOSED: [2020-05-16 Sat 21:58]
-*** in_dgree
+*** DONE in_dgree
+    CLOSED: [2020-05-17 Sun 02:37]
 *** DONE out_degree
     CLOSED: [2020-05-16 Sat 22:00]
 *** DONE degree
     CLOSED: [2020-05-16 Sat 22:17]
-*** TODO second detgree neighbor
-*** remove edge
+*** DONE second detgree neighbor
+    CLOSED: [2020-05-17 Sun 02:38]
+*** DONE remove edge
+    CLOSED: [2020-05-17 Sun 06:03]
+*** DONE BFT
+    CLOSED: [2020-05-17 Sun 07:15]
+*** DONE DTF
+    CLOSED: [2020-05-17 Sun 09:49]
+*** TODO reachable
+*** TODO cycle

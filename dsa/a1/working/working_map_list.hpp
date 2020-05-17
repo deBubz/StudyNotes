@@ -252,15 +252,13 @@ vector<vertex<T>> directed_graph<T>::get_second_order_neighbours(const int& u_id
 
 template <typename T>	// true if u can reach v
 bool directed_graph<T>::reachable(const int& u_id, const int& v_id) {
-	// if (adjacent(u_id, v_id)) return true;
+	if (adjacent(u_id, v_id)) return true;
 
-	//// better breadth first
-	//vector<vertex<T>> n_list = breadth_first(u_id);
-	//cout << "breadth first  " << endl;
-	//for (int i = 0; i < n_list.size(); i++) {
-	//	if(v_id == n_list[i].id) return true;
-	//}
-	//cout << endl;
+	for (auto v : breadth_first(u_id)) {
+		if(v.id == v_id) {
+			return true;
+		}
+	}
 
 	return false;
 }
@@ -268,11 +266,14 @@ bool directed_graph<T>::reachable(const int& u_id, const int& v_id) {
 template <typename T>	// true if graph have any cycles
 bool directed_graph<T>::contain_cycles() {
 	// should be the same as reachable
-	// check each v if it can reach its neighbour
-
-	for(auto v : this->vertex_list) {
-		return reachable(v.first, v.first);
+	// for each vertex v in graph
+	// can the neighbour u reach v
+	for(auto v : this->vertex_list) {					// map(int, T)
+		for (vertex<T> n : get_neighbours(v.first)) {	// vertex
+			if (reachable(n.id, v.first)) return true;
+		}
 	}
+	return false;
 }
 
 template <typename T>
