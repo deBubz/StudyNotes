@@ -346,9 +346,10 @@ int testVertexDegrees(){
         cout << v.id << " ";
     }
     cout << endl;
-
     cout << "reachable  from 4 - 1 " << g.reachable(4,1) << endl;
     cout << "cycle " << g.contain_cycles() << endl;
+
+    directed_graph<int> tree = g.out_tree(1);
 
 
     return 0;
