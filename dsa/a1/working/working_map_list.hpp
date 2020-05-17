@@ -35,11 +35,14 @@ private:
 	unordered_map<int, T> vertex_list;
 	unordered_map<int, unordered_map<int, T>> adj_list;
 
-	size_t vertex_size;
-	size_t edge_size;
+	size_t vertex_size = 0;
+	size_t edge_size = 0;
+
+	int tree_root;
 
 public:
 	directed_graph();
+	directed_graph(const int&);		// tree root
 	~directed_graph();
 
 	// ======= helper functions ===========
@@ -99,9 +102,9 @@ public:
 // Note also that C++ is sensitive to the order you declare and define things in - you have to have it available before you use it.
 
 // =============== const, destr ======================
-template <typename T> directed_graph<T>::directed_graph() {
-	this->vertex_size = 0;
-	this->edge_size = 0;
+template <typename T> directed_graph<T>::directed_graph() {}
+template <typename T> directed_graph<T>::directed_graph(const int& root_id) {
+	this->tree_root = root_id;
 }
 template <typename T> directed_graph<T>::~directed_graph() {}
 
@@ -269,72 +272,54 @@ vector<vertex<T>> directed_graph<T>::get_second_order_neighbours(const int &u_id
 	return sec_o_neighbours;
 }
 
-template <typename T> // true if u can reach v
+template <typename T> // ok
 bool directed_graph<T>::reachable(const int &u_id, const int &v_id)
-{
-	if (adjacent(u_id, v_id)) return true;
-
-	for (auto v : breadth_first(u_id))
-	{
-		if (v.id == v_id)
-		{
-			return true;
-		}
+{	// true if u->v
+	for (vertex<T> v : breadth_first(u_id))
+	{	// interchangable between bft and dft
+		if (v.id == v_id) return true;
 	}
 
 	return false;
 }
 
-template <typename T> // true if graph have any cycles
+template <typename T> // ok
 bool directed_graph<T>::contain_cycles()
-{
-	// should be the same as reachable
-	// for each vertex v in graph
-	// can the neighbour u reach v
-	for (auto v : this->vertex_list)
-	{ // map(int, T)
+{	// does graph has cycles
+	for (auto v : this->vertex_list)	// foreach vertex u in graph
+	{
 		for (vertex<T> n : get_neighbours(v.first))
-		{ // vertex
-			if (reachable(n.id, v.first))
-				return true;
+		{	// neighbour v can reach u => cycle
+			if (reachable(n.id, v.first)) return true;
 		}
 	}
+
 	return false;
 }
 
-template <typename T>
+template <typename T> // ok
 vector<vertex<T>> directed_graph<T>::depth_first(const int &u_id)
-{
-	// could break for unconnected
+{	// dft iterative, same as bft but with stack
 	vector<vertex<T>> DFT;
 	stack<int> to_visit;
 
-	bool flag[num_vertices() + 1];
-	// setting up flags for visited verts
-	for (int i = 0; i < num_vertices() + 1; i++) {
-		flag[i] = false;
-	}
+	bool flag[num_vertices() + 1];	// visited flag
+	for (int i = 0; i < num_vertices() + 1; i++) { flag[i] = false; }
 
-	to_visit.push(u_id);
+	to_visit.push(u_id);					// first node
 	while (!to_visit.empty())
-	{
-		// pop from stack
-		int visit = to_visit.top(); // u
+	{	// while stack is not empty
+		int visit = to_visit.top(); 	// pop u from stack
 		to_visit.pop();
 
 		if (!flag[visit])
-		{
+		{	// if u is not visited
 			DFT.push_back(get_vertex(visit));
-			// visit u
-			flag[visit] = true;
-		}
+			flag[visit] = true;			// mark u visited
 
-		for (vertex<T> v : get_neighbours(visit))
-		{
-			// add to stack if unvisited
-			if (!flag[v.id])
-			{
-				to_visit.push(v.id);
+			for (vertex<T> v : get_neighbours(visit))
+			{	// for each u neighbour v add to stack if unvisited
+				if (!flag[v.id]) { to_visit.push(v.id); }
 			}
 		}
 	}
@@ -342,42 +327,34 @@ vector<vertex<T>> directed_graph<T>::depth_first(const int &u_id)
 	return DFT;
 }
 
-template <typename T>
+template <typename T> // ok
 vector<vertex<T>> directed_graph<T>::breadth_first(const int &u_id)
-{
-	// could break for
-	vector<vertex<T>> BFT; // output
+{	// bft iterative, same as dft but with queue
+	vector<vertex<T>> BFT;
+	queue<int> to_visit;
 
-	queue<int> to_visit;				 // queue for bft
-	bool flag[num_vertices() + 1]; // visited checker
-	for (int i = 1; i < num_vertices() + 1; i++)
-	{
-		flag[i] = false;
-	}
+	bool flag[num_vertices() + 1];	// visited flag
+	for (int i = 1; i < num_vertices() + 1; i++) { flag[i] = false; }
 
-	to_visit.push(u_id); // first node
+	to_visit.push(u_id); 				// first node
 
 	while (!to_visit.empty())
-	{
-		// pop from queue
-		int visit = to_visit.front(); // u
+	{	// while queue is not empty
+		int visit = to_visit.front();	// pop u from queue
 		to_visit.pop();
 
 		if (!flag[visit])
-		{
+		{	// if u is not visited
 			BFT.push_back(get_vertex(visit));
-			flag[visit] = true;
-		} // visit u
+			flag[visit] = true;			// visit u
 
-		for (vertex<T> v : get_neighbours(visit))
-		{
-			// add to stack if unvisited
-			if (!flag[v.id])
-			{
-				to_visit.push(v.id);
+			for (vertex<T> v : get_neighbours(visit))
+			{	// for each u neighbour v add to queue if unvisited
+				if (!flag[v.id]) to_visit.push(v.id);
 			}
 		}
 	}
+
 	return BFT;
 }
 
@@ -385,64 +362,72 @@ vector<vertex<T>> directed_graph<T>::breadth_first(const int &u_id)
 
 template <typename T>
 directed_graph<T> directed_graph<T>::out_tree(const int &u_id)
-{
-	directed_graph<T> tree;
-
+{	// returns a spanning tree
 	bool flag[num_vertices() + 1]; // visited checker
 	for (int i = 1; i < num_vertices() + 1; i++) { flag[i] = i == u_id; }
 
-	// dfs recursive
-	// root node
+	directed_graph<T> tree(u_id);			// create tree with root node
 	tree.add_vertex(get_vertex(u_id));
 
 	for (vertex<T> v : get_neighbours(u_id))
 	{	// foreach neighbours of root
 		out_tree_helper(tree, u_id, v.id, flag);
-		// pass tree, parent, child, flag[]
 	}
+
 	return tree;
 }
 
-template <typename T> // recursive dft for out_tree
+template <typename T>
 void directed_graph<T>::out_tree_helper(directed_graph<T> &tree, const int &parent_id, const int &child_id, bool* flag)
-{
-	//cout << child_id << " is visited? " << flag[child_id] << endl;
-	if(!flag[child_id]) {
-		flag[child_id] = true;	// mark visited
-		// add parent, child vertex
-		tree.add_vertex(get_vertex(parent_id));
+{	// recursive dft function for out_tree
+	if(!flag[child_id])
+	{	// if child not visited
+		flag[child_id] = true;
+		// add child vertex, parent-> child edge
 		tree.add_vertex(get_vertex(child_id));
-		// add edge parent -> child
 		tree.add_edge(parent_id, child_id, this->adj_list[parent_id][child_id]);
 
-		// child now is newParent
-		int newParent = child_id;
-
-		for (vertex<T> v : get_neighbours(newParent)) {
-			out_tree_helper(tree, newParent, v.id, flag);
-		}	// recursive
+		// child is now new parent
+		for (vertex<T> v : get_neighbours(child_id)) {
+			out_tree_helper(tree, child_id, v.id, flag);
+		}
 	}
 };
 
-// ====================================================
+template <typename T>
+vector<vertex<T>> directed_graph<T>::pre_order_traversal(const int &u_id, directed_graph<T> &mst)
+{	// return vector of vertex in in preorder traversal
+	//return mst.depth_first(mst.tree_root); this definitely works but lets do recursive
 
-//template <typename T>
-//directed_graph<T> directed_graph<T>::out_tree(const int& u_id) {
 
-//}
-
-// ====================================================
+}
 
 template <typename T>
-vector<vertex<T>> directed_graph<T>::pre_order_traversal(const int &u_id, directed_graph<T> &mst) { return vector<vertex<T>>(); }
+vector<vertex<T>> directed_graph<T>::in_order_traversal(const int &u_id, directed_graph<T> &mst) {
+	vector<vertex<T>> in_order
+
+
+
+	return in_order;
+}
 
 template <typename T>
-vector<vertex<T>> directed_graph<T>::in_order_traversal(const int &u_id, directed_graph<T> &mst) { return vector<vertex<T>>(); }
+vector<vertex<T>> directed_graph<T>::post_order_traversal(const int &u_id, directed_graph<T> &mst) {
+	vector<vertex<T>> post_order
+
+
+
+	return post_order;
+}
 
 template <typename T>
-vector<vertex<T>> directed_graph<T>::post_order_traversal(const int &u_id, directed_graph<T> &mst) { return vector<vertex<T>>(); }
+vector<vertex<T>> directed_graph<T>::significance_sorting() {
+	vector<vertex<T>> sig_sort;
 
-template <typename T>
-vector<vertex<T>> directed_graph<T>::significance_sorting() { return vector<vertex<T>>(); }
+
+
+	return sig_sort;
+}
+
 
 #endif
