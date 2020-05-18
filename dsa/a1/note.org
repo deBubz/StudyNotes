@@ -8,32 +8,39 @@
 *** functions
 ** directed_graph
 *** variables
-*** methods [6/24]
-**** TODO constructor/destructor
+*** methods [20/24]
+**** DONE constructor/destructor
+     CLOSED: [2020-05-17 Sun 18:40]
      - standard
 **** DONE bool->contains (int&)
      CLOSED: [2020-05-16 Sat 08:26]
      - return true if grap contains vertex_id
-**** TODO bool->adjacent (int&, int&)
+**** DONE bool->adjacent (int&, int&)
+     CLOSED: [2020-05-17 Sun 18:48]
      - return true if first vertex is adjacent to second
 
 **** DONE void add_vertex (vertex<T>&)
      CLOSED: [2020-05-16 Sat 07:01]
      - Adds the passed in vertex to the graph (with no edges).
-**** TODO void add_edge (const int&, const int&, const T&)
+**** DONE void add_edge (const int&, const int&, const T&)
+     CLOSED: [2020-05-17 Sun 18:48]
      - Adds a weighted edge from the first vertex to the second.
  
 **** DONE void remove_vertex (int&)
      CLOSED: [2020-05-16 Sat 07:30]
      - Removes the given vertex. Should also clear any incident edges.
-**** TODO void remove_edge (int&, int&)
+**** DONE void remove_edge (int&, int&)
+     CLOSED: [2020-05-17 Sun 18:48]
      - Removes the edge between the two vertices, if it exists.
 
-**** TODO size_t out_degree (int&) {return this->size;} const;
+**** DONE size_t out_degree (int&) {return this->size;} const;
+     CLOSED: [2020-05-17 Sun 18:49]
      - Returns the number of edges leaving a vertex.
-**** TODO size_t->in_degree (int&) {return this->size;}
+**** DONE size_t->in_degree (int&) {return this->size;}
+     CLOSED: [2020-05-17 Sun 18:49]
      - Returns number of edges coming in to a vertex.
-**** TODO size_t degree(const int&) {return this->size; const;
+**** DONE size_t degree(const int&) {return this->size; const;
+     CLOSED: [2020-05-17 Sun 18:49]
      - Returns the degree of the vertex (both in edges and out edges).
 
 **** DONE size_t num_vertices() {return this->size;} const;
@@ -47,27 +54,34 @@
      CLOSED: [2020-05-16 Sat 07:02]
      - Returns a vector containing all the vertices.
 
-**** TODO vector<vertex<T>> get_neighbours(int&) {vertex<T> v; return v;}
+**** DONE vector<vertex<T>> get_neighbours(int&) {vertex<T> v; return v;}
+     CLOSED: [2020-05-17 Sun 18:49]
      - Returns a vector containing all the vertices reachable from the given vertex.
      - The vertex is not considered a neighbour of itself.
-**** TODO vector<vertex<T>> get_second_order_neighbors(const int&) {vertex<T> v; return v;}
+**** DONE vector<vertex<T>> get_second_order_neighbors(const int&) {vertex<T> v; return v;}
+     CLOSED: [2020-05-17 Sun 18:49]
      - Returns a vector containing all the second_order_neighbours (i.e., neighbours of neighbours) of the given vertex.
      - A vector cannot be considered a second_order_neighbor of itself.
-**** TODO bool reachable(const int&, const int&) const;
+**** DONE bool reachable(const int&, const int&) const;
+     CLOSED: [2020-05-17 Sun 18:49]
      - Returns true if the second vertex is reachable from the first (can you follow a path of out-edges to get from the first to the second?)
      - Returns false otherwise.
-**** TODO bool contain_cycles() const;
+**** DONE bool contain_cycles() const;
+     CLOSED: [2020-05-17 Sun 18:49]
      - Return true if the graph contains cycles (there is a path from any vertices directly/indirectly to itself)
      - false otherwise.
 
-**** TODO vector<vertex<T>> depth_first(const int&) {vertex<T> v; return v;};
+**** DONE vector<vertex<T>> depth_first(const int&) {vertex<T> v; return v;};
+     CLOSED: [2020-05-17 Sun 18:49]
      - Returns the vertices of the graph in the order they are visited in by a depth-first traversal
      - starting at the given vertex.
-**** TODO vector<vertex<T>> breadth_first(const int&) {vertex<T> v; return v;};
+**** DONE vector<vertex<T>> breadth_first(const int&) {vertex<T> v; return v;};
+     CLOSED: [2020-05-17 Sun 18:49]
      - Returns the vertices of the graph in the order they are visisted in by a breadth-first traversal
      - starting at the given vertex.
 
-**** TODO directed_graph<T> out_tree(const int&);
+**** DONE directed_graph<T> out_tree(const int&);
+     CLOSED: [2020-05-18 Mon 05:38]
      - Returns a spanning tree of the graph starting at the given vertex using the out-edges.
      - This means every vertex in the tree is reachable from the root.
 

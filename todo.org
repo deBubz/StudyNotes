@@ -49,7 +49,8 @@
    CLOSED: [2020-05-16 Sat 06:20]
 ** DONE Email DB prog about the doccumentation
    CLOSED: [2020-05-17 Sun 14:48]
-** TODO dsa week 05 lec
+** DONE dsa week 05 lec
+   CLOSED: [2020-05-17 Sun 18:38]
 ** TODO note sds form element
 ** TODO dsa week 06 notes
 ** TODO do sds api docs on what i need 

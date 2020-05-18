@@ -1,4 +1,5 @@
-#include "./test.hpp"
+//#include "./test.hpp"
+#include "./working_map_list.hpp"
 
 //void setup(directed_graph<int> &g) {
 //	int r = rand()%test_size + 2;
@@ -19,21 +20,6 @@
 //}
 // aa
 int main(){
-	cout << "Test Cons\t\t" << testConstructor_AddVertex_Contains() << endl;
-	//cout << "--------------------------" << endl;
-	cout << "Test GetVert\t\t" << testGetVertices() << endl;
-	//cout << "--------------------------" << endl;
-	cout << "Test RemoveVert\t\t" << testRemoveVertex() << endl;
-	//cout << "--------------------------" << endl;
-	cout << "Test Edges\t\t" << testAddEdge_Adjacent_GetNeighbours() << endl;
-	//cout << "--------------------------" << endl;
-	cout << "Test 2nd order\t\t" << test2ndOrderNeighbours() << endl;
-	//cout << "--------------------------" << endl;
-	cout << "Test Degree\t\t" << testVertexDegrees() << endl;
-	//cout << "--------------------------" << endl;
-	cout << "Test Remove Edge\t" << testRemoveEdge() << endl;
-
-	//directed_graph<int> g;
 	//// add vertex
 	////for (int i = 1; i < 7; i++) {
 	////	g.add_vertex(vertex<int>(i, i*3));
@@ -50,11 +36,58 @@ int main(){
 
 	// add edge
 
-	cout << "testing tree time" << endl;
-
+	cout << "making graph\n";
 	directed_graph<int> g;
 
+	g.add_vertex(vertex<int>(1, 12));
+	g.add_vertex(vertex<int>(2, 12));
+	g.add_vertex(vertex<int>(3, 12));
+	g.add_vertex(vertex<int>(4, 12));
+	g.add_vertex(vertex<int>(5, 12));
+	g.add_vertex(vertex<int>(6, 12));
+	g.add_vertex(vertex<int>(7, 12));
+	g.add_vertex(vertex<int>(8, 12));
+	g.add_vertex(vertex<int>(9, 12));
+	g.add_vertex(vertex<int>(10, 12));
+	g.add_vertex(vertex<int>(11, 12));
+	g.add_vertex(vertex<int>(13 ,13));
 
 
+	g.add_edge(1, 2, 1);
+	g.add_edge(1, 9, 1);
+	g.add_edge(2, 3, 1);
+	g.add_edge(2, 6, 1);
+	g.add_edge(3, 4, 1);
+	g.add_edge(3, 5, 1);
+	g.add_edge(6, 7, 1);
+	g.add_edge(6, 8, 1);
+	g.add_edge(9, 11, 1);
+	g.add_edge(9, 10, 1);
+	g.add_edge(1, 13, 3);
+
+	cout << "testing tree time" << endl;
+
+	directed_graph<int> tree = g.out_tree(1);
+
+	vector<vertex<int>> pre = tree.pre_order_traversal(1, tree);
+	cout << "\npre path:\t";
+	for(int i = 0; i < pre.size(); i++) {
+		cout << pre[i].id << "-";
+	}
+	cout << endl;
+
+	vector<vertex<int>> inorder = tree.in_order_traversal(1, tree);
+	cout << "\nin path:\t";
+	for(int i = 0; i < inorder.size(); i++) {
+		cout << inorder[i].id << "-";
+	}
+	cout << endl;
+
+	vector<vertex<int>> post = tree.post_order_traversal(1, tree);
+	cout << "\npost path:\t";
+	for(int i = 0; i < inorder.size(); i++) {
+		cout << inorder[i].id << "-";
+	}
+	cout << endl;
 
 }

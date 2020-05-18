@@ -91,8 +91,11 @@ public:
 	void out_tree_helper(directed_graph<T> &, const int &, const int &, bool*);
 
 	vector<vertex<T>> pre_order_traversal(const int &, directed_graph<T> &);  // returns the vertices in the visiting order of a pre-order traversal of the tree starting at the given vertex.
+	void pre_order_helper(vector<vertex<T>>&, const int&, bool*);
 	vector<vertex<T>> in_order_traversal(const int &, directed_graph<T> &);	  // returns the vertices in the visiting order of an in-order traversal of the tree starting at the given vertex.
+	void in_order_helper(vector<vertex<T>>&, const int&, const int&, bool*);
 	vector<vertex<T>> post_order_traversal(const int &, directed_graph<T> &); // returns the vertices in ther visitig order of a post-order traversal of the tree starting at the given vertex.
+	void post_order_helper(vector<vertex<T>>&, const int&, bool*);
 
 	vector<vertex<T>> significance_sorting(); // Return a vector containing a sorted list of the vertices in descending order of their significance.
 };
@@ -369,6 +372,9 @@ directed_graph<T> directed_graph<T>::out_tree(const int &u_id)
 	directed_graph<T> tree(u_id);			// create tree with root node
 	tree.add_vertex(get_vertex(u_id));
 
+	cout << "======\n";
+	cout << "printing tree root 1\n";
+
 	for (vertex<T> v : get_neighbours(u_id))
 	{	// foreach neighbours of root
 		out_tree_helper(tree, u_id, v.id, flag);
@@ -383,6 +389,7 @@ void directed_graph<T>::out_tree_helper(directed_graph<T> &tree, const int &pare
 	if(!flag[child_id])
 	{	// if child not visited
 		flag[child_id] = true;
+		cout << "> branch of " << parent_id << " : (" << child_id << ")\n";
 		// add child vertex, parent-> child edge
 		tree.add_vertex(get_vertex(child_id));
 		tree.add_edge(parent_id, child_id, this->adj_list[parent_id][child_id]);
@@ -395,29 +402,107 @@ void directed_graph<T>::out_tree_helper(directed_graph<T> &tree, const int &pare
 };
 
 template <typename T>
-vector<vertex<T>> directed_graph<T>::pre_order_traversal(const int &u_id, directed_graph<T> &mst)
+vector<vertex<T>> directed_graph<T>::pre_order_traversal(const int &u_id, directed_graph<T> &tree)
 {	// return vector of vertex in in preorder traversal
 	//return mst.depth_first(mst.tree_root); this definitely works but lets do recursive
 
+	bool flag[num_vertices() + 1]; // visited checker
+	for (int i = 1; i < num_vertices() + 1; i++) { flag[i] = i == u_id; }
 
+	vector<vertex<T>> pre_order;
+	pre_order.push_back(tree.get_vertex(tree.tree_root));		// u_id as root_id is redundant
+
+	for (vertex<T> v : get_neighbours(tree.tree_root))
+	{	// foreach neighbours of root
+		pre_order_helper(pre_order, v.id, flag);
+
+	}
+
+	return pre_order;
 }
 
 template <typename T>
-vector<vertex<T>> directed_graph<T>::in_order_traversal(const int &u_id, directed_graph<T> &mst) {
-	vector<vertex<T>> in_order
+void directed_graph<T>::pre_order_helper(vector<vertex<T>>& pre_order, const int& child_id, bool* flag)
+{	// same as dsf
+	if(!flag[child_id]) {
+		flag[child_id] = true;
 
+		pre_order.push_back(get_vertex(child_id));
 
+		for (vertex<T> v : get_neighbours(child_id)) {
+			pre_order_helper(pre_order, v.id, flag);
+		}
+	}
+}
+
+template <typename T>
+vector<vertex<T>> directed_graph<T>::in_order_traversal(const int &u_id, directed_graph<T> &tree) {
+	bool flag[num_vertices() + 1]; // visited checker
+	for (int i = 1; i < num_vertices() + 1; i++) { flag[i] = false; }
+
+	vector<vertex<T>> in_order;
+
+	for (vertex<T> v : get_neighbours(tree.tree_root))
+	{	// foreach neighbours of root
+		in_order_helper(in_order, tree.tree_root, v.id, flag);
+	}
 
 	return in_order;
 }
 
 template <typename T>
-vector<vertex<T>> directed_graph<T>::post_order_traversal(const int &u_id, directed_graph<T> &mst) {
-	vector<vertex<T>> post_order
+void directed_graph<T>::in_order_helper(vector<vertex<T>>& in_order, const int& parent_id, const int& child_id, bool* flag) {
+	if(!flag[child_id]) {
+		vector<vertex<T>> n = get_neighbours(child_id);
 
+		if(n.size() == 0) {			// add leaf
+			flag[child_id] = true;
+			in_order.push_back(get_vertex(child_id));
+			cout << "leaf added " << child_id << endl;
+		} else {	// n.size > 0
+			for (vertex<T> v : get_neighbours(child_id)) {
+				in_order_helper(in_order, child_id, v.id, flag);
+			}
+		}
 
+		if(!flag[parent_id]) {		// add branch
+			flag[parent_id] = true;
+			in_order.push_back(get_vertex(parent_id));
+		}
+	}
+}
+
+template <typename T>
+vector<vertex<T>> directed_graph<T>::post_order_traversal(const int &u_id, directed_graph<T> &tree)
+{
+	bool flag[num_vertices() + 1]; // visited checker
+	for (int i = 1; i < num_vertices() + 1; i++) { flag[i] = false; }
+	vector<vertex<T>> post_order;
+
+	for (vertex<T> v : get_neighbours(tree.tree_root))
+	{	// foreach neighbours of root
+		post_order_helper(post_order, v.id, flag);
+	}
+
+	post_order.push_back(get_vertex(u_id));
+	cout << "what " << u_id << " " << flag[u_id] << endl;
 
 	return post_order;
+}
+
+template <typename T>
+void directed_graph<T>::post_order_helper(vector<vertex<T>>& post_order, const int& u_id, bool* flag) {
+	if(!flag[u_id]) {
+
+		for (vertex<T> v : get_neighbours(u_id))
+		{	// foreach neighbours of root
+			post_order_helper(post_order, v.id, flag);
+		}
+
+		post_order.push_back(get_vertex(u_id));
+		cout << "pushed " << u_id << endl;
+		flag[u_id] = true;
+	}
 }
 
 template <typename T>
