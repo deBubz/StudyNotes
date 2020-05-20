@@ -40,7 +40,8 @@
     CLOSED: [2020-05-15 Fri 02:28]
 ** DONE dsa week 05 notes
    CLOSED: [2020-05-15 Fri 02:28]
-* Tasks
+** DONE student fees
+   CLOSED: [2020-05-20 Wed 09:22]
 ** DONE dsa 05 adj_matrix
    CLOSED: [2020-05-16 Sat 01:11]
 ** DONE dsa 05 adj_list
@@ -51,13 +52,13 @@
    CLOSED: [2020-05-17 Sun 14:48]
 ** DONE dsa week 05 lec
    CLOSED: [2020-05-17 Sun 18:38]
+** DONE internet bills
+   CLOSED: [2020-05-20 Wed 09:22]
+* Tasks
 ** TODO note sds form element
 ** TODO dsa week 06 notes
-** TODO do sds api docs on what i need 
+** DOING do sds api docs on what i need 
 * Tomorrow
-** TODO student fees
-** TODO cancel optus
-** TODO internet bills
 * Important Dates
 ** DSA a1  22 May
 ** DB Prog 5 June

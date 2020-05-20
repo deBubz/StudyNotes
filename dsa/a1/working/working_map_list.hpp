@@ -146,6 +146,7 @@ void directed_graph<T>::add_edge(const int &u_id, const int &v_id, const T &weig
 	if (contains(u_id) && contains(v_id) && !adjacent(u_id, v_id))
 	{ // check if edge exist, edge doenst
 		this->adj_list[u_id].insert({v_id, weight});
+		cout >> "added " << u_id << " -> " << v_id << endl;
 		this->edge_size++;
 	}
 }
@@ -507,10 +508,9 @@ void directed_graph<T>::post_order_helper(vector<vertex<T>>& post_order, const i
 
 template <typename T>
 vector<vertex<T>> directed_graph<T>::significance_sorting() {
-	vector<vertex<T>> sig_sort;
-
-
-
+	vector<vertex<T>> sig_sort = get_vertices();
+	// #import<algorithm>
+	sort(sig_sort.begin(), sig_sort.end(),[](vertex<T> u, vertex<T> v){ return u.weight > v.weight; });
 	return sig_sort;
 }
 
