@@ -377,8 +377,8 @@ vector<vertex<T>> directed_graph<T>::post_order_traversal(const int &u_id, direc
 		post_order_traversal(post_order, v.id, flag);
 	}
 
+	// add root last
 	post_order.push_back(get_vertex(u_id));
-	// cout << "what " << u_id << " " << flag[u_id] << endl;
 
 	return post_order;
 }
@@ -389,10 +389,9 @@ void directed_graph<T>::post_order_traversal(vector<vertex<T>>& post_order, cons
 
 		for (vertex<T> v : get_neighbours(u_id))
 		{	// foreach neighbours of root
-			l(post_order, v.id, flag);
+			post_order_traversal(post_order, v.id, flag);
 		}
 
-		// cout << "=== " << u_id << endl;
 		post_order.push_back(get_vertex(u_id));
 		// cout << "pushed " << u_id << endl;
 		flag[u_id] = true;
@@ -401,6 +400,6 @@ void directed_graph<T>::post_order_traversal(vector<vertex<T>>& post_order, cons
 template <typename T>
 vector<vertex<T>> directed_graph<T>::significance_sorting() {
 	vector<vertex<T>> sig_sort = get_vertices();
-	sort(sig_sort.begin(), sig_sort.end(),[](vertex<T> u, vertex<T> v){ return u.weight > v.weight; });
+	sort(sig_sort.begin(), sig_sort.end(), [](vertex<T> u, vertex<T> v){ return u.weight > v.weight; });
 	return sig_sort;
 }

@@ -60,11 +60,11 @@
    CLOSED: [2020-05-21 Thu 14:45]
 * Tasks
 ** TODO note sds form element
-** TODO dsa week 06 notes
-** TODO do sds api docs on what i need 
+** TODO do sds api docs on what i need?? 
+** TODO dsa week 09 notes
 ** DONE do database notes
    CLOSED: [2020-05-20 Wed 23:51]
-** TODO db prog review
+** DOING db prog review
 ** TODO look ad dsa w05 w06
 ** DSA tute at 6pm
 * Tomorrow

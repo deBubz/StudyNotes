@@ -95,7 +95,7 @@ algorithms for graph traversal focuses on
 
 ### Depth first Traversal
 
-- recursively pick unvisited neighbour to visit depthward
+- recursively pick unvisited neighbour to visit depth ward
 - **backtrack** to previous recorded neighbour when a dead ends occurs
 
 [Recursive](https://www.tutorialspoint.com/data_structures_algorithms/depth_first_traversal.htm)
@@ -110,6 +110,8 @@ DFT(Vertex v){
     }
 }
 ```
+
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim -create-dirs \https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 Iterative
 
@@ -136,7 +138,7 @@ DFT(){
 
 - pick a starting vertex and put it in a `queue`
 - inherently iterative, possible but no point to implement recursive
-- takes a vertex from `queue` visit it and place its neighbours in the queue
+- takes a vertex from `queue` visit it and place its neighbour in the queue
 
 ```md
 // pseudo

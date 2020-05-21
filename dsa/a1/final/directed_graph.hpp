@@ -79,6 +79,6 @@ public:
 	vector<vertex<T>> significance_sorting(); // Return a vector containing a sorted list of the vertices in descending order of their significance.
 };
 
-#include "directed_graph.tpp"
+#include "directed_graph.cpp"
 
 #endif
