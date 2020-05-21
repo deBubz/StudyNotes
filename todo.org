@@ -54,10 +54,19 @@
    CLOSED: [2020-05-17 Sun 18:38]
 ** DONE internet bills
    CLOSED: [2020-05-20 Wed 09:22]
+** DONE pair prog with kev tomorrow 
+   CLOSED: [2020-05-21 Thu 14:45]
+** DONE try to split the files
+   CLOSED: [2020-05-21 Thu 14:45]
 * Tasks
 ** TODO note sds form element
 ** TODO dsa week 06 notes
-** DOING do sds api docs on what i need 
+** TODO do sds api docs on what i need 
+** DONE do database notes
+   CLOSED: [2020-05-20 Wed 23:51]
+** TODO db prog review
+** TODO look ad dsa w05 w06
+** DSA tute at 6pm
 * Tomorrow
 * Important Dates
 ** DSA a1  22 May
@@ -75,3 +84,6 @@
     - he mentioned it should be simple an understandable for a layperson
     - I had the assumption that it would be similar to programming language/frameworks/api/etc documentation
       - where it presents detailes of the packages' public elemts, what is achievable with the package and examples on how to use the  
+** cool things
+   - lazy Git
+   - git bare
