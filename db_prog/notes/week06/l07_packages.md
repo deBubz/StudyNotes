@@ -78,9 +78,11 @@ some **advantages**
 - when a package module runs, it does so with the same privilege as the owner of the package ( not the package user )
 - gives you the ability to `hide` a table from the user. Access to add/modufy data is done by calling certain modules.
   - values can be checked and data modification can be controlled.
-- package allow the creation of private modules which can only be called from other modules within the package. This enforce information hiding 
+- package allow the creation of private modules which can only be called from other modules within the package. This enforce information hiding
 
 ## Guidelines for writing Packages
 
 ## Built in Packages supplied by Oracle
+
+`DMBS_output`
 

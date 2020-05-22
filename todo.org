@@ -58,15 +58,38 @@
    CLOSED: [2020-05-21 Thu 14:45]
 ** DONE try to split the files
    CLOSED: [2020-05-21 Thu 14:45]
+** DONE do database notes
+   CLOSED: [2020-05-20 Wed 23:51]
+** CloudWorkshop catchup [5/5]
+*** DONE Week3 - intro to aws and ec2
+    CLOSED: [2020-05-22 Fri 20:51]
+*** DONE Week5 - elastic bean stalk
+    CLOSED: [2020-05-22 Fri 17:44]
+*** DONE Week6 - customize elastic bean stalk
+    CLOSED: [2020-05-22 Fri 17:44]
+*** DONE Week7 - aws storage services lab
+    CLOSED: [2020-05-22 Fri 17:44]
+*** DONE Week8 - creating mini app on Force.com
+    CLOSED: [2020-05-22 Fri 20:51]
 * Tasks
 ** TODO note sds form element
 ** TODO do sds api docs on what i need?? 
 ** TODO dsa week 09 notes
-** DONE do database notes
-   CLOSED: [2020-05-20 Wed 23:51]
-** DOING db prog review
-** TODO look ad dsa w05 w06
-** DSA tute at 6pm
+** DONE Catch up zz [3/3]
+   CLOSED: [2020-05-22 Fri 12:52]
+*** DONE week05
+    CLOSED: [2020-05-22 Fri 10:03]
+*** DONE week06
+    CLOSED: [2020-05-22 Fri 11:55]
+*** DONE week07
+    CLOSED: [2020-05-22 Fri 12:31]
+** database workshop review
+*** DOING week05
+*** TODO week06
+*** TODO week07
+** get the notes
+** TODO Week9 - secure force PaaS
+** TODO Week10 - define Workflow in Force.com
 * Tomorrow
 * Important Dates
 ** DSA a1  22 May

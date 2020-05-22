@@ -1,4 +1,4 @@
-# Setup 
+# Setup
 
 ## Software
 
@@ -14,9 +14,3 @@ This subject will teach you use
 
 ---
 
-## TODO 
-
-- [ ] Install SQL Developer
-- [ ] Install UTS VPN
-- [ ] Try to connect
-  - [ ] Add connection enter details above
