@@ -111,3 +111,49 @@ END parent_block;
 -- what did COMMIT in the child_block do?
 -- what did ROLLBACK in the parent block do?
 
+
+
+--------------------------------------------------------------
+
+-- misc information
+
+--assessmetn
+
+-- msg log table
+
+select * from dbp_message_log where student_id = user;
+
+-- should not use db_admin.nem16 just use nem_rm16 table
+
+-- forcast 48 entries for 14 days for
+select tni, fr, frmp from v_nem_rm16;
+
+-- forecast statement type
+
+-- initialize what should init
+-- what functions should i do
+-- do everything at once?? seems bad
+
+-- seperate generate and print??
+
+
+-- design document
+-- schema of the data, erd
+-- describe module, what it does, parameter table, log table
+-- technical guide to help another person build the system
+-- table of contents, headers, page numbers
+
+
+-- sql avg for 1hh of 1day
+select tni, lr, frmp, hh, avg(volume)
+from v_nem_rm16
+where to_char(day, 'Day') = to_char(to_date('19-MAY-2020', 'DD-MON-YYYY'), 'Day')
+and tni = 'NBFW'
+and lr = 'ENGYAUST'
+and frmp = 'CITIP'
+-- and hh = 1
+group by tni, lr, frmp, hh
+
+-- can i do this to generate 48 entries for 1 day
+
+-- need a holiday flag, if no holiday. normal operation, check against the forcasting day
