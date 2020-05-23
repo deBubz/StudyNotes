@@ -14,11 +14,70 @@
 using namespace std;
 
 /*
-	the graph class
+	Directed Graph class using adjacent list built from unordered_map
+	DSA 2020 - Assessment 1 submission
+
+	by Bao Hoang 13363332
 */
 template <typename T>
 class directed_graph
 {
+	// private elements are moved to the end of the class to group and contain recursive helper functions
+public:
+	// ======= constructors, destructors ========
+	directed_graph();
+	directed_graph(const int&);		// tree constructor
+	~directed_graph();
+
+	// ======= helper methods ===================
+	bool contains(const int &) const;
+	bool adjacent(const int &, const int &);
+
+	// add methods
+	void add_vertex(const vertex<T> &);
+	void add_edge(const int &, const int &, const T &);
+
+	// remove methods
+	void remove_vertex(const int &);
+	void remove_edge(const int &, const int &);
+
+	// degree count methods
+	size_t in_degree(const int &);
+	size_t out_degree(const int &);
+	size_t degree(const int &);
+
+	// get size count methods
+	size_t num_vertices() const;
+	size_t num_edges() const;
+
+	// get methods
+	vertex<T> get_vertex(const int&);
+	vector<vertex<T>> get_vertices();
+
+	// neighbours methods
+	vector<vertex<T>> get_neighbours(const int &);
+	vector<vertex<T>> get_second_order_neighbours(const int &);
+
+	// ======= cycles ===========================
+	bool reachable(const int &, const int &);
+	bool contain_cycles();
+
+	// ======= graph traversals =================
+	vector<vertex<T>> depth_first(const int &);
+	vector<vertex<T>> breadth_first(const int &);
+
+	// ======= trees ============================
+	directed_graph<T> out_tree(const int &);
+
+	// depth first tree traversals
+	vector<vertex<T>> pre_order_traversal(const int &, directed_graph<T> &);
+	vector<vertex<T>> in_order_traversal(const int &, directed_graph<T> &);
+	vector<vertex<T>> post_order_traversal(const int &, directed_graph<T> &);
+
+
+	// ======= sorting =========================
+	vector<vertex<T>> significance_sorting();
+
 
 private:
 	unordered_map<int, T> vertex_list;
@@ -27,58 +86,18 @@ private:
 	size_t vertex_size = 0;
 	size_t edge_size = 0;
 
-	int root_node;
+	int tree_root;
 
-	//
+	// ======= recursion helper functions =======
+	void out_tree_helper(directed_graph<T> &, const int &, const int &, bool*);
 
-public:
-	directed_graph();
-	directed_graph(const int&);		// tree root
-	~directed_graph();
-
-	// ======= helper functions ===========
-	bool contains(const int &) const;
-	bool adjacent(const int &, const int &);
-
-	void add_vertex(const vertex<T> &);						 //Adds the passed in vertex to the graph (with no edges).
-	void add_edge(const int &, const int &, const T &); //Adds a weighted edge from the first vertex to the second.
-
-	void remove_vertex(const int &);				  //Removes the given vertex. Should also clear any incident edges.
-	void remove_edge(const int &, const int &); //Removes the edge between the two vertices, if it exists.
-
-	size_t in_degree(const int &);  //Returns number of edges coming in to a vertex.
-	size_t out_degree(const int &); //Returns the number of edges leaving a vertex.
-	size_t degree(const int &);	  //Returns the degree of the vertex (both in edges and out edges).
-
-	size_t num_vertices() const; //Returns the total number of vertices in the graph.
-	size_t num_edges() const;	  //Returns the total number of edges in the graph.
-
-	vertex<T> get_vertex(const int&);
-	vector<vertex<T>> get_vertices();									//Returns a vector containing all the vertices.
-	vector<vertex<T>> get_neighbours(const int &);					//Returns a vector containing all the vertices reachable from the given vertex. The vertex is not considered a neighbour of itself.
-	vector<vertex<T>> get_second_order_neighbours(const int &); // Returns a vector containing all the second_order_neighbours (i.e., neighbours of neighbours) of the given vertex.
-																					// A vector cannot be considered a second_order_neighbour of itself.
-	bool reachable(const int &, const int &); //Returns true if the second vertex is reachable from the first (can you follow a path of out-edges to get from the first to the second?). Returns false otherwise.
-	bool contain_cycles();							// Return true if the graph contains cycles (there is a path from any vertices directly/indirectly to itself), false otherwise.
-
-	vector<vertex<T>> depth_first(const int &);	 //Returns the vertices of the graph in the order they are visited in by a depth-first traversal starting at the given vertex.
-	vector<vertex<T>> breadth_first(const int &); //Returns the vertices of the graph in the order they are visisted in by a breadth-first traversal starting at the given vertex.
-
-	directed_graph<T> out_tree(const int &); //Returns a tree starting at the given vertex using the out-edges. This means every vertex in the tree is reachable from the root.
-	void out_tree(directed_graph<T> &, const int &, const int &, bool*);
-
-	vector<vertex<T>> pre_order_traversal(const int &, directed_graph<T> &);  // returns the vertices in the visiting order of a pre-order traversal of the tree starting at the given vertex.
-	void pre_order_traversal(vector<vertex<T>>&, const int&, bool*);
-
-	vector<vertex<T>> in_order_traversal(const int &, directed_graph<T> &);	  // returns the vertices in the visiting order of an in-order traversal of the tree starting at the given vertex.
-	void in_order_traversal(vector<vertex<T>>&, const int&, const int&, bool*);
-
-	vector<vertex<T>> post_order_traversal(const int &, directed_graph<T> &); // returns the vertices in ther visitig order of a post-order traversal of the tree starting at the given vertex.
-	void post_order_traversal(vector<vertex<T>>&, const int&, bool*);
-
-	vector<vertex<T>> significance_sorting(); // Return a vector containing a sorted list of the vertices in descending order of their significance.
+	// tree traversals
+	void pre_order_helper(vector<vertex<T>>&, const int&, bool*);
+	void in_order_helper(vector<vertex<T>>&, const int&, const int&, bool*);
+	void post_order_helper(vector<vertex<T>>&, const int&, bool*);
 };
 
+// definitions of class methods
 #include "directed_graph.cpp"
 
 #endif
