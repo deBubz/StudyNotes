@@ -313,7 +313,7 @@ vector<vertex<T>> directed_graph<T>::get_second_order_neighbours(const int &u_id
  *
  * @param u_id - int id of chosen starting vertex
  * @param v_id - int id of chosen vertex if starting vertex can reach
- * @return true if vertex u can reach vertex v
+ * @return bool if vertex u can reach vertex v
  */
 template <typename T>
 bool directed_graph<T>::reachable(const int &u_id, const int &v_id) {
@@ -326,7 +326,7 @@ bool directed_graph<T>::reachable(const int &u_id, const int &v_id) {
 }
 
 /**
- * Check if the grapg contains a cycle
+ * Check if the graph contains a cycle
  *
  * Construct under the theory of for a vertex u,
  * if its neighbour v has a path back to u (reachable(u, v))

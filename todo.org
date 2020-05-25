@@ -71,11 +71,7 @@
     CLOSED: [2020-05-22 Fri 17:44]
 *** DONE Week8 - creating mini app on Force.com
     CLOSED: [2020-05-22 Fri 20:51]
-* Tasks
-** TODO note sds form element
-** TODO do sds api docs on what i need?? 
-** TODO dsa week 09 notes
-** DONE Catch up zz [3/3]
+** DONE Catch up db notes [3/3]
    CLOSED: [2020-05-22 Fri 12:52]
 *** DONE week05
     CLOSED: [2020-05-22 Fri 10:03]
@@ -83,6 +79,48 @@
     CLOSED: [2020-05-22 Fri 11:55]
 *** DONE week07
     CLOSED: [2020-05-22 Fri 12:31]
+** DONE commenting dsa [7/7]
+   CLOSED: [2020-05-23 Sat 18:53]
+*** DONE helper methods [6/6]
+    CLOSED: [2020-05-23 Sat 18:53]
+**** DONE add
+     CLOSED: [2020-05-23 Sat 16:27]
+**** DONE remove
+     CLOSED: [2020-05-23 Sat 16:36]
+**** DONE degree
+     CLOSED: [2020-05-23 Sat 16:46]
+**** DONE size
+     CLOSED: [2020-05-23 Sat 16:48]
+**** DONE get
+     CLOSED: [2020-05-23 Sat 17:03]
+**** DONE neighbours
+     CLOSED: [2020-05-23 Sat 17:13]
+*** DONE cycles
+    CLOSED: [2020-05-23 Sat 17:39]
+*** DONE graph traversals
+    CLOSED: [2020-05-23 Sat 17:53]
+*** DONE tree
+    CLOSED: [2020-05-23 Sat 18:13]
+*** DONE tree traversals
+    CLOSED: [2020-05-23 Sat 18:52]
+**** DONE pre order 
+     CLOSED: [2020-05-23 Sat 18:34]
+**** DONE in order
+     CLOSED: [2020-05-23 Sat 18:52]
+**** DONE post order
+     CLOSED: [2020-05-23 Sat 18:52]
+*** DONE sorting
+    CLOSED: [2020-05-23 Sat 18:41]
+*** DONE private
+    CLOSED: [2020-05-23 Sat 18:52]
+**** DONE trees
+     CLOSED: [2020-05-23 Sat 18:13]
+**** DONE traversals
+     CLOSED: [2020-05-23 Sat 18:52]
+* Tasks
+** TODO note sds form element
+** TODO do sds api docs on what i need?? 
+** TODO dsa week 09 notes
 ** database workshop review
 *** DOING week05
 *** TODO week06

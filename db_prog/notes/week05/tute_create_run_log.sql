@@ -47,6 +47,14 @@ CREATE TABLE RUN_LOG
   Comments     VARCHAR2(255)
  );
 
+
+
+
+
+
+--  question 3
+
+
  drop table DP_MESSAGES;
 
  CREATE TABLE DP_MESSAGES
@@ -63,6 +71,8 @@ Create table test_table
   test_value     VARCHAR2(255)
 );
 
+select * from DP_MESSAGES;
+select * from test_table;
 
 drop procedure child_block;
 

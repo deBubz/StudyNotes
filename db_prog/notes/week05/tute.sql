@@ -1,4 +1,4 @@
-set serveroutput on;
+et serveroutput on;
 
 -- tutorial 5 questions and answers
 
@@ -48,6 +48,10 @@ EXCEPTION
     when ZERO_DIVIDE THEN
         dbms_output.put_line('cant divide by 0');
 
+	when OTHERS THEN
+		  dbms_output.put_line('ERROR THROWN ' || SQLERRM);
+		  ROLLBACK;
+
 END;
 
 
@@ -74,6 +78,96 @@ create table run_log (
 -- run the procedure and record running details into RUN_LOG
 
 -- watch tutorial for this
+
+-- ==========================================================================================
+-- question 2 Tutorial code
+-
+--drop sequence seq_runlog;
+--create sequence seq_runlog start with 1 maxvalue 999999999 increment by 1;
+--
+--
+--select seq_runlog.nextval from DUAL;
+--
+---- write a procedure that do something
+---- if its done in the past hour then then throw an error
+--
+--
+select * from run_log;
+--
+insert into run_log(runID, ModuleName, RunStartDate, RunEndDate, Outcome, Comments)
+values (1, 'test1', sysdate, null, null, 'starting');
+--
+--set serveroutput on;
+--
+update run_log set runenddate = sysdate where runid = 1;
+--
+delete from run_log;
+
+DECLARE
+    v_runID               number;
+    moduleRun           exception;
+    r_run_log           run_log%ROWTYPE;
+    c_moduleName       CONSTANT run_log.modulename%TYPE := 'test1';
+    c_runBuffer        constant number := 1/24;
+BEGIN
+    --
+    -- log run
+    BEGIN
+        select * INTO r_run_log
+        from run_log
+        where upper(modulename) = upper(c_moduleName)
+        and runenddate > sysdate -c_runBuffer;
+
+        dbms_output.put_line('has been run before');
+
+        -- raise exception because its already ran
+        raise moduleRun;
+    EXCEPTION
+         WHEN no_data_found THEN
+            dbms_output.put_line('not run before ');
+            -- if not runbefore start another module
+            -- sequence id
+            select seq_runlog.nextval into v_runID from dual;
+--
+            insert into run_log(runID, ModuleName, RunStartDate, RunEndDate, Outcome, Comments)
+            values (v_runID, c_modulename, sysdate, null, null, 'starting');
+
+    END;
+    dbms_output.put_line(c_moduleName ||' is running');
+
+
+    -- main code
+
+    v_runid := 100/0;
+
+    -- finish run
+    update run_log
+    set runenddate = sysdate,
+        outcome = 'SUCCESS',
+        comments = 'finished running'
+    where runid =v_runID;
+
+    dbms_output.put_line(c_moduleName ||' has finished running');
+
+exception
+    when moduleRUN then
+        dbms_output.put_line(c_moduleName ||' has ben ran before');
+
+    -- when everything failed, log that it failed
+    when others then
+        update run_log
+            set runenddate = sysdate,
+            outcome = 'FAILED',
+            comments = 'something went wrong'
+        where runid =v_runID;
+
+
+END;
+
+
+-- ====================================================================================================
+
+
 
 -- q03 copy to the env
 
