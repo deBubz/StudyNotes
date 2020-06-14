@@ -2,7 +2,6 @@
 
 ## Misc
 
-- 50 %
 - document your approach, keep it short and straight to the point
   - use diagrams, note what you're proud of
 - submit: professional presentation in soft copy
@@ -10,35 +9,19 @@
 - include `ORACLE userid` in the front page, include email adress for marking sheet
 - check `utsonline` regularly for specification adendums
 
-## Overview
-
-- moving to privatization of the retail electricity industry.
-- retailers are just responsible to monitor the correct electricity usage and payment
-- the market is a pool where producer bid to supply and suppliers bid to buy. Pool managed by **AEMO**
-- the bidding by traders determine the price, set at 5min intervals
-- **AEMO** aggregates prices to half hour to publish continually.
-- trader need to be determine correctly using the time published at the half hours interval
-- **AEMO** provide consumption report containing consumption data for each of he participation data in the market.
-- Each report is for the total volume for that participant only. Broken down by LR(Local Retailer) and FRMP (Financially Responsible Market Participant)
-- Report `RM16` produced weekly for data stored in `NEM_RM16`
-
 ## Database Specs
 
-- create `LOCAL_RM16` table to store your calculated forecast values
-- could be a direct copy for either of the tables with the object or my view with the object unwrapped into individual attributes.
-- VIEW: `V_NEM_RM16`
-- free to use either the object or the unwrapped version of the object. depends on you
+- use the view to generate data: `V_NEM_RM16`
 
 ---
 
 ## Task
 
-- forecast energy requirement for each TNI, LR, FRMP combination, daily at each half hour interval
 - forecast calculated for 2 weeks into the future.
-- forecast should be for each TNI, LR, FRMP at each of the half hour intervals
+- forecast should be for each `TNI`, `LR`, `FRMP` at each of the half hour intervals
 - Each forecast record you create should have the `statement_type` marked as `FORECAST`
   - forecast values for each day in the future should be based on the avg of the half hour values for the previous same day and half hour combination.
-  - **for holidays** 
+  - **for holidays**
     - if holiday, average the consumption of past holiday data.
     - if holiday data not available, use past sundays consumption data. DONT mix sundays with with holidays, use one or the other
     - when forcasting non-holidays, must use non-holiday data
@@ -75,4 +58,80 @@ List of deliverables
 
 REMEMBER TO TEST YOUR PROGRAM
 
+
+---
+
+## Schema
+
+The tables to use in your program
+
+### RUN_TABLE
+
+- used to log the processes running your program
+
+| var | datatype | notes |
+|:---|:---:|:---|
+|run_id | number | |
+|run_start| date | |
+|run_end | date | |
+|outcome | varchar2(15) | |
+|remarks | varchar2(255)| |
+
+
+### DBP_PARAMETER
+
+- parameter table for data type, date/string format??
+- gotta need to ask about this
+
+| var | datatype | notes |
+|:---|:---:|:---|
+|category | varchar2(35) | |
+|code| varchar2(35) | |
+|value | varchar2(35) | |
+|active | varchar2(1) 'y' | |
+|modified | date(sysdate)| |
+
+### DBP_MESSAGE_LOG
+
+| var | datatype | notes |
+|:---|:---:|:---|
+|studentID | varchar2(50) | |
+|msg_date| datetime | |
+|msg_id | varchar2(35) | |
+|message | varchar2(2000) | |
+
+
+
+### DBP_HOLIDAY
+
+- holiday dates to watch out for??
+
+| var | datatype | notes |
+|:---|:---:|:---|
+|holiday_date | date |
+
+
+------------------
+
+> edit these under here
+
+### V_NEM_RM16
+
+| var | datatype | notes |
+|:---|:---:|:---|
+|run_id | number | |
+|run_start| date | |
+|run_end | date | |
+|outcome | varchar2(15) | |
+|remarks | varchar2(255)| |
+
+### DBP_LOCALRM16
+
+| var | datatype | notes |
+|:---|:---:|:---|
+|run_id | number | |
+|run_start| date | |
+|run_end | date | |
+|outcome | varchar2(15) | |
+|remarks | varchar2(255)| |
 

@@ -38,8 +38,8 @@ END;
 
 
 -----------------------------------------------------------------------
-
--- creating package
+-- package Specification
+------------------------------------------------------------------------
 CREATE OR REPLACE PACKAGE pgk_lecture6 AS
 -- this part be the spec
 	FUNCTION is_numeric(p_number VARCHAR2)
@@ -99,6 +99,12 @@ CREATE OR REPLACE PACKAGE BODY pgk_lecture6 AS
     BEGIN
         DBMS_OUTPUT.put_line(' the package is being executed ');
 		DBMS_OUTPUT.put_line(' the package variable is ' || v_packageVariable);
+        -- use this to init global variables
+        select value into v_value from my_parms where category = 'Email_constants' and code='Fss_settlement_Report';
+        
+--        if v_values is not null Then
+--            insert into my_params ()
+--            values
 
 END pgk_lecture6;
 /

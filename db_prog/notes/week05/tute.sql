@@ -57,6 +57,7 @@ END;
 
 -- q02 create RUN LOG tavble with this table
 
+drop table run_log;
 create table run_log (
 	runID				NUMBER			PRIMARY KEY
 	ModuleName		VARCHAR2(35)	NOT NULL
@@ -77,137 +78,120 @@ create table run_log (
 -- ok so create table for logging (RUN_LOG)
 -- run the procedure and record running details into RUN_LOG
 
--- watch tutorial for this
+select * from run_table;
 
--- ==========================================================================================
--- question 2 Tutorial code
--
---drop sequence seq_runlog;
---create sequence seq_runlog start with 1 maxvalue 999999999 increment by 1;
---
---
---select seq_runlog.nextval from DUAL;
---
----- write a procedure that do something
----- if its done in the past hour then then throw an error
---
---
-select * from run_log;
---
+drop table run_log;
+create table run_log (
+	runID				NUMBER			PRIMARY KEY,
+	ModuleName		VARCHAR2(35)	NOT NULL,
+	RunStartDate	DATE				NOT NULL,
+	RunEndDate		DATE,
+	Outcome			VARCHAR2(35),
+	Comments			VARCHAR2(35)
+);
+
+-- sequence
+drop sequence seq_runlog;
+create sequence seq_runlog start with 1 maxvalue 999999999 increment by 1;
+
+
+--- table editing
+-- test running
 insert into run_log(runID, ModuleName, RunStartDate, RunEndDate, Outcome, Comments)
 values (1, 'test1', sysdate, null, null, 'starting');
---
---set serveroutput on;
---
+
+-- test finished runnign
+update run_log set runenddate = sysdate where runid = 1;    -- had coded runid
+
+
+-- update
 update run_log set runenddate = sysdate where runid = 1;
---
+
+-- remove all
 delete from run_log;
 
-DECLARE
-    v_runID               number;
-    moduleRun           exception;
-    r_run_log           run_log%ROWTYPE;
-    c_moduleName       CONSTANT run_log.modulename%TYPE := 'test1';
-    c_runBuffer        constant number := 1/24;
+select * from run_log;
+
+set serveroutput on;
+
+
+call mainProg();
+
+--- check run code
+create or replace procedure mainProg is
+    v_runID         NUMBER;
+
+    moduleRUN       EXCEPTION;
+    pragma exception_init(moduleRun, -60);
+
+    c_module_name   constant    run_log.ModuleName%TYPE := 'test1';
+    c_run_buffer    constant    number := 1/24;     -- used to check if ran in the last hour
 BEGIN
     --
     -- log run
-    BEGIN
-        select * INTO r_run_log
-        from run_log
-        where upper(modulename) = upper(c_moduleName)
-        and runenddate > sysdate -c_runBuffer;
-
-        dbms_output.put_line('has been run before');
-
-        -- raise exception because its already ran
-        raise moduleRun;
-    EXCEPTION
-         WHEN no_data_found THEN
-            dbms_output.put_line('not run before ');
-            -- if not runbefore start another module
-            -- sequence id
-            select seq_runlog.nextval into v_runID from dual;
---
-            insert into run_log(runID, ModuleName, RunStartDate, RunEndDate, Outcome, Comments)
-            values (v_runID, c_modulename, sysdate, null, null, 'starting');
-
-    END;
-    dbms_output.put_line(c_moduleName ||' is running');
-
+    testshouldrun(c_module_name, c_run_buffer, v_runID);
 
     -- main code
-
-    v_runid := 100/0;
-
-    -- finish run
+    dbms_output.put_line('running some code');
+    null;
+    -- finish running succesfullt
     update run_log
     set runenddate = sysdate,
         outcome = 'SUCCESS',
-        comments = 'finished running'
-    where runid =v_runID;
-
-    dbms_output.put_line(c_moduleName ||' has finished running');
-
-exception
+        comments = 'Finished running'
+    where runid = v_runID;
+EXCEPTION
     when moduleRUN then
-        dbms_output.put_line(c_moduleName ||' has ben ran before');
-
-    -- when everything failed, log that it failed
-    when others then
-        update run_log
-            set runenddate = sysdate,
-            outcome = 'FAILED',
-            comments = 'something went wrong'
-        where runid =v_runID;
-
-
+        dbms_output.put_line(c_module_name || ' has been run before');
+--    when others then
+--        dbms_output.put_line('something happened');
+--
+--        update run_log
+--        set runenddate = sysdate,
+--            outcome = 'FAILED',
+--            comments = 'failed execution '
+--        where runid = v_runID;
 END;
-
-
--- ====================================================================================================
-
-
-
--- q03 copy to the env
-
-CREATE OR REPLACE PROCEDURE child_block IS
-BEGIN
-	INSERT INTO dp_messages
-		(tutorial_nr, question_nr, message)
-	VALUES
-		(5, 3, 'Child block insert';
-	COMMIT;
-END child_block;
-
 /
 
-CREATE OR REPLACE PROCEDURE parent_block IS
-BEGIN
-	INSERT INTO test_table
-		(test_value)
-	VALUES
-		('Parent block insert at '||sysdate);
+-- if you wanna use this is a speperate module
+create or replace procedure testShouldRun (
+    p_modulename    run_log.modulename%type,
+    p_run_buffer    number,
+    p_runID         out number
+) is
+    r_run_log       run_log%ROWTYPE;
+    -- moduleRun exception is unknown
+    moduleRun exception;
 
-	child_block;
-	ROLLBACK;
-END parent_block;
-/
+begin
+    select * into r_run_log     -- to check if ran in the last hour
+    from run_log
+    where upper(modulename) = upper(p_modulename)
+    and runenddate > sysdate - p_run_buffer
+    and outcome != 'FAILED';        -- if no data found, it ran in the past hr
 
--- run parent_block; and the test table, what do you see
--- what COMMIT in the child_block do?
--- what ROLLBACK in the parent do?
+    dbms_output.put_line('> ran already before');
 
--- modify the child to be an AUTONOMOUS transaction
--- rerun parent
--- do query on the dp_messages table and the test_table, what do you see
+        -- stop running when its ran before
+    dbms_output.put_line('> raising');
+    raise moduleRUN;
 
--- what did COMMIT in the child_block do?
--- what did ROLLBACK in the parent block do?
+        -- need to handle this
+exception
+    when NO_DATA_FOUND then
+        dbms_output.put_line('> no data - not ran before or already ran'); -- then add a log to start running
+        -- set id
+        select SEQ_RUNLOG.nextval into p_runid from dual;
+        insert into run_log(runID, ModuleName, RunStartDate, RunEndDate, Outcome, Comments)
+        values (p_runid, p_modulename, sysdate, null, null, 'starting');
+end;
 
 
 
---------------------------------------------------------------
+
+-- *****************************************************************************
+--------------------------------------------------------------------------------
 
 -- misc information
 
@@ -251,3 +235,71 @@ group by tni, lr, frmp, hh
 -- can i do this to generate 48 entries for 1 day
 
 -- need a holiday flag, if no holiday. normal operation, check against the forcasting day
+
+
+
+-- question 3
+
+-- question 3
+ drop table DP_MESSAGES;
+ CREATE TABLE DP_MESSAGES
+ (
+   Tutorial_nr      VARCHAR2(35),
+   Question_nr      VARCHAR2(10),
+   message          VARCHAR2(255));
+
+
+Drop Table Test_Table;
+Create table test_table
+(
+  test_value     VARCHAR2(255)
+);
+
+select * from test_table;
+select * from dp_messages;
+
+drop procedure child_block;
+drop procedure parent_block;
+
+CREATE OR REPLACE PROCEDURE child_block IS
+    -- add autonomous transaction
+    -- only commit an autonomous transaction in the current scope
+    pragma autonomous_transaction;
+BEGIN
+	INSERT INTO dp_messages
+		(tutorial_nr, question_nr, message)
+	VALUES
+		(5, 3, 'Child block insert autonomous');
+	COMMIT;
+END child_block;
+
+/
+
+CREATE OR REPLACE PROCEDURE parent_block IS
+BEGIN
+	INSERT INTO test_table
+		(test_value)
+	VALUES
+		('Parent block insert at '||sysdate);
+
+	child_block;
+	ROLLBACK;
+END parent_block;
+/
+
+-- running
+
+call parent_block();
+
+-- no pragma, since it inserted into seperate tables
+-- it'll commit both??
+-- run parent_block; and the test table, what do you see
+-- what COMMIT in the child_block do?
+-- what ROLLBACK in the parent do?
+
+-- modify the child to be an AUTONOMOUS transaction
+-- rerun parent
+-- do query on the dp_messages table and the test_table, what do you see
+
+-- what did COMMIT in the child_block do?
+-- what did ROLLBACK in the parent block do?s

@@ -118,8 +118,6 @@
 **** DONE traversals
      CLOSED: [2020-05-23 Sat 18:52]
 * Tasks
-** TODO note sds form element
-** TODO do sds api docs on what i need?? 
 ** TODO dsa week 09 notes
 ** database workshop review
 *** DOING week05
@@ -128,6 +126,13 @@
 ** get the notes
 ** TODO Week9 - secure force PaaS
 ** TODO Week10 - define Workflow in Force.com
+** TODO CLOUD week 8 lecture review
+** TODO DBPROG week 6 tutorials/ file io review
+** TODO DBPROG assessment discussion 3 review
+** DONE DB week 5 again
+   CLOSED: [2020-05-28 Thu 15:29]
+** TODO DB week 6 tutorials
+** TODO DB week 7 tutorials
 * Tomorrow
 * Important Dates
 ** DSA a1  22 May
@@ -148,3 +153,35 @@
 ** cool things
    - lazy Git
    - git bare
+* dbprog discussion notes
+** DONE d1 29-apr 1.40
+   CLOSED: [2020-05-26 Tue 13:51]
+** DONE d2 6-may 1.22
+   CLOSED: [2020-05-26 Tue 14:54]
+*** if future date is a holiday, take holiday avg in the past
+*** if there are no hodidays, take past sundays
+*** run_table, checks the program ran today or not, or the program is still running
+**** there should only be one entry per day per running time
+**** should it log a fail status, that would count as an extra record
+*** OK should I include the common package the documentation
+**** Since its an dependancy 
+** TODO d3 13-may 2.11
+** TODO d4 20-may 1.43
+* dbprog checklist [3/5]
+** DOING Main page
+** DONE Intro
+   CLOSED: [2020-06-05 Fri 16:51]
+** DONE table desc
+   CLOSED: [2020-06-05 Fri 16:51]
+** DONE data requirement
+   CLOSED: [2020-06-05 Fri 16:52]
+** TODO modules
+*** DONE operation desc
+    CLOSED: [2020-06-05 Fri 16:52]
+*** DONE usage
+    CLOSED: [2020-06-05 Fri 16:52]
+*** DOING examples
+** end note
+* DB Code touch up
+** Exception when theres no code in data source
+
