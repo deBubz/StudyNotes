@@ -1,187 +1,51 @@
-* Done
-** DONE Do sds sparks notes
-   CLOSED: [2020-05-09 Sat 17:03]
-** DONE DSA review
-   CLOSED: [2020-05-09 Sat 17:33]
-   - Make a 'table of contents' for each weekly notes
-*** DONE Week 03
-    CLOSED: [2020-05-09 Sat 17:04]
-*** DONE Week 04
-    CLOSED: [2020-05-09 Sat 17:32]
-** DONE DSA practice 3
-** DONE DSA practice 4
-   CLOSED: [2020-05-10 Sun 19:51]
-** DONE sds reflections [3/3]
-   CLOSED: [2020-05-11 Mon 12:15]
-*** DONE [] before stuvac (15 april)
-    CLOSED: [2020-05-11 Mon 03:26]
-*** DONE [] after stufac (29 april)
-    CLOSED: [2020-05-11 Mon 12:15]
-*** DONE [] last week (6 may)
-    CLOSED: [2020-05-11 Mon 12:15]
-** DONE do sds json doc
-   CLOSED: [2020-05-13 Wed 05:57]
-** DONE do sds design doc?
-   CLOSED: [2020-05-13 Wed 05:58]
-** DONE take db notes week07
-   CLOSED: [2020-05-13 Wed 14:31]
-** DONE get started on DSA a1
-   CLOSED: [2020-05-14 Thu 03:12]
-** DONE dsa check week 01 - 05 notes [4/4]
-   CLOSED: [2020-05-15 Fri 02:28]
-   briefly go through / take notes if not related
-*** DONE week02
-    CLOSED: [2020-05-14 Thu 12:57]
-*** DONE week03
-    CLOSED: [2020-05-14 Thu 13:36]
-*** DONE week04
-    CLOSED: [2020-05-15 Fri 02:28]
-*** DONE week05
-    CLOSED: [2020-05-15 Fri 02:28]
-** DONE dsa week 05 notes
-   CLOSED: [2020-05-15 Fri 02:28]
-** DONE student fees
-   CLOSED: [2020-05-20 Wed 09:22]
-** DONE dsa 05 adj_matrix
-   CLOSED: [2020-05-16 Sat 01:11]
-** DONE dsa 05 adj_list
-   CLOSED: [2020-05-16 Sat 01:11]
-** DONE build basic sds form while using one of the json
-   CLOSED: [2020-05-16 Sat 06:20]
-** DONE Email DB prog about the doccumentation
-   CLOSED: [2020-05-17 Sun 14:48]
-** DONE dsa week 05 lec
-   CLOSED: [2020-05-17 Sun 18:38]
-** DONE internet bills
-   CLOSED: [2020-05-20 Wed 09:22]
-** DONE pair prog with kev tomorrow 
-   CLOSED: [2020-05-21 Thu 14:45]
-** DONE try to split the files
-   CLOSED: [2020-05-21 Thu 14:45]
-** DONE do database notes
-   CLOSED: [2020-05-20 Wed 23:51]
-** CloudWorkshop catchup [5/5]
-*** DONE Week3 - intro to aws and ec2
-    CLOSED: [2020-05-22 Fri 20:51]
-*** DONE Week5 - elastic bean stalk
-    CLOSED: [2020-05-22 Fri 17:44]
-*** DONE Week6 - customize elastic bean stalk
-    CLOSED: [2020-05-22 Fri 17:44]
-*** DONE Week7 - aws storage services lab
-    CLOSED: [2020-05-22 Fri 17:44]
-*** DONE Week8 - creating mini app on Force.com
-    CLOSED: [2020-05-22 Fri 20:51]
-** DONE Catch up db notes [3/3]
-   CLOSED: [2020-05-22 Fri 12:52]
-*** DONE week05
-    CLOSED: [2020-05-22 Fri 10:03]
-*** DONE week06
-    CLOSED: [2020-05-22 Fri 11:55]
-*** DONE week07
-    CLOSED: [2020-05-22 Fri 12:31]
-** DONE commenting dsa [7/7]
-   CLOSED: [2020-05-23 Sat 18:53]
-*** DONE helper methods [6/6]
-    CLOSED: [2020-05-23 Sat 18:53]
-**** DONE add
-     CLOSED: [2020-05-23 Sat 16:27]
-**** DONE remove
-     CLOSED: [2020-05-23 Sat 16:36]
-**** DONE degree
-     CLOSED: [2020-05-23 Sat 16:46]
-**** DONE size
-     CLOSED: [2020-05-23 Sat 16:48]
-**** DONE get
-     CLOSED: [2020-05-23 Sat 17:03]
-**** DONE neighbours
-     CLOSED: [2020-05-23 Sat 17:13]
-*** DONE cycles
-    CLOSED: [2020-05-23 Sat 17:39]
-*** DONE graph traversals
-    CLOSED: [2020-05-23 Sat 17:53]
-*** DONE tree
-    CLOSED: [2020-05-23 Sat 18:13]
-*** DONE tree traversals
-    CLOSED: [2020-05-23 Sat 18:52]
-**** DONE pre order 
-     CLOSED: [2020-05-23 Sat 18:34]
-**** DONE in order
-     CLOSED: [2020-05-23 Sat 18:52]
-**** DONE post order
-     CLOSED: [2020-05-23 Sat 18:52]
-*** DONE sorting
-    CLOSED: [2020-05-23 Sat 18:41]
-*** DONE private
-    CLOSED: [2020-05-23 Sat 18:52]
-**** DONE trees
-     CLOSED: [2020-05-23 Sat 18:13]
-**** DONE traversals
-     CLOSED: [2020-05-23 Sat 18:52]
 * Tasks
-** TODO dsa week 09 notes
-** database workshop review
-*** DOING week05
-*** TODO week06
-*** TODO week07
-** get the notes
-** TODO Week9 - secure force PaaS
-** TODO Week10 - define Workflow in Force.com
-** TODO CLOUD week 8 lecture review
-** TODO DBPROG week 6 tutorials/ file io review
-** TODO DBPROG assessment discussion 3 review
-** DONE DB week 5 again
-   CLOSED: [2020-05-28 Thu 15:29]
-** TODO DB week 6 tutorials
-** TODO DB week 7 tutorials
-* Tomorrow
-* Important Dates
-** DSA a1  22 May
-** DB Prog 5 June
-** cloud 11 June
-* Subjects
-** DSA
-** DB Prog
-** Intro Software Development
-** Cloud SaaS
+** TODAY
+  - what is java
+*** TEHK [/]
+**** TODO read tehk code
+**** TODO read JDA doc
+**** TODO set up test env
+**** TODO break stuff
+*** important mails [2/6]
+**** TODO Thanking email to Ricky
+**** TODO Thanking email to Julia, and thoughts on the studio
+**** TODO Thanking email to Laurie
+**** DONE Marking email to Asif
+     CLOSED: [2020-07-05 Sun 19:37]
+**** DONE marking email to julia
+     CLOSED: [2020-07-05 Sun 19:36]
+**** TODO Thanking email to Thomas
+** TOMORROW
+* Personal
+- What should I fucking do
+** School
+*** Figure out the subjects to do next semester
+**** Plan A Original
+     - advanced softdev
+     - Architecture
+     - Internet of things
+**** Plan B
+     - advanced softdev
+     - Sensors
+     - Internet of Things
+*** Gather old docs to archive
+**** TODO ISD
+**** TODO DSA
+**** TODO DBPROG
+*** figure out me study path
+*** have another look at data subjs and ask Urthor
+** Projects
+*** Tehk 
+**** reactions interface/inheritance
+** Me
+*** Code focus
+**** C/C++
+**** Javascript
+**** Rust
 * NOTES:
 ** questions
 *** Urthor - question about electives and data analytics
-*** Laurie - question about how the doc should be like
-    - he mentioned it should be simple an understandable for a layperson
-    - I had the assumption that it would be similar to programming language/frameworks/api/etc documentation
-      - where it presents detailes of the packages' public elemts, what is achievable with the package and examples on how to use the  
 ** cool things
    - lazy Git
    - git bare
-* dbprog discussion notes
-** DONE d1 29-apr 1.40
-   CLOSED: [2020-05-26 Tue 13:51]
-** DONE d2 6-may 1.22
-   CLOSED: [2020-05-26 Tue 14:54]
-*** if future date is a holiday, take holiday avg in the past
-*** if there are no hodidays, take past sundays
-*** run_table, checks the program ran today or not, or the program is still running
-**** there should only be one entry per day per running time
-**** should it log a fail status, that would count as an extra record
-*** OK should I include the common package the documentation
-**** Since its an dependancy 
-** TODO d3 13-may 2.11
-** TODO d4 20-may 1.43
-* dbprog checklist [3/5]
-** DOING Main page
-** DONE Intro
-   CLOSED: [2020-06-05 Fri 16:51]
-** DONE table desc
-   CLOSED: [2020-06-05 Fri 16:51]
-** DONE data requirement
-   CLOSED: [2020-06-05 Fri 16:52]
-** TODO modules
-*** DONE operation desc
-    CLOSED: [2020-06-05 Fri 16:52]
-*** DONE usage
-    CLOSED: [2020-06-05 Fri 16:52]
-*** DOING examples
-** end note
-* DB Code touch up
-** Exception when theres no code in data source
 
