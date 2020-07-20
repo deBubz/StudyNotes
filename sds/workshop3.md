@@ -1,4 +1,0 @@
-# stuff
-
-- do weekly reflection
-- 
