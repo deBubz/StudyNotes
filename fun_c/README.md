@@ -39,10 +39,13 @@
 5. (Quiz 3)Structure and file Processing
 6. (Quiz 4)Pointer, Dynamic memory management 1
 7. (Quiz 5)(Solo Project)Pointer, Dynamic memory management 2
--. Stuvac
-8. (Group)Programming in the Large
-9. Cross Development and CLI parsing
-10. On to C++
-11. Group work
-12. Group work + Revision
--. Group task Due
+
+Stuvac
+
+1. (Group)Programming in the Large
+2. Cross Development and CLI parsing
+3.  On to C++
+4.  Group work
+5.  Group work + Revision
+
+Group task Due

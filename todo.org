@@ -48,6 +48,17 @@
 ** cool things
    - lazy Git
    - git bare
+** Internship Opportunities
+*** Commonwealth
+*** SAS viya
+*** BOEING
+*** NEWCREST mining
+*** amazon
+*** mongoDB
+*** atlassian
+*** RESMED
+*** SUNCORP
+*** Microsoft
 ** sekiro
 *** endings
 **** shura(EZ) - loyal to owl
