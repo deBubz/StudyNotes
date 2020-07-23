@@ -36,4 +36,5 @@ suppose there is an unresponsive process you want to end manually
 
 you can either
 
-- use `jobs` to list the process and `kill %
+- use `jobs` to list the process and `kill %id` to end the process
+- use `ps` to list processes and `kill id` to end the process
