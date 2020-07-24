@@ -16,7 +16,9 @@ int main(void)
 
 	printf("Enter two integers> ");
 	scanf("%d%d", &first, &second);
-	ans = first / second;
+
+	ans = (double)first / second;
 	printf("The result is %.3lf\n", ans);
+
 	return (0);
 } 
