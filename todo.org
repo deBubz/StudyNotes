@@ -15,7 +15,19 @@
 **** DONE marking email to julia
      CLOSED: [2020-07-05 Sun 19:36]
 **** TODO Thanking email to Thomas
-** TOMORROW
+** IOT
+*** lecture at 1
+*** tutorial
+*** lecture
+**** NODE_RED paper 8pg maybe skim through
+**** the slides is 50 pgs
+***** just get 10 slides now?
+*** tutorial
+**** mostly just to setup node-red
+**** could research and look up on what type of pi board to get/ research and play with
+** FUN C
+** ASD
+
 * Personal
 - What should I fucking do
 ** School
