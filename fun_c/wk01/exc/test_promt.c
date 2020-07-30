@@ -9,10 +9,14 @@ int main(void) {
     // alright this doesnt work, it'll assign gibberish to i
     // scanf("enter a number: %d", &i);
 
+    // ----------------------------------------------
+
     // stick to this solution
     // printf("Enter a number: ");
     // scanf("%d", &i);
     // printf("the number is: %d\n", i);
+
+    // ----------------------------------------------
 
     // multiple inputs
     // alright so the text stream thing

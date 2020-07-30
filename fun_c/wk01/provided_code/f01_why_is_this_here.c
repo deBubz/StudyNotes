@@ -1,9 +1,6 @@
 /* 
-example of a badly formatted code 
-pretty hard to read understand
-
-real question is does this even compile
-no it doesn't so a pretty bad example
+this is pretty cool
+try to compile and run it
 */
 
 
