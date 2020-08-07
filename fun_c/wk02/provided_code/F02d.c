@@ -13,6 +13,9 @@ explain:
     - pass by value (functions use a local copy of variables)
 *******************************************************************************/
 
+
+/* wait I done this last week */
+
 #include <stdio.h>
 #define PI 3.14
 

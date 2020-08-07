@@ -1,10 +1,4 @@
-/*******************************************************************************
-author     : Beeshanga Abewardana Jayawickrama
-date       :
-
-description:
-Debugging exercise - runtime errors. cast, 0.
-*******************************************************************************/
+/* example type casting */
 
 
 #include <stdio.h>
@@ -14,6 +8,7 @@ int main(void)
 	int first, second;
 	double ans;
 
+	/* user enter 2 integers */
 	printf("Enter two integers> ");
 	scanf("%d%d", &first, &second);
 

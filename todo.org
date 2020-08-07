@@ -1,33 +1,46 @@
 * Tasks
 ** TODAY
-  - what is java
-*** TEHK [/]
-**** TODO read tehk code
-**** TODO read JDA doc
-**** TODO set up test env
-**** TODO break stuff
-*** important mails [2/6]
-**** TODO Thanking email to Ricky
-**** TODO Thanking email to Julia, and thoughts on the studio
-**** TODO Thanking email to Laurie
-**** DONE Marking email to Asif
-     CLOSED: [2020-07-05 Sun 19:37]
-**** DONE marking email to julia
-     CLOSED: [2020-07-05 Sun 19:36]
-**** TODO Thanking email to Thomas
+*** week review 
+*** TODO revising [0/3]
+**** TODO fun_c
+***** TODO Check ed
+***** TODO check uts online
+***** TODO check notes
+**** TODO IOT
+***** TODO skim through lecture notes
+***** TODO setup till lab 3
+***** TODO check assessments notes
+**** TODO ASD
+***** TODO try making the IM app
+***** TODO check release 0 contents
+***** TODO check ISD notes for that content
+*** TODO cancel the thing
+*** TODO do the thing
 ** IOT
-*** lecture at 1
-*** tutorial
 *** lecture
 **** NODE_RED paper 8pg maybe skim through
 **** the slides is 50 pgs
 ***** just get 10 slides now?
+*** lec 02 [4/7]
+**** DONE Key Concepts
+     CLOSED: [2020-08-07 Fri 09:54]
+**** DONE Components
+     CLOSED: [2020-08-07 Fri 09:54]
+**** DONE characteristics
+     CLOSED: [2020-08-07 Fri 09:54]
+**** DONE Categories of Apps
+     CLOSED: [2020-08-07 Fri 09:54]
+**** TODO Challenges
+**** TODO Issues
+**** TODO Active area of development
 *** tutorial
-**** mostly just to setup node-red
-**** could research and look up on what type of pi board to get/ research and play with
 ** FUN C
+   generally be careful of the small details in the forums, there are a lot of nuanced details
+*** TODO forum 2  data types notes
+*** TODO double check quiz for 10/10
 ** ASD
-
+*** TODO briefly go through the week 1 - agile 
+    - should be very simple and straight forward
 * Personal
 - What should I fucking do
 ** School
@@ -56,7 +69,6 @@
 **** Rust
 * NOTES:
 ** questions
-*** Urthor - question about electives and data analytics
 ** cool things
    - lazy Git
    - git bare
@@ -98,3 +110,4 @@
 **** master of prosthetics - all upgrades
 **** peak physical strength [3/49] - beads
 **** lazuline upgrade - something fountain heads
+     

@@ -41,6 +41,7 @@ int main(void)
     return 0;
 }
 
+/* print the binary value */
 void printbin(char* n, int nb)
 {
     int i;

@@ -23,10 +23,10 @@
   - Week 3 - 7
 - **Solo Project**
   - 20%
-  - Week 7
+  - DUE: Week 7
 - **Group Project**
   - 30% (half code, half report)
-  - End of year Stuvac
+  - DUE: End of year Stuvac
 - **Final Exam**
   - 30%
 

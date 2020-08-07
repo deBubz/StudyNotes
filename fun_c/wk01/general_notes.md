@@ -19,7 +19,6 @@ seems simple and basic enough, just some basic programming stuff
 - **Logical Errors** - logic errors, only the dev can spot this from testing the program
 - **Runtime Errors** - edge cases, errors occuring when running the program. you can check through testing, im looking at you variables
 
-
 ---
 
 # book notes

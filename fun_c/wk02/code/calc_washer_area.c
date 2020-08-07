@@ -21,6 +21,7 @@ int main(void) {
     printf("Enter the outer and inner diameters: ");
     scanf("%lf%lf", &outer_d, &inner_d);
 
+    /* calculate */
     washer_area = circle_area(outer_d) - circle_area(inner_d);
     printf("The area of the washer is: %.3lf", washer_area);
 

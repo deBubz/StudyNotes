@@ -16,7 +16,6 @@ To contol proceeses
 - `bg` - put a process in the background
 - `fg` - put a process in the foreground
 
-
 > use `man` to see more about it
 
 ---

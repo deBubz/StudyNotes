@@ -21,6 +21,7 @@ int main(void)
     printf("m = %d\nn = %d\n", m, n);
     printf("%d = %d + 5\n%d = 3 * %d\n\n", m+5, m, 3*n, n);
 
+    // ================================================
     // ok the ex are lame
     printf("ex 2_3 - programming\n\n");
 
@@ -30,12 +31,14 @@ int main(void)
     scanf("%d%d%d", &a, &b, &c);
     printf("Entered %d, %d and %d.\n\n", a, b, c);
 
+    // ------------------------------------------------
     // q 2 calc square perimeter
     printf("Enter the side of the square(cm): ");
     int s_side;
     scanf("%d", &s_side);
     printf("The square\'s perimeter is %d cm long.\n\n", s_side*4);
 
+    // ------------------------------------------------
     // q3 enter the radius and compute the area
     // use constant macro for PI = 3.14159
     printf("Enter the radius size(cm): ");

@@ -1,11 +1,3 @@
-/*******************************************************************************
-author     : Beeshanga Abewardana Jayawickrama
-date       :
-
-description:
-miles to km conversion. Debugging exercise - compilation errors, logical errors
-*******************************************************************************/
-
 /* Converts distances from miles to kilometers. */
 
 #include <stdio.h>         /* printf, scanf definitions   */
