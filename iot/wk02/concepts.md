@@ -61,8 +61,6 @@ Hoooly
 - Data-centric
 - Geographic routing
 - In-network
-- State
-- Uncertainty
 - Sensor Task
 - Cooperative processing
 - Detection
@@ -74,7 +72,6 @@ Hoooly
 - System Performance goal
 - Evaluation Metrics
 - Node services
-- Data storage
 - Embedded OS
 
 # Key concepts and definition
