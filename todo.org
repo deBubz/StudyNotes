@@ -1,60 +1,35 @@
 * Tasks
 ** TODAY
-*** week review 
 *** revising [2/3]
-**** DONE fun_c
-     CLOSED: [2020-08-07 Fri 12:11]
-***** DONE Check ed
-      CLOSED: [2020-08-07 Fri 10:36]
-***** DONE check uts online
-      CLOSED: [2020-08-07 Fri 10:37]
-***** DONE check notes
-      CLOSED: [2020-08-07 Fri 12:11]
-**** DONE IOT
-     CLOSED: [2020-08-07 Fri 13:58]
-***** DONE skim through lecture notes
-      CLOSED: [2020-08-07 Fri 13:58]
-***** DONE setup till lab 3
-      CLOSED: [2020-08-07 Fri 13:58]
-***** DONE check assessments notes
-      CLOSED: [2020-08-07 Fri 16:05]
 **** TODO ASD
-***** TODO try making the IM app
-***** TODO check release 0 contents
+***** DONE check release 0 contents
+      CLOSED: [2020-08-10 Mon 02:07]
 ***** TODO check ISD notes for that content
 *** TODO cancel the thing
 *** TODO do the thing
-*** TODO purchase IoT equipment list
-** IOT
-*** lecture
-**** NODE_RED paper 8pg maybe skim through
-**** the slides is 50 pgs
-***** just get 10 slides now?
-*** lec 02 [4/7]
-**** DONE Key Concepts
-     CLOSED: [2020-08-07 Fri 09:54]
-**** DONE Components
-     CLOSED: [2020-08-07 Fri 09:54]
-**** DONE characteristics
-     CLOSED: [2020-08-07 Fri 09:54]
-**** DONE Categories of Apps
-     CLOSED: [2020-08-07 Fri 09:54]
-**** TODO Challenges
-**** TODO Issues
-**** TODO Active area of development
-*** tutorial
-    - maybe check with others why my week 3 grafana data are all blank
-*** assessment
-    - ok so i've read the requirements? i guess
-    - there are a few more parts to read:
-      - the submission details
-      - the samples?
-** FUN C
-   generally be careful of the small details in the forums, there are a lot of nuanced details
-*** TODO try completing chapter 2
-** ASD
-*** TODO briefly go through the week 1 - agile 
-    - should be very simple and straight forward
+*** purchase IoT equipment list
+**** rasp pi 0 wifi 
+**** serial cable
+*** IOT
+**** lecture
+***** NODE_RED paper 8pg maybe skim through
+***** the slides is 50 pgs
+****** just get 10 slides now?
+**** tutorial
+     - maybe check with others why my week 3 grafana data are all blank
+**** assessment
+     - ok so i've read the requirements? i guess
+     - there are a few more parts to read:
+       - the submission details
+       - the samples?
+*** FUN C
+    generally be careful of the small details in the forums, there are a lot of nuanced details
+**** TODO try completing chapter 2
+*** ASD
+** TODO TOMORROW
+*** ASD week 01 notes
+*** ASD week 02 notes
+*** IoT Week 03 notes
 * Personal
 - What should I fucking do
 ** School
