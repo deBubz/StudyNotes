@@ -2,6 +2,21 @@
 
 > due 24 aug
 
+- [release0 notes](#release0-notes)
+	- [submission notes](#submission-notes)
+	- [criteria](#criteria)
+- [deliverables](#deliverables)
+	- [begin](#begin)
+	- [software requirements](#software-requirements)
+	- [software project plan](#software-project-plan)
+	- [solution architecture](#solution-architecture)
+	- [solution design](#solution-design)
+	- [software prototype](#software-prototype)
+	- [devops pipeline setup](#devops-pipeline-setup)
+	- [quality/presentation](#qualitypresentation)
+	- [appendices](#appendices)
+- [key words](#key-words)
+
 ## submission notes
 
 - devops pipeline containing indibidual student DevOps config details or script if important

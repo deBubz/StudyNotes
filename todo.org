@@ -1,13 +1,7 @@
 * Tasks
 ** TODAY
-*** revising [2/3]
-**** TODO ASD
-***** DONE check release 0 contents
-      CLOSED: [2020-08-10 Mon 02:07]
-***** TODO check ISD notes for that content
 *** TODO cancel the thing
-*** TODO do the thing
-*** purchase IoT equipment list
+*** TODO purchase IoT equipment list
 **** rasp pi 0 wifi 
 **** serial cable
 *** IOT
@@ -26,6 +20,14 @@
     generally be careful of the small details in the forums, there are a lot of nuanced details
 **** TODO try completing chapter 2
 *** ASD
+**** TODO try to complete 2 section today 
+***** TODO Functional requirements
+****** communication
+****** payment handling
+***** TODO non-functional requirements
+****** communication
+****** payment handling
+**** TODO week 2 DevOps notes
 ** TODO TOMORROW
 *** ASD week 01 notes
 *** ASD week 02 notes
