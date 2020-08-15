@@ -22,8 +22,21 @@
 ***** TODO non-functional requirements
 ****** communication
 ****** payment handling
-**** TODO get started on the UI stuff
-**** DOING figgure out the auth stuff
+**** TODO figgure out the auth stuff
+**** OK HAVE A LOOK AT THIS
+***** check the DevOps differences
+***** check devops pipeline
+***** check AIP class what they use for AUTH, testing, webpack
+***** check testing library contents
+***** OK
+***** draw up a simple devops pipeline thing
+***** draw up a simple wireframe thing
+***** re-edit the note/ show to group
+***** re organize the repo and readmes
+      - react will be the main project?
+      - be located in a seperate folder (not in src)
+      - make sure to keep a readme for eachpart and
+      - running/building script lauch both the be/fe
 * Personal
 - What should I fucking do
 ** School
