@@ -1,16 +1,11 @@
 * Tasks
 ** TODAY
 *** TODO cancel the thing
-*** TODO purchase IoT equipment list
-**** rasp pi 0 wifi 
-**** serial cable
 *** IOT
 **** lecture
 ***** NODE_RED paper 8pg maybe skim through
 ***** the slides is 50 pgs
 ****** just get 10 slides now?
-**** tutorial
-     - maybe check with others why my week 3 grafana data are all blank
 **** assessment
      - ok so i've read the requirements? i guess
      - there are a few more parts to read:
@@ -27,11 +22,8 @@
 ***** TODO non-functional requirements
 ****** communication
 ****** payment handling
-**** TODO week 2 DevOps notes
-** TODO TOMORROW
-*** ASD week 01 notes
-*** ASD week 02 notes
-*** IoT Week 03 notes
+**** TODO get started on the UI stuff
+**** DOING figgure out the auth stuff
 * Personal
 - What should I fucking do
 ** School
@@ -101,4 +93,4 @@
 **** master of prosthetics - all upgrades
 **** peak physical strength [3/49] - beads
 **** lazuline upgrade - something fountain heads
-     
+**** 

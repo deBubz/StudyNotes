@@ -1,3 +1,9 @@
-.out
+# c/c++ compiled files
+*.out
+
+# IDE stuff
 .vscode
 .idea
+
+
+
