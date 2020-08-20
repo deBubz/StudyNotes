@@ -10,8 +10,6 @@
 ***** NODE_RED paper 8pg maybe skim through
 ***** the slides is 50 pgs
 ****** just get 10 slides now?
-**** tutorial
-     - maybe check with others why my week 3 grafana data are all blank
 **** assessment
      - ok so i've read the requirements? i guess
      - there are a few more parts to read:
@@ -28,11 +26,21 @@
 ***** TODO non-functional requirements
 ****** communication
 ****** payment handling
-**** TODO week 2 DevOps notes
-** TODO TOMORROW
-*** ASD week 01 notes
-*** ASD week 02 notes
-*** IoT Week 03 notes
+**** TODO figgure out the auth stuff
+**** OK HAVE A LOOK AT THIS
+***** check the DevOps differences
+***** check devops pipeline
+***** check AIP class what they use for AUTH, testing, webpack
+***** check testing library contents
+***** OK
+***** draw up a simple devops pipeline thing
+***** draw up a simple wireframe thing
+***** re-edit the note/ show to group
+***** re organize the repo and readmes
+      - react will be the main project?
+      - be located in a seperate folder (not in src)
+      - make sure to keep a readme for eachpart and
+      - running/building script lauch both the be/fe
 * Personal
 - What should I fucking do
 ** School
@@ -102,4 +110,4 @@
 **** master of prosthetics - all upgrades
 **** peak physical strength [3/49] - beads
 **** lazuline upgrade - something fountain heads
-     
+**** 
