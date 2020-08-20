@@ -62,12 +62,9 @@ so **short circuit** evaluation
 > you know this
 
 ```c
-if () 
-{
+if() {
 
-}
-else
-{
+} else {
 
 }
 ```
@@ -82,13 +79,12 @@ write the statement based on a flow chart `s 11`
 
 ```c
 char a;
-switch(a)
-{
-    case 'a':
-        printf('a');
-        break;
-    default:
-        break;
+switch(a) {
+  case 'a':
+    printf('a');
+    break;
+  default:
+    break;
 }
 ```
 
@@ -105,8 +101,7 @@ switch(a)
 > you know this
 
 ```c
-while()
-{
+while() {
 
 }
 ```
@@ -116,8 +111,8 @@ while()
 > you know this
 
 ```c
-for(int i = 0; i < 3; i++)
-{
+int i;
+for(i = 0; i < 3; i++) {
 
 }
 ```
@@ -127,8 +122,7 @@ for(int i = 0; i < 3; i++)
 > you know this
 
 ```c
-do
-{
+do {
 
 } while ()
 

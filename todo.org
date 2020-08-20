@@ -1,7 +1,8 @@
 * Tasks
 ** TODAY
 *** TODO cancel the thing
-*** TODO purchase IoT equipment list
+*** DONE purchase IoT equipment list
+    CLOSED: [2020-08-18 Tue 00:09]
 **** rasp pi 0 wifi 
 **** serial cable
 *** IOT
