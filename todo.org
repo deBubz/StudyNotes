@@ -1,10 +1,6 @@
 * Tasks
 ** TODAY
 *** TODO cancel the thing
-*** DONE purchase IoT equipment list
-    CLOSED: [2020-08-18 Tue 00:09]
-**** rasp pi 0 wifi 
-**** serial cable
 *** IOT
 **** lecture
 ***** NODE_RED paper 8pg maybe skim through
@@ -19,13 +15,6 @@
     generally be careful of the small details in the forums, there are a lot of nuanced details
 **** TODO try completing chapter 2
 *** ASD
-**** TODO try to complete 2 section today 
-***** TODO Functional requirements
-****** communication
-****** payment handling
-***** TODO non-functional requirements
-****** communication
-****** payment handling
 **** TODO figgure out the auth stuff
 **** OK HAVE A LOOK AT THIS
 ***** check the DevOps differences
@@ -41,6 +30,17 @@
       - be located in a seperate folder (not in src)
       - make sure to keep a readme for eachpart and
       - running/building script lauch both the be/fe
+**** release0 TASKS
+***** functional requirement
+***** data dict
+***** non-functional requirement
+***** project time sheet
+***** cost estimates
+***** project timesheet
+***** data architecture
+***** application architecture
+***** contribution log book
+***** dev-ops
 * Personal
 - What should I fucking do
 ** School
