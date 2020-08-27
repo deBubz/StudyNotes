@@ -18,4 +18,5 @@ general doc to keep track of what I did in a day
 > Need to make notes of those terms and research some differences
 
 
-### fri july 31
+---
+
