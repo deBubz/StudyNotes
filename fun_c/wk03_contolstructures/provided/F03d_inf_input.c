@@ -16,28 +16,25 @@ to show:
 
 void print_square(int size);
 
-int main(void)
-{
+int main(void) {
     int inp;
-    int i;
 
     // handle infinite input
     // stops when input is 0
-    for (i=0, inp=1; i<5 && inp!=0; i++) {
+    int i;
+    for (i = 0, inp = 1; i < 5 && inp != 0; i++) {
         printf("input>");
         scanf("%d", &inp);
+
         print_square(inp);
     }
     return 0;
 }
 
-void print_square(int size)
-{
+void print_square(int size) {
     int i, j;
-    for (j=0; j<size; j++)
-    {
-        for(i=0; i<size; i++)
-        {
+    for (j = 0; j< size; j++) {
+        for(i = 0; i < size; i++) {
             printf("* ");
         }
         printf("\n");

@@ -20,3 +20,16 @@ general doc to keep track of what I did in a day
 
 ---
 
+## Weel 6
+
+## Friday 28 Aug
+
+- Pay more attention on commenting
+- try to split things into smaller functions
+- maybe try the new infinite input method
+- lets practice the differences between `++a` and `a++`
+
+> Current TODO
+> - review lab04
+> - new quiz
+> - array quiz 10/10
