@@ -155,19 +155,25 @@ accuracy, resolution and precision
 
 ## Analog to Digital conversion
 
-- important features
-- quantisation
-- encoding
-- resolution
-- conversion time
-- conversion method
+important features of Analog to Digital Converiosn
+- **sampling rate**
+- **quantisation**
+- **encoding**
+- **conversion time**
+- **conversion method**
 
 successive approximation methods
 
 ## Digital to Analog Conversion
+
+
 
 ---
 
 ## Intro Friis Formula
 
 ## Intro Shannon Capacity Theorem
+
+> are these useful??
+
+> - https://youtu.be/ancDN11C2vg
