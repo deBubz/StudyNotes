@@ -11,6 +11,16 @@ typedef struct ipaddr ipaddr_t;
 
 
 void print_ipaddr(ipaddr_t ip);
+
+/*
+An IP address is valid if all 4 octets have values between 0 and 255(inclusive).
+The function checks if the input ip address is valid.
+Inputs:
+  ip - ipaddr_t input IP address variable
+Return:
+  1 - if input ip is valid
+  0 - otherwise
+*/
 int is_valid(ipaddr_t ip);
 
 /*
@@ -50,6 +60,22 @@ and prompt the user again to give a valid input. The function may scan up to
 addr_array_len valid IP addresses, or until the user enters -1.-1.-1.-1 as the
 input, whichever occurs first.
 
+Sample run 1 with addr_array_len=5, the function returns 2:
+>
+192.168.1.1
+>
+-192.168.1.1
+Invalid input
+>
+192.168.1.2
+>
+-1.-1.-1.-1
+
+Sample run 2 with addr_array_len=2, the function returns 2:
+>
+192.168.1.1
+>
+192.168.1.2
 
 Inputs:
   addr_array_len - maximum possible number of inputs, this is the size of the
@@ -68,6 +94,11 @@ Display IP addresses in the same subnet in addr_array. All addresses in the one
 subnet should be displayed in the same line, in the same order the addresses
 were entered. Each address is separated by one space, and each line has a
 trailing space in the end of the line prior to the new line character.
+
+Sample run 1 where addr_array contains the following IP addresses {192.168.1.1,
+192.168.2.1, 192.168.1.2, 192.168.1.3} and addr_array_len=4:
+192.168.1.1 192.168.1.2 192.168.1.3 
+192.168.2.1 
 
 Input:
   addr_array - contains IP addresses
@@ -90,7 +121,7 @@ int main (void){
     printf("Enter a choice> \n");
     scanf("%d", &choice);
 
-    /* menu choices */
+
     if(choice == 1) {   /* OK test 1 */
         ipaddr_t ip;
 
@@ -214,12 +245,9 @@ void print_ipaddr(ipaddr_t ip) {
     printf("%d.%d.%d.%d", ip.octet1, ip.octet2, ip.octet3, ip.octet4);
 }
 
-/**
- * An IP address is valid if all 4 octets have values between 0 and 255(inclusive).
- * The function checks if the input ip address is valid.
- * @param ip - ipaddr_t input IP address variable
- * @return 1 - ip is valid, 0 - otherwise
-*/
+/* is ip valid
+1 - valid
+0 - not valid */
 int is_valid(ipaddr_t ip) {
     int valid = 1;
 
@@ -320,7 +348,7 @@ void print_same_subnet(const ipaddr_t addr_array[], int addr_array_len) {
                 read[j] = 1;
             }
         }
-
+        
         read[i] = 1;
         printf("\n");
     }
