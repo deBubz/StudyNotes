@@ -1,7 +1,7 @@
 /*******************************************************************************
  * 48430 Fundamentals of C Programming - Assignment 2
- * Name: no
- * Student ID: 3
+ * Name: Bao Hoang
+ * Student ID: 13363332
  * Date of submission:
  * A brief statement on what you could achieve (less than 50 words):
  * 
@@ -148,11 +148,11 @@ int add_flight(flight_t flight_list[], int flight_count) {
     /* need validation */
     printf("Enter flight code>\n");
     scanf("%s", new_flight.flightcode);
-    printf("flight %s", new_flight.flightcode);
+    /* printf("flight %s", new_flight.flightcode); */
 
     /* get departure date */
     printf("Enter departure info for the flight leaving SYD.\n");
-    new_flight.arrival_dt = get_date_time();
+    new_flight.departure_dt = get_date_time();
 
     /* get arrival city name */
     printf("Enter arrival city code>\n");
@@ -160,7 +160,7 @@ int add_flight(flight_t flight_list[], int flight_count) {
     
     /* get arrival date */
     printf("Enter arrival info.\n");
-    new_flight.departure_dt = get_date_time();
+    new_flight.arrival_dt = get_date_time();
 
     flight_list[flight_count++] = new_flight;
     return flight_count;
@@ -174,17 +174,16 @@ void display_flights(flight_t flight_list[], int flight_count) {
     strcpy(citycode, get_fixedlen_string(citycode_len));
 
     if(!strcmp(citycode, "*")) {
-        printf("all\n");
         if (flight_count == 0) {
             printf("No flights\n");
         } else print_all_flight(flight_list, flight_count);
     } else {
-        printf("city\n");
         if(get_dest_count(citycode, flight_list, flight_count) == 0) {
             printf("No flights\n");
         } else print_flight_to(citycode, flight_list, flight_count);
     }
 }
+
 
 int get_dest_count(char citycode[], flight_t flight_list[], int flight_count) {
     int i, count = 0;
@@ -230,10 +229,13 @@ date_time_t get_date_time(void) {
 }
 
 char* get_fixedlen_string(int char_len) {
-    char* string = "";
+    char in[char_len];
+    char* string;
 
-    scanf("%s", string);
-    string[char_len] = '\0';
+    scanf("%s", in);
+    /* in[char_len] = '\0'; */
+    /* strcpy(string, in); */
+    string = &in[0];
 
     return string;
 }
@@ -245,6 +247,7 @@ char* get_fixedlen_string(int char_len) {
 */
 
 /**
+ * 
  * print the header of flights listing
  */
 void print_flight_header() {
@@ -273,10 +276,10 @@ void print_flight_to(char citycode[], flight_t flight_list[], int flight_count) 
 
     int i;
     for(i = 0; i < flight_count; i++) {
-        printf("%s match with %s\n", citycode, flight_list[i].arrival_city);
+        /* printf("%s match with %s\n", citycode, flight_list[i].arrival_city); */
 
         if(strcmp(citycode, flight_list[i].arrival_city) == 0) {
-            printf("found\n");
+            /* printf("found\n"); */
             print_flight(flight_list[i]);
         }
     }
@@ -317,7 +320,7 @@ void print_loc_datetime(char location[], date_time_t dt) {
     
     /* print date */
     printf("%02d-%02d ", dt.month, dt.day);
-    printf("%02d:%02d ", dt.hour, dt.minute);
+    printf("%02d:%02d", dt.hour, dt.minute);
 }
 
 /* 
