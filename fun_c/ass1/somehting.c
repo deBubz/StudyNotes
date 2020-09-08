@@ -60,8 +60,8 @@ typedef struct flight flight_t;
 void print_menu (void);
 int add_flight(flight_t flight_list[], int flight_count);
 void display_flights(flight_t flight_list[], int flight_count);
-int save_to_file(void);
-int load_from_file(void);
+int save_to_file(flight_t flight_list[], int flight_count);
+int read_from_file(flight_t flight_list[]);
 
 /* get function */
 /* int get_flight_code(void); */
@@ -75,6 +75,10 @@ void print_all_flight(flight_t flight_list[], int fight_count);
 void print_flight_to(char citycode[], flight_t flight_list[], int flight_count);
 void print_flight(flight_t flight);
 void print_loc_datetime(char location[], date_time_t dt);
+void print_with_padding(char location[], int padding);
+
+/* file processing */
+
 
 /* validation */
 int check_flight_code();
@@ -109,9 +113,10 @@ int main(void){
             display_flights(flight_list, flight_count);
         }
         else if(choice == 3) {   /* save all flights to file */
-
+            save_to_file(flight_list, flight_count);
         }
         else if(choice == 4) {   /* load the flights from the db file */
+            flight_count = read_from_file(flight_list);
         }
         else printf("Invalid choice\n");
 
@@ -197,9 +202,85 @@ int get_dest_count(char citycode[], flight_t flight_list[], int flight_count) {
     return count;
 }
 
+int save_to_file(flight_t flight_list[], int flight_count) {
+    FILE *fp = NULL;
+    fp = fopen(DB_NAME, "w");
 
-int save_to_file(void) { return 0; }
-int load_from_file(void) { return 0; }
+    if(fp == NULL){
+        printf("Write error\n");
+        return 1;
+    }
+
+    /* writing */
+    int i;
+    for(i = 0; i < flight_count; i++) {
+        fprintf(
+            fp,
+            "%s %d %d %d %d %s %d %d %d %d\n",
+            flight_list[i].flightcode,
+            flight_list[i].departure_dt.month,
+            flight_list[i].departure_dt.day,
+            flight_list[i].departure_dt.hour,
+            flight_list[i].departure_dt.minute,
+            flight_list[i].arrival_city,
+            flight_list[i].arrival_dt.month,
+            flight_list[i].arrival_dt.day,
+            flight_list[i].arrival_dt.hour,
+            flight_list[i].arrival_dt.minute
+        );
+    }
+
+    fclose(fp);
+
+    return 0;
+}
+
+int read_from_file(flight_t flight_list[]) {
+    FILE *fp = NULL;
+    fp = fopen(DB_NAME, "r");
+
+    int count = 0;
+    char line[100];
+    char space[] = " ";
+
+    if(fp == NULL){
+        printf("Read error\n");
+        return 0;
+    }
+
+    /* reading each line*/
+    while(fgets(line, sizeof(line), fp)) {
+        /* printf("%s\n,", line); */
+
+        char *ptr = strtok(line, space);
+        char *array[20];
+        int i = 0;
+
+        /* string to array */
+        while(ptr != NULL) {
+            array[i++] = ptr;
+            /* printf("%s ", array[i-1]); */
+            ptr = strtok(NULL, space);
+        }
+
+        flight_t flight;
+        strcpy(flight.flightcode, array[0]);
+        flight.departure_dt.month = atoi(array[1]);
+        flight.departure_dt.day = atoi(array[2]);
+        flight.departure_dt.hour = atoi(array[3]);
+        flight.departure_dt.minute = atoi(array[4]);
+        strcpy(flight.arrival_city, array[5]);
+        flight.arrival_dt.month = atoi(array[6]);
+        flight.arrival_dt.day = atoi(array[7]);
+        flight.arrival_dt.hour = atoi(array[8]);
+        flight.arrival_dt.minute = atoi(array[9]);
+
+        flight_list[count++] = flight;
+    }
+
+    return count;
+}
+
 
 /* 
 -------------------------------------------------------------------
@@ -276,10 +357,7 @@ void print_flight_to(char citycode[], flight_t flight_list[], int flight_count) 
 
     int i;
     for(i = 0; i < flight_count; i++) {
-        /* printf("%s match with %s\n", citycode, flight_list[i].arrival_city); */
-
         if(strcmp(citycode, flight_list[i].arrival_city) == 0) {
-            /* printf("found\n"); */
             print_flight(flight_list[i]);
         }
     }
@@ -289,13 +367,8 @@ void print_flight_to(char citycode[], flight_t flight_list[], int flight_count) 
  * print flight detail
  */
 void print_flight(flight_t flight) {
-    int str_len;
-
-    /* flight code and padding */
-    printf("%s", flight.flightcode);
-    for(str_len = strlen(flight.flightcode); str_len < MAX_FLIGHTCODE_LEN + 1; str_len++){
-        printf(" ");
-    }
+    /* flightcode */
+    print_with_padding(flight.flightcode, MAX_FLIGHTCODE_LEN + 1);
 
     /* origin */
     print_loc_datetime(SYDNEY, flight.departure_dt);
@@ -307,21 +380,33 @@ void print_flight(flight_t flight) {
 }
 
 /**
- * print location date time
+ * Prints departure/arrival location and Datetime of the flight
+ * Prints in the format:
+ *  LOC mn-da hr:mn
  */
 void print_loc_datetime(char location[], date_time_t dt) {
-    int str_len;
-
-    /* flight code and padding */
-    printf("%s", location);
-    for(str_len = strlen(location); str_len < MAX_CITYCODE_LEN + 1; str_len++){
-        printf(" ");
-    }
+    /* departure/arrival location */
+    print_with_padding(location, MAX_CITYCODE_LEN +1);
     
-    /* print date */
+    /* print date time */
     printf("%02d-%02d ", dt.month, dt.day);
     printf("%02d:%02d", dt.hour, dt.minute);
 }
+
+void print_with_padding(char location[], int padding) {
+    int i;
+    printf("%s", location);
+    for(i = strlen(location); i < padding; i++){
+        printf(" ");
+    }
+}
+
+/* 
+-------------------------------------------------------------------
+    FileProcessing Functions
+-------------------------------------------------------------------
+*/
+
 
 /* 
 -------------------------------------------------------------------
@@ -338,7 +423,7 @@ void print_loc_datetime(char location[], date_time_t dt) {
  * @return 1 if the number is in range, 0 if the number is out of range
  */
 int check_int_range(int i, int min, int max) {
-    if(i >= min && i <= max ) {   /* valid */
+    if(i >= min && i <= max ) { /* valid */
         return 1;
     } else {                    /* invalid */
         return 0;
