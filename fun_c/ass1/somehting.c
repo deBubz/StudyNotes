@@ -2,26 +2,31 @@
  * 48430 Fundamentals of C Programming - Assignment 2
  * Name: Bao Hoang
  * Student ID: 13363332
- * Date of submission:
- * A brief statement on what you could achieve (less than 50 words):
+ * Date of submission: 11 - September 2020
  * 
+ * Brief:
+ * - This is a simple console based program to store flight information
+ * for flights departuring from Sydney.
+ * - The flights information includes the flight code, departure time, 
+ * arrival city and arrival time.
+ * - The program is also able to save information to a data file to be stored
  * 
- * A brief statement on what you could NOT achieve (less than 50 words):
- * 
+ * Limitations:
+ * - This program can only store flight departuring from Sydney
+ * - This program can only store up to 5 flights listing
+ * - This program cannot select which data file to load from
  * 
 *******************************************************************************/
 
 /*******************************************************************************
- * List header files - do NOT use any other header files. Note that stdlib.h is
- * included in case you want to use any of the functions in there. However the
- * task can be achieved with stdio.h and string.h only.
+ * HEADER FILES 
 *******************************************************************************/
 #include <stdio.h>  /* printf, scanf */
-#include <string.h>
+#include <string.h> /* strcpy, strlen */
 #include <stdlib.h>
 
 /*******************************************************************************
- * List preprocessing directives - you may define your own.
+ * PREPROCESSING DIRECTIVES
 *******************************************************************************/
 #define MAX_FLIGHTCODE_LEN 6
 #define MAX_CITYCODE_LEN 3
@@ -30,9 +35,7 @@
 #define SYDNEY "SYD"
 
 /*******************************************************************************
- * List structs - you may define struct date_time and struct flight only. Each
- * struct definition should have only the fields mentioned in the assignment
- * description.
+ * STRUCTS
 *******************************************************************************/
 struct date_time {
     int month;
@@ -50,47 +53,43 @@ struct flight {
 };
 typedef struct flight flight_t;
 
-
-
 /*******************************************************************************
- * Function prototypes - do NOT change the given prototypes. However you may
- * define your own functions if required.
+ * FUNCTION PROTOTPYPES
 *******************************************************************************/
 
-void print_menu (void);
 int add_flight(flight_t flight_list[], int flight_count);
-void display_flights(flight_t flight_list[], int flight_count);
-int save_to_file(flight_t flight_list[], int flight_count);
+void display_flights(const flight_t flight_list[], const int flight_count);
+int save_to_file(const flight_t flight_list[], const int flight_count);
 int read_from_file(flight_t flight_list[]);
 
 /* get function */
-/* int get_flight_code(void); */
-date_time_t get_date_time();
-char* get_fixedlen_string(int char_len);
-int get_dest_count(char citycode[], flight_t flight_list[], int flight_count);
+date_time_t get_date_time(void);
+char* get_fixedlen_string(const int char_len);
+char* get_flight_code();
+int get_dest_count(const char citycode[], const flight_t flight_list[], const int flight_count);
 
 /* print functions */
-void print_flight_header();
-void print_all_flight(flight_t flight_list[], int fight_count);
-void print_flight_to(char citycode[], flight_t flight_list[], int flight_count);
-void print_flight(flight_t flight);
-void print_loc_datetime(char location[], date_time_t dt);
-void print_with_padding(char location[], int padding);
-
-/* file processing */
-
+void print_menu (void);
+void print_flight_header(void);
+void print_all_flight(const flight_t flight_list[], const int fight_count);
+void print_flight_to(const char citycode[], const flight_t flight_list[], const int flight_count);
+void print_flight(const flight_t flight);
+void print_loc_datetime(const char location[], const date_time_t dt);
+void print_with_padding(const char location[], const int padding);
 
 /* validation */
-int check_flight_code();
-int check_int_range(int i, int min, int max);
-int check_month(int mon);
-int check_day(int day);
-int check_hour(int hr);
-int check_min(int min);
+int check_flight_code(const char str[]);
+int check_upper_char(const char c);
+int check_number_char(const char c);
+int check_int_range(const int i, const int min, const int max);
+int check_month(const int mon);
+int check_day(const int day);
+int check_hour(const int hr);
+int check_min(const int min);
 
 
 /*******************************************************************************
- * Main function
+ * MAIN
 *******************************************************************************/
 int main(void){
     int choice;
@@ -101,12 +100,13 @@ int main(void){
     print_menu();
     scanf("%d", &choice);
 
+    /* main program */
     while (choice != 5) {
         if(choice == 1) {   /* add flight */
-            if (flight_count == MAX_NUM_FLIGHTS) {
-                printf("Cannot add more flights - memory full\n");
-            } else {
+            if (flight_count < MAX_NUM_FLIGHTS) {
                 flight_count = add_flight(flight_list, flight_count);
+            } else {        /* memory full */
+                printf("Cannot add more flights - memory full\n");
             }
         }
         else if(choice == 2) {   /* show all flights based on destination */
@@ -128,32 +128,22 @@ int main(void){
 }
 
 /*******************************************************************************
- * This function prints the initial menu with all instructions on how to use
- * this program.
- * @param void
- * @return none
+ * FUNCTION DEFINITIONS
 *******************************************************************************/
-void print_menu (void) {
-    printf("\n"
-    "1. add a flight\n"
-    "2. display all flights to a destination\n"
-    "3. save the flights to the database file\n"
-    "4. load the flights from the database file\n"
-    "5. exit the program\n"
-    "Enter choice (number between 1-5)>\n");
-}
 
-/* 
-    Main functions
-*/
-
+/*******************************************************************************
+ * This function add a new flight of type flight_t in to the flight_list array
+ * 
+ * @param flight_list - the flight array to add into
+ * @param flight_count - the current count of flights stored in flight_list
+ * @return the updated count of flights stored in flight_list
+ */
 int add_flight(flight_t flight_list[], int flight_count) {
     flight_t new_flight;
 
-    /* need validation */
+    /* get flight code */
     printf("Enter flight code>\n");
-    scanf("%s", new_flight.flightcode);
-    /* printf("flight %s", new_flight.flightcode); */
+    strcpy(new_flight.flightcode, get_flight_code());
 
     /* get departure date */
     printf("Enter departure info for the flight leaving SYD.\n");
@@ -171,18 +161,31 @@ int add_flight(flight_t flight_list[], int flight_count) {
     return flight_count;
 }
 
-void display_flights(flight_t flight_list[], int flight_count) {
+
+/*******************************************************************************
+ *  This function is to display flights on to the console
+ *  First it will ask if the user wants to show ALL flights or only flights to
+ *  a specific destination
+ * 
+ *  To show all flights, enter "*"
+ *  To show a specific flight, enter "CITYCODE"
+ * 
+ *  @param flight_list - flight list array to print from
+ *  @param flight_count - current count of the flights stored in flight_list
+ */
+void display_flights(const flight_t flight_list[], const int flight_count) {
     int citycode_len = MAX_CITYCODE_LEN + 1;
     char citycode[citycode_len];
 
+    /* display choice */
     printf("Enter arrival city code or enter * to show all destinations>\n");
     strcpy(citycode, get_fixedlen_string(citycode_len));
 
     if(!strcmp(citycode, "*")) {
-        if (flight_count == 0) {
+        if (flight_count == 0) {    /* show all flights */
             printf("No flights\n");
         } else print_all_flight(flight_list, flight_count);
-    } else {
+    } else {    /* show flights to a specified city */
         if(get_dest_count(citycode, flight_list, flight_count) == 0) {
             printf("No flights\n");
         } else print_flight_to(citycode, flight_list, flight_count);
@@ -190,19 +193,17 @@ void display_flights(flight_t flight_list[], int flight_count) {
 }
 
 
-int get_dest_count(char citycode[], flight_t flight_list[], int flight_count) {
-    int i, count = 0;
 
-    for (i = 0; i < flight_count; i++) {
-        if(strcmp(citycode, flight_list[i].arrival_city) == 0) {
-            count++;
-        }
-    }
-
-    return count;
-}
-
-int save_to_file(flight_t flight_list[], int flight_count) {
+/*******************************************************************************
+ *  This function will save flight data as text into a file named "database"
+ *  If the file does not exist, a new file will be created
+ *  
+ *  NOTE: Any previous existing data will be deleted
+ * 
+ *  @param flight_list - flight list data to save
+ *  @param flight_count - current count of the flights stored in flight_list
+ */
+int save_to_file(const flight_t flight_list[], const int flight_count) {
     FILE *fp = NULL;
     fp = fopen(DB_NAME, "w");
 
@@ -211,30 +212,37 @@ int save_to_file(flight_t flight_list[], int flight_count) {
         return 1;
     }
 
-    /* writing */
+    /* writing, each flight is on one line */
     int i;
     for(i = 0; i < flight_count; i++) {
+        flight_t fl = flight_list[i];
         fprintf(
             fp,
             "%s %d %d %d %d %s %d %d %d %d\n",
-            flight_list[i].flightcode,
-            flight_list[i].departure_dt.month,
-            flight_list[i].departure_dt.day,
-            flight_list[i].departure_dt.hour,
-            flight_list[i].departure_dt.minute,
-            flight_list[i].arrival_city,
-            flight_list[i].arrival_dt.month,
-            flight_list[i].arrival_dt.day,
-            flight_list[i].arrival_dt.hour,
-            flight_list[i].arrival_dt.minute
+            fl.flightcode,
+            fl.departure_dt.month,
+            fl.departure_dt.day,
+            fl.departure_dt.hour,
+            fl.departure_dt.minute,
+            fl.arrival_city,
+            fl.arrival_dt.month,
+            fl.arrival_dt.day,
+            fl.arrival_dt.hour,
+            fl.arrival_dt.minute
         );
     }
-
     fclose(fp);
 
     return 0;
 }
 
+/*******************************************************************************
+ *  This function will load flight data from a file named "database"
+ * 
+ *  @param flight_list - flight list array to load to
+ *  @return the number of flights loaded from file
+ *          0 - if the file does not exist or is blank
+ */
 int read_from_file(flight_t flight_list[]) {
     FILE *fp = NULL;
     fp = fopen(DB_NAME, "r");
@@ -243,26 +251,25 @@ int read_from_file(flight_t flight_list[]) {
     char line[100];
     char space[] = " ";
 
-    if(fp == NULL){
+    if(fp == NULL){ /* file does not exist */
         printf("Read error\n");
         return 0;
     }
 
-    /* reading each line*/
+    /* reading each line in file */
     while(fgets(line, sizeof(line), fp)) {
-        /* printf("%s\n,", line); */
-
+        
         char *ptr = strtok(line, space);
         char *array[20];
         int i = 0;
 
-        /* string to array */
+        /* string to word array */
         while(ptr != NULL) {
             array[i++] = ptr;
-            /* printf("%s ", array[i-1]); */
             ptr = strtok(NULL, space);
         }
 
+        /* mapping string array into type flight_t */
         flight_t flight;
         strcpy(flight.flightcode, array[0]);
         flight.departure_dt.month = atoi(array[1]);
@@ -282,12 +289,24 @@ int read_from_file(flight_t flight_list[]) {
 }
 
 
-/* 
--------------------------------------------------------------------
-    Get Functions
--------------------------------------------------------------------
-*/
+/*******************************************************************************
+ * GET FUNCTIONS
+*******************************************************************************/
 
+
+/*******************************************************************************
+ *  This function is to initialise a valid struct type date_time_t
+ *  
+ *  While entering, date time values, if the entered values are invalid
+ *  User will be asked to enter them again
+ * 
+ *  Valid Month     1 - 12  (Inclusive)
+ *  Valid Day       1 - 31  (Inclusive)
+ *  Valid Hour      0 - 23  (Inclusive)
+ *  Valid Minute    0 - 59  (Inclusive)
+ * 
+ * @return date_time_t object with valid date time values
+ */
 date_time_t get_date_time(void) {
     date_time_t dt;
     int valid = 1;
@@ -295,6 +314,7 @@ date_time_t get_date_time(void) {
     printf("Enter month, date, hour and minute separated by spaces>\n");
     scanf("%d%d%d%d", &dt.month, &dt.day, &dt.hour, &dt.minute);
 
+    /* validatin date time input */
     if(!check_month(dt.month)) valid = 0;
     if(!check_day(dt.day)) valid = 0;
     if(!check_hour(dt.hour)) valid = 0;
@@ -309,37 +329,115 @@ date_time_t get_date_time(void) {
     return dt;
 }
 
-char* get_fixedlen_string(int char_len) {
+/*******************************************************************************
+ *  This function returns a char pointer, which is a string of 
+ *  a specific length
+ *
+ *  @param char_len - the length of the string
+ *  @return a char pointer to a string of a specified length
+ */
+char* get_fixedlen_string(const int char_len) {
     char in[char_len];
     char* string;
 
     scanf("%s", in);
-    /* in[char_len] = '\0'; */
-    /* strcpy(string, in); */
     string = &in[0];
 
     return string;
 }
 
-/* 
--------------------------------------------------------------------
-    Print Functions
--------------------------------------------------------------------
-*/
-
-/**
+/*******************************************************************************
+ *  This function returns a char pointer, which is a string of
+ *  a valid FlightCode
  * 
- * print the header of flights listing
+ *  If the entered flight code is in-valid, User will be prompt to enter
+ *  the flight code again
+ * 
+ *  Valid flight code format:
+ *  char length:    3 - 6
+ *  char 1 - 2:     Uppercase letter
+ *  char 3 - 6:     Numbers
+ * 
+ *  @return a char pointer to a string of a valid FlightCode
  */
-void print_flight_header() {
+char* get_flight_code() {
+    char* out;
+    /* char in_str[200]; */
+    char * line = malloc(100), * linep = line;
+
+    /* scanf("%[^\n]", in_str); */
+    fgets(line, 100, stdin);
+
+    /* fgets(in_str, 100, stdin); */
+    while(!check_flight_code(line)) {
+        printf("Invalid input\n");
+        printf("Enter flight code>\n");
+        /* scanf("%[^\n]", in_str); */
+
+        fgets(line, 100, stdin);
+        /* fgets(in_str, 200, stdin); */
+    }
+
+    printf("valid: %s\n",line);
+    *out = *line;
+    return out;
+}
+
+/*******************************************************************************
+ *  This function returns the count of flights arriving at a specific CityCode
+ * 
+ *  @param citycode - char array of the city code
+ *  @param flight_list - flight list array to search from
+ *  @param flight_count - current count of flights stored in flight_list
+ *  @return the number of flights arriving at a specific CityCode
+ */
+int get_dest_count(const char citycode[], const flight_t flight_list[], const int flight_count) {
+    int i, count = 0;
+
+    for (i = 0; i < flight_count; i++) {
+        if(strcmp(citycode, flight_list[i].arrival_city) == 0) {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+
+/*******************************************************************************
+ * PRINT FUNCTIONS
+*******************************************************************************/
+
+/*******************************************************************************
+ * This function prints the initial menu with all instructions on how to use
+ * this program.
+ */
+void print_menu (void) {
+    printf("\n"
+    "1. add a flight\n"
+    "2. display all flights to a destination\n"
+    "3. save the flights to the database file\n"
+    "4. load the flights from the database file\n"
+    "5. exit the program\n"
+    "Enter choice (number between 1-5)>\n");
+}
+
+/*******************************************************************************
+ *  This function prints the flight list header when listing flights
+ */
+void print_flight_header(void) {
     printf("Flight Origin          Destination\n");
     printf("------ --------------- ---------------\n");
 }
 
-/**
- * print all flights
+/*******************************************************************************
+ *  This function prints all flights information from Sydney stored  in 
+ *  the flight list
+ *  
+ *  @param flight_list - flight_t array storing the list of flights
+ *  @param flight_count - number of flights stored in the flight_list array
  */
-void print_all_flight(flight_t flight_list[], int flight_count) {
+void print_all_flight(const flight_t flight_list[], const int flight_count) {
     print_flight_header();
 
     /* flight body */
@@ -349,12 +447,18 @@ void print_all_flight(flight_t flight_list[], int flight_count) {
     }
 }
 
-/**
- * print all flights to a destination
+/*******************************************************************************
+ *  This function prints all flight information from Sydney to 
+ *  a specific destination
+ *
+ *  @param citycode - char array of the destination city code
+ *  @param flight_list - flight_t array storing the list of flights
+ *  @param flight_count - number of flights stored in the flight_list array
  */
-void print_flight_to(char citycode[], flight_t flight_list[], int flight_count) {
+void print_flight_to(const char citycode[], const flight_t flight_list[], const int flight_count) {
     print_flight_header();
 
+    /* flights to city */
     int i;
     for(i = 0; i < flight_count; i++) {
         if(strcmp(citycode, flight_list[i].arrival_city) == 0) {
@@ -363,12 +467,21 @@ void print_flight_to(char citycode[], flight_t flight_list[], int flight_count) 
     }
 }
 
-/**
- * print flight detail
+/*******************************************************************************
+ *  This function prints the flight detail of a flight departuring from Sydney 
+ *  in the format:
+ *  
+ *  FLCODE SYD mm-dd hh:mm ARV mm-dd hh:mm
+ *  
+ *  Where   FLCODE is the flight code
+ *          ARV is the arrival city code
+ *
+ *  @param flight - type flight_t struct contaning all information of the flight 
  */
-void print_flight(flight_t flight) {
+void print_flight(const flight_t flight) {
     /* flightcode */
-    print_with_padding(flight.flightcode, MAX_FLIGHTCODE_LEN + 1);
+    print_with_padding(flight.flightcode, MAX_FLIGHTCODE_LEN );
+    printf(" ");
 
     /* origin */
     print_loc_datetime(SYDNEY, flight.departure_dt);
@@ -379,42 +492,115 @@ void print_flight(flight_t flight) {
     printf("\n");
 }
 
-/**
- * Prints departure/arrival location and Datetime of the flight
- * Prints in the format:
- *  LOC mn-da hr:mn
+/*******************************************************************************
+ *  This function prints city code and arrival or departure date time 
+ *  in the format:
+ *  
+ *  CIT mm-dd hh:mm
+ *
+ *  @param location - the char array of the location, should be under 3 chars
+ *  @param dt - date time of type date_time_t
  */
-void print_loc_datetime(char location[], date_time_t dt) {
+void print_loc_datetime(const char location[], const date_time_t dt) {
     /* departure/arrival location */
     print_with_padding(location, MAX_CITYCODE_LEN +1);
     
-    /* print date time */
+    /* date time */
     printf("%02d-%02d ", dt.month, dt.day);
     printf("%02d:%02d", dt.hour, dt.minute);
 }
 
-void print_with_padding(char location[], int padding) {
+/*******************************************************************************
+ *  This function prints a string with a minimum number space padding 
+ *  the right side of the spring
+ *  
+ *  Padding size should be larger than char count in the string
+ *  If string char count is larger, there will be no padding
+ *
+ *  @param str - char array of the string
+ *  @param padding - minimum space padding size
+ */
+void print_with_padding(const char str[], const int padding) {
     int i;
-    printf("%s", location);
-    for(i = strlen(location); i < padding; i++){
+    printf("%s", str);
+    for(i = strlen(str); i < padding; i++){
         printf(" ");
     }
 }
 
-/* 
--------------------------------------------------------------------
-    FileProcessing Functions
--------------------------------------------------------------------
-*/
+
+/*******************************************************************************
+ * VALIDATION FUNCTIONS
+*******************************************************************************/
+
+/*******************************************************************************
+ *  This function checks and if the enered flight code is valid or not
+ * 
+ *  Valid flight code format:
+ *  char length:    3 - 6
+ *  char 1 - 2:     Uppercase letter
+ *  char 3 - 6:     Numbers
+ * 
+ *  @param str - char array of the flight code
+ *  @return 1 - valid flight code
+ *          0 - invalid flight code
+ */
+int check_flight_code(const char str[]) {
+    int i;
+    int len = strlen(str);
+
+    /* check char length between 3 - 6 */
+    if(!check_int_range(len, 3, 6)) return 0;
+    /* check if char 1 - 2 is upper case */
+    for(i = 0; i < 2; i++) {
+        if (!check_upper_char(str[i])) return 0;
+    }
+    /* check if char 3 -> len is number */
+    for(i = 2; i < len; i++) {
+        if (!check_number_char(str[i])) return 0;
+    }
+
+    return 1;
+}
 
 
-/* 
--------------------------------------------------------------------
-    Validation Functions
--------------------------------------------------------------------
-*/
+/*******************************************************************************
+ *  This function checks the range of what a char can be
+ *  This is based on how char can also be represented as an int
+ *  
+ *  @param c - the char to check
+ *  @param min - the lower range of char value
+ *  @param max - the higher range of char value
+ *  @return 1 if the char is in the allocated range
+ *          0 if the char is not in the allocated range
+ */
+int check_char_range(const char c, const char min, const char max) {
+    return (c >= min && c <= max ) ? 1 : 0;
+}
 
-/**
+/*******************************************************************************
+ *  This function check if the char is an uppercase letter
+ *  
+ *  @param c - the char to check
+ *  @return 1 the char is an uppercase letter
+ *          0 the char is not an uppercase letter
+ */
+int check_upper_char(const char c) {
+    return check_char_range(c, 'A', 'Z');
+}
+
+/*******************************************************************************
+ *  This function check if the char is number
+ *  
+ *  @param c - the char to check
+ *  @return 1 the char is a number
+ *          0 the char is not a number
+ */
+int check_number_char(const char c) {
+    return check_char_range(c , '0', '9');
+}
+
+/*******************************************************************************
  * Check if an integer if it is between a range (inclusive)
  * 
  * @param i the value to check
@@ -422,54 +608,50 @@ void print_with_padding(char location[], int padding) {
  * @param max maximum value of the range (inclusive)
  * @return 1 if the number is in range, 0 if the number is out of range
  */
-int check_int_range(int i, int min, int max) {
-    if(i >= min && i <= max ) { /* valid */
-        return 1;
-    } else {                    /* invalid */
-        return 0;
-    }
+int check_int_range(const int i, const int min, const int max) {
+    return (i >= min && i <= max ) ? 1 : 0;
 }
 
-/**
+/*******************************************************************************
  * Check if the entered month is valid
  * Month value should be 1 - 12 (inclusive)
  * 
  * @param mon month integer value
  * @return 1 if valid, 0 if invalid
  */
-int check_month(int mon) {
+int check_month(const int mon) {
     return check_int_range(mon, 1, 12);
 }
 
-/**
+/*******************************************************************************
  * Check if the entered day is valid
  * Day value should be 1 - 31 (inclusive)
  * 
  * @param day day integer value
  * @return 1 if valid, 0 if invalid
  */
-int check_day(int day) {
+int check_day(const int day) {
     return check_int_range(day, 1, 31);
 }
 
-/**
+/*******************************************************************************
  * Check if the entered hour is valid
  * hour value should be 0 - 23 (inclusive)
  * 
  * @param hr hour integer value
  * @return 1 if valid, 0 if invalid
  */
-int check_hour(int hr) {
+int check_hour(const int hr) {
     return check_int_range(hr, 0, 23);
 }
 
-/**
+/*******************************************************************************
  * Check if the entered minutes is valid
  * Month value should be 0 - 59 (inclusive)
  * 
  * @param min minute integer value
  * @return 1 if valid, 0 if invalid
  */
-int check_min(int min) {
+int check_min(const int min) {
     return check_int_range(min, 0, 59);
 }
