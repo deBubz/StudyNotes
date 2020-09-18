@@ -1,6 +1,9 @@
 * Tasks
+** LIST
+*** ASD review
+*** IOT week 06 review
+*** fun c review
 ** TODAY
-*** TODO cancel the thing
 *** IOT
 **** lecture
 ***** NODE_RED paper 8pg maybe skim through
@@ -15,32 +18,7 @@
     generally be careful of the small details in the forums, there are a lot of nuanced details
 **** TODO try completing chapter 2
 *** ASD
-**** TODO figgure out the auth stuff
-**** OK HAVE A LOOK AT THIS
-***** check the DevOps differences
-***** check devops pipeline
-***** check AIP class what they use for AUTH, testing, webpack
-***** check testing library contents
-***** OK
-***** draw up a simple devops pipeline thing
-***** draw up a simple wireframe thing
-***** re-edit the note/ show to group
-***** re organize the repo and readmes
-      - react will be the main project?
-      - be located in a seperate folder (not in src)
-      - make sure to keep a readme for eachpart and
-      - running/building script lauch both the be/fe
-**** release0 TASKS
-***** functional requirement
-***** data dict
-***** non-functional requirement
-***** project time sheet
-***** cost estimates
-***** project timesheet
-***** data architecture
-***** application architecture
-***** contribution log book
-***** dev-ops
+**** have a look at integrating cucumber
 * Personal
 - What should I fucking do
 ** School
