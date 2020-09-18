@@ -1,6 +1,7 @@
 * Tasks
 ** LIST
 *** ASD review
+**** wk06 - 07
 *** IOT week 06 review
 *** fun c review
 ** TODAY
@@ -17,8 +18,11 @@
 *** FUN C
     generally be careful of the small details in the forums, there are a lot of nuanced details
 **** TODO try completing chapter 2
+**** have a read read of the assessment note 
 *** ASD
 **** have a look at integrating cucumber
+**** lets actually do my part of the work
+**** LOGBOOK
 * Personal
 - What should I fucking do
 ** School
