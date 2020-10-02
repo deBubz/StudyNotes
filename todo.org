@@ -22,6 +22,17 @@
 *** ASD
 **** have a look at integrating cucumber
 **** lets actually do my part of the work
+***** Model
+***** User Stories
+      - 1001 > 1004 CRUD
+        - 01 Create - rate
+        - 02 Read - view rating
+        - 03 Update - update old rating
+        - 04 Delete - delete rating
+      - 1005 > 1007
+        - 05 View ratings in Dog profile
+        - 06 limit rating to people who had a date with
+        - 07 view ratings from other users
 **** LOGBOOK
 * Personal
 - What should I fucking do

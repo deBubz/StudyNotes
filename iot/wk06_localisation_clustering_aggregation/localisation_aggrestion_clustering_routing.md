@@ -1,3 +1,30 @@
+- [Background](#background)
+- [Location & Localisation](#location--localisation)
+  - [`Categorisation of Positions`](#categorisation-of-positions)
+  - [`Classification of localisation methods`](#classification-of-localisation-methods)
+  - [Range based techniques](#range-based-techniques)
+- [Clustering](#clustering)
+  - [node v data clustering](#node-v-data-clustering)
+- [Data aggregation](#data-aggregation)
+  - [aggregation types](#aggregation-types)
+  - [aggretion by voting methods](#aggretion-by-voting-methods)
+  - [data aggregation models](#data-aggregation-models)
+    - [centralised & decentralised](#centralised--decentralised)
+    - [hierachical aggregarion Model](#hierachical-aggregarion-model)
+    - [summary: aggregation](#summary-aggregation)
+- [Clustering](#clustering-1)
+  - [Clustering taxonomy](#clustering-taxonomy)
+- [Routing](#routing)
+  - [Taxonomy of Routing protocols](#taxonomy-of-routing-protocols)
+- [Taxonomy of Network Structure in Routing](#taxonomy-of-network-structure-in-routing)
+  - [Flat based Routing protocols](#flat-based-routing-protocols)
+  - [Heirachical Routing](#heirachical-routing)
+  - [Location Based Routing](#location-based-routing)
+  - [Routing protocols based on Protocol Operation](#routing-protocols-based-on-protocol-operation)
+  - [Hierachical v Flat](#hierachical-v-flat)
+  - [Routing Protocal Classification & Comparison](#routing-protocal-classification--comparison)
+- [Summary](#summary)
+
 Oh shit there is alot
 
 > Localisation, Aggretion, Clustering and routing
@@ -39,6 +66,8 @@ Knowledge of sensor location with IoT help with:
 - obj tracking
 - routing data & protocols are based on geographic information (routing)
 - coverege area management
+
+--- 
 
 ## Location & Localisation
 
@@ -108,6 +137,8 @@ Knowledge of sensor location with IoT help with:
   - dynamic clustering is a result of reconfiguration in later stages
 - **data clustering** different from sensor/nodes clustering ??? what the fuck
 
+---
+
 ## Data aggregation
 
 - this is an essential paradigm for routing in IoT
@@ -115,7 +146,6 @@ Knowledge of sensor location with IoT help with:
 - **data aggregation** shift the focus from 
   - address-centric methods for networking ( finding short routes btween pairs of addressable end-nodes )
   - to a more-data centric approach ( finding routes from multi sources -> single destination that allows in-network consolidation of redundant data )
-
 
 **concepts**
 
@@ -206,6 +236,8 @@ more things on the model
   - it saves on energy processing resources
   - BUT introduce transmission delays
 
+---
+
 ## Clustering
 
 Network performance in important in IoT
@@ -240,4 +272,107 @@ Network performance in important in IoT
   - single hop & multihop
   - HOmogeneous & hetero geneous
 
+--- 
 
+## Routing
+
+**Definition**:
+IoT routing denote the arranging(scheduling) of sensor/control data 
+for delivery according to scheduled sequence.
+
+IoT are large in scale;
+Routing means deciding the "best" **routing path** to transfer data packets.
+The more nodes there are in the **routing path**, the more **complex** the rouing is
+
+**Routing Issues**
+- global ID addresing (using both IPv4 & IPv6)
+- IP-based protocols ?man? not always apply
+- stationary v mobile nodes
+- energy, storagem processing contraints
+- high redundancy in different sensor data, actuation controll
+
+### Taxonomy of Routing protocols
+
+Categorisation of IoT routing algos
+
+- path establishment
+- network strucure
+- protocol operation
+- initiator of communication
+
+> sl55
+
+## Taxonomy of Network Structure in Routing
+
+Routing protocol are of these categories
+
+- FlatBased
+- Hierarchical Based
+  - High energy node `transmit`
+  - Low evergy node `sense`
+  - 2 layer routing increase lifetime
+- Location Based
+  - sensor nodes addressed based on location
+  - Location from GPS or coordination among nodes
+
+### Flat based Routing protocols
+
+1. Sensor protocol for Information Negotiation (SPIN)
+2. Directed Diffusion
+3. RumorRouting
+4. Minimum cost forwarding Algo (MCFA)
+
+### Heirachical Routing
+
+1. Low Energy Adaptive Clustering Hierachy (LEACH)
+2. Self Organizing Protocol (SOP)
+3. Virtual Grid Architecture
+4. Hierachical power aware routing
+
+> sl61 LEACH example
+
+### Location Based Routing
+
+1. Gerographical Adaptive Fidelity (GAF)
+2. SPAN 
+
+### Routing protocols based on Protocol Operation
+
+1. Multipath Routing
+2. Query based Routing
+3. Negotiation based Routing
+4. QoS based routing
+
+> Examples sl64-67 
+
+### Hierachical v Flat
+
+| Heirarchical routing | Flat Routing |
+|:---|:---|
+|reservation based scheduling | connection based scheduling |
+|collision avoided | collision overhead present |
+| reduced duty cycle due to periodic sleeping | variable duty cycle by controlling sleep time of nodes |
+| data aggregation by `clusterhead` | node on multihop path aggregate incomming data from neighbours |
+| Simple, non-optimal routing | can be optimal and complex |
+| link `requires` global and local sync | link forms `without` sync |
+| overhead of clusters formation in network | routes only formed in regions that have data ready for transmission |
+| low latency as multiple hops network formed by clusterheads `always available` | latency in `waking up` intermediate nodes and setting the multipath | 
+| `uniform` energy dissapation | energy dissapation `depends` on traffic patern |
+| energy dissapation `cannot be controlled` | energy dissapation `addapts` to traffic pattern |
+| fair channel allocation | fairness not guaranteed |
+
+### Routing Protocal Classification & Comparison
+
+> sl69
+
+---
+
+## Summary
+
+- viewd the basic frameworks for **localisation**, **aggregation**, **clustering** and **routing**
+  - algos differ in *node selection*, *aggregation methods*, *cluster formation* and *routing*
+  - some address intra/inter cluster comminication
+- **clustering** improves utilisation of all available information and not only subset of parameters. It yield **better network performance** by:
+  - reduce power consumption -> prolongs network lifetime
+  - formation cluster from a set of nodes
+  - cluster the whole network with the selected CH and rotates CHs for energy distribution
