@@ -15,6 +15,10 @@ specified, print an error message.
 #include <stdio.h>
 #include <string.h>
 
+int aa(char* argv[]) {
+    return (!strcmp(argv[1], "-h") || !strcmp(argv[1], "--help"));
+}
+
 int main(int argc, char* argv[]) {
     /* argc - count of seperate string typed on the CLI including the program name */
     /* argv[] - char pointer array, hold all the string including the program name */
@@ -32,7 +36,7 @@ int main(int argc, char* argv[]) {
         /* cli modes */ 
 
         /* 3 modes */
-        if(!strcmp(argv[1], "-h") || !strcmp(argv[1], "--help")) {
+        if(aa(argv)) {
             /* help -h or --help */
             printf("help flag\n");
         } else if (!strcmp(argv[1], "-c") || !strcmp(argv[1], "--count")) {
