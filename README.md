@@ -6,3 +6,8 @@
 
 # Autumn 2021 (S1)
 
+> subjects sorted by possible difficulty
+
+- [sensing, actuators and controllers]()
+- [project management and the professional]()
+- [introduction to data analytics]()
