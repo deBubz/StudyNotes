@@ -4,12 +4,5 @@
 
 ---
 
-# Spring 2020 (S2)
-
-subs ordered by priority/difficulty
-
-- Internet of Things
-- Advanced Software Development
-- Fundamentals of C Programming
-
+# Autumn 2021 (S1)
 
