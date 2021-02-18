@@ -9,5 +9,5 @@
 > subjects sorted by possible difficulty
 
 - [sensing, actuators and controllers]()
-- [project management and the professional]()
-- [introduction to data analytics]()
+- [project management and the professional](./pmp/)
+- [introduction to data analytics](./ida/)

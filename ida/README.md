@@ -33,3 +33,10 @@ A3: Datamining in action
 12. neural networks
 13. guest lecture
 14. (stuvac)
+
+---
+
+## extras
+
+Beside from the weekly workshop sesssion, there is a QnA session on Tuesday for reclarification of contents.
+
