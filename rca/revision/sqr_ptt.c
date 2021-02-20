@@ -14,7 +14,7 @@ void print(int len);
 int main()
 {
     /* NOTE: defining i seperate from the for loop is for old c++ */
-    /* infinite input untill 0 is entered */
+    /* ask user for input 5 times or untill 0 is entered*/
     int i, inp;
     for(i = 0, inp = 1; i < 5 && inp != 0; i++)
     {
@@ -36,7 +36,7 @@ int main()
 void print(int len)
 {
     int i, j;
-    for(j = 0; i < len; j++)
+    for(j = 0; j < len; j++)
     {
         for(i = 0; i < len; i++)
         {
