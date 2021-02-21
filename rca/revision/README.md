@@ -62,3 +62,17 @@ basic functions declarations/definitions[functions.c](./functions.c):
 printing a [square pattern](./sqr_ptt.c)
 - design pattern: get infinite user input using for loop
 - for loops
+
+## arrays
+
+standard data structure, which is a block of **contigious memory** to store a fixed collection of data of the same type
+
+demo of [array and references](./array_ref.c)
+- initilizing array
+- assigning elements
+- array variables are pointer to the first 
+- array mutation
+
+hello there [strings](./strings.c)
+- strings are just char arrays
+- actual string size, and the null termination char
