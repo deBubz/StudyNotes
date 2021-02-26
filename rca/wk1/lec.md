@@ -22,6 +22,8 @@ embedded systems encompasses
 
 > look up wiki??
 
+- 
+
 ## Bit, switch & Button
 
 - You prob know what this is, but in embedded context
