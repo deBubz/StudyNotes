@@ -16,19 +16,24 @@ embedded systems encompasses
   - perform a small number of specific(dedicatied) functions
   - constrains by processsing power, performance size, time, cost (iot concepts)
 
+### Moores law
+
+- IC will double in transistor capacity in every 18 month
+
 ## Integratec circuits & Moore's Law
 
-> doesnt explain IC, explains moors law only
+> doesnt explain IC
 
 > look up wiki??
-
-- 
 
 ## Bit, switch & Button
 
 - You prob know what this is, but in embedded context
   - **1** HIGH
   - **0** LOW
+- this doesnt represent **voltage** but the signal if its on or off
+- usually abstracts to abinary value, it changing value overtime is called a digital **signal** 
+- often represented as button/ switch / led
 
 ## Timing diagram & pulse
 
