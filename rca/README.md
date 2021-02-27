@@ -25,7 +25,7 @@ A3: Final Exam
 5. Concurrent synchSMs
 6. I/O
 7. Peripherals
-8. Task Scheds
+8. Task Scheduling
 9. Utilization/ Scheduling
 10. Control Systems
 
