@@ -35,6 +35,12 @@ embedded systems encompasses
 - usually abstracts to abinary value, it changing value overtime is called a digital **signal** 
 - often represented as button/ switch / led
 
+## RIMS
+
+- an emulation of a microcontroller for learning purposes
+- work using `c`
+- 
+
 ## Timing diagram & pulse
 
 > here comes the interesting stuff
