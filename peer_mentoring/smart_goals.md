@@ -49,11 +49,11 @@ additional strategies in setting goal
 GOAL: complete assessment(report) by due date
 
 CHECKPOINTS: `organized chronologically`
-- [ ] note requirements
-    - [ ] due date
-    - [ ] word limit
-    - [ ] format
-    - [ ] misc constraints
+- [x] note requirements
+    - [x] due date - Week 6 dd-mm submit time
+    - [x] word limit - 2000
+    - [x] format
+    - [x] misc constraints
 - [ ] Draft format `note: this part depends on your asssessment`
 - [ ] article summary `take note of what you can use in the report`
   - [ ] article 1 `put the title here insted`
