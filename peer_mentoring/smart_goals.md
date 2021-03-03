@@ -39,8 +39,8 @@ additional strategies in setting goal
 
 ### Tools
 
-- notion
-- markdown
+- [notion](https://www.notion.so/)
+- [markdown](https://www.markdownguide.org/basic-syntax/)
 - pen/paper
 - white/blackboard in your room
 
