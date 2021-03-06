@@ -145,9 +145,92 @@ B = B & 0xF0; // Keeps B7..B4 the same, forces B3..B0 to 0s
 
 > avoid using bitwise operations on single bit var
 
+- [5_5 mask and bitwise operators](./5_5_bit_mask.c)
+
 ## shift shift operator
 
 shift bytes left or right by a number of bits
 
 - << left shift
 - \>\> right shift
+
+```c
+B = A << 1;  // Sets B7 to A6, B6 to A5, ..., B1 to A0, and B0 to 0 
+B = A >> 4;  // Sets B7..B4 to 0000, and B3..B0 to A7..A4
+B = B << 1;  // Sets B7 to B6, B6 to B5, ..., and B0 to 0
+```
+
+4 bit addition using shift
+```c
+#include "RIMS.h"
+
+void main()
+{
+  unsigned char sound1 = 0;
+  unsigned char sound2 = 0;
+
+  while (1) { 
+    sound1 = A & 0x0F; // 0000A3A2A1A0
+    sound2 = A >> 4;   // A7A6A5A4A3A2A1A0 --> 0000A7A6A5A4
+
+    // splitting each half then add
+    B = sound1 + sound2;
+  }
+}
+```
+
+> be careful of loosing data when shifting bits
+
+- [6_2_shifting](./6_2_shiftng.c)
+- [6_3_parkinglot](./6_3_parkinglot.c)
+
+---
+
+## Bit access functions
+
+Return a value where `Kth` bit is of an `unsigned char x` is 0
+```c
+x | (0x01 << k)
+// shift 1 into K position
+// or to guarantee it to be always 1
+```
+
+function setting bit to a value
+```c
+// x: 8-bit value
+// k: bit position to set, range is 0-7
+// b: set bit to this, either 1 or 0
+unsigned char SetBit(unsigned char x, unsigned char k, unsigned char b) {
+  return (b ?  (x | (0x01 << k))  :  (x & ~(0x01 << k)) );
+}
+```
+
+function return bit at a position
+```c
+unsigned char GetBit(unsigned char x, unsigned char k) {
+  return ((x & (0x01 << k)) != 0)
+}
+```
+
+- useful for the parking lot question incase each pin is not assigned to an individual Variable - **rewrite code later**
+
+> `inline` keyword
+> - tell the compiler to replace the function to where it is called
+> - default by most compiler optimizations
+
+---
+
+## Rounding, overflow
+
+rounding
+- be careful using expressions with integer divisions, fractions are truncated
+- problem can be partially addressed by doing division as late as possible
+
+overflow
+- opposite of rounding
+- the way to address overflow is to divide earlier
+  > what
+- another way is temporarily cast it to a larger type
+
+
+
