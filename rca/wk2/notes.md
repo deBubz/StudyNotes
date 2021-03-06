@@ -92,21 +92,58 @@ unsigned char B;  // 8 pin output pins - decimal
 
 ---
 
+## Hex
+
+- better to write binary or hex rather than int value
+- 0-255 doesnt clearly show intent, should write `B = b11111111`
+- but `c` doesnt support binary, it supports **hexidecimal**
+- Base 16 number with the range `[0-9A-F]` (4 bit).
+
+in `c`
+- hex constant preceed by `0x`
+  - `1111 1111` == `0xFF`
+  - `1010 1010` == `0XAA`
+
+> hex can give a better desired bit pattern
+
+### hex exercises
+
+- [4.2 hex](./4_3_hex.c)
+- [4.4 more hex](./4_4_more_hex.c)
+- [4.6 7segment system](./4_6_segment.c)
+
+---
+
 ## bitwise operations
 
+similar to logical operators
 - & and
 - | or
-- ^ xor
+- ^ xor - exactly one
 - ~ not
 
-## bit mask
+### bit mask
 
-OH so this is quickly assigning value/ setting the default value regardless of the input
+- Masks are constant pattern of 0/1
+
+OH so this is setting the default value regardless of the input
 
 - 0 & is always 0
 - 1 | is always 1
 - 0 | x is always x
 - 1 & x is always x
+
+```c
+B = A | 0x01; // Sets B to A, except forces B0 to 1
+B = A | 0x04; // Sets B to A, except forces B2 to 1
+B = A & 0xF7; // Sets B to A, except that B3 is cleared to 0
+B = A | 0xF0; // Sets B7..B4 to 1111, and B3..B0 to A3..A0
+B = A & 0x0F; // Sets B7..B4 to 0000, and B3..B0 to A3..A0 
+B = B | 0x0F; // Keeps B7..B4 the same, forces B3..B0 to 1s
+B = B & 0xF0; // Keeps B7..B4 the same, forces B3..B0 to 0s
+```
+
+> avoid using bitwise operations on single bit var
 
 ## shift shift operator
 
