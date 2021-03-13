@@ -110,3 +110,16 @@ good SM practices
 ---
 
 ## Mealy actions
+
+- earlier SM model associated actions with states only are `Moore-type` SM
+- `Mealy type` SM allows actions and transition too
+  - can make some behavior easier to capture
+
+![mealy1](./mealy1.png)
+
+- action appear in the transition switch statement
+
+
+
+
+
