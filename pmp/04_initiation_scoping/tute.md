@@ -13,6 +13,8 @@
 
 > classic sales/management ignoring engineer
 
+---
+
 ## case 2
 
 - Easysoft new software, tax calculator
@@ -24,10 +26,30 @@
 
 > rushing prod, assuming ppl smort
 
+---
+
 ## case 3
 
+- you, PM for Excelsior consultatnt
+- take project - automated warehouse management system for DeLuna
+- previous PM quit after 3months
+- team 19ppl, from both companies, incl support/testind roles + pt.specialist
 
+project looking "dying"
+- missing deadlines, unmotivated team, overspent:process ratio
+- the pt.specialist most likely the cause, hired to redesign the operation
+  - forcing certain changes from team members
+  - shows he dun kno nuffin
+  - charging large fees to project
+  - your Director(Excelsior) brother in law
+- You propose to halt and audit, Director dont want to, could ruin relationship with DeLuna
+  - loss of money, loss of jobs
+- DeLuna about to absorb other companies combinining warehouses
+- Excelsior request more funding, no halt
+- YOU prep proposal for extension and incr budget, while hiding past flaws
+- DeLuna trust YOU and giff money w/o much questioning
 
+---
 
 ## case 4
 
