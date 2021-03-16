@@ -54,7 +54,7 @@ embedded systems encompasses
 
 ### Basic timing pulse diagram
 
-![basic diagram](./assets/basic_diagram.png)
+![basic diagram](basic_diagram.png)
 
 diagram describes:
 - 2 input, 1 output timing diagram
@@ -67,7 +67,7 @@ diagram describes:
 
 Timing diagrams also sometimes display numerical output values and may includes arrows representing which events also trigger a value change
 
-![arrow diagram](./assets/arrow_diagram.png)
+![arrow diagram](arrow_diagram.png)
 
 
 
@@ -98,4 +98,4 @@ check output: assert output B
   assert 0xf0
 ```
 
-![simple test vector](./assets/test_vectpr.png)
+![simple test vector](test_vectpr.png)

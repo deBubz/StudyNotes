@@ -49,7 +49,7 @@ void main()
 - since microprocessors have `c` compilers and not SM compulers
   - necessary to implement SM in `c`
 
-example of [latch](./latch.c)
+example of [latch](latch.c)
     
 ![latch](latch.png)
 
@@ -58,13 +58,13 @@ good SM practices
 - include `default` in `switch` even if not needed for safety purposes
   - incase your SM ran into trouble and is stuck in a state
 
-[carousel SM](./carousel.c)
+[carousel SM](carousel.c)
 
-![carousel](./carousel.png)
+![carousel](carousel.png)
 
-[light toggle sm](./light_toggle.c)
+[light toggle sm](light_toggle.c)
 
-![light toggle](./light_toggle.png)
+![light toggle](light_toggle.png)
 
 ---
 
@@ -105,7 +105,7 @@ good SM practices
 
 [door system]()
 
-![door](./door.png)
+![door](door.png)
 
 ---
 
@@ -115,7 +115,7 @@ good SM practices
 - `Mealy type` SM allows actions and transition too
   - can make some behavior easier to capture
 
-![mealy1](./mealy1.png)
+![mealy1](mealy1.png)
 
 - action appear in the transition switch statement
 

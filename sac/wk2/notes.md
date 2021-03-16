@@ -85,10 +85,10 @@ unsigned char B;  // 8 pin output pins - decimal
 
 ### c exercises
 
-- [3.1 simple io](./3_1_io.c)
-- [3.2 plus 1](./3_2_plus1.c)
-- [3.3 overflow](./3_3_overflow.c)
-- [3.4 seatbelt](./3_4_airbag.c)
+- [3.1 simple io](3_1_io.c)
+- [3.2 plus 1](3_2_plus1.c)
+- [3.3 overflow](3_3_overflow.c)
+- [3.4 seatbelt](3_4_airbag.c)
 
 ---
 
@@ -108,9 +108,9 @@ in `c`
 
 ### hex exercises
 
-- [4.2 hex](./4_3_hex.c)
-- [4.4 more hex](./4_4_more_hex.c)
-- [4.6 7segment system](./4_6_segment.c)
+- [4.2 hex](4_3_hex.c)
+- [4.4 more hex](4_4_more_hex.c)
+- [4.6 7segment system](4_6_segment.c)
 
 ---
 
@@ -145,7 +145,7 @@ B = B & 0xF0; // Keeps B7..B4 the same, forces B3..B0 to 0s
 
 > avoid using bitwise operations on single bit var
 
-- [5_5 mask and bitwise operators](./5_5_bit_mask.c)
+- [5_5 mask and bitwise operators](5_5_bit_mask.c)
 
 ## shift shift operator
 
@@ -181,8 +181,8 @@ void main()
 
 > be careful of loosing data when shifting bits
 
-- [6_2_shifting](./6_2_shiftng.c)
-- [6_3_parkinglot](./6_3_parkinglot.c)
+- [6_2_shifting](6_2_shiftng.c)
+- [6_3_parkinglot](6_3_parkinglot.c)
 
 ---
 

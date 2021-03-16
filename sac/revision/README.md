@@ -23,13 +23,13 @@ gcc -Wall -Werror -o output.out input.c
 
 ## Basics
 
-simple [hello_world.c](./hello_world.c) contains:
+simple [hello_world.c](hello_world.c) contains:
 - main method
 - importing standard i/o library
 - printing a string onto console
 - `main` return type
 
-reading user input [miles_km.c](./miles_km.c):
+reading user input [miles_km.c](miles_km.c):
 - declarating empty variables
 - assigning user input value for a specific datatype
 - defining CONSTANTS
@@ -37,12 +37,12 @@ reading user input [miles_km.c](./miles_km.c):
 
 ## Types/Functions
 
-basic numeric types [numer_types.c](./number_types.c):
+basic numeric types [numer_types.c](number_types.c):
 - number types memory size
 - string format specifiers to print some types
 - first look at addresses and memory
 
-basic functions declarations/definitions[functions.c](./functions.c):
+basic functions declarations/definitions[functions.c](functions.c):
 - styling standard if using functions
 - function declaration and definition
 - function doccumentation
@@ -59,7 +59,7 @@ basic functions declarations/definitions[functions.c](./functions.c):
 - while loops
 - do while loops
 
-printing a [square pattern](./sqr_ptt.c)
+printing a [square pattern](sqr_ptt.c)
 - design pattern: get infinite user input using for loop
 - for loops
 
@@ -67,7 +67,7 @@ printing a [square pattern](./sqr_ptt.c)
 
 standard data structure, which is a block of **contigious memory** to store a fixed collection of data of the same type
 
-demo of [array and references](./array_ref.c)
+demo of [array and references](array_ref.c)
 - initilizing array
 - assigning elements
 - array variables are pointer to the first 

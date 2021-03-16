@@ -8,6 +8,5 @@
 
 > subjects sorted by possible difficulty
 
-- [sensing, actuators and controllers]()
+- [sensing, actuators and controllers](./sac)
 - [project management and the professional](./pmp/)
-- [introduction to data analytics](./ida/)
