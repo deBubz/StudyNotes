@@ -28,4 +28,11 @@
 
 
 
+
 ## case 4
+
+- Priya new to AU, first job as assistant sys admin
+- HR director wants Priya to dl/install **KEYLOGGER** to all PCs
+  - sus some1 posting bad safety product reviews
+  - shit talking internal QC process
+- Priya wants to do a good job but also feels sus, ask you for advice
