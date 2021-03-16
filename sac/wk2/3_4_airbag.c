@@ -1,7 +1,8 @@
 #include "RIMS.h"
 
 /* 
-    some if else statements to similating a simple embedded system
+    some if else statements to similating 
+    airbag warning 
 */
 
 void main()

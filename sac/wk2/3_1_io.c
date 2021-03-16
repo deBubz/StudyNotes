@@ -12,8 +12,7 @@ void main()
         B1 = 1;
         B2 = 1;
         
-        /* 
-        or just set B = 7;
-        */
+        // B = 7;
+        // B = 0x07;
     }
 }
