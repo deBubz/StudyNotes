@@ -14,8 +14,11 @@ int main()
     while (1)
     {
         // counting open slots
-        B = A0+A1+A2+A3+A4+A5;
+        unsigned char open = 6-(A0+A1+A2+A3+A4+A5);
         // handicapped spots
-        B7 = A6 && A7;
+        unsigned char handi_alert = (A6 && A7) ?
+            0x80 : 0x00;
+
+        B = open | handi_alert;
     }
 }

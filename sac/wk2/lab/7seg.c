@@ -8,7 +8,7 @@
 */
 
 // globally declared 
-char HEXSEG = [
+const unsigned char HEXSEG[] = {
     0x77,   // 0
     0x24,   // 1
     0x5d,   // 2
@@ -25,7 +25,8 @@ char HEXSEG = [
     0x7c,   // d
     0x5b,   // e
     0x1b,   // f
-]
+};
+
 void main()
 {
     // init
