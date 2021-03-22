@@ -30,3 +30,15 @@ ex 4.2.3 festive lights bounce
 ---
 
 ## SynchSMs and time interval for inputs
+
+- time interval are also used for inputs
+- talks about temperature system taking average of readings
+  - each readings are made every 3000ms and the latest 3 readings are stored to generate average
+
+4.3.1 Fuel level sensor
+
+- another scenario is to measure time between 2 input events
+
+4.3.2 Baby monitor
+
+4.3.3 reaction timer

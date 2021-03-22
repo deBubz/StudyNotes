@@ -18,26 +18,36 @@ Len: 2800 - 3500
 
 ## Background
 
-- discuss the ethics of existing technology and the situations it may apply to
-- surveillance software to monitor employees wfh
-
-> sample articles in Appendix A
+- Discuss Ethics of technology and its applications
+- Upsurge of the use of software automation to monitor employees doing WFH
+- Think of your future POV where you would use these software in the future
 
 ## Tasks
 
-Prepare report answering questions in each section. Then:
+Prepare report answering questions in each section, while:
 - conceptualize the problems/issue
 - find reference, example of your pov
-- our views should be supported by arguements and citations
+- our views should be supported by arguments and citations
 
-Assesment sections:
+Assessment sections:
 
 1. **stakeholder Ethics** (12)
-   -  at least 3 ethical issues associated with using home monitoring tech. are there any ethical concerns
-   - for each identified stakeholder:
-     - try to describe the issue from their view point/ provide reasoning
-   - for each stakeholder, select the closest fitting ethical principle (w2 sl10)
-     - justify & explain
+   - at least 3 ethical issues associated with using employee monitoring technology. Are there any ethical concerns
+   - For each issue Identify different key stakeholder, Why do you think they are a stakeholder.
+   - for each stakeholder:
+     - describe the issue from their view point, provide reasoning
+     - select the closest potential fit of their viewpoints that fits the ethical principals. justify why
+   - for each ethical issue:
+     - discuss personal view in relation to each issue
+     - select your belief closest fit to ethical principle
+     - why do you pick that for yourself
+   - compare your views with the PoV of the stake holders
+     - discuss differences and similarities
+     - why do you think this exist
+     - who is the most right
+    
+> Seperated from 2
+
 2. **International Code of conduct/ Codes of ethics** (12)
    - research `Codes of Conduct` & `Codes of Ethics for IT` bodies representing australia (Australian Computer Society)
    - Plus 2 national/international groups (Association for Computer Machinery, Project Management Institute, IEEE... )
@@ -46,6 +56,7 @@ Assesment sections:
      - examine & compare Codes for 3 industry bodies, whats the differences and similarities regardig the casee study subject
      - why do you believe these conflicts are presents
    - justify ans with specific references to items within case study examples 
+
 3. **Report Professionalism and Communication** (6)
    - report should be written as if it is ment for a professional audience
    - use of quotes, statistics, and diagrams backed by citations
