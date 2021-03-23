@@ -39,6 +39,13 @@ Includes:
 
 ## Initial SCope
 
-plan to ussya a Request-for-tender, automated and integrated VMS. The new system will allow
-- on snow accommodation, equipment hire and ski passes.
+plan to use a a Request-for-tender, automated and integrated VMS. The new system will allow
+- on snow accommodation, equipment hire and ski passes
+  - directly reserve any holiday accommodation,
+- on snow services/activities reservation, Visitors can online book ski lessons and tuition for selected date/time under SRM
+  - for both mtn there are public classes for different grade
+  - or 1 hour private lesson can also be arranged with dedicated instructor
+- patron account management, CRM system allowing vacationers to
+  - check balance, 
+  - set personal details
 
