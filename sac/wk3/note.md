@@ -37,7 +37,7 @@ void main()
 - system described by SM as 
   - at anytime, the system is in a state (**current state**)
   - upon starting, system transition to the initial state and execute the action (**tick**)
-- for state machine to be precisely defined, transition should have **mutually exclusive conditions
+- for state machine to be precisely defined, transition should have **mutually exclusive conditions**
   - only 1 condition could be true at anytime
   - which state will the system choose if the multiple conditions are true
   - **non deterministic** state machine

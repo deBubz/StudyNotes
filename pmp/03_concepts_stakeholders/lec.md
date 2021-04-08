@@ -121,7 +121,7 @@ performance reporting to stakeholders
 - satisfy stakeholder that progress expectations are being met
 - help stakeholder make educated decisions regarding the project
 
-> detailed stakeholder analysis is prequesite to good communications planning/management
+> detailed stakeholder analysis is perquisite to good communications planning/management
 
 ### communication management plan matrix
 
@@ -130,6 +130,13 @@ performance reporting to stakeholders
 ---
 
 ## questions
+
+> is stakeholder engagement the same as stakeholder management
+
+- engagement 
+  - seek to build rapport/ understanding between stakeholders as a basis for common decision making(relationship)
+- management
+  - seek to establish specific deliverables and expectations then actively plan/execute towards outcome (realization)
 
 ---
 
