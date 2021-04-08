@@ -8,7 +8,7 @@
 - good for capturing algos that transform input to output (**data processing behavior**)
 
 ```c
-// exteded carousel, harder to understand 
+// extended carousel, harder to understand 
 // bc sequential instruction model not made dor capturing time behavior
 #include "RIMS.h"
 void main()
@@ -46,7 +46,7 @@ void main()
 
 ## Implementing SM in `c`
 
-- since microprocessors have `c` compilers and not SM compulers
+- since microprocessors have `c` compilers and not SM compilers
   - necessary to implement SM in `c`
 
 example of [latch](latch.c)
@@ -81,7 +81,7 @@ good SM practices
 - statement can appear in actions can be more than assignment statements
   - regular code is ok too
 - state actions can include `for`, function call, `if` as long as 
-  - it doesnt wait on an input
+  - it doesn't wait on an input
 
 [3.5.2 applause meter sm]()
 
@@ -91,7 +91,7 @@ good SM practices
 
 ### conditions
 
-> exactly 1 of a state exiting transition shouldd have a condition evaluated to true at a given time.
+> exactly 1 of a state exiting transition should have a condition evaluated to true at a given time.
 >
 > so the next state for each tick is precisely and clearly defined
 
@@ -100,7 +100,7 @@ good SM practices
   - e.g uses `A1` or `A0` and they can be both true at the same time, not clear  
   - using `!A1&&A0` and fail to consider `!A1&&!A0`
     - its not wrong but SM will become non-deterministic, as the model does not define which of the two true transition will be taken.
-- for convinience, this SM oses `other` condition to indicate the transition that should be taken if none other normal condition is true
+- for convenience, this SM oses `other` condition to indicate the transition that should be taken if none other normal condition is true
 > else statement in transition switch
 
 [door system]()

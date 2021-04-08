@@ -13,16 +13,16 @@ embedded systems encompasses
 - **electrical devices**
   - embedded with microprocessors (every piece of electronics out there)
 - **microprocessors**
-  - perform a small number of specific(dedicatied) functions
-  - constrains by processsing power, performance size, time, cost (iot concepts)
+  - perform a small number of specific(dedicated) functions
+  - constrains by processing power, performance size, time, cost (iot concepts)
 
-### Moores law
+### Moore's law
 
 - IC will double in transistor capacity in every 18 month
 
-## Integratec circuits & Moore's Law
+## Integrated circuits & Moore's Law
 
-> doesnt explain IC
+> doesn't explain IC
 
 > look up wiki??
 
@@ -31,13 +31,13 @@ embedded systems encompasses
 - You prob know what this is, but in embedded context
   - **1** HIGH
   - **0** LOW
-- this doesnt represent **voltage** but the signal if its on or off
-- usually abstracts to abinary value, it changing value overtime is called a digital **signal** 
+- this doesn't represent **voltage** but the signal if its on or off
+- usually abstracts to a binary value, it changing value overtime is called a digital **signal** 
 - often represented as button/ switch / led
 
 ## RIMS
 
-- an emulation of a microcontroller for learning purposes
+- an emulation of a micro-controller for learning purposes
 - work using `c`
 - is a simulator supporting `c` programming simulating the execution of **RIM** (Riverside-Irvine Microcontroller)
 
@@ -75,7 +75,7 @@ Timing diagrams also sometimes display numerical output values and may includes 
 
 > generic testing paradigm for software engineering
 
-- Test border case (edgecases), ensure 100% coverage
+- Test border case (edge cases), ensure 100% coverage
 - USE PRINT STATEMENTS 
 
 ## Input value combination (test vectors)
@@ -95,4 +95,4 @@ check output: assert output B
   assert 0xf0
 ```
 
-![simple test vector](test_vectpr.png)
+![simple test vector](test_vector.png)
