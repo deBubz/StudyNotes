@@ -57,19 +57,27 @@ embedded systems encompasses
 ![basic diagram](./assets/basic_diagram.png)
 
 diagram describes:
+- represent how an embedded system operates over time according to I/O
 - 2 input, 1 output timing diagram
 - the output `B0` is one between 4s - 5s when both `A0` and `A1` is **HIGH**
 - dotted line presents sometimes to help line up certain events
+
+**sample ex 1.4.1**: Timing diagram showing all permutations of 3 inputs
+- 6 possible combinations: a b c ab ac bc abc
 
 > remember from previous section:
 >
 > I/O also represent 8-bit value
 
-Timing diagrams also sometimes display numerical output values and may includes arrows representing which events also trigger a value change
+Timing diagrams also sometimes display numerical output values and may includes arrows representing which **events** also trigger a value change
 
 ![arrow diagram](./assets/arrow_diagram.png)
 
-> is this PWM - pulse width modulation
+> is this PWM - pulse width modulationo
+
+### Events
+
+events are change on signal, typically refer to a bit changing from 0->1 or 1->0.
 
 ## Testing
 
@@ -77,6 +85,9 @@ Timing diagrams also sometimes display numerical output values and may includes 
 
 - Test border case (edge cases), ensure 100% coverage
 - USE PRINT STATEMENTS 
+- for code with multiple branches, testing ensuring each statement is executed once is called 100% code coverage.
+- **black box testing** testing functionalities while implementation is **not** known to tester, often ui/ux 
+- **white box testing** testing functionalities while implementation is known 
 
 ## Input value combination (test vectors)
 
