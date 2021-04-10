@@ -18,21 +18,22 @@ why `c`
 - take care of which data type to use
 - int can have different size depending on the processor
 
-| Type | size(bit) | Range |
-|:---|:---:|:---|
-|`signed char` | 8 | -128 to 127 |
-|`unsigned char` | 8 | 0 to 255 |
-|`signed short` | 16 |  |
-|`unsigned short` | 16 |  |
-|`signed long` | 32 |  |
-|`unsigned long` | 32 |  |
-|`signed int` | N |  |
-|`unsigned int` | N |  |
+| Type             | size(bit) | Range       |
+|:-----------------|:---------:|:------------|
+| `signed char`    |     8     | -128 to 127 |
+| `unsigned char`  |     8     | 0 to 255    |
+| `signed short`   |    16     |             |
+| `unsigned short` |    16     |             |
+| `signed long`    |    32     |             |
+| `unsigned long`  |    32     |             |
+| `signed int`     |     N     |             |
+| `unsigned int`   |     N     |             |
 
 > yep you know all this
 > 
-> int size are N because it depends on the system, 
-> commonly 4 byte or 8 byte
+> - int size are N because it depends on the system, 
+> - commonly 4 byte or 8 byte
+> - avoid using int due to **undefined int**
 
 - its good to know the rough range of the variable to decide what type is best to use
 - conserve space
@@ -179,6 +180,10 @@ void main()
 }
 ```
 
+Generally, this is used in place of complex mathematical calculations. i.e
+- `<<` usually for doubling value 
+- `>>` usually for /2 value 
+
 > be careful of loosing data when shifting bits
 
 - [6_2_shifting](6_2_shiftng.c)
@@ -232,5 +237,8 @@ overflow
   > what
 - another way is temporarily cast it to a larger type
 
+---
 
+## NOTE
 
+- maybe have a look at **getBit** and **setBit**
