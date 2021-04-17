@@ -106,7 +106,7 @@
    - tools -> risk audits, risk review, risk status meetings and reports
    - **this is a continuous exercise**
 6. **risk response**
-   - backup plan
+   - backup plan to attempt to remove the risk
    - when a risk trigger occurs the risk owner  must take appropriate action (per the risk response plan)
    - outcome will be favorable or unfavorable
    - outcome should be assessed for further action
