@@ -208,3 +208,4 @@ CREATE VIEW ViewName as (Select * from TableName);
   - Natural join - inner join variation, join column by similar names, and duplicate columns are removed
 
 > add examples
+
