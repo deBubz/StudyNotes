@@ -7,7 +7,7 @@
 - [lec 7 - SQL](#lec-7---sql)
   - [Select statements](#select-statements)
 - [lec 8 - Joining table](#lec-8---joining-table)
-- [lec 10 -](#lec-10--)
+- [lec 9 - sub-queries](#lec-9---sub-queries)
 
 
 # Lec 1 - basics of RDB
@@ -241,7 +241,7 @@ CREATE VIEW ViewName as (Select * from TableName);
 
 ---
 
-lec 9 - sub-queries
+# lec 9 - sub-queries
 
 - query inside another query, can be placed
   - in a condition of the `WHERE` clause
