@@ -7,6 +7,7 @@
 - [lec 7 - SQL](#lec-7---sql)
   - [Select statements](#select-statements)
 - [lec 8 - Joining table](#lec-8---joining-table)
+- [lec 10 -](#lec-10--)
 
 
 # Lec 1 - basics of RDB
@@ -204,8 +205,65 @@ CREATE VIEW ViewName as (Select * from TableName);
 - relational operation combining many tables with relating columns into a single table
 - common columns are normally PK and FK of dependent table
 - Types of joins 
-  - Innerjoin(EquiJoin) - joining condition based on equality between common columns
-  - Natural join - inner join variation, join column by similar names, and duplicate columns are removed
+  1. EquiJoin - inner inner join joining condition based on equality between common columns, show duplicated column
+  ```sql
+  SELECT * FROM TableA INNER JOIN TableB
+  ON TableA.name = TableB.name;
+  ```
+  2. Natural join - inner join variation, join column by similar names, and duplicate columns are removed.
+  ```sql
+  SELECT * FROM TableA NATURAL JOIN TableB;
+  ```
+  3. Cross join - regular join using the where clause only
+  ```sql
+  SELECT * FROM TableA a, TableB b
+  WHERE a.name = b.name
+  ```
+- Outer joins - rows not having matching column values are also included
+  1. left/right outer join - contains value of the other side even if there are no match
+  ```sql
+  -- regular left/right outer join
+  SELECT * FROM TableA
+  LEFT OUTER JOIN TableB
+  ON TableA.name = TableB.name
+  -- outer join but not including B
+  SELECT * FROM TableA
+  LEFT OUTER JOIN TableB
+  ON TableA.name = TableB.name
+  WHERE TableB.id IS NULL
+  ```
+  2. full outer join/ union join - include all column from each table but if there are no matching column data for the row, it will be null
+  ```sql
+  SELECT * FROM TableA
+  FULL OUTER JOIN TableB -- full outer join
+  ON TableA.name == TableB.name
+  ```
 
-> add examples
+---
 
+lec 9 - sub-queries
+
+- query inside another query, can be placed
+  - in a condition of the `WHERE` clause
+  - as a table in the `FROM` clause
+  - within the `HAVING` clause
+- sub-queries can also
+  - **simple** - executed once for the entire outer query
+    - used in `WHERE` and `HAVING`
+  - **correlated** - executed once **for each** row returned by the outer query
+
+```sql
+-- simple 
+SELECT * from Product_t
+where price = (SELECT max(price) from Product_t)
+-- since max returned only 1 value, outer query is also executed once
+```
+- `IN` or `ANY` operator, select data from a set
+- try to avoid `ALL` and `ANY`
+```sql
+-- select all customer that have made an order
+SELECT * from Customer_T
+WHERE CustomerID IN (SELECT distinct(CustomerID) from Order_T)
+```
+
+> some JOIN can also be written as a SUB-QUERY
